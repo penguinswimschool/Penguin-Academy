@@ -48,6 +48,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
 
     setIsSubmitting(false);
 
+    window.dataLayer?.push({ event: 'generate_lead', lead_source: 'contact_form' });
+
     setIsSubmitted(true);
 
     // Reset form after 3 seconds

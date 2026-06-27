@@ -1,9 +1,16 @@
 import React from 'react';
 import { FaWhatsapp } from "react-icons/fa";
 
+declare global {
+  interface Window {
+    dataLayer?: Record<string, unknown>[];
+  }
+}
+
 const WhatsAppButton: React.FC = () => {
   const handleWhatsAppClick = () => {
-    window.open('http://wa.me/6589553399', '_blank');
+    window.dataLayer?.push({ event: 'whatsapp_click', whatsapp_source: 'floating_button' });
+    window.open('https://wa.me/6589553399', '_blank');
   };
 
   return (
