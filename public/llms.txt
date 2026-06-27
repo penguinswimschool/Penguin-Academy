@@ -1,0 +1,28 @@
+# Penguin Academy - Web Content Summary
+
+**Overview:**
+Penguin Academy is Singapore's official SSI (Scuba Schools International) certification centre, offering globally recognised aquatic education programs for aspiring and practicing swim teachers. The academy trains candidates to become certified swim instructors through structured, premium coaching pathways.
+
+**Contact Information:**
+- Email: swim@penguinswimschool.sg
+- WhatsApp: +65 8955 3399
+- SSI Presenter Profile: https://my.divessi.com/pro/121320
+
+**Core Course Offerings:**
+- React Right (CPR, AED, First Aid) - 0.5 day course, prerequisite for swim teacher certification
+- SSI Swim Teacher Level 1 - 1.5 day course, includes React Right certification
+- SSI Swim Teacher Level 2 - 1 day course, includes React Right certification
+- Baby & Me Swim Teacher Course - 3 day specialised course for infant/parent swim instruction
+- Penguin Pro Swim Teacher Pathway Bundle - 5 day complete bundle combining all certification levels
+
+**Who This Is For:**
+Aspiring swim teachers, current swim coaches seeking official SSI certification, fitness/aquatics professionals expanding into swim instruction, and candidates seeking a structured pathway from certification through mentorship into paid teaching roles in Singapore.
+
+**Geographic Coverage:**
+Singapore-based certification centre, training delivered in-person in Singapore for candidates pursuing swim teacher certification and instructor careers locally.
+
+**Key Differentiators:**
+Official SSI-affiliated certification centre, globally recognised credentials, structured multi-level course pathway, mentorship and job-placement support after certification, premium small-group instruction rather than mass-market training.
+
+**Related Organisation:**
+Penguin Academy is affiliated with Penguin Swim School (https://www.penguinswimschool.sg), a Singapore swim school offering lessons for infants through seniors, sharing the same coaching standards and contact channel.
