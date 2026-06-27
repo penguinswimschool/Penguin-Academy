@@ -99,9 +99,38 @@ CREATE POLICY "Authenticated users can update courses" ON admin_courses
 CREATE POLICY "Authenticated users can delete courses" ON admin_courses
   FOR DELETE USING (auth.uid() IS NOT NULL);
 
+-- Create contact_submissions table for the public contact form
+CREATE TABLE IF NOT EXISTS contact_submissions (
+  id UUID DEFAULT gen_random_uuid() PRIMARY KEY,
+  name TEXT NOT NULL,
+  email TEXT NOT NULL,
+  phone TEXT NOT NULL,
+  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
+);
+
+-- Enable RLS on contact_submissions
+ALTER TABLE contact_submissions ENABLE ROW LEVEL SECURITY;
+
+DROP POLICY IF EXISTS "Anyone can submit a contact form" ON contact_submissions;
+DROP POLICY IF EXISTS "Admins can view contact submissions" ON contact_submissions;
+
+-- Public (anon key) can submit leads, but cannot read them back
+CREATE POLICY "Anyone can submit a contact form" ON contact_submissions
+  FOR INSERT WITH CHECK (true);
+
+-- Only admins can read submitted leads
+CREATE POLICY "Admins can view contact submissions" ON contact_submissions
+  FOR SELECT USING (
+    EXISTS (
+      SELECT 1 FROM profiles
+      WHERE profiles.id = auth.uid() AND profiles.role = 'admin'
+    )
+  );
+
 -- Create indexes for better performance
 CREATE INDEX IF NOT EXISTS idx_profiles_role ON profiles(role);
 CREATE INDEX IF NOT EXISTS idx_profiles_email ON profiles(email);
 CREATE INDEX IF NOT EXISTS idx_admin_courses_status ON admin_courses(status);
 CREATE INDEX IF NOT EXISTS idx_admin_courses_category ON admin_courses(category);
-CREATE INDEX IF NOT EXISTS idx_admin_courses_dates ON admin_courses(start_date, end_date); 
+CREATE INDEX IF NOT EXISTS idx_admin_courses_dates ON admin_courses(start_date, end_date);
+CREATE INDEX IF NOT EXISTS idx_contact_submissions_created_at ON contact_submissions(created_at);

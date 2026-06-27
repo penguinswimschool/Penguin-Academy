@@ -13,6 +13,8 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
     phone: ''
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
@@ -22,12 +24,32 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the data to your backend
-    console.log('Form submitted:', formData);
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Request failed');
+      }
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      setIsSubmitting(false);
+      setSubmitError('Something went wrong sending your message. Please try WhatsApp or email instead.');
+      return;
+    }
+
+    setIsSubmitting(false);
+
     setIsSubmitted(true);
-    
+
     // Reset form after 3 seconds
     setTimeout(() => {
       setIsSubmitted(false);
@@ -135,12 +157,17 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
                 </div>
               </div>
 
+              {submitError && (
+                <p className="text-sm text-red-600">{submitError}</p>
+              )}
+
               <button
                 type="submit"
-                className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2"
+                disabled={isSubmitting}
+                className="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors flex items-center justify-center space-x-2 disabled:opacity-60"
               >
                 <Send className="h-5 w-5" />
-                <span>Send Message</span>
+                <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
 
