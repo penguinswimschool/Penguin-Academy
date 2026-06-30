@@ -3,15 +3,17 @@ import { sanityClient } from '@/lib/sanity'
 
 const baseUrl = 'https://www.swimcoachcertification.com'
 
+// Canonical URLs aligned with GSC-indexed pages (legacy slugs redirect via next.config.ts)
 const staticRoutes = [
   '',
+  '/courses/penguin-pro-swim-teacher-pathway',
   '/courses/ssi-swim-teacher-level-1',
   '/courses/ssi-swim-teacher-level-2',
   '/courses/baby-and-me-swim-teacher',
-  '/courses/penguin-pro-swim-teacher-pathway',
   '/courses/react-right-cpr-aed-first-aid',
   '/blog',
   '/terms',
+  '/login',
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
