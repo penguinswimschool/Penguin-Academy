@@ -1,6 +1,6 @@
 "use client"
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
+import { GOOGLE_REVIEWS_URL } from '@/lib/approved-course-details';
 import { Award, MessageCircle, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 
@@ -51,6 +51,7 @@ const Footer: React.FC<FooterProps> = ({ onTermsClick, onAdminClick }) => {
               <li><Link href="/courses/ssi-swim-teacher-level-1" className="hover:text-white transition-colors">SSI Swim Teacher Level 1</Link></li>
               <li><Link href="/courses/ssi-swim-teacher-level-2" className="hover:text-white transition-colors">SSI Swim Teacher Level 2</Link></li>
               <li><Link href="/courses/baby-and-me-swim-teacher" className="hover:text-white transition-colors">SSI Baby & Me Instructor</Link></li>
+              <li><Link href="/courses/ssi-adult-swim-teacher" className="hover:text-white transition-colors">SSI Adult Swim Teacher</Link></li>
               <li><Link href="/courses/react-right-cpr-aed-first-aid" className="hover:text-white transition-colors">React Right (CPR, AED, First Aid)</Link></li>
             </ul>
           </div>
@@ -82,7 +83,7 @@ const Footer: React.FC<FooterProps> = ({ onTermsClick, onAdminClick }) => {
                   Course Calendar
                 </button>
               </li>
-              <li><a href="#" className="hover:text-white transition-colors">Testimonials</a></li>
+              <li><a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Testimonials</a></li>
             </ul>
           </div>
 
@@ -99,7 +100,7 @@ const Footer: React.FC<FooterProps> = ({ onTermsClick, onAdminClick }) => {
               </div>
               <div className="flex items-center space-x-3">
                 <MapPin className="h-5 w-5 text-blue-400" />
-                <span>Singapore • Private Pools & Premium Venues</span>
+                <span>CBD / Central Singapore</span>
               </div>
             </div>
           </div>

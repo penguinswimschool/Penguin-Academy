@@ -28,6 +28,11 @@ const nextConfig: NextConfig = {
         destination: '/courses/ssi-swim-teacher-level-2',
         permanent: true,
       },
+      {
+        source: '/adult-swim-instructor',
+        destination: '/courses/ssi-adult-swim-teacher',
+        permanent: true,
+      },
     ];
   },
 };

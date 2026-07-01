@@ -2,12 +2,14 @@ import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookNowButton from '@/components/BookNowButton'
-import { Award, Clock, Users, CheckCircle } from 'lucide-react'
+import CourseMetaGrid from '@/components/CourseMetaGrid'
+import { Award, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
+import { COURSE_DETAILS, certCourseIncludes } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
   title: 'SSI Swim Teacher Level 2 Certification | Penguin Academy Singapore',
-  description: 'Take your swim teaching to the next level with SSI Swim Teacher Level 2 course. Learn advanced skills like stroke development, technique correction, and class progression planning.',
+  description: 'SSI Swim Teacher Level 2 in Singapore — $1,688 SGD including React Right. 1 full day, 9am–6pm, CBD / Central Singapore.',
   alternates: {
     canonical: 'https://www.swimcoachcertification.com/courses/ssi-swim-teacher-level-2',
   },
@@ -33,41 +35,19 @@ export default function SSILevel2Page() {
               <h1 className="text-4xl font-bold text-gray-900">SSI Swim Teacher Level 2 Certification</h1>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-6 mb-8">
-              <div className="flex items-center gap-3">
-                <Clock className="h-5 w-5 text-blue-600" />
-                <div>
-                  <div className="font-semibold text-gray-900">Duration</div>
-                  <div className="text-gray-600">1 Day</div>
-                </div>
-              </div>
-              <div className="flex items-center gap-3">
-                <Users className="h-5 w-5 text-blue-600" />
-                <div>
-                  <div className="font-semibold text-gray-900">Capacity</div>
-                  <div className="text-gray-600">6 Students</div>
-                </div>
-              </div>
-            </div>
+            <CourseMetaGrid />
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
-              <p className="text-gray-700 leading-relaxed mb-4">
-                Take your swim teaching to the next level with the SSI Swim Teacher Level 2 course in Singapore, conducted by Penguin Academy. This course builds on Level 1 and covers advanced skills like stroke development (freestyle, backstroke, breaststroke), technique correction, endurance building, and class progression planning.
+              <p className="text-gray-700 leading-relaxed">
+                Build on Level 1 with stroke development (freestyle, backstroke, breaststroke), technique correction, endurance building, and class progression planning. {COURSE_DETAILS.format} Assessment includes {COURSE_DETAILS.assessment.toLowerCase()}.
               </p>
             </div>
 
             <div className="bg-green-50 p-6 rounded-lg mb-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">What's Included</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">What&apos;s Included</h3>
               <div className="space-y-3">
-                {[
-                  "SSI Swim Teacher Level 2 Certification",
-                  "React Right (CPR, AED, First Aid)",
-                  "Lifetime mentorship & training with the Penguin Team",
-                  "24/7 support via PenguinGPT",
-                  "Lifetime membership in the Penguin Family",
-                  "Complimentary Lifetime Refresher"
-                ].map((feature, index) => (
+                {certCourseIncludes('SSI Swim Teacher Level 2 Certification').map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{feature}</span>
@@ -79,7 +59,7 @@ export default function SSILevel2Page() {
             <div className="bg-yellow-50 p-6 rounded-lg">
               <div className="flex items-center justify-between mb-4">
                 <div>
-                  <div className="text-3xl font-bold text-gray-900">$1,288</div>
+                  <div className="text-3xl font-bold text-gray-900">$1,688</div>
                   <div className="text-sm text-gray-600">includes React Right</div>
                 </div>
                 <div className="flex gap-4">

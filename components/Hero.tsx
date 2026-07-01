@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 Whether you're looking to start your journey as a certified swim teacher or upgrade your professional qualifications, Penguin Academy Singapore provides structured, globally recognised programmes that prepare you to coach with skill, safety, and confidence.
               </p>
               <p className="font-bold">
-                Plus, graduates are eligible to join Penguin Swim Classes as instructors—so you can step straight into paid coaching opportunities without worrying about job placement.
+                All courses include at least 8 in-water attachment sessions with Penguin Swim Classes — required to pass certification.
               </p>
             </div>
             
@@ -43,7 +43,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Singapore-Based Training:</strong> Convenient in-person courses held at selected private pools and premium venues.</span>
+                  <span><strong>Singapore-Based Training:</strong> In-person courses in CBD / Central Singapore, 9am–6pm. Overseas format can be discussed separately.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Job Opportunities After Graduation:</strong> Graduates are eligible to join Penguin Swim Classes as instructors, so you won't need to worry about job placement after completing your course.</span>
+                  <span><strong>Practical Attachment:</strong> Complete at least 8 in-water attachment sessions with Penguin Swim Classes as part of your certification pathway.</span>
                 </div>
               </div>
             </div>

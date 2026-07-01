@@ -3,121 +3,174 @@ import React, { useState } from 'react';
 import { Award, Clock, Users, CheckCircle, Heart, Zap, Shield, Baby, GraduationCap, Star, Package } from 'lucide-react';
 import { createCheckoutSession } from '@/lib/stripe';
 import { findProductByName } from '@/lib/stripe-config';
+import {
+  ATTACHMENT_REQUIREMENT,
+  COURSE_DETAILS,
+  LIFETIME_MEMBERSHIP,
+  LIFETIME_MENTORSHIP,
+  LIFETIME_REFRESHER,
+  PENGUIN_SUPPORT,
+} from '@/lib/approved-course-details';
 import Link from 'next/link';
 
 interface CourseListProps {
   onAskQuestions: (courseTitle?: string) => void;
 }
 
+const coursePaths: Record<number, string> = {
+  1: '/courses/penguin-pro-swim-teacher-pathway',
+  2: '/courses/ssi-swim-teacher-level-1',
+  3: '/courses/ssi-swim-teacher-level-2',
+  4: '/courses/baby-and-me-swim-teacher',
+  5: '/courses/ssi-adult-swim-teacher',
+  6: '/courses/react-right-cpr-aed-first-aid',
+};
+
 const courses = [
   {
     id: 1,
-    title: "Penguin Pro Swim Teacher Pathway – Full Certification Bundle",
-    duration: "5 Days",
-    capacity: "6 Students",
+    title: "Penguin Pro Bundle – SSI Level 1 + Level 2 with React Right",
+    duration: COURSE_DETAILS.duration,
+    capacity: COURSE_DETAILS.capacity,
     price: "$2,888",
-    originalPrice: "$4,352",
-    description: "Become a fully certified, industry-ready swim teacher in just 5 days. This intensive swim teacher training course provides everything you need to become a confident, certified professional — all under one roof at Penguin Academy.",
+    originalPrice: "$3,376",
+    description: "Bundle SSI Swim Teacher Level 1 and Level 2 with React Right. Each course runs 1 full day (9am–6pm) at our CBD / Central Singapore venue.",
     features: [
-      "SSI Swim Teacher Level 1, Level 2, Baby & Me Swim Teacher Certification",
-      "SSI React Right (CPR, AED, First Aid)",
-      "24/7 PenguinGPT Support",
-      "Lifetime Mentorship & Training with the Penguin Team",
-      "Lifetime Penguin Family Membership",
-      "Digital SSI-Accredited Certifications",
-      "Priority Booking for future upgrades",
-      "Complimentary Lifetime Refresher"
+      "SSI Swim Teacher Level 1 Certification",
+      "SSI Swim Teacher Level 2 Certification",
+      "React Right (CPR, AED, First Aid)",
+      PENGUIN_SUPPORT,
+      LIFETIME_MENTORSHIP,
+      LIFETIME_MEMBERSHIP,
+      LIFETIME_REFRESHER,
+      ATTACHMENT_REQUIREMENT,
     ],
     icon: Package,
     image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
-    highlight: "Save $1,464",
+    highlight: "Save $488",
     isBundle: true,
-    location: "Temasek Polytechnic",
-    schedule: "Every Monday, Wednesday & Friday",
-    installment: "$1,499 per month × 2"
+    location: COURSE_DETAILS.venue,
+    schedule: COURSE_DETAILS.schedule,
   },
   {
     id: 2,
     title: "SSI Swim Teacher Level 1 Certification",
-    duration: "1.5 Days",
-    capacity: "8 Students",
-    price: "$1,288",
+    duration: COURSE_DETAILS.duration,
+    capacity: COURSE_DETAILS.capacity,
+    price: "$1,688",
     originalPrice: null,
     image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
-    description: "Kickstart your professional swim teaching journey with the SSI Swim Teacher Level 1 Certification in Singapore, offered by Penguin Academy. This course is designed for aspiring instructors who want to work with beginners and young children in private or group settings. You'll learn essential skills like water safety, floating, gliding, and how to manage engaging and safe swim lessons.",
+    description: "SSI Swim Teacher Level 1 in Singapore — 1 full day, 9am–6pm, CBD / Central Singapore. Includes React Right. Theory and practical assessment.",
     features: [
       "SSI Swim Teacher Level 1 Certification",
       "React Right (CPR, AED, First Aid)",
-      "Lifetime mentorship & training with the Penguin Team",
-      "24/7 support via PenguinGPT",
-      "Lifetime membership in the Penguin Family",
-      "Complimentary Lifetime Refresher"
+      LIFETIME_MENTORSHIP,
+      PENGUIN_SUPPORT,
+      LIFETIME_MEMBERSHIP,
+      LIFETIME_REFRESHER,
+      ATTACHMENT_REQUIREMENT,
     ],
     icon: GraduationCap,
     highlight: "includes React Right",
-    isBundle: false
+    isBundle: false,
+    location: COURSE_DETAILS.venue,
+    schedule: COURSE_DETAILS.schedule,
   },
   {
     id: 3,
     title: "SSI Swim Teacher Level 2 Certification",
-    duration: "1 Day",
-    capacity: "6 Students",
-    price: "$1,288",
+    duration: COURSE_DETAILS.duration,
+    capacity: COURSE_DETAILS.capacity,
+    price: "$1,688",
     originalPrice: null,
-    description: "Take your swim teaching to the next level with the SSI Swim Teacher Level 2 course in Singapore, conducted by Penguin Academy. This course builds on Level 1 and covers advanced skills like stroke development (freestyle, backstroke, breaststroke), technique correction, endurance building, and class progression planning.",
+    description: "SSI Swim Teacher Level 2 in Singapore — 1 full day, 9am–6pm. Builds on Level 1 with stroke development, technique correction, and class progression.",
     features: [
       "SSI Swim Teacher Level 2 Certification",
       "React Right (CPR, AED, First Aid)",
-      "Lifetime mentorship & training with the Penguin Team",
-      "24/7 support via PenguinGPT",
-      "Lifetime membership in the Penguin Family",
-      "Complimentary Lifetime Refresher"
+      LIFETIME_MENTORSHIP,
+      PENGUIN_SUPPORT,
+      LIFETIME_MEMBERSHIP,
+      LIFETIME_REFRESHER,
+      ATTACHMENT_REQUIREMENT,
     ],
     icon: Award,
     image: "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg",
     highlight: "includes React Right",
-    isBundle: false
+    isBundle: false,
+    location: COURSE_DETAILS.venue,
+    schedule: COURSE_DETAILS.schedule,
   },
   {
     id: 4,
     title: "Baby & Me Swim Teacher Course",
-    duration: "3 Days",
-    capacity: "6 Students",
-    price: "$888",
+    duration: COURSE_DETAILS.duration,
+    capacity: COURSE_DETAILS.capacity,
+    price: "$1,688",
     originalPrice: null,
-    description: "Become a certified Baby Swim Teacher in Singapore with the SSI Baby & Me course at Penguin Academy. This course equips you to conduct fun, engaging, and safe parent-child swim classes for infants aged 6 months to 3 years. You'll learn how to build water confidence, teach early motor skills, and create meaningful bonding experiences through songs, games, and guided movement.",
+    description: "SSI Baby & Me certification — 1 full day for parent-child swim instruction (ages 6 months–3 years). Includes React Right.",
     features: [
       "SSI Baby & Me Teacher Certification",
-      "Lifetime mentorship & training with the Penguin Team",
-      "24/7 support via PenguinGPT",
-      "Lifetime membership in the Penguin Family",
-      "Complimentary Lifetime Refresher"
+      "React Right (CPR, AED, First Aid)",
+      LIFETIME_MENTORSHIP,
+      PENGUIN_SUPPORT,
+      LIFETIME_MEMBERSHIP,
+      LIFETIME_REFRESHER,
+      ATTACHMENT_REQUIREMENT,
     ],
     icon: Baby,
     image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
-    highlight: "Ages 6 months - 3 years",
-    isBundle: false
+    highlight: "includes React Right",
+    isBundle: false,
+    location: COURSE_DETAILS.venue,
+    schedule: COURSE_DETAILS.schedule,
   },
   {
     id: 5,
-    title: "React Right (CPR, AED, First Aid)",
-    duration: "0.5 Day",
-    capacity: "12 Students",
-    price: "$199",
+    title: "SSI Adult Swim Teacher Certification",
+    duration: COURSE_DETAILS.duration,
+    capacity: COURSE_DETAILS.capacity,
+    price: "$1,688",
     originalPrice: null,
-    description: "The React Right First Aid course in Singapore, conducted by Penguin Academy, certifies you in CPR, AED usage, and emergency First Aid under the SSI framework. This essential course is suitable for swim coaches, personal trainers, educators, and everyday individuals who want to be prepared to respond in real-life emergencies.",
+    description: "SSI Adult Swim Teacher certification — 1 full day, 9am–6pm. Learn to coach adult beginners and improvers. Includes React Right.",
+    features: [
+      "SSI Adult Swim Teacher Certification",
+      "React Right (CPR, AED, First Aid)",
+      LIFETIME_MENTORSHIP,
+      PENGUIN_SUPPORT,
+      LIFETIME_MEMBERSHIP,
+      LIFETIME_REFRESHER,
+      ATTACHMENT_REQUIREMENT,
+    ],
+    icon: Users,
+    image: "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg",
+    highlight: "includes React Right",
+    isBundle: false,
+    location: COURSE_DETAILS.venue,
+    schedule: COURSE_DETAILS.schedule,
+  },
+  {
+    id: 6,
+    title: "React Right (CPR, AED, First Aid)",
+    duration: COURSE_DETAILS.duration,
+    capacity: COURSE_DETAILS.capacity,
+    price: "$100",
+    originalPrice: null,
+    description: "React Right First Aid — 1 full day, 9am–6pm. CPR, AED, and emergency First Aid under the SSI framework.",
     features: [
       "React Right Certification (SSI-accredited)",
       "CPR and AED training",
       "First Aid response for common emergencies",
       "Practical scenario-based assessments",
-      "Study support via PenguinGPT",
-      "Complimentary Lifetime Refresher"
+      PENGUIN_SUPPORT,
+      LIFETIME_REFRESHER,
+      ATTACHMENT_REQUIREMENT,
     ],
     icon: Shield,
     image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
     highlight: "Standalone course",
-    isBundle: false
+    isBundle: false,
+    location: COURSE_DETAILS.venue,
+    schedule: COURSE_DETAILS.schedule,
   }
 ];
 
@@ -229,14 +282,6 @@ const CourseList: React.FC<CourseListProps> = ({ onAskQuestions }) => {
                     ))}
                   </div>
 
-                  {course.installment && (
-                    <div className="bg-blue-50 p-4 rounded-lg mb-6">
-                      <p className="text-sm text-blue-800">
-                        <strong>Installment Option:</strong> {course.installment}
-                      </p>
-                    </div>
-                  )}
-
                   <div className="grid grid-cols-3 gap-2">
                     <button 
                       onClick={() => handleBookCourse(course)}
@@ -246,16 +291,7 @@ const CourseList: React.FC<CourseListProps> = ({ onAskQuestions }) => {
                       {loadingCourseId === course.id ? 'Processing...' : (course.isBundle ? 'Book Bundle' : 'Book Now')}
                     </button>
                     <Link
-                      href={course.id === 1 
-                        ? '/courses/penguin-pro-swim-teacher-pathway'
-                        : course.id === 2
-                        ? '/courses/ssi-swim-teacher-level-1'
-                        : course.id === 3
-                        ? '/courses/ssi-swim-teacher-level-2'
-                        : course.id === 4
-                        ? '/courses/baby-and-me-swim-teacher'
-                        : '/courses/react-right-cpr-aed-first-aid'
-                      }
+                      href={coursePaths[course.id]}
                       className={`w-full px-2 py-2.5 border rounded-lg font-semibold transition-colors text-xs text-center whitespace-nowrap ${course.isBundle ? 'border-green-600 text-green-600 hover:bg-green-50' : 'border-blue-600 text-blue-600 hover:bg-blue-50'}`}
                     >
                       Learn More
@@ -288,7 +324,7 @@ const CourseList: React.FC<CourseListProps> = ({ onAskQuestions }) => {
               </div>
               <div>
                 <h4 className="font-semibold text-gray-900 mb-2">Lifetime Support</h4>
-                <p className="text-gray-600">Ongoing mentorship, 24/7 PenguinGPT support, and lifetime membership in the Penguin Family.</p>
+                <p className="text-gray-600">Ongoing mentorship, 24/7 Penguin Support, and lifetime membership in the Penguin Family.</p>
               </div>
             </div>
 
@@ -300,16 +336,16 @@ const CourseList: React.FC<CourseListProps> = ({ onAskQuestions }) => {
               <div className="grid md:grid-cols-2 gap-6 text-gray-900">
                 <div className="bg-white bg-opacity-20 rounded-lg p-4">
                   <h5 className="font-bold mb-2">🏆 Penguin Pro Bundle</h5>
-                  <p className="text-sm mb-2">All 5 certifications in 5 days</p>
-                  <p className="text-lg font-bold">$2,888 (Save $1,464)</p>
+                  <p className="text-sm mb-2">SSI Level 1 + Level 2 with React Right</p>
+                  <p className="text-lg font-bold">$2,888 (Save $488)</p>
                 </div>
                 <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <h5 className="font-bold mb-2">📚 Individual Courses</h5>
-                  <p className="text-sm mb-2">Take courses separately</p>
-                  <p className="text-lg font-bold">$4,352 total</p>
+                  <h5 className="font-bold mb-2">📚 Buy Separately</h5>
+                  <p className="text-sm mb-2">Level 1 + Level 2 + React Right</p>
+                  <p className="text-lg font-bold">$3,376 total</p>
                 </div>
               </div>
-              <p className="text-sm text-gray-800 mt-4">Perfect for new swim teachers or those wanting comprehensive certification quickly!</p>
+              <p className="text-sm text-gray-800 mt-4">Each course runs 1 full day (9am–6pm) in CBD / Central Singapore.</p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 mt-8">
@@ -322,19 +358,20 @@ const CourseList: React.FC<CourseListProps> = ({ onAskQuestions }) => {
                   <li>• Lifetime mentorship and training support</li>
                   <li>• Access to exclusive workshops and updates</li>
                   <li>• Networking opportunities with certified instructors</li>
-                  <li>• Career guidance and job placement assistance</li>
+                  <li>• At least 8 in-water attachment sessions with Penguin Swim Classes</li>
+                  <li>• Lifetime refresher at a discounted rate (payable by coach)</li>
                 </ul>
               </div>
               
               <div className="bg-white rounded-xl p-6">
                 <div className="flex items-center gap-3 mb-4">
                   <Zap className="h-6 w-6 text-yellow-500" />
-                  <h4 className="text-lg font-bold text-gray-900">PenguinGPT Support</h4>
+                  <h4 className="text-lg font-bold text-gray-900">Penguin Support</h4>
                 </div>
                 <ul className="text-left space-y-2 text-gray-600">
-                  <li>• 24/7 AI-powered learning assistance</li>
-                  <li>• Instant answers to teaching questions</li>
-                  <li>• Lesson planning and curriculum support</li>
+                  <li>• 24/7 support for certified coaches</li>
+                  <li>• Answers to teaching and certification questions</li>
+                  <li>• Lesson planning and curriculum guidance</li>
                   <li>• Continuous professional development</li>
                 </ul>
               </div>

@@ -9,10 +9,10 @@ export interface StripeProduct {
 export const products: StripeProduct[] = [
   {
     id: 'bundle',
-    name: 'Penguin Pro Swim Teacher Pathway – Full Certification Bundle',
+    name: 'Penguin Pro Bundle – SSI Level 1 + Level 2 with React Right',
     priceId: 'price_1Rqt9TDzf62ejFguvuaAcuPu', // Test price ID - replace with real one
     mode: 'payment',
-    description: 'Complete certification bundle including all SSI courses'
+    description: 'SSI Level 1 + Level 2 with React Right'
   },
   {
     id: 'level1',
@@ -41,6 +41,13 @@ export const products: StripeProduct[] = [
     priceId: 'price_1Rqt5eDzf62ejFguiDKQK7ec', // Test price ID - replace with real one
     mode: 'payment',
     description: 'CPR, AED, and First Aid certification'
+  },
+  {
+    id: 'adult',
+    name: 'SSI Adult Swim Teacher Certification',
+    priceId: 'price_adult_placeholder', // Replace with real Stripe price ID
+    mode: 'payment',
+    description: 'SSI Adult swim teacher certification including React Right'
   }
 ];
 

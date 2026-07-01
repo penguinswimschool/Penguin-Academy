@@ -10,6 +10,7 @@ const staticRoutes = [
   '/courses/ssi-swim-teacher-level-1',
   '/courses/ssi-swim-teacher-level-2',
   '/courses/baby-and-me-swim-teacher',
+  '/courses/ssi-adult-swim-teacher',
   '/courses/react-right-cpr-aed-first-aid',
   '/blog',
   '/terms',

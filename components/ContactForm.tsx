@@ -178,7 +178,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
               <div className="space-y-2 text-gray-600">
                 <p>📱 WhatsApp: +65 8955 3399</p>
                 <p>📧 Email: swim@penguinswimschool.sg</p>
-                <p>📍 Location: Singapore • Private Pools & Premium Venues</p>
+                <p>📍 Location: CBD / Central Singapore</p>
                 <p>🎓 SSI Presenter: <a href="https://my.divessi.com/pro/121320" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">View Profile</a></p>
               </div>
             </div>
