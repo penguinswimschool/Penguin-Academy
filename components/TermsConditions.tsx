@@ -107,7 +107,7 @@ const TermsConditions: React.FC<TermsConditionsProps> = ({ onBack }) => {
               <div className="space-y-2 text-gray-700">
                 <p><strong>Company:</strong> Penguin Swim School Pte. Ltd.</p>
                 <p><strong>UEN:</strong> 202215517W</p>
-                <p><strong>Phone:</strong> +65 8955 3399</p>
+                <p><strong>Phone:</strong> +65 8909 4395</p>
                 <p><strong>Email:</strong> swim@penguinswimschool.sg</p>
                 <p><strong>Location:</strong> Singapore</p>
               </div>

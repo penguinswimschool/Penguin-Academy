@@ -10,7 +10,7 @@ declare global {
 const WhatsAppButton: React.FC = () => {
   const handleWhatsAppClick = () => {
     window.dataLayer?.push({ event: 'whatsapp_click', whatsapp_source: 'floating_button' });
-    window.open('https://wa.me/6589553399', '_blank');
+    window.open('https://wa.me/6589094395', '_blank');
   };
 
   return (

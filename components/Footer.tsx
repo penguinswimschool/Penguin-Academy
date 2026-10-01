@@ -92,7 +92,7 @@ const Footer: React.FC<FooterProps> = ({ onTermsClick, onAdminClick }) => {
             <div className="space-y-4 text-gray-400">
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 text-blue-400" />
-                <a href="tel:+6589553399" className="hover:text-white transition-colors cursor-pointer">+65 8955 3399</a>
+                <a href="tel:+6589094395" className="hover:text-white transition-colors cursor-pointer">+65 8909 4395</a>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 text-blue-400" />

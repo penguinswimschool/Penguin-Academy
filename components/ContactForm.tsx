@@ -176,7 +176,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ onBack }) => {
             <div className="mt-8 p-6 bg-blue-50 rounded-lg">
               <h3 className="font-semibold text-gray-900 mb-3">Prefer to contact us directly?</h3>
               <div className="space-y-2 text-gray-600">
-                <p>📱 WhatsApp: +65 8955 3399</p>
+                <p>📱 WhatsApp: +65 8909 4395</p>
                 <p>📧 Email: swim@penguinswimschool.sg</p>
                 <p>📍 Location: CBD / Central Singapore</p>
                 <p>🎓 SSI Presenter: <a href="https://my.divessi.com/pro/121320" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">View Profile</a></p>
