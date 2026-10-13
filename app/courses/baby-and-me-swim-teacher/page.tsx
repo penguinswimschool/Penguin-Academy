@@ -5,11 +5,11 @@ import BookNowButton from '@/components/BookNowButton'
 import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Baby, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
-import { COURSE_DETAILS, certCourseIncludes } from '@/lib/approved-course-details'
+import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
   title: 'Baby & Me Swim Teacher Course | Penguin Academy Singapore',
-  description: 'SSI Baby & Me certification — $1,688 SGD including React Right. 1 full day, 9am–6pm, for parent-child swim classes ages 6 months–3 years.',
+  description: 'SSI Baby & Me certification — $1,688 SGD including full React Right, for parent-child swim classes ages 6 months–3 years.',
   alternates: {
     canonical: 'https://www.swimcoachcertification.com/courses/baby-and-me-swim-teacher',
   },
@@ -35,7 +35,7 @@ export default function BabyAndMePage() {
               <h1 className="text-4xl font-bold text-gray-900">Baby & Me Swim Teacher Course</h1>
             </div>
 
-            <CourseMetaGrid />
+            <CourseMetaGrid recommendedDuration={COURSE_STANDARDS.baby.recommendedDuration} minimumAge={COURSE_STANDARDS.baby.minimumAge} />
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
@@ -50,7 +50,7 @@ export default function BabyAndMePage() {
             <div className="bg-green-50 p-6 rounded-lg mb-8">
               <h3 className="text-lg font-bold text-gray-900 mb-4">What&apos;s Included</h3>
               <div className="space-y-3">
-                {certCourseIncludes('SSI Baby & Me Teacher Certification').map((feature, index) => (
+                {certCourseIncludes('SSI Baby & Me Teacher Certification', COURSE_STANDARDS.baby.apprenticeship).map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{feature}</span>
@@ -63,7 +63,7 @@ export default function BabyAndMePage() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <div className="text-3xl font-bold text-gray-900">$1,688</div>
-                  <div className="text-sm text-gray-600">includes React Right • Ages 6 months – 3 years</div>
+                  <div className="text-sm text-gray-600">includes full React Right • Teaches ages 6 months – 3 years</div>
                 </div>
                 <div className="flex gap-4">
                   <BookNowButton courseTitle="Baby & Me Swim Instructor Course" />

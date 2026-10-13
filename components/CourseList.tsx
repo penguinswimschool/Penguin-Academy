@@ -1,393 +1,43 @@
 "use client"
-import React, { useState } from 'react';
-import { Award, Clock, Users, CheckCircle, Heart, Zap, Shield, Baby, GraduationCap, Star, Package } from 'lucide-react';
-import { createCheckoutSession } from '@/lib/stripe';
-import { findProductByName } from '@/lib/stripe-config';
-import {
-  ATTACHMENT_REQUIREMENT,
-  COURSE_DETAILS,
-  LIFETIME_MEMBERSHIP,
-  LIFETIME_MENTORSHIP,
-  LIFETIME_REFRESHER,
-  PENGUIN_SUPPORT,
-} from '@/lib/approved-course-details';
+
+import React from 'react';
 import Link from 'next/link';
+import { Award, Clock, Users, CheckCircle, GraduationCap, Baby, Package, Shield } from 'lucide-react';
+import { COURSE_DETAILS, COURSE_STANDARDS, FULL_REACT_RIGHT, whatsappEnquiryUrl } from '@/lib/approved-course-details';
 
-interface CourseListProps {
-  onAskQuestions: (courseTitle?: string) => void;
-}
-
-const coursePaths: Record<number, string> = {
-  1: '/courses/penguin-pro-swim-teacher-pathway',
-  2: '/courses/ssi-swim-teacher-level-1',
-  3: '/courses/ssi-swim-teacher-level-2',
-  4: '/courses/baby-and-me-swim-teacher',
-  5: '/courses/ssi-adult-swim-teacher',
-  6: '/courses/react-right-cpr-aed-first-aid',
-};
+interface CourseListProps { onAskQuestions: (courseTitle?: string) => void; }
 
 const courses = [
-  {
-    id: 1,
-    title: "Penguin Pro Bundle – SSI Level 1 + Level 2 with React Right",
-    duration: COURSE_DETAILS.duration,
-    capacity: COURSE_DETAILS.capacity,
-    price: "$2,888",
-    originalPrice: "$3,376",
-    description: "Bundle SSI Swim Teacher Level 1 and Level 2 with React Right. Each course runs 1 full day (9am–6pm) at our CBD / Central Singapore venue.",
-    features: [
-      "SSI Swim Teacher Level 1 Certification",
-      "SSI Swim Teacher Level 2 Certification",
-      "React Right (CPR, AED, First Aid)",
-      PENGUIN_SUPPORT,
-      LIFETIME_MENTORSHIP,
-      LIFETIME_MEMBERSHIP,
-      LIFETIME_REFRESHER,
-      ATTACHMENT_REQUIREMENT,
-    ],
-    icon: Package,
-    image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
-    highlight: "Save $488",
-    isBundle: true,
-    location: COURSE_DETAILS.venue,
-    schedule: COURSE_DETAILS.schedule,
-  },
-  {
-    id: 2,
-    title: "SSI Swim Teacher Level 1 Certification",
-    duration: COURSE_DETAILS.duration,
-    capacity: COURSE_DETAILS.capacity,
-    price: "$1,688",
-    originalPrice: null,
-    image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
-    description: "SSI Swim Teacher Level 1 in Singapore — 1 full day, 9am–6pm, CBD / Central Singapore. Includes React Right. Theory and practical assessment.",
-    features: [
-      "SSI Swim Teacher Level 1 Certification",
-      "React Right (CPR, AED, First Aid)",
-      LIFETIME_MENTORSHIP,
-      PENGUIN_SUPPORT,
-      LIFETIME_MEMBERSHIP,
-      LIFETIME_REFRESHER,
-      ATTACHMENT_REQUIREMENT,
-    ],
-    icon: GraduationCap,
-    highlight: "includes React Right",
-    isBundle: false,
-    location: COURSE_DETAILS.venue,
-    schedule: COURSE_DETAILS.schedule,
-  },
-  {
-    id: 3,
-    title: "SSI Swim Teacher Level 2 Certification",
-    duration: COURSE_DETAILS.duration,
-    capacity: COURSE_DETAILS.capacity,
-    price: "$1,688",
-    originalPrice: null,
-    description: "SSI Swim Teacher Level 2 in Singapore — 1 full day, 9am–6pm. Builds on Level 1 with stroke development, technique correction, and class progression.",
-    features: [
-      "SSI Swim Teacher Level 2 Certification",
-      "React Right (CPR, AED, First Aid)",
-      LIFETIME_MENTORSHIP,
-      PENGUIN_SUPPORT,
-      LIFETIME_MEMBERSHIP,
-      LIFETIME_REFRESHER,
-      ATTACHMENT_REQUIREMENT,
-    ],
-    icon: Award,
-    image: "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg",
-    highlight: "includes React Right",
-    isBundle: false,
-    location: COURSE_DETAILS.venue,
-    schedule: COURSE_DETAILS.schedule,
-  },
-  {
-    id: 4,
-    title: "Baby & Me Swim Teacher Course",
-    duration: COURSE_DETAILS.duration,
-    capacity: COURSE_DETAILS.capacity,
-    price: "$1,688",
-    originalPrice: null,
-    description: "SSI Baby & Me certification — 1 full day for parent-child swim instruction (ages 6 months–3 years). Includes React Right.",
-    features: [
-      "SSI Baby & Me Teacher Certification",
-      "React Right (CPR, AED, First Aid)",
-      LIFETIME_MENTORSHIP,
-      PENGUIN_SUPPORT,
-      LIFETIME_MEMBERSHIP,
-      LIFETIME_REFRESHER,
-      ATTACHMENT_REQUIREMENT,
-    ],
-    icon: Baby,
-    image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
-    highlight: "includes React Right",
-    isBundle: false,
-    location: COURSE_DETAILS.venue,
-    schedule: COURSE_DETAILS.schedule,
-  },
-  {
-    id: 5,
-    title: "SSI Adult Swim Teacher Certification",
-    duration: COURSE_DETAILS.duration,
-    capacity: COURSE_DETAILS.capacity,
-    price: "$1,688",
-    originalPrice: null,
-    description: "SSI Adult Swim Teacher certification — 1 full day, 9am–6pm. Learn to coach adult beginners and improvers. Includes React Right.",
-    features: [
-      "SSI Adult Swim Teacher Certification",
-      "React Right (CPR, AED, First Aid)",
-      LIFETIME_MENTORSHIP,
-      PENGUIN_SUPPORT,
-      LIFETIME_MEMBERSHIP,
-      LIFETIME_REFRESHER,
-      ATTACHMENT_REQUIREMENT,
-    ],
-    icon: Users,
-    image: "https://images.pexels.com/photos/863988/pexels-photo-863988.jpeg",
-    highlight: "includes React Right",
-    isBundle: false,
-    location: COURSE_DETAILS.venue,
-    schedule: COURSE_DETAILS.schedule,
-  },
-  {
-    id: 6,
-    title: "React Right (CPR, AED, First Aid)",
-    duration: COURSE_DETAILS.duration,
-    capacity: COURSE_DETAILS.capacity,
-    price: "$100",
-    originalPrice: null,
-    description: "React Right First Aid — 1 full day, 9am–6pm. CPR, AED, and emergency First Aid under the SSI framework.",
-    features: [
-      "React Right Certification (SSI-accredited)",
-      "CPR and AED training",
-      "First Aid response for common emergencies",
-      "Practical scenario-based assessments",
-      PENGUIN_SUPPORT,
-      LIFETIME_REFRESHER,
-      ATTACHMENT_REQUIREMENT,
-    ],
-    icon: Shield,
-    image: "https://images.pexels.com/photos/1263349/pexels-photo-1263349.jpeg",
-    highlight: "Standalone course",
-    isBundle: false,
-    location: COURSE_DETAILS.venue,
-    schedule: COURSE_DETAILS.schedule,
-  }
+  { title: 'Penguin Pro Bundle – Any 2 Teacher Courses', path: '/courses/penguin-pro-swim-teacher-pathway', price: '$2,888', originalPrice: '$3,376', duration: '2 instructor-led days', description: 'Choose any 2: Level 1, Level 2, Baby & Me, or Adult Swim Teacher. The bundle includes full React Right.', features: ['Choose any 2 teacher courses', FULL_REACT_RIGHT, 'Save $488', 'All programme-specific SSI completion requirements'], icon: Package, bundle: true },
+  { title: 'SSI Swim Teacher Level 1 Certification', path: '/courses/ssi-swim-teacher-level-1', price: '$1,688', duration: COURSE_DETAILS.liveDay, description: 'Foundational professional swim-teaching course. SSI recommends 24-28 total hours.', features: [FULL_REACT_RIGHT, COURSE_STANDARDS.level1.apprenticeship], icon: GraduationCap },
+  { title: 'SSI Swim Teacher Level 2 Certification', path: '/courses/ssi-swim-teacher-level-2', price: '$1,688', duration: COURSE_DETAILS.liveDay, description: 'Advanced stroke development and class progression. SSI Level 1 certification is required.', features: [FULL_REACT_RIGHT, COURSE_STANDARDS.level2.apprenticeship], icon: Award },
+  { title: 'SSI Baby & Me Swim Teacher', path: '/courses/baby-and-me-swim-teacher', price: '$1,688', duration: COURSE_DETAILS.liveDay, description: 'Parent-child swim teaching for infants aged 6 months to 3 years. SSI recommends 8-10 total hours.', features: [FULL_REACT_RIGHT, COURSE_STANDARDS.baby.apprenticeship], icon: Baby },
+  { title: 'SSI Adult Swim Teacher Certification', path: '/courses/ssi-adult-swim-teacher', price: '$1,688', duration: COURSE_DETAILS.liveDay, description: 'Structured teaching for adult beginners and improvers. SSI recommends 22-26 total hours.', features: [FULL_REACT_RIGHT, COURSE_STANDARDS.adult.apprenticeship], icon: Users },
+  { title: 'Full SSI React Right', path: '/courses/react-right-cpr-aed-first-aid', price: '$100', duration: '8-12 recommended hours', description: 'First Aid & CPR, AED Provider and Oxygen Provider, with practical scenarios and final assessments.', features: ['Minimum age 12+', 'Valid for 2 years', 'No swim-teaching apprenticeship'], icon: Shield },
 ];
 
-const CourseList: React.FC<CourseListProps> = ({ onAskQuestions }) => {
-  const [loadingCourseId, setLoadingCourseId] = useState<number | null>(null);
-
-  const handleBookCourse = async (course: any) => {
-    setLoadingCourseId(course.id);
-    try {
-      // Find the corresponding product by course title
-      const product = findProductByName(course.title);
-      
-      if (!product) {
-        console.error('Product not found for course:', course.title);
-        alert('Product configuration not found. Please contact support.');
-        setLoadingCourseId(null);
-        return;
-      }
-
-      const successUrl = `${window.location.origin}/success`;
-      const cancelUrl = window.location.href;
-      
-      await createCheckoutSession(product.priceId, product.mode, successUrl, cancelUrl);
-    } catch (error) {
-      console.error('Error creating checkout session:', error);
-      alert('Failed to create checkout session. Please try again or contact support.');
-      setLoadingCourseId(null);
-    }
-  };
-
-  return (
-    <section id="courses" className="py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
-            SSI Swim Teacher <span className="text-blue-600">Certification Courses</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Choose from our comprehensive range of SSI swim teacher certification programs designed to launch or advance your aquatic education career in Singapore.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
-          {courses.map((course) => {
-            const IconComponent = course.icon;
-            return (
-              <div key={course.id} className={`bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow border overflow-hidden ${course.isBundle ? 'border-yellow-400 border-2 relative' : 'border-gray-100'}`}>
-                {course.isBundle && (
-                  <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-yellow-400 to-orange-400 text-center py-2">
-                    <span className="text-sm font-bold text-gray-900">🏆 MOST POPULAR BUNDLE</span>
-                  </div>
-                )}
-                <div className="relative h-64">
-                  <img 
-                    src={course.image}
-                    alt={course.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className={`absolute ${course.isBundle ? 'top-12' : 'top-4'} right-4 px-3 py-1 rounded-full text-sm font-semibold ${course.isBundle ? 'bg-green-600 text-white' : 'bg-blue-600 text-white'}`}>
-                    <div>{course.price}</div>
-                    {course.originalPrice && (
-                      <div className="text-xs line-through opacity-75">{course.originalPrice}</div>
-                    )}
-                  </div>
-                  {course.highlight && (
-                    <div className={`absolute ${course.isBundle ? 'top-12' : 'top-4'} left-4 px-3 py-1 rounded-full text-xs font-bold ${course.isBundle ? 'bg-red-500 text-white' : 'bg-yellow-400 text-blue-900'}`}>
-                      {course.highlight}
-                    </div>
-                  )}
-                </div>
-                
-                <div className={`p-8 ${course.isBundle ? 'pt-6' : ''}`}>
-                  <div className="flex items-center gap-3 mb-4">
-                    <IconComponent className="h-6 w-6 text-blue-600" />
-                    <h3 className={`font-bold text-gray-900 ${course.isBundle ? 'text-lg' : 'text-xl'}`}>{course.title}</h3>
-                  </div>
-                  
-                  <p className="text-gray-600 mb-6 text-sm leading-relaxed">{course.description}</p>
-                  
-                  <div className="flex items-center gap-4 mb-6 text-sm text-gray-600 flex-wrap">
-                    <div className="flex items-center gap-2">
-                      <Clock className="h-4 w-4 text-blue-600" />
-                      <span>{course.duration}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <Users className="h-4 w-4 text-blue-600" />
-                      <span>{course.capacity}</span>
-                    </div>
-                    {course.location && (
-                      <div className="flex items-center gap-2">
-                        <span className="h-4 w-4 text-blue-600">📍</span>
-                        <span>{course.location}</span>
-                      </div>
-                    )}
-                    {course.schedule && (
-                      <div className="flex items-center gap-2">
-                        <span className="h-4 w-4 text-blue-600">🗓️</span>
-                        <span>{course.schedule}</span>
-                      </div>
-                    )}
-                  </div>
-
-                  <div className="space-y-2 mb-8">
-                    {course.features.map((feature, index) => (
-                      <div key={index} className="flex items-start gap-3">
-                        <CheckCircle className="h-4 w-4 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-700 text-sm">{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <div className="grid grid-cols-3 gap-2">
-                    <button 
-                      onClick={() => handleBookCourse(course)}
-                      disabled={loadingCourseId === course.id}
-                      className={`w-full px-2 py-2.5 rounded-lg font-semibold transition-colors text-xs whitespace-nowrap text-center ${course.isBundle ? 'bg-green-600 text-white hover:bg-green-700' : 'bg-blue-600 text-white hover:bg-blue-700'} disabled:opacity-50 disabled:cursor-not-allowed`}
-                    >
-                      {loadingCourseId === course.id ? 'Processing...' : (course.isBundle ? 'Book Bundle' : 'Book Now')}
-                    </button>
-                    <Link
-                      href={coursePaths[course.id]}
-                      className={`w-full px-2 py-2.5 border rounded-lg font-semibold transition-colors text-xs text-center whitespace-nowrap ${course.isBundle ? 'border-green-600 text-green-600 hover:bg-green-50' : 'border-blue-600 text-blue-600 hover:bg-blue-50'}`}
-                    >
-                      Learn More
-                    </Link>
-                    <button
-                      onClick={() => onAskQuestions(course.title)}
-                      className={`w-full px-2 py-2.5 border rounded-lg font-semibold transition-colors text-xs text-center whitespace-nowrap ${course.isBundle ? 'border-green-600 text-green-600 hover:bg-green-50' : 'border-blue-600 text-blue-600 hover:bg-blue-50'}`}
-                    >
-                      Ask Questions
-                    </button>
-                  </div>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        <div className="text-center mt-16">
-          <div className="bg-blue-50 rounded-2xl p-8">
-            <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-            <h3 className="text-2xl font-bold text-gray-900 mb-4">Why Choose Penguin Academy?</h3>
-            <div className="grid md:grid-cols-3 gap-8 text-center mb-8">
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Globally Recognised</h4>
-                <p className="text-gray-600">SSI certifications are accepted in over 130 countries worldwide by swim schools and aquatic centres.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Expert Instruction</h4>
-                <p className="text-gray-600">Learn from our authorised SSI Course Presenter with extensive aquatic education experience.</p>
-              </div>
-              <div>
-                <h4 className="font-semibold text-gray-900 mb-2">Lifetime Support</h4>
-                <p className="text-gray-600">Ongoing mentorship, 24/7 Penguin Support, and lifetime membership in the Penguin Family.</p>
-              </div>
-            </div>
-
-            <div className="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-xl p-6 mt-8">
-              <div className="flex items-center justify-center gap-3 mb-4">
-                <Package className="h-8 w-8 text-gray-900" />
-                <h4 className="text-2xl font-bold text-gray-900">Bundle vs Individual Courses</h4>
-              </div>
-              <div className="grid md:grid-cols-2 gap-6 text-gray-900">
-                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <h5 className="font-bold mb-2">🏆 Penguin Pro Bundle</h5>
-                  <p className="text-sm mb-2">SSI Level 1 + Level 2 with React Right</p>
-                  <p className="text-lg font-bold">$2,888 (Save $488)</p>
-                </div>
-                <div className="bg-white bg-opacity-20 rounded-lg p-4">
-                  <h5 className="font-bold mb-2">📚 Buy Separately</h5>
-                  <p className="text-sm mb-2">Level 1 + Level 2 + React Right</p>
-                  <p className="text-lg font-bold">$3,376 total</p>
-                </div>
-              </div>
-              <p className="text-sm text-gray-800 mt-4">Each course runs 1 full day (9am–6pm) in CBD / Central Singapore.</p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8 mt-8">
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Heart className="h-6 w-6 text-red-500" />
-                  <h4 className="text-lg font-bold text-gray-900">Penguin Family Benefits</h4>
-                </div>
-                <ul className="text-left space-y-2 text-gray-600">
-                  <li>• Lifetime mentorship and training support</li>
-                  <li>• Access to exclusive workshops and updates</li>
-                  <li>• Networking opportunities with certified instructors</li>
-                  <li>• At least 8 in-water attachment sessions with Penguin Swim Classes</li>
-                  <li>• Lifetime refresher at a discounted rate (payable by coach)</li>
-                </ul>
-              </div>
-              
-              <div className="bg-white rounded-xl p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <Zap className="h-6 w-6 text-yellow-500" />
-                  <h4 className="text-lg font-bold text-gray-900">Penguin Support</h4>
-                </div>
-                <ul className="text-left space-y-2 text-gray-600">
-                  <li>• 24/7 support for certified coaches</li>
-                  <li>• Answers to teaching and certification questions</li>
-                  <li>• Lesson planning and curriculum guidance</li>
-                  <li>• Continuous professional development</li>
-                </ul>
-              </div>
-            </div>
-            
-            <div className="mt-8 p-6 bg-white rounded-xl">
-              <h4 className="text-lg font-bold text-gray-900 mb-4 text-center">About SSI (Swim Schools International)</h4>
-              <p className="text-gray-600 text-center">
-                Swim Schools International (SSI) is one of the world's leading aquatic education providers, offering structured swim teacher programmes that are trusted in over 130 countries. As an SSI-certified swim teacher, you'll be equipped to teach beginners through to advanced swimmers across various age groups.
-              </p>
-            </div>
-          </div>
-        </div>
+const CourseList: React.FC<CourseListProps> = () => (
+  <section id="courses" className="py-20 bg-white">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="text-center mb-12">
+        <h2 className="text-4xl font-bold text-gray-900 mb-4">SSI Swim Teacher <span className="text-blue-600">Certification Courses</span></h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto">One instructor-led training day per teacher course, followed by all required learning, assessments and programme-specific apprenticeship before certification.</p>
       </div>
-    </section>
-  );
-};
+      <div className="grid lg:grid-cols-2 xl:grid-cols-3 gap-8">
+        {courses.map((course) => {
+          const Icon = course.icon;
+          return <article key={course.title} className={`rounded-2xl shadow-lg border p-7 flex flex-col ${course.bundle ? 'border-yellow-400 border-2 bg-yellow-50' : 'border-gray-100 bg-white'}`}>
+            <div className="flex items-start justify-between gap-4 mb-4"><div className="flex items-center gap-3"><Icon className="h-7 w-7 text-blue-600" /><h3 className="text-xl font-bold text-gray-900">{course.title}</h3></div><div className="text-right flex-shrink-0"><div className="text-xl font-bold text-blue-700">{course.price}</div>{course.originalPrice && <div className="text-sm text-gray-500 line-through">{course.originalPrice}</div>}</div></div>
+            <p className="text-gray-600 mb-5">{course.description}</p>
+            <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-5"><span className="flex items-center gap-2"><Clock className="h-4 w-4 text-blue-600" />{course.duration}</span><span className="flex items-center gap-2"><Users className="h-4 w-4 text-blue-600" />{COURSE_DETAILS.capacity}</span></div>
+            <div className="space-y-3 mb-7 flex-1">{course.features.map(feature => <div key={feature} className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">{feature}</span></div>)}</div>
+            <div className="grid grid-cols-2 gap-3"><a href={whatsappEnquiryUrl(course.title)} target="_blank" rel="noopener noreferrer" className={`${course.bundle ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'} text-white text-center px-3 py-3 rounded-lg font-semibold text-sm`}>WhatsApp Us</a><Link href={course.path} className="border border-blue-600 text-blue-600 text-center px-3 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50">Course Details</Link></div>
+          </article>;
+        })}
+      </div>
+      <div className="mt-12 bg-blue-50 rounded-2xl p-8 text-center"><h3 className="text-2xl font-bold text-gray-900 mb-3">Flexible scheduling</h3><p className="text-gray-700 max-w-3xl mx-auto mb-5">Confirmed dates are shown when available. Otherwise, WhatsApp us to discuss a suitable date based on candidate availability and instructor capacity.</p><a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" className="inline-flex bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">Check dates on WhatsApp</a></div>
+    </div>
+  </section>
+);
 
 export default CourseList;

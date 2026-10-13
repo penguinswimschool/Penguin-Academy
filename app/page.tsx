@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Bot } from 'lucide-react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
+import AcademyVideo from '@/components/AcademyVideo';
 import CourseList from '@/components/CourseList';
 import CourseCalendar from '@/components/CourseCalendar';
 import ContactForm from '@/components/ContactForm';
@@ -74,6 +75,7 @@ function App() {
         onContactClick={() => setShowContactForm(true)}
       />
       <Hero onContactClick={() => setShowContactForm(true)} />
+      <AcademyVideo />
       <CourseList onAskQuestions={handleAskQuestions} />
       
       <CourseCalendar />

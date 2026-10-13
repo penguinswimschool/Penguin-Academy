@@ -6,8 +6,9 @@ import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Package, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import {
-  ATTACHMENT_REQUIREMENT,
   COURSE_DETAILS,
+  COMPLETION_REQUIREMENTS,
+  FULL_REACT_RIGHT,
   LIFETIME_MEMBERSHIP,
   LIFETIME_MENTORSHIP,
   LIFETIME_REFRESHER,
@@ -15,22 +16,21 @@ import {
 } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
-  title: 'Penguin Pro Bundle – SSI Level 1 + Level 2 with React Right | Penguin Academy',
-  description: 'Bundle SSI Swim Teacher Level 1 and Level 2 with React Right for $2,888 SGD. Each course is 1 full day, 9am–6pm, CBD / Central Singapore.',
+  title: 'Penguin Pro Bundle – Any 2 SSI Teacher Courses | Penguin Academy',
+  description: 'Choose any 2 teacher courses for $2,888 SGD. The bundle includes full SSI React Right.',
   alternates: {
     canonical: 'https://www.swimcoachcertification.com/courses/penguin-pro-swim-teacher-pathway',
   },
 }
 
 const bundleFeatures = [
-  'SSI Swim Teacher Level 1 Certification',
-  'SSI Swim Teacher Level 2 Certification',
-  'React Right (CPR, AED, First Aid)',
+  'Choose any 2: Level 1, Level 2, Baby & Me, or Adult Swim Teacher',
+  FULL_REACT_RIGHT,
+  'SSI digital learning, assessments, final exam and programme-specific apprenticeship for each selected course',
   PENGUIN_SUPPORT,
   LIFETIME_MENTORSHIP,
   LIFETIME_MEMBERSHIP,
   LIFETIME_REFRESHER,
-  ATTACHMENT_REQUIREMENT,
 ]
 
 export default function PenguinProPathwayPage() {
@@ -54,7 +54,7 @@ export default function PenguinProPathwayPage() {
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Penguin Pro Bundle
             </h1>
-            <p className="text-xl text-gray-800 mb-6">SSI Level 1 + Level 2 with React Right</p>
+            <p className="text-xl text-gray-800 mb-6">Any 2 SSI teacher courses with full React Right included</p>
             <div className="flex items-center justify-center gap-6 text-gray-900">
               <div className="bg-white bg-opacity-30 px-6 py-3 rounded-lg">
                 <div className="text-3xl font-bold">$2,888</div>
@@ -74,10 +74,10 @@ export default function PenguinProPathwayPage() {
                   <h2 className="text-2xl font-bold text-gray-900">Course Overview</h2>
                 </div>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Bundle SSI Swim Teacher Level 1 and Level 2 with React Right. Each course runs 1 full day (9am–6pm) at our {COURSE_DETAILS.venue} venue. {COURSE_DETAILS.format}
+                  Choose any two teacher courses: Level 1, Level 2, Baby & Me, or Adult Swim Teacher. Each selected course includes one instructor-led day (9am–6pm) at our {COURSE_DETAILS.venue} venue plus all programme-specific SSI completion requirements. {COURSE_DETAILS.format}
                 </p>
 
-                <CourseMetaGrid />
+                <CourseMetaGrid recommendedDuration="Varies by the 2 courses selected" minimumAge="18+" liveTraining="2 instructor-led days" />
 
                 <div className="bg-blue-50 p-6 rounded-lg mb-8">
                   <h3 className="text-lg font-bold text-gray-900 mb-4">What&apos;s Included</h3>
@@ -99,10 +99,10 @@ export default function PenguinProPathwayPage() {
               <div className="bg-white rounded-2xl shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Why Choose This Bundle?</h2>
                 <p className="text-gray-700 mb-4">
-                  Save $488 compared to purchasing SSI Level 1, Level 2, and React Right separately ($3,376).
+                  Save $488 compared with purchasing any two teacher courses separately ($3,376). Full React Right is included, not charged separately.
                 </p>
                 <p className="text-gray-700">
-                  {ATTACHMENT_REQUIREMENT}.
+                  {COMPLETION_REQUIREMENTS} Level 2 requires SSI Swim Teacher Level 1 certification.
                 </p>
               </div>
             </div>
@@ -120,11 +120,11 @@ export default function PenguinProPathwayPage() {
                   </div>
                 </div>
                 <BookNowButton 
-                  courseTitle="Penguin Pro Bundle – SSI Level 1 + Level 2 with React Right"
+                  courseTitle="Penguin Pro Bundle – any 2 SSI teacher courses"
                   variant="green"
                   className="block w-full text-center mb-4"
                 >
-                  Book Bundle
+                  Enquire on WhatsApp
                 </BookNowButton>
                 <Link
                   href="/#courses"

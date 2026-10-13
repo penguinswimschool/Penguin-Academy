@@ -6,28 +6,31 @@ import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Shield, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import {
-  ATTACHMENT_REQUIREMENT,
   COURSE_DETAILS,
+  COURSE_STANDARDS,
+  FULL_REACT_RIGHT,
   LIFETIME_REFRESHER,
   PENGUIN_SUPPORT,
 } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
-  title: 'React Right (CPR, AED, First Aid) Certification | Penguin Academy Singapore',
-  description: 'React Right certification — $100 SGD. 1 full day, 9am–6pm, CBD / Central Singapore. CPR, AED, and First Aid under the SSI framework.',
+  title: 'React Right First Aid, CPR, AED & Oxygen Provider | Penguin Academy',
+  description: 'Full SSI React Right — $100 SGD. Includes First Aid & CPR, AED Provider and Oxygen Provider.',
   alternates: {
     canonical: 'https://www.swimcoachcertification.com/courses/react-right-cpr-aed-first-aid',
   },
 }
 
 const reactRightIncludes = [
-  'React Right Certification (SSI-accredited)',
-  'CPR and AED training',
-  'First Aid response for common emergencies',
+  FULL_REACT_RIGHT,
+  'First Aid & CPR module (recommended 5 hours)',
+  'AED Provider module (recommended 1 hour)',
+  'Oxygen Provider module (recommended 2 hours)',
   'Practical scenario-based assessments',
+  'Academic assessments and final exam for each applicable portion',
+  'Certification is valid for 2 years',
   PENGUIN_SUPPORT,
   LIFETIME_REFRESHER,
-  ATTACHMENT_REQUIREMENT,
 ]
 
 export default function ReactRightPage() {
@@ -41,21 +44,21 @@ export default function ReactRightPage() {
             <span className="mx-2 text-gray-400">/</span>
             <Link href="/#courses" className="text-blue-600 hover:text-blue-800">Courses</Link>
             <span className="mx-2 text-gray-400">/</span>
-            <span className="text-gray-600">React Right (CPR, AED, First Aid)</span>
+            <span className="text-gray-600">React Right</span>
           </nav>
 
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
             <div className="flex items-center gap-3 mb-6">
               <Shield className="h-8 w-8 text-blue-600" />
-              <h1 className="text-4xl font-bold text-gray-900">React Right (CPR, AED, First Aid)</h1>
+              <h1 className="text-4xl font-bold text-gray-900">React Right: First Aid, CPR, AED & Oxygen Provider</h1>
             </div>
 
-            <CourseMetaGrid />
+            <CourseMetaGrid recommendedDuration={COURSE_STANDARDS.reactRight.recommendedDuration} minimumAge={COURSE_STANDARDS.reactRight.minimumAge} liveTraining="Scheduled practical training" />
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
               <p className="text-gray-700 leading-relaxed">
-                Get certified in CPR, AED usage, and emergency First Aid under the SSI framework. Suitable for swim coaches, personal trainers, educators, and anyone who wants to respond confidently in emergencies. {COURSE_DETAILS.format} Assessment includes {COURSE_DETAILS.assessment.toLowerCase()}.
+                Complete the full SSI React Right combination: First Aid & CPR, AED Provider and Oxygen Provider. Suitable for swim coaches, personal trainers, educators, and anyone who wants to respond confidently in emergencies. {COURSE_DETAILS.format}
               </p>
             </div>
 
@@ -78,7 +81,7 @@ export default function ReactRightPage() {
                   <div className="text-sm text-gray-600">Standalone course</div>
                 </div>
                 <div className="flex gap-4">
-                  <BookNowButton courseTitle="React Right (CPR, AED, First Aid)" />
+                  <BookNowButton courseTitle="Full SSI React Right" />
                   <Link
                     href="/#courses"
                     className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"

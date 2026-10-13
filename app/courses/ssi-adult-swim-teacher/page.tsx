@@ -5,11 +5,11 @@ import BookNowButton from '@/components/BookNowButton'
 import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Users, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
-import { COURSE_DETAILS, certCourseIncludes } from '@/lib/approved-course-details'
+import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
   title: 'SSI Adult Swim Teacher Certification | Penguin Academy Singapore',
-  description: 'Become a certified SSI Adult Swim Teacher in Singapore. Includes React Right certification, in-person training in CBD / Central Singapore, and attachment sessions with Penguin Swim Classes.',
+  description: 'Become a certified SSI Adult Swim Teacher in Singapore. $1,688 SGD including full React Right and programme-specific apprenticeship.',
   alternates: {
     canonical: 'https://www.swimcoachcertification.com/courses/ssi-adult-swim-teacher',
   },
@@ -35,7 +35,7 @@ export default function SSIAdultPage() {
               <h1 className="text-4xl font-bold text-gray-900">SSI Adult Swim Teacher Certification</h1>
             </div>
 
-            <CourseMetaGrid />
+            <CourseMetaGrid recommendedDuration={COURSE_STANDARDS.adult.recommendedDuration} minimumAge={COURSE_STANDARDS.adult.minimumAge} />
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
@@ -50,7 +50,7 @@ export default function SSIAdultPage() {
             <div className="bg-green-50 p-6 rounded-lg mb-8">
               <h3 className="text-lg font-bold text-gray-900 mb-4">What&apos;s Included</h3>
               <div className="space-y-3">
-                {certCourseIncludes('SSI Adult Swim Teacher Certification').map((feature, index) => (
+                {certCourseIncludes('SSI Adult Swim Teacher Certification', COURSE_STANDARDS.adult.apprenticeship).map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{feature}</span>
@@ -63,7 +63,7 @@ export default function SSIAdultPage() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <div className="text-3xl font-bold text-gray-900">$1,688</div>
-                  <div className="text-sm text-gray-600">includes React Right</div>
+                  <div className="text-sm text-gray-600">includes full React Right</div>
                 </div>
                 <div className="flex gap-4">
                   <BookNowButton courseTitle="SSI Adult Swim Teacher Certification" />

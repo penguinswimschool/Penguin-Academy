@@ -3,8 +3,7 @@ import React, { useState } from 'react';
 import { useEffect } from 'react';
 import { supabase } from '@/utils/supabase/client';
 import { Calendar, ChevronLeft, ChevronRight, MapPin, Clock, Users, MessageCircle, Award } from 'lucide-react';
-import { createCheckoutSession } from '@/lib/stripe';
-import { findProductByName } from '@/lib/stripe-config';
+import { whatsappEnquiryUrl } from '@/lib/approved-course-details';
 
 interface Course {
   id: string;
@@ -27,7 +26,6 @@ const CourseCalendar = () => {
   const [loading, setLoading] = useState(true);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
-  const [checkoutLoading, setCheckoutLoading] = useState(false);
 
   useEffect(() => {
     fetchCourses();
@@ -195,29 +193,6 @@ const CourseCalendar = () => {
     return 'text-red-600 bg-red-100';
   };
 
-  const handleBookCourse = async (course: Course) => {
-    setCheckoutLoading(true);
-    try {
-      // Find the corresponding product by course title
-      const product = findProductByName(course.title);
-      
-      if (!product) {
-        alert('Product not found. Please contact support.');
-        return;
-      }
-
-      const successUrl = `${window.location.origin}/success`;
-      const cancelUrl = window.location.href;
-      
-      await createCheckoutSession(product.priceId, product.mode, successUrl, cancelUrl);
-    } catch (error) {
-      console.error('Error creating checkout session:', error);
-      alert('Please log in to book a course.');
-    } finally {
-      setCheckoutLoading(false);
-    }
-  };
-
   if (loading) {
     return (
       <section id="calendar" className="py-20 bg-gray-50">
@@ -226,6 +201,19 @@ const CourseCalendar = () => {
             <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
             <p className="text-gray-600">Loading course calendar...</p>
           </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (courses.length === 0) {
+    return (
+      <section id="calendar" className="py-20 bg-gray-50">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Flexible Course Dates</h2>
+          <p className="text-xl text-gray-600 mb-8">Course dates are arranged based on candidate availability and instructor capacity. Confirmed dates will appear here when available; meanwhile, WhatsApp us to discuss a suitable schedule.</p>
+          <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" className="inline-flex bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700">Check dates on WhatsApp</a>
         </div>
       </section>
     );
@@ -353,13 +341,7 @@ const CourseCalendar = () => {
             </div>
 
             <div className="flex gap-3">
-              <button
-                onClick={() => handleBookCourse(selectedCourse)}
-                disabled={checkoutLoading}
-                className="flex-1 bg-blue-600 text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors text-center cursor-pointer disabled:opacity-50"
-              >
-                {checkoutLoading ? 'Processing...' : 'Book Now'}
-              </button>
+              <a href={whatsappEnquiryUrl(selectedCourse.title)} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center">Enquire on WhatsApp</a>
               <button 
                 onClick={() => setSelectedCourse(null)}
                 className="px-6 py-3 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition-colors"

@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           <div>
             <div className="flex items-center space-x-2 mb-6">
               <Shield className="h-6 w-6 text-blue-600" />
-              <span className="text-blue-600 font-semibold">Official SSI Certification Centre</span>
+              <span className="text-blue-600 font-semibold">SSI Swim Teacher Training in Singapore</span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
               Become a Certified <span className="text-blue-600">Swim Teacher</span> with SSI
@@ -26,7 +26,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 Whether you're looking to start your journey as a certified swim teacher or upgrade your professional qualifications, Penguin Academy Singapore provides structured, globally recognised programmes that prepare you to coach with skill, safety, and confidence.
               </p>
               <p className="font-bold">
-                All courses include at least 8 in-water attachment sessions with Penguin Swim Classes — required to pass certification.
+                Every $1,688 teacher course includes full SSI React Right: First Aid & CPR, AED Provider and Oxygen Provider.
               </p>
             </div>
             
@@ -35,7 +35,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               <div className="space-y-3 text-gray-700">
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Official SSI Presenter:</strong> All courses are led by registered presenters, trained and authorised under SSI's international standards.</span>
+                  <span><strong>Verified SSI Professional:</strong> Training is led by Remus Teo, an active SSI Swim Teacher Instructor and React Right Instructor Trainer.</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
@@ -51,7 +51,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 </div>
                 <div className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Practical Attachment:</strong> Complete at least 8 in-water attachment sessions with Penguin Swim Classes as part of your certification pathway.</span>
+                  <span><strong>Complete Pathway:</strong> Digital learning, instructor-led training, assessments, final exam and the programme-specific supervised apprenticeship are clearly explained.</span>
                 </div>
               </div>
             </div>
@@ -88,8 +88,8 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               <div className="flex items-center space-x-3">
                 <Award className="h-8 w-8 text-blue-600" />
                 <div>
-                  <div className="font-bold text-gray-900">Official SSI Centre</div>
-                  <div className="text-sm text-gray-600">Singapore</div>
+                  <div className="font-bold text-gray-900">SSI Instructor-Led</div>
+                  <div className="text-sm text-gray-600">Verified active profile</div>
                 </div>
               </div>
             </div>
@@ -139,14 +139,14 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           <div className="text-center">
             <h2 className="text-3xl lg:text-4xl font-bold mb-4">About Penguin Academy Singapore</h2>
             <p className="text-xl text-blue-100 mb-6 max-w-4xl mx-auto">
-              Your Trusted Centre for SSI Swim Teacher Certification
+              SSI Swim Teacher Education with Clear, Supported Pathways
             </p>
             <p className="text-lg text-blue-200 max-w-5xl mx-auto leading-relaxed">
-              Welcome to Penguin Academy, Singapore's dedicated training hub for aspiring swim coaches. As the official Swim Schools International (SSI) certification centre in Singapore, we offer a full suite of SSI swim teacher certification courses, conducted by our authorised SSI Course Presenter.
+              Penguin Academy is Singapore's dedicated training hub for aspiring swim teachers. Courses are led by Remus Teo, an active SSI Swim Teacher Instructor, with clear guidance from digital learning through assessment and apprenticeship.
             </p>
             <div className="mt-8">
               <span className="inline-block bg-yellow-400 text-blue-900 px-6 py-3 rounded-full text-sm font-bold">
-                OFFICIAL SSI CERTIFICATION CENTRE • SINGAPORE
+                SSI SWIM TEACHER TRAINING • SINGAPORE
               </span>
             </div>
           </div>
@@ -171,8 +171,8 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
                 SSI PRO CERTIFIED
               </span>
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-2">Remus Teo</h1>
-            <p className="text-xl text-blue-100 mb-2">SWIM INSTRUCTOR</p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-2">Remus Teo</h2>
+            <p className="text-xl text-blue-100 mb-2">SSI SWIM TEACHER INSTRUCTOR</p>
             <p className="text-lg text-blue-200 mb-6">SSI Pro 121320</p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
@@ -182,7 +182,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               </div>
               <div className="flex items-center gap-3 bg-white bg-opacity-10 px-6 py-3 rounded-lg">
                 <Award className="h-6 w-6 text-yellow-400" />
-                <span className="font-semibold text-black">Master Instructor</span>
+                <span className="font-semibold text-black">React Right Instructor Trainer</span>
               </div>
               <div className="flex items-center gap-3 bg-white bg-opacity-10 px-6 py-3 rounded-lg">
                 <Star className="h-6 w-6 text-yellow-400" />
@@ -196,7 +196,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
               rel="noopener noreferrer"
               className="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors shadow-lg"
             >
-              View SSI Presenter Profile
+              View Verified SSI Profile
             </a>
           </div>
         </div>

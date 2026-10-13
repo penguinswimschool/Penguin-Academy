@@ -5,11 +5,11 @@ import BookNowButton from '@/components/BookNowButton'
 import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Award, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
-import { COURSE_DETAILS, certCourseIncludes } from '@/lib/approved-course-details'
+import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
   title: 'SSI Swim Teacher Level 2 Certification | Penguin Academy Singapore',
-  description: 'SSI Swim Teacher Level 2 in Singapore — $1,688 SGD including React Right. 1 full day, 9am–6pm, CBD / Central Singapore.',
+  description: 'SSI Swim Teacher Level 2 in Singapore — $1,688 SGD including full React Right. SSI Level 1 certification is required.',
   alternates: {
     canonical: 'https://www.swimcoachcertification.com/courses/ssi-swim-teacher-level-2',
   },
@@ -35,19 +35,19 @@ export default function SSILevel2Page() {
               <h1 className="text-4xl font-bold text-gray-900">SSI Swim Teacher Level 2 Certification</h1>
             </div>
 
-            <CourseMetaGrid />
+            <CourseMetaGrid recommendedDuration={COURSE_STANDARDS.level2.recommendedDuration} minimumAge={COURSE_STANDARDS.level2.minimumAge} />
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
               <p className="text-gray-700 leading-relaxed">
-                Build on Level 1 with stroke development (freestyle, backstroke, breaststroke), technique correction, endurance building, and class progression planning. {COURSE_DETAILS.format} Assessment includes {COURSE_DETAILS.assessment.toLowerCase()}.
+                Build on Level 1 with stroke development (freestyle, backstroke, breaststroke), technique correction, endurance building, and class progression planning. {COURSE_STANDARDS.level2.prerequisite}. {COURSE_DETAILS.format} Assessment includes {COURSE_DETAILS.assessment.toLowerCase()}.
               </p>
             </div>
 
             <div className="bg-green-50 p-6 rounded-lg mb-8">
               <h3 className="text-lg font-bold text-gray-900 mb-4">What&apos;s Included</h3>
               <div className="space-y-3">
-                {certCourseIncludes('SSI Swim Teacher Level 2 Certification').map((feature, index) => (
+                {certCourseIncludes('SSI Swim Teacher Level 2 Certification', COURSE_STANDARDS.level2.apprenticeship).map((feature, index) => (
                   <div key={index} className="flex items-start gap-3">
                     <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
                     <span className="text-gray-700">{feature}</span>
@@ -60,7 +60,7 @@ export default function SSILevel2Page() {
               <div className="flex items-center justify-between mb-4">
                 <div>
                   <div className="text-3xl font-bold text-gray-900">$1,688</div>
-                  <div className="text-sm text-gray-600">includes React Right</div>
+                  <div className="text-sm text-gray-600">includes full React Right</div>
                 </div>
                 <div className="flex gap-4">
                   <BookNowButton courseTitle="SSI Swim Teacher Level 2 Certification" />

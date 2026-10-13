@@ -30,13 +30,8 @@ DROP POLICY IF EXISTS "Allow profile creation" ON profiles;
 CREATE POLICY "Users can view own profile" ON profiles
   FOR SELECT USING (auth.uid() = id);
 
--- Users can update their own profile
-CREATE POLICY "Users can update own profile" ON profiles
-  FOR UPDATE USING (auth.uid() = id);
-
--- Allow profile creation during signup
-CREATE POLICY "Allow profile creation" ON profiles
-  FOR INSERT WITH CHECK (auth.uid() = id);
+-- Profiles are created by the trusted signup trigger below. Do not allow clients
+-- to insert or update role-bearing profile rows directly.
 
 -- Create function to automatically create profile on user signup
 CREATE OR REPLACE FUNCTION public.handle_new_user()
@@ -82,22 +77,25 @@ DROP POLICY IF EXISTS "Everyone can view courses" ON admin_courses;
 DROP POLICY IF EXISTS "Only admins can create courses" ON admin_courses;
 DROP POLICY IF EXISTS "Only admins can update courses" ON admin_courses;
 DROP POLICY IF EXISTS "Only admins can delete courses" ON admin_courses;
+DROP POLICY IF EXISTS "Authenticated users can create courses" ON admin_courses;
+DROP POLICY IF EXISTS "Authenticated users can update courses" ON admin_courses;
+DROP POLICY IF EXISTS "Authenticated users can delete courses" ON admin_courses;
 
 -- Everyone can view courses (public read access)
 CREATE POLICY "Everyone can view courses" ON admin_courses
   FOR SELECT USING (true);
 
--- Only authenticated users can insert courses (simplified for now)
-CREATE POLICY "Authenticated users can create courses" ON admin_courses
-  FOR INSERT WITH CHECK (auth.uid() IS NOT NULL);
+-- Only admins can insert courses
+CREATE POLICY "Only admins can create courses" ON admin_courses
+  FOR INSERT WITH CHECK (EXISTS (SELECT 1 FROM profiles WHERE profiles.id = auth.uid() AND profiles.role = 'admin'));
 
--- Only authenticated users can update courses (simplified for now)
-CREATE POLICY "Authenticated users can update courses" ON admin_courses
-  FOR UPDATE USING (auth.uid() IS NOT NULL);
+-- Only admins can update courses
+CREATE POLICY "Only admins can update courses" ON admin_courses
+  FOR UPDATE USING (EXISTS (SELECT 1 FROM profiles WHERE profiles.id = auth.uid() AND profiles.role = 'admin'));
 
--- Only authenticated users can delete courses (simplified for now)
-CREATE POLICY "Authenticated users can delete courses" ON admin_courses
-  FOR DELETE USING (auth.uid() IS NOT NULL);
+-- Only admins can delete courses
+CREATE POLICY "Only admins can delete courses" ON admin_courses
+  FOR DELETE USING (EXISTS (SELECT 1 FROM profiles WHERE profiles.id = auth.uid() AND profiles.role = 'admin'));
 
 -- Create contact_submissions table for the public contact form
 CREATE TABLE IF NOT EXISTS contact_submissions (
