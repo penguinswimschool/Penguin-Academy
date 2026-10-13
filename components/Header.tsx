@@ -67,8 +67,6 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
 
   const getRoleDisplay = () => {
     if (!user) return null;
-    console.log("role: ", user.role);
-    
     switch (user.role) {
       case 'admin':
         return {
@@ -94,7 +92,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
   const roleDisplay = getRoleDisplay();
 
   return (
-    <header className="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-blue-100">
+    <header className="fixed top-0 z-50 w-full border-b border-white/10 bg-[#071b2b]/95 text-white shadow-[0_8px_30px_rgba(3,15,25,0.18)] backdrop-blur-xl">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-blue-700 focus:shadow-lg"
@@ -102,36 +100,38 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
         Skip to main content
       </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
-          <Link href="/">
+        <div className="flex h-16 items-center justify-between">
+          <Link href="/" aria-label="Penguin Academy home">
             <div className="flex items-center space-x-2">
-                <Image src="/5.png" alt="Penguin Academy Logo" width={50} height={50} />
-                <span className="text-xl font-bold text-gray-900">Penguin Academy</span>
+                <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white shadow-sm">
+                  <Image src="/5.png" alt="" width={36} height={36} />
+                </span>
+                <span className="text-lg font-bold tracking-tight text-white sm:text-xl">Penguin Academy</span>
             </div>
           </Link>
           
-          <nav className="hidden md:flex space-x-8">
+          <nav className="hidden items-center space-x-8 md:flex" aria-label="Primary navigation">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="font-medium text-slate-200 transition-colors hover:text-cyan-300"
             >
               About Trainer
             </button>
             <button 
               onClick={() => scrollToSection('courses')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="font-medium text-slate-200 transition-colors hover:text-cyan-300"
             >
               Courses
             </button>
             <button 
               onClick={() => scrollToSection('calendar')}
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="font-medium text-slate-200 transition-colors hover:text-cyan-300"
             >
               Calendar
             </button>
             <Link 
               href="/blog"
-              className="text-gray-700 hover:text-blue-600 transition-colors font-medium"
+              className="font-medium text-slate-200 transition-colors hover:text-cyan-300"
             >
               Blog
             </Link>
@@ -140,7 +140,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
           <div className="hidden md:flex items-center space-x-4">
             <button
               onClick={handleContactClick}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium"
+              className="rounded-full bg-cyan-300 px-5 py-2.5 font-bold text-[#071b2b] transition-colors hover:bg-cyan-200"
             >
               Contact
             </button>
@@ -179,7 +179,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (
-              <Link href="/login" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors">
+              <Link href="/login" className="flex items-center space-x-2 text-slate-300 transition-colors hover:text-white">
                 <User className="h-4 w-4" />
                 <span>Login</span>
               </Link>
@@ -188,7 +188,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
 
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden p-2"
+            className="rounded-lg p-2 text-white transition hover:bg-white/10 md:hidden"
             aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
@@ -199,29 +199,29 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
       </div>
 
       {isMenuOpen && (
-        <div id="mobile-navigation" className="md:hidden bg-white border-t border-gray-200">
-          <div className="px-4 py-3 space-y-3">
+        <div id="mobile-navigation" className="border-t border-white/10 bg-[#071b2b] md:hidden">
+          <div className="space-y-2 px-4 py-4">
             <button 
               onClick={() => scrollToSection('hero')}
-              className="block w-full text-left text-gray-700 hover:text-blue-600 py-2"
+              className="block w-full rounded-lg px-3 py-2.5 text-left text-slate-200 hover:bg-white/5 hover:text-cyan-300"
             >
               About Trainer
             </button>
             <button 
               onClick={() => scrollToSection('courses')}
-              className="block w-full text-left text-gray-700 hover:text-blue-600 py-2"
+              className="block w-full rounded-lg px-3 py-2.5 text-left text-slate-200 hover:bg-white/5 hover:text-cyan-300"
             >
               Courses
             </button>
             <button 
               onClick={() => scrollToSection('calendar')}
-              className="block w-full text-left text-gray-700 hover:text-blue-600 py-2"
+              className="block w-full rounded-lg px-3 py-2.5 text-left text-slate-200 hover:bg-white/5 hover:text-cyan-300"
             >
               Calendar
             </button>
             <Link 
               href="/blog"
-              className="block w-full text-left text-gray-700 hover:text-blue-600 py-2"
+              className="block w-full rounded-lg px-3 py-2.5 text-left text-slate-200 hover:bg-white/5 hover:text-cyan-300"
             >
               Blog
             </Link>
@@ -231,10 +231,10 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
                 {/* <span className="text-sm">Loading...</span> */}
               </div>
             ) : user ? (
-              <div className="space-y-3 pt-3 border-t border-gray-200">
+              <div className="space-y-3 border-t border-white/10 pt-3">
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <button className="flex items-center space-x-2 text-gray-700 py-2 w-full text-left hover:text-blue-600">
+                    <button className="flex w-full items-center space-x-2 py-2 text-left text-slate-200 hover:text-cyan-300">
                       <User className="h-4 w-4" />
                       <span className="text-sm font-medium">{user.email}</span>
                       {roleDisplay && (
@@ -269,7 +269,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
                 </DropdownMenu>
               </div>
             ) : (
-              <Link href="/login" className="block w-full text-left text-gray-700 hover:text-blue-600 py-2">
+              <Link href="/login" className="block w-full rounded-lg px-3 py-2.5 text-left text-slate-200 hover:bg-white/5 hover:text-cyan-300">
                 <div className="flex items-center space-x-2">
                   <User className="h-4 w-4" />
                   <span>Login</span>
@@ -279,7 +279,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
 
             <button
               onClick={handleContactClick}
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors font-medium w-fit"
+              className="mt-2 w-full rounded-full bg-cyan-300 px-5 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200"
             >
               Contact
             </button>

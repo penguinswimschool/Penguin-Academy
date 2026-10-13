@@ -1,6 +1,46 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #ffffff;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+  color: #0b2438;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: #67e8f9;
+  color: #071b2b;
+}
+
+:focus-visible {
+  outline: 3px solid #22d3ee;
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
 /* @custom-variant dark (&:is(.dark *)); */
 /* 
 @theme inline {

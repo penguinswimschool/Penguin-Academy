@@ -196,11 +196,11 @@ const CourseCalendar = () => {
 
   if (loading) {
     return (
-      <section id="calendar" className="py-20 bg-gray-50">
+      <section id="calendar" className="bg-white py-20 sm:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600 mx-auto mb-4"></div>
-            <p className="text-gray-600">Loading course calendar...</p>
+            <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-b-teal-700"></div>
+            <p className="text-slate-600">Loading course dates…</p>
           </div>
         </div>
       </section>
@@ -209,19 +209,25 @@ const CourseCalendar = () => {
 
   if (courses.length === 0) {
     return (
-      <section id="calendar" className="py-20 bg-gray-50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Flexible Course Dates</h2>
-          <p className="text-xl text-gray-600 mb-8">Course dates are arranged based on candidate availability and instructor capacity. Confirmed dates will appear here when available; meanwhile, WhatsApp us to discuss a suitable schedule.</p>
-          <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_empty_state', courseName: 'Course date enquiry' })} className="inline-flex bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700">Check dates on WhatsApp</a>
+      <section id="calendar" className="bg-white py-20 sm:py-28">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+          <div className="relative overflow-hidden rounded-[2rem] bg-[#dff5f1] px-7 py-14 text-center sm:px-14 sm:py-16">
+            <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-cyan-300/20 blur-3xl" />
+            <div className="relative">
+              <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-teal-700 shadow-sm"><Calendar className="h-7 w-7" /></div>
+              <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-800">Plan your training</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Flexible course dates.</h2>
+              <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">Dates are arranged around candidate availability and instructor capacity. Confirmed sessions appear here; otherwise, speak with us to plan a suitable schedule.</p>
+              <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_empty_state', courseName: 'Course date enquiry' })} className="mt-8 inline-flex rounded-full bg-[#0b2438] px-7 py-4 font-bold text-white transition hover:bg-teal-800">Check dates on WhatsApp</a>
+            </div>
+          </div>
         </div>
       </section>
     );
   }
 
   return (
-    <section id="calendar" className="py-20 bg-gray-50">
+    <section id="calendar" className="bg-white py-20 sm:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />

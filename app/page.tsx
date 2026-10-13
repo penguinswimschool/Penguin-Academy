@@ -5,6 +5,7 @@ import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import AcademyVideo from '@/components/AcademyVideo';
 import CourseList from '@/components/CourseList';
+import TrainingJourney from '@/components/TrainingJourney';
 import CourseCalendar from '@/components/CourseCalendar';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -71,15 +72,16 @@ function App() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-white">
       <StructuredData data={homepageStructuredData} />
       <Header 
         onContactClick={() => setShowContactForm(true)}
       />
       <main id="main-content">
         <Hero onContactClick={() => setShowContactForm(true)} />
-        <AcademyVideo />
         <CourseList onAskQuestions={handleAskQuestions} />
+        <TrainingJourney />
+        <AcademyVideo />
         <CourseCalendar />
       </main>
       <Footer 
@@ -89,7 +91,7 @@ function App() {
       {/* Floating PenguinGPT Button */}
       <button
         onClick={() => handleAskQuestions()}
-        className="fixed bottom-6 right-6 bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-50 border-2 border-purple-200 hover:border-purple-300"
+        className="fixed bottom-6 right-6 z-50 rounded-full border-4 border-white bg-[#0b2438] p-3 text-white shadow-[0_12px_35px_rgba(7,27,43,0.22)] transition-all duration-200 hover:scale-105 hover:bg-teal-800"
         title="Chat with PenguinGPT"
         aria-label="Chat with PenguinGPT"
       >

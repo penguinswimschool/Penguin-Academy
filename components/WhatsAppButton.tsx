@@ -12,7 +12,7 @@ const WhatsAppButton: React.FC = () => {
     <div className="fixed bottom-22 right-6 z-50">
       <button
         onClick={handleWhatsAppClick}
-        className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 transform hover:scale-110 hover:shadow-xl"
+        className="rounded-full border-4 border-white bg-[#25D366] p-4 text-white shadow-[0_12px_35px_rgba(7,27,43,0.2)] transition-all duration-300 hover:scale-105 hover:bg-[#20bd5a]"
         aria-label="Contact us on WhatsApp"
       >
         <FaWhatsapp size={24} />

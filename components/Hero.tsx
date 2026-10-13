@@ -1,202 +1,153 @@
 import React from 'react';
-import { Award, Star, Users, Clock, Shield, CheckCircle } from 'lucide-react';
+import { ArrowRight, Award, CheckCircle, Shield, Sparkles, Users } from 'lucide-react';
 import Image from 'next/image';
 
 interface HeroProps {
   onContactClick: () => void;
 }
 
+const trustPoints = [
+  'Verified SSI instructor-led training',
+  'Small cohorts of 1–8 candidates',
+  'Full React Right included with teacher courses',
+];
+
 const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
   return (
-    <section id="hero" className="pt-16">
-      {/* Main Hero Content */}
-      <div className="bg-gradient-to-br from-blue-50 to-cyan-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+    <section id="hero" className="overflow-hidden bg-[#071b2b] pt-16 text-white">
+      <div className="relative isolate">
+        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_12%,rgba(45,212,191,0.18),transparent_34%),radial-gradient(circle_at_8%_72%,rgba(56,189,248,0.16),transparent_32%)]" />
+        <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
+
+        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.03fr_0.97fr] lg:px-10 lg:py-28">
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <Shield className="h-6 w-6 text-blue-600" />
-              <span className="text-blue-600 font-semibold">SSI Swim Teacher Training in Singapore</span>
+            <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-white/5 px-4 py-2 text-sm font-semibold tracking-wide text-cyan-100 backdrop-blur">
+              <Shield className="h-4 w-4 text-cyan-300" aria-hidden="true" />
+              SSI swim teacher education · Singapore
             </div>
-            <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Become a Certified <span className="text-blue-600">Swim Teacher</span> with SSI
+
+            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
+              Teach swimming with
+              <span className="block bg-gradient-to-r from-cyan-300 to-teal-200 bg-clip-text text-transparent">skill, safety and confidence.</span>
             </h1>
-            <div className="text-xl text-gray-600 mb-6 leading-relaxed">
-              <p className="mb-4">
-                Whether you're looking to start your journey as a certified swim teacher or upgrade your professional qualifications, Penguin Academy Singapore provides structured, globally recognised programmes that prepare you to coach with skill, safety, and confidence.
+
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
+              Structured SSI pathways for aspiring and experienced swim teachers, led in Singapore by verified SSI professional Remus Teo.
+            </p>
+
+            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:max-w-2xl">
+              <p className="text-base font-semibold text-white sm:text-lg">
+                Every $1,688 teacher course includes full SSI React Right.
               </p>
-              <p className="font-bold">
-                Every $1,688 teacher course includes full SSI React Right: First Aid & CPR, AED Provider and Oxygen Provider.
+              <p className="mt-1 text-sm leading-6 text-slate-300">
+                First Aid &amp; CPR, AED Provider and Oxygen Provider training are included.
               </p>
             </div>
-            
-            <div className="bg-white p-6 rounded-xl shadow-lg mb-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">Why Choose Penguin Academy?</h3>
-              <div className="space-y-3 text-gray-700">
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Verified SSI Professional:</strong> Training is led by Remus Teo, an active SSI Swim Teacher Instructor and React Right Instructor Trainer.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Internationally Recognised:</strong> SSI qualifications are accepted globally, opening doors for both local and overseas opportunities.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Singapore-Based Training:</strong> In-person courses in CBD / Central Singapore, 9am–6pm. Overseas format can be discussed separately.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Personalised Coaching:</strong> Small class sizes ensure individual attention and hands-on learning.</span>
-                </div>
-                <div className="flex items-start gap-3">
-                  <CheckCircle className="h-5 w-5 text-green-500 mt-0.5 flex-shrink-0" />
-                  <span><strong>Complete Pathway:</strong> Digital learning, instructor-led training, assessments, final exam and the programme-specific supervised apprenticeship are clearly explained.</span>
-                </div>
-              </div>
-            </div>
-            
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button 
+
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+              <button
                 onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
-                className="bg-blue-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-blue-700 transition-colors shadow-lg"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] shadow-[0_14px_40px_rgba(34,211,238,0.18)] transition hover:bg-cyan-200"
               >
-                View Courses
+                Explore courses
+                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </button>
               <button
                 onClick={onContactClick}
-                className="border-2 border-blue-600 text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-600 hover:text-white transition-colors"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
               >
-                Contact Now
+                Speak with the Academy
               </button>
             </div>
 
+            <div className="mt-10 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">
+              {trustPoints.map((point) => (
+                <div key={point} className="flex items-start gap-2">
+                  <CheckCircle className="mt-0.5 h-4 w-4 flex-none text-teal-300" aria-hidden="true" />
+                  <span>{point}</span>
+                </div>
+              ))}
+            </div>
           </div>
 
-          <div className="relative">
-            <div className="relative h-[520px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl bg-blue-100">
+          <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
+            <div className="absolute -inset-5 -z-10 rounded-[2.5rem] bg-gradient-to-br from-cyan-300/20 via-transparent to-teal-300/10 blur-2xl" />
+            <div className="relative h-[480px] overflow-hidden rounded-[2rem] border border-white/15 bg-slate-800 shadow-[0_35px_90px_rgba(0,0,0,0.38)] sm:h-[620px]">
               <Image
                 src="/hero_image.jpg"
                 alt="Penguin Academy swim teacher training in Singapore"
                 fill
                 priority
-                sizes="(min-width: 1024px) 50vw, 100vw"
+                sizes="(min-width: 1024px) 48vw, 100vw"
                 className="object-cover"
               />
-            </div>
-            <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
-              <div className="flex items-center space-x-3">
-                <Award className="h-8 w-8 text-blue-600" />
-                <div>
-                  <div className="font-bold text-gray-900">SSI Instructor-Led</div>
-                  <div className="text-sm text-gray-600">Verified active profile</div>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071b2b]/80 via-transparent to-transparent" />
+              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/15 bg-[#071b2b]/85 p-5 backdrop-blur-md sm:inset-x-7 sm:bottom-7 sm:p-6">
+                <div className="flex items-center gap-4">
+                  <div className="flex h-11 w-11 flex-none items-center justify-center rounded-full bg-cyan-300 text-[#071b2b]">
+                    <Award className="h-5 w-5" aria-hidden="true" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-white">SSI instructor-led education</p>
+                    <p className="mt-1 text-sm text-slate-300">Clear support from digital learning through assessment and apprenticeship.</p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        
-        {/* Who Is This For Section */}
-        <div className="mt-20 bg-white rounded-2xl p-8 shadow-lg">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Who Is This For?</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Users className="h-6 w-6 text-blue-600" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Aspiring Coaches</h4>
-              <p className="text-sm text-gray-600">Looking for recognised entry into the swim coaching industry</p>
-            </div>
-            <div className="text-center p-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Award className="h-6 w-6 text-blue-600" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Current Instructors</h4>
-              <p className="text-sm text-gray-600">Want to upgrade to internationally accredited certification</p>
-            </div>
-            <div className="text-center p-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Shield className="h-6 w-6 text-blue-600" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Sports Professionals</h4>
-              <p className="text-sm text-gray-600">Lifeguards, PE teachers expanding into aquatic education</p>
-            </div>
-            <div className="text-center p-4">
-              <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
-                <Star className="h-6 w-6 text-blue-600" />
-              </div>
-              <h4 className="font-semibold text-gray-900 mb-2">Ex-Swimmers</h4>
-              <p className="text-sm text-gray-600">Competitive swimmers and students considering coaching careers</p>
-            </div>
-          </div>
-        </div>
-      </div>
       </div>
 
-      {/* Penguin Academy Section */}
-      <div className="bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center">
-            <h2 className="text-3xl lg:text-4xl font-bold mb-4">About Penguin Academy Singapore</h2>
-            <p className="text-xl text-blue-100 mb-6 max-w-4xl mx-auto">
-              SSI Swim Teacher Education with Clear, Supported Pathways
-            </p>
-            <p className="text-lg text-blue-200 max-w-5xl mx-auto leading-relaxed">
-              Penguin Academy is Singapore's dedicated training hub for aspiring swim teachers. Courses are led by Remus Teo, an active SSI Swim Teacher Instructor, with clear guidance from digital learning through assessment and apprenticeship.
-            </p>
-            <div className="mt-8">
-              <span className="inline-block bg-yellow-400 text-blue-900 px-6 py-3 rounded-full text-sm font-bold">
-                SSI SWIM TEACHER TRAINING • SINGAPORE
-              </span>
+      <div className="border-y border-slate-200 bg-[#f6f4ee] text-[#0b2438]">
+        <div className="mx-auto grid max-w-7xl gap-px bg-slate-200 sm:grid-cols-3">
+          {[
+            { value: '1–8', label: 'candidates per cohort', icon: Users },
+            { value: '5', label: 'focused SSI course pathways', icon: Sparkles },
+            { value: '121320', label: 'verified SSI Pro profile', icon: Shield },
+          ].map(({ value, label, icon: Icon }) => (
+            <div key={label} className="flex items-center justify-center gap-4 bg-[#f6f4ee] px-6 py-7">
+              <Icon className="h-6 w-6 text-teal-700" aria-hidden="true" />
+              <div>
+                <p className="text-2xl font-bold tracking-tight">{value}</p>
+                <p className="text-sm text-slate-600">{label}</p>
+              </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
 
-      {/* Founder Section */}
-      <div className="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="text-center mb-12">
-            <div className="inline-block mb-6">
-              <Image 
-                src="/Remus.png" 
-                alt="Remus Teo - SSI Pro Instructor"
-                className="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover mx-auto"
-                width={128}
-                height={128}
-              />
-            </div>
-            <div className="mb-4">
-              <span className="inline-block bg-yellow-400 text-blue-900 px-4 py-2 rounded-full text-sm font-bold mb-4">
-                SSI PRO CERTIFIED
-              </span>
-            </div>
-            <h2 className="text-4xl lg:text-5xl font-bold mb-2">Remus Teo</h2>
-            <p className="text-xl text-blue-100 mb-2">SSI SWIM TEACHER INSTRUCTOR</p>
-            <p className="text-lg text-blue-200 mb-6">SSI Pro 121320</p>
-            
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
-              <div className="flex items-center gap-3 bg-white bg-opacity-10 px-6 py-3 rounded-lg">
-                <CheckCircle className="h-6 w-6 text-yellow-400" />
-                <span className="font-semibold text-black">SSI Professional Level</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white bg-opacity-10 px-6 py-3 rounded-lg">
-                <Award className="h-6 w-6 text-yellow-400" />
-                <span className="font-semibold text-black">React Right Instructor Trainer</span>
-              </div>
-              <div className="flex items-center gap-3 bg-white bg-opacity-10 px-6 py-3 rounded-lg">
-                <Star className="h-6 w-6 text-yellow-400" />
-                <span className="font-semibold text-black">10+ Years Experience</span>
-              </div>
-            </div>
+      <div className="bg-white text-[#0b2438]">
+        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:px-10 lg:py-24">
+          <div className="relative mx-auto">
+            <div className="absolute -inset-4 rounded-full bg-cyan-100 blur-2xl" />
+            <Image
+              src="/Remus.png"
+              alt="Remus Teo, SSI Swim Teacher Instructor"
+              className="relative h-52 w-52 rounded-full border-[10px] border-white object-cover shadow-2xl sm:h-64 sm:w-64"
+              width={256}
+              height={256}
+            />
+          </div>
 
+          <div>
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Meet your instructor</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">Learn with verified guidance.</h2>
+            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
+              Remus Teo is an active SSI Swim Teacher Instructor and React Right Instructor Trainer. Candidates receive a clearly explained pathway through digital learning, in-person instruction, assessment and programme-specific apprenticeship.
+            </p>
+            <div className="mt-7 flex flex-wrap gap-3 text-sm font-semibold">
+              <span className="rounded-full bg-slate-100 px-4 py-2">SSI Swim Teacher Instructor</span>
+              <span className="rounded-full bg-slate-100 px-4 py-2">React Right Instructor Trainer</span>
+              <span className="rounded-full bg-slate-100 px-4 py-2">SSI Pro 121320</span>
+            </div>
             <a
               href="https://my.divessi.com/pro/121320"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-block bg-white text-blue-900 px-8 py-3 rounded-lg font-bold hover:bg-blue-50 transition-colors shadow-lg"
+              className="mt-8 inline-flex items-center gap-2 font-bold text-teal-800 transition hover:text-teal-600"
             >
-              View Verified SSI Profile
+              View verified SSI profile
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
         </div>
