@@ -47,8 +47,8 @@ async function getHomepageMeta() {
 export async function generateMetadata(): Promise<Metadata> {
   const meta = await getHomepageMeta();
   
-  const title = meta?.title || "Swim Coach Certification Singapore | Professional Training";
-  const description = meta?.description || "Get certified as a professional swim coach in Singapore. Accredited training, expert instructors & practical coaching experience. Enroll today!";
+  const title = meta?.title || "SSI Swim Teacher Courses Singapore | Penguin Academy";
+  const description = meta?.description || "Train as an SSI swim teacher in Singapore with Penguin Academy. Explore Level 1, Level 2, Baby & Me, Adult and React Right CPR, AED and Oxygen Provider courses.";
   const ogTitle = meta?.ogTitle || title;
   const ogDescription = meta?.ogDescription || description;
   const ogImage = meta?.ogImage && sanityClient ? urlFor(meta.ogImage).url() : "/penguinacademylogo512x280.jpg";
@@ -81,7 +81,13 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     alternates: {
       canonical: "https://www.swimcoachcertification.com/", 
-    }
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: ogTitle,
+      description: ogDescription,
+      images: [ogImage],
+    },
   };
 }
 

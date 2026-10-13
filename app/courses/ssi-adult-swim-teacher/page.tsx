@@ -6,6 +6,8 @@ import { Users, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
+import StructuredData from '@/components/StructuredData'
+import { buildCoursePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
   title: 'SSI Adult Swim Teacher Singapore | Penguin Academy',
@@ -16,10 +18,11 @@ export const metadata = buildCourseMetadata({
 export default function SSIAdultPage() {
   return (
     <div className="min-h-screen bg-gray-50">
+      <StructuredData data={buildCoursePageStructuredData('adult')} />
       <Header />
       <div className="pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <nav className="mb-8">
+          <nav className="mb-8" aria-label="Breadcrumb">
             <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
             <span className="mx-2 text-gray-400">/</span>
             <Link href="/#courses" className="text-blue-600 hover:text-blue-800">Courses</Link>

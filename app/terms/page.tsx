@@ -1,6 +1,29 @@
 import React from 'react';
+import type { Metadata } from 'next';
 import { ArrowLeft, FileText, Building, CreditCard, GraduationCap, Calendar, Shield, Users, CheckCircle } from 'lucide-react';
 import Link from 'next/link';
+
+export const metadata: Metadata = {
+  title: 'Terms & Conditions | Penguin Academy Singapore',
+  description: 'Read the enrolment, payment, attendance, certification, cancellation and conduct terms for Penguin Academy courses in Singapore.',
+  alternates: {
+    canonical: 'https://www.swimcoachcertification.com/terms',
+  },
+  openGraph: {
+    title: 'Terms & Conditions | Penguin Academy Singapore',
+    description: 'Read the terms that apply to Penguin Academy course enrolment and participation in Singapore.',
+    url: 'https://www.swimcoachcertification.com/terms',
+    siteName: 'Penguin Academy',
+    locale: 'en_SG',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Terms & Conditions | Penguin Academy Singapore',
+    description: 'Read the terms that apply to Penguin Academy course enrolment and participation in Singapore.',
+  },
+};
+
 const TermsConditions: React.FC = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-cyan-50 pt-16">

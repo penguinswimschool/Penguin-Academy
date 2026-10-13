@@ -95,6 +95,12 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
 
   return (
     <header className="fixed top-0 w-full bg-white shadow-sm z-50 border-b border-blue-100">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-[60] focus:rounded-md focus:bg-white focus:px-4 focus:py-2 focus:text-blue-700 focus:shadow-lg"
+      >
+        Skip to main content
+      </a>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <Link href="/">
@@ -147,7 +153,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             ) : user ? (
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
-                  <button className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors p-2 rounded-md hover:bg-gray-50">
+                  <button aria-label="Open account menu" className="flex items-center space-x-2 text-gray-700 hover:text-blue-600 transition-colors p-2 rounded-md hover:bg-gray-50">
                     <User className="h-4 w-4" />
                   </button>
                 </DropdownMenuTrigger>
@@ -183,6 +189,9 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className="md:hidden p-2"
+            aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-navigation"
           >
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
@@ -190,7 +199,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
       </div>
 
       {isMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-200">
+        <div id="mobile-navigation" className="md:hidden bg-white border-t border-gray-200">
           <div className="px-4 py-3 space-y-3">
             <button 
               onClick={() => scrollToSection('hero')}

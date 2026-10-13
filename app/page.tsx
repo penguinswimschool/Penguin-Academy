@@ -1,7 +1,6 @@
 "use client"
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { Bot } from 'lucide-react';
 import Header from '@/components/Header';
 import Hero from '@/components/Hero';
 import AcademyVideo from '@/components/AcademyVideo';
@@ -13,6 +12,8 @@ import SuccessPage from '@/components/SuccessPage';
 import PenguinGPT from '@/components/PenguinGPT';
 import TermsConditions from '@/components/TermsConditions';
 import WhatsAppButton from '@/components/WhatsAppButton';
+import StructuredData from '@/components/StructuredData';
+import { homepageStructuredData } from '@/lib/structured-data';
 import Image from 'next/image';
 
 function App() {
@@ -71,14 +72,16 @@ function App() {
 
   return (
     <div className="min-h-screen">
+      <StructuredData data={homepageStructuredData} />
       <Header 
         onContactClick={() => setShowContactForm(true)}
       />
-      <Hero onContactClick={() => setShowContactForm(true)} />
-      <AcademyVideo />
-      <CourseList onAskQuestions={handleAskQuestions} />
-      
-      <CourseCalendar />
+      <main id="main-content">
+        <Hero onContactClick={() => setShowContactForm(true)} />
+        <AcademyVideo />
+        <CourseList onAskQuestions={handleAskQuestions} />
+        <CourseCalendar />
+      </main>
       <Footer 
         onTermsClick={() => setShowTerms(true)} 
         onAdminClick={() => setShowAdminDashboard(true)} 
@@ -88,6 +91,7 @@ function App() {
         onClick={() => handleAskQuestions()}
         className="fixed bottom-6 right-6 bg-white p-3 rounded-full shadow-lg transition-all duration-200 hover:scale-110 z-50 border-2 border-purple-200 hover:border-purple-300"
         title="Chat with PenguinGPT"
+        aria-label="Chat with PenguinGPT"
       >
         <Image 
           src="/2.png" 

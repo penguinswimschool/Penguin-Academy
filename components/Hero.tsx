@@ -74,15 +74,15 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
           </div>
 
           <div className="relative">
-            <div className="aspect-w-4 aspect-h-5 rounded-2xl overflow-hidden shadow-2xl bg-gray-200 flex items-center justify-center">
-              {/* Image placeholder - replace src with your uploaded image */}
-              <div className="w-full h-[600px] bg-gradient-to-br from-blue-100 to-cyan-100 flex items-center justify-center">
-                <div className="text-center p-8">
-                  <div className="w-24 h-24 bg-blue-200 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Image src="/hero_image.jpg" alt="Hero Image" layout="fill" objectFit="cover" />
-                  </div>
-                </div>
-              </div>
+            <div className="relative h-[520px] lg:h-[600px] rounded-2xl overflow-hidden shadow-2xl bg-blue-100">
+              <Image
+                src="/hero_image.jpg"
+                alt="Penguin Academy swim teacher training in Singapore"
+                fill
+                priority
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
             <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-xl">
               <div className="flex items-center space-x-3">

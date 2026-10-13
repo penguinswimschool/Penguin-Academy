@@ -11,6 +11,7 @@ import Footer from '@/components/Footer'
 // GROQ query to get a single blog post by slug
 const postQuery = `*[_type == "blogPost" && slug.current == $slug][0] {
   _id,
+  _updatedAt,
   title,
   slug,
   excerpt,
@@ -37,6 +38,7 @@ const slugsQuery = `*[_type == "blogPost"] {
 
 interface BlogPost {
   _id: string
+  _updatedAt: string
   title: string
   slug: { current: string }
   excerpt: string
@@ -101,18 +103,26 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) {
     return {
       title: 'Post Not Found',
-      description: 'The requested blog post could not be found.'
+      description: 'The requested blog post could not be found.',
+      robots: { index: false, follow: false },
     }
   }
 
+  const title = post.seoTitle || post.title
+  const description = post.seoDescription || post.excerpt
+  const url = `https://www.swimcoachcertification.com/blog/${post.slug.current}`
+
   return {
-    title: post.seoTitle || post.title,
-    description: post.seoDescription || post.excerpt,
+    title,
+    description,
+    alternates: { canonical: url },
     openGraph: {
-      title: post.seoTitle || post.title,
-      description: post.seoDescription || post.excerpt,
+      title,
+      description,
+      url,
       type: 'article',
       publishedTime: post.publishedAt,
+      modifiedTime: post._updatedAt,
       authors: post.author?.name ? [post.author.name] : undefined,
       images: post.mainImage && sanityClient ? [
         {
@@ -125,8 +135,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     },
     twitter: {
       card: 'summary_large_image',
-      title: post.seoTitle || post.title,
-      description: post.seoDescription || post.excerpt,
+      title,
+      description,
       images: post.mainImage && sanityClient ? [urlFor(post.mainImage).url()] : undefined,
     },
   }

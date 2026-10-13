@@ -63,19 +63,24 @@ async function getBlogPosts(): Promise<BlogPost[]> {
 
 // Generate metadata for SEO
 export async function generateMetadata(): Promise<Metadata> {
+  const title = 'Swim Teacher Training Insights | Penguin Academy'
+  const description = 'Practical guidance on SSI swim teacher education, certification pathways, aquatic instruction, CPR, AED and oxygen provider training in Singapore.'
+  const url = 'https://www.swimcoachcertification.com/blog'
+
   return {
-    title: 'Blog - Penguin Swim Academy',
-    description: 'Discover insights, tips, and stories about swimming instruction, SSI certification, and the world of aquatic education.',
+    title,
+    description,
+    alternates: { canonical: url },
     openGraph: {
-      title: 'Blog - Penguin Swim Academy',
-      description: 'Discover insights, tips, and stories about swimming instruction, SSI certification, and the world of aquatic education.',
+      title,
+      description,
       type: 'website',
-      url: '/blog',
+      url,
     },
     twitter: {
       card: 'summary_large_image',
-      title: 'Blog - Penguin Swim Academy',
-      description: 'Discover insights, tips, and stories about swimming instruction, SSI certification, and the world of aquatic education.',
+      title,
+      description,
     },
   }
 }
@@ -242,4 +247,4 @@ function PostCard({ post }: { post: BlogPost }) {
       </article>
     </Link>
   )
-} 
+}
