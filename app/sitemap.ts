@@ -25,7 +25,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   if (sanityClient) {
     try {
       const posts: { slug: string; updatedAt: string }[] = await sanityClient.fetch(
-        `*[_type == "blogPost" && defined(slug.current)]{
+        `*[_type == "blogPost" && defined(slug.current) && defined(publishedAt) && publishedAt <= now()]{
           "slug": slug.current,
           "updatedAt": _updatedAt
         }`

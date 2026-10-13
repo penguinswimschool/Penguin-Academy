@@ -9,7 +9,12 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 
 // GROQ query to get a single blog post by slug
-const postQuery = `*[_type == "blogPost" && slug.current == $slug][0] {
+const postQuery = `*[
+  _type == "blogPost" &&
+  slug.current == $slug &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+][0] {
   _id,
   _updatedAt,
   title,
@@ -32,7 +37,12 @@ const postQuery = `*[_type == "blogPost" && slug.current == $slug][0] {
 }`
 
 // GROQ query to get all blog post slugs for static generation
-const slugsQuery = `*[_type == "blogPost"] {
+const slugsQuery = `*[
+  _type == "blogPost" &&
+  defined(slug.current) &&
+  defined(publishedAt) &&
+  publishedAt <= now()
+] {
   slug
 }`
 

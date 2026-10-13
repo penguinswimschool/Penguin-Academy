@@ -9,7 +9,8 @@ export const config = projectId ? {
   dataset,
   projectId,
   apiVersion: '2024-01-01', // use current date (YYYY-MM-DD) to target the latest API version
-  useCdn: process.env.NODE_ENV === 'production',
+  // ISR and tag-based revalidation should read the latest published document.
+  useCdn: false,
 } : null
 
 // Set up the client for fetching data in the getProps page functions
@@ -31,4 +32,4 @@ export const imageUrlFor = (source: SanityImageSource) => {
     throw new Error('Sanity is not configured. Please set NEXT_PUBLIC_SANITY_PROJECT_ID environment variable.')
   }
   return imageUrlBuilder(config).image(source).auto('format').fit('max')
-} 
+}
