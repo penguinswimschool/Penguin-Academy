@@ -61,18 +61,18 @@ export default function SSIAdultPage() {
             </div>
 
             <div className="bg-yellow-50 p-6 rounded-lg">
-              <div className="flex items-center justify-between mb-4">
-                <div>
+              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+                <div className="min-w-0">
                   <div className="text-3xl font-bold text-gray-900">$1,688</div>
                   <div className="text-sm text-gray-600">includes full React Right</div>
                 </div>
-                <div className="flex gap-4">
-                  <BookNowButton courseTitle="SSI Adult Swim Teacher Certification" />
+                <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">
+                  <BookNowButton courseTitle="SSI Adult Swim Teacher Certification" className="w-full text-center md:w-auto" />
                   <Link
                     href={whatsappEnquiryUrl('SSI Adult Swim Teacher Certification')}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
+                    className="inline-flex w-full items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg text-center font-semibold hover:bg-blue-50 transition-colors md:w-auto"
                   >
                     Ask Questions
                   </Link>
