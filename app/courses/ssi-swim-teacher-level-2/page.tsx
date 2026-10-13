@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookNowButton from '@/components/BookNowButton'
@@ -6,14 +5,13 @@ import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Award, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
+import { buildCourseMetadata } from '@/lib/course-metadata'
 
-export const metadata: Metadata = {
-  title: 'SSI Swim Teacher Level 2 Certification | Penguin Academy Singapore',
-  description: 'SSI Swim Teacher Level 2 in Singapore — $1,688 SGD including full React Right. SSI Level 1 certification is required.',
-  alternates: {
-    canonical: 'https://www.swimcoachcertification.com/courses/ssi-swim-teacher-level-2',
-  },
-}
+export const metadata = buildCourseMetadata({
+  title: 'SSI Swim Teacher Level 2 Singapore | Penguin Academy',
+  description: 'Advance with SSI Swim Teacher Level 2 in Singapore for $1,688, including full React Right. SSI Swim Teacher Level 1 is required.',
+  path: '/courses/ssi-swim-teacher-level-2',
+})
 
 export default function SSILevel2Page() {
   return (

@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookNowButton from '@/components/BookNowButton'
@@ -14,14 +13,13 @@ import {
   LIFETIME_REFRESHER,
   PENGUIN_SUPPORT,
 } from '@/lib/approved-course-details'
+import { buildCourseMetadata } from '@/lib/course-metadata'
 
-export const metadata: Metadata = {
-  title: 'Penguin Pro Bundle – Any 2 SSI Teacher Courses | Penguin Academy',
-  description: 'Choose any 2 teacher courses for $2,888 SGD. The bundle includes full SSI React Right.',
-  alternates: {
-    canonical: 'https://www.swimcoachcertification.com/courses/penguin-pro-swim-teacher-pathway',
-  },
-}
+export const metadata = buildCourseMetadata({
+  title: 'Any 2 SSI Swim Teacher Courses | $2,888 Bundle',
+  description: 'Choose any two SSI teacher courses for $2,888 in Singapore: Level 1, Level 2, Baby & Me or Adult. Full React Right is included.',
+  path: '/courses/penguin-pro-swim-teacher-pathway',
+})
 
 const bundleFeatures = [
   'Choose any 2: Level 1, Level 2, Baby & Me, or Adult Swim Teacher',

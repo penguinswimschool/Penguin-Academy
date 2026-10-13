@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookNowButton from '@/components/BookNowButton'
@@ -6,14 +5,13 @@ import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Baby, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
+import { buildCourseMetadata } from '@/lib/course-metadata'
 
-export const metadata: Metadata = {
-  title: 'Baby & Me Swim Teacher Course | Penguin Academy Singapore',
-  description: 'SSI Baby & Me certification — $1,688 SGD including full React Right, for parent-child swim classes ages 6 months–3 years.',
-  alternates: {
-    canonical: 'https://www.swimcoachcertification.com/courses/baby-and-me-swim-teacher',
-  },
-}
+export const metadata = buildCourseMetadata({
+  title: 'SSI Baby & Me Swim Teacher Singapore | Penguin Academy',
+  description: 'Train to teach parent-child swimming for ages 6 months to 3 years. $1,688 in Singapore, including full SSI React Right.',
+  path: '/courses/baby-and-me-swim-teacher',
+})
 
 export default function BabyAndMePage() {
   return (

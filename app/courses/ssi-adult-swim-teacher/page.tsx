@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookNowButton from '@/components/BookNowButton'
@@ -6,14 +5,13 @@ import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Users, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
 import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
+import { buildCourseMetadata } from '@/lib/course-metadata'
 
-export const metadata: Metadata = {
-  title: 'SSI Adult Swim Teacher Certification | Penguin Academy Singapore',
-  description: 'Become a certified SSI Adult Swim Teacher in Singapore. $1,688 SGD including full React Right and programme-specific apprenticeship.',
-  alternates: {
-    canonical: 'https://www.swimcoachcertification.com/courses/ssi-adult-swim-teacher',
-  },
-}
+export const metadata = buildCourseMetadata({
+  title: 'SSI Adult Swim Teacher Singapore | Penguin Academy',
+  description: 'Train to teach adult beginners and improvers with SSI in Singapore. $1,688 including full React Right and required apprenticeship.',
+  path: '/courses/ssi-adult-swim-teacher',
+})
 
 export default function SSIAdultPage() {
   return (

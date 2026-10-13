@@ -1,4 +1,3 @@
-import { Metadata } from 'next'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookNowButton from '@/components/BookNowButton'
@@ -12,14 +11,13 @@ import {
   LIFETIME_REFRESHER,
   PENGUIN_SUPPORT,
 } from '@/lib/approved-course-details'
+import { buildCourseMetadata } from '@/lib/course-metadata'
 
-export const metadata: Metadata = {
-  title: 'React Right First Aid, CPR, AED & Oxygen Provider | Penguin Academy',
-  description: 'Full SSI React Right — $100 SGD. Includes First Aid & CPR, AED Provider and Oxygen Provider.',
-  alternates: {
-    canonical: 'https://www.swimcoachcertification.com/courses/react-right-cpr-aed-first-aid',
-  },
-}
+export const metadata = buildCourseMetadata({
+  title: 'SSI React Right Singapore | First Aid, CPR, AED & Oxygen',
+  description: 'Full SSI React Right in Singapore for $100, including First Aid & CPR, AED Provider and Oxygen Provider training.',
+  path: '/courses/react-right-cpr-aed-first-aid',
+})
 
 const reactRightIncludes = [
   FULL_REACT_RIGHT,

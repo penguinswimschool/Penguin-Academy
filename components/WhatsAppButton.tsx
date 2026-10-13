@@ -1,15 +1,10 @@
 import React from 'react';
 import { FaWhatsapp } from "react-icons/fa";
-
-declare global {
-  interface Window {
-    dataLayer?: Record<string, unknown>[];
-  }
-}
+import { trackWhatsAppEnquiry } from '@/lib/analytics';
 
 const WhatsAppButton: React.FC = () => {
   const handleWhatsAppClick = () => {
-    window.dataLayer?.push({ event: 'whatsapp_click', whatsapp_source: 'floating_button' });
+    trackWhatsAppEnquiry({ source: 'floating_button' });
     window.open('https://wa.me/6589094395', '_blank');
   };
 
@@ -26,4 +21,4 @@ const WhatsAppButton: React.FC = () => {
   );
 };
 
-export default WhatsAppButton; 
+export default WhatsAppButton;

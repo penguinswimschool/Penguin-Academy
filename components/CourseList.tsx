@@ -4,6 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import { Award, Clock, Users, CheckCircle, GraduationCap, Baby, Package, Shield } from 'lucide-react';
 import { COURSE_DETAILS, COURSE_STANDARDS, FULL_REACT_RIGHT, whatsappEnquiryUrl } from '@/lib/approved-course-details';
+import { trackWhatsAppEnquiry } from '@/lib/analytics';
 
 interface CourseListProps { onAskQuestions: (courseTitle?: string) => void; }
 
@@ -31,11 +32,11 @@ const CourseList: React.FC<CourseListProps> = () => (
             <p className="text-gray-600 mb-5">{course.description}</p>
             <div className="flex flex-wrap gap-4 text-sm text-gray-600 mb-5"><span className="flex items-center gap-2"><Clock className="h-4 w-4 text-blue-600" />{course.duration}</span><span className="flex items-center gap-2"><Users className="h-4 w-4 text-blue-600" />{COURSE_DETAILS.capacity}</span></div>
             <div className="space-y-3 mb-7 flex-1">{course.features.map(feature => <div key={feature} className="flex items-start gap-2"><CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" /><span className="text-sm text-gray-700">{feature}</span></div>)}</div>
-            <div className="grid grid-cols-2 gap-3"><a href={whatsappEnquiryUrl(course.title)} target="_blank" rel="noopener noreferrer" className={`${course.bundle ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'} text-white text-center px-3 py-3 rounded-lg font-semibold text-sm`}>WhatsApp Us</a><Link href={course.path} className="border border-blue-600 text-blue-600 text-center px-3 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50">Course Details</Link></div>
+            <div className="grid grid-cols-2 gap-3"><a href={whatsappEnquiryUrl(course.title)} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'course_card', courseName: course.title })} className={`${course.bundle ? 'bg-green-600 hover:bg-green-700' : 'bg-blue-600 hover:bg-blue-700'} text-white text-center px-3 py-3 rounded-lg font-semibold text-sm`}>WhatsApp Us</a><Link href={course.path} className="border border-blue-600 text-blue-600 text-center px-3 py-3 rounded-lg font-semibold text-sm hover:bg-blue-50">Course Details</Link></div>
           </article>;
         })}
       </div>
-      <div className="mt-12 bg-blue-50 rounded-2xl p-8 text-center"><h3 className="text-2xl font-bold text-gray-900 mb-3">Flexible scheduling</h3><p className="text-gray-700 max-w-3xl mx-auto mb-5">Confirmed dates are shown when available. Otherwise, WhatsApp us to discuss a suitable date based on candidate availability and instructor capacity.</p><a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" className="inline-flex bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">Check dates on WhatsApp</a></div>
+      <div className="mt-12 bg-blue-50 rounded-2xl p-8 text-center"><h3 className="text-2xl font-bold text-gray-900 mb-3">Flexible scheduling</h3><p className="text-gray-700 max-w-3xl mx-auto mb-5">Confirmed dates are shown when available. Otherwise, WhatsApp us to discuss a suitable date based on candidate availability and instructor capacity.</p><a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'course_list_schedule', courseName: 'Course date enquiry' })} className="inline-flex bg-green-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-green-700">Check dates on WhatsApp</a></div>
     </div>
   </section>
 );

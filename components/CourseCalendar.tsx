@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { supabase } from '@/utils/supabase/client';
 import { Calendar, ChevronLeft, ChevronRight, MapPin, Clock, Users, MessageCircle, Award } from 'lucide-react';
 import { whatsappEnquiryUrl } from '@/lib/approved-course-details';
+import { trackWhatsAppEnquiry } from '@/lib/analytics';
 
 interface Course {
   id: string;
@@ -213,7 +214,7 @@ const CourseCalendar = () => {
           <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
           <h2 className="text-4xl font-bold text-gray-900 mb-4">Flexible Course Dates</h2>
           <p className="text-xl text-gray-600 mb-8">Course dates are arranged based on candidate availability and instructor capacity. Confirmed dates will appear here when available; meanwhile, WhatsApp us to discuss a suitable schedule.</p>
-          <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" className="inline-flex bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700">Check dates on WhatsApp</a>
+          <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_empty_state', courseName: 'Course date enquiry' })} className="inline-flex bg-green-600 text-white px-8 py-4 rounded-lg font-semibold hover:bg-green-700">Check dates on WhatsApp</a>
         </div>
       </section>
     );
@@ -341,7 +342,7 @@ const CourseCalendar = () => {
             </div>
 
             <div className="flex gap-3">
-              <a href={whatsappEnquiryUrl(selectedCourse.title)} target="_blank" rel="noopener noreferrer" className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center">Enquire on WhatsApp</a>
+              <a href={whatsappEnquiryUrl(selectedCourse.title)} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_course_modal', courseName: selectedCourse.title })} className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center">Enquire on WhatsApp</a>
               <button 
                 onClick={() => setSelectedCourse(null)}
                 className="px-6 py-3 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition-colors"
