@@ -4,7 +4,7 @@ import BookNowButton from '@/components/BookNowButton'
 import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Users, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
-import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
+import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes, whatsappEnquiryUrl } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
 import StructuredData from '@/components/StructuredData'
 import { buildCoursePageStructuredData } from '@/lib/structured-data'
@@ -69,7 +69,9 @@ export default function SSIAdultPage() {
                 <div className="flex gap-4">
                   <BookNowButton courseTitle="SSI Adult Swim Teacher Certification" />
                   <Link
-                    href="/#courses"
+                    href={whatsappEnquiryUrl('SSI Adult Swim Teacher Certification')}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors"
                   >
                     Ask Questions

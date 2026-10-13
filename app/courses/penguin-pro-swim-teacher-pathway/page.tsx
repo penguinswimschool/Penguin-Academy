@@ -12,6 +12,7 @@ import {
   LIFETIME_MENTORSHIP,
   LIFETIME_REFRESHER,
   PENGUIN_SUPPORT,
+  whatsappEnquiryUrl,
 } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
 import StructuredData from '@/components/StructuredData'
@@ -128,7 +129,9 @@ export default function PenguinProPathwayPage() {
                   Enquire on WhatsApp
                 </BookNowButton>
                 <Link
-                  href="/#courses"
+                  href={whatsappEnquiryUrl('Penguin Pro Bundle – any 2 SSI teacher courses')}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="block w-full border-2 border-green-600 text-green-600 text-center py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
                 >
                   Ask Questions
