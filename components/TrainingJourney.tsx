@@ -1,4 +1,5 @@
 import { BookOpen, ClipboardCheck, GraduationCap, Waves } from 'lucide-react';
+import Image from 'next/image';
 
 const steps = [
   {
@@ -40,6 +41,19 @@ export default function TrainingJourney() {
             <p className="mt-5 text-lg leading-8 text-slate-600">
               Certification is awarded after all applicable SSI learning, assessment and apprenticeship requirements are completed—not simply after attending one training day.
             </p>
+            <figure className="relative mt-9 min-h-[420px] overflow-hidden rounded-[1.75rem] bg-slate-200 shadow-[0_18px_50px_rgba(11,36,56,0.1)]">
+              <Image
+                src="/academy-instructor-development.jpg"
+                alt="Instructor guiding swim teacher candidates during an in-water training session"
+                fill
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#071b2b]/75 via-transparent to-transparent" />
+              <figcaption className="absolute inset-x-0 bottom-0 p-6 font-semibold text-white">
+                Instructor-led practice and feedback
+              </figcaption>
+            </figure>
           </div>
 
           <ol className="grid gap-4 sm:grid-cols-2">

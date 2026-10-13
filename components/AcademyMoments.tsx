@@ -22,6 +22,13 @@ const moments = [
     className: 'min-h-[300px]',
     sizes: '(min-width: 1024px) 42vw, 100vw',
   },
+  {
+    src: '/academy-supervised-session.jpg',
+    alt: 'Coaches working across a supervised swim teaching session in Singapore',
+    label: 'Supervised practice across multiple teaching scenarios',
+    className: 'min-h-[360px] lg:col-span-2',
+    sizes: '(min-width: 1024px) 100vw, 100vw',
+  },
 ];
 
 export default function AcademyMoments() {
