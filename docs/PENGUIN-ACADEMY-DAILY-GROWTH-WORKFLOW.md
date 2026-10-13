@@ -53,6 +53,20 @@ The supervisor reports:
 - Check that AI-facing claims are specific, current and supported by official sources.
 - Build Singapore relevance while making international-attendee information explicit.
 
+#### Content Authority & SSI Standards Agent
+
+- Maintain a source-backed editorial calendar for course pages, guides, comparisons and FAQs.
+- Verify SSI terminology, requirements, prices, inclusions and credential claims before publication.
+- Strengthen named-expert review, citations, internal links and content freshness.
+- Prevent duplicated, thin or search-engine-first content from being published.
+
+#### Analytics & Conversion Agent
+
+- Measure search visibility, page journeys and qualified WhatsApp enquiries when data access is available.
+- Maintain the agreed daily and weekly KPI scorecard without presenting estimates as measured results.
+- Audit CTA clarity, course comparison, course-date and international-candidate journeys.
+- Check analytics, consent and privacy implications before new tracking is introduced.
+
 #### Penguin Academy Supervisor
 
 - Set priorities and prevent duplicate work.
@@ -81,6 +95,7 @@ The supervisor reports:
 - Number of priority pages with verified metadata, schema, internal links and current facts.
 - AI-answer readiness: direct answers, attributable facts, expert identity, citations and updated dates.
 - Conversion health: working calls to action, correct `+65 8909 4395` routing and explicit SGD pricing.
+- Measured funnel performance: landing-page visits, course-detail engagement, WhatsApp intent and qualified enquiries when tracking is available.
 - Content quality: no unsupported claims, no intent cannibalisation and no thin pages created solely for keywords.
 
 ## Priority search themes
