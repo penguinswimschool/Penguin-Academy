@@ -1,10 +1,7 @@
 import React from 'react';
 import { ArrowRight, Award, CheckCircle, Shield, Sparkles, Users } from 'lucide-react';
 import Image from 'next/image';
-
-interface HeroProps {
-  onContactClick: () => void;
-}
+import Link from 'next/link';
 
 const trustPoints = [
   'Verified SSI instructor-led training',
@@ -12,7 +9,7 @@ const trustPoints = [
   'Full React Right included with teacher courses',
 ];
 
-const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
+const Hero: React.FC = () => {
   return (
     <section id="hero" className="overflow-hidden bg-[#071b2b] pt-16 text-white">
       <div className="relative isolate">
@@ -45,19 +42,19 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             </div>
 
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <button
-                onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
+              <Link
+                href="/courses"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] shadow-[0_14px_40px_rgba(34,211,238,0.18)] transition hover:bg-cyan-200"
               >
                 Explore courses
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
-              </button>
-              <button
-                onClick={onContactClick}
+              </Link>
+              <Link
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
               >
                 Speak with the Academy
-              </button>
+              </Link>
             </div>
 
             <div className="mt-10 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">

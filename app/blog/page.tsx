@@ -239,7 +239,7 @@ export default async function BlogPage() {
                 </p>
               </div>
               <div className="flex flex-wrap gap-3 lg:justify-end">
-                <Link href="/#courses" className="rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">
+                <Link href="/courses" className="rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">
                   Compare courses
                 </Link>
                 <a href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, please help me choose the right course pathway.')}`} className="rounded-full border border-white/20 px-6 py-3 font-bold text-white transition hover:bg-white/10">

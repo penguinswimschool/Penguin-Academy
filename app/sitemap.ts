@@ -7,6 +7,10 @@ const baseUrl = 'https://www.swimcoachcertification.com'
 // Canonical URLs aligned with GSC-indexed pages (legacy slugs redirect via next.config.ts)
 const staticRoutes = [
   { path: '', lastModified: '2026-10-13T15:46:26+08:00' },
+  { path: '/about', lastModified: '2026-10-13T22:00:00+08:00' },
+  { path: '/courses', lastModified: '2026-10-13T22:00:00+08:00' },
+  { path: '/course-dates', lastModified: '2026-10-13T22:00:00+08:00' },
+  { path: '/contact', lastModified: '2026-10-13T22:00:00+08:00' },
   { path: '/courses/penguin-pro-swim-teacher-pathway', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/courses/ssi-swim-teacher-level-1', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/courses/ssi-swim-teacher-level-2', lastModified: '2026-10-13T16:09:32+08:00' },
@@ -14,7 +18,8 @@ const staticRoutes = [
   { path: '/courses/ssi-adult-swim-teacher', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/courses/react-right-cpr-aed-first-aid', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/blog', lastModified: '2026-10-13T10:00:00+08:00' },
-  { path: '/terms', lastModified: '2026-10-01T11:42:49+08:00' },
+  { path: '/terms', lastModified: '2026-10-13T22:00:00+08:00' },
+  { path: '/privacy', lastModified: '2026-10-13T22:00:00+08:00' },
 ]
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {

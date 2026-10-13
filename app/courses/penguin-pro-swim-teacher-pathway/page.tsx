@@ -44,7 +44,7 @@ export default function PenguinProPathwayPage() {
           <nav className="mb-8" aria-label="Breadcrumb">
             <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
             <span className="mx-2 text-gray-400">/</span>
-            <Link href="/#courses" className="text-blue-600 hover:text-blue-800">Courses</Link>
+            <Link href="/courses" className="text-blue-600 hover:text-blue-800">Courses</Link>
             <span className="mx-2 text-gray-400">/</span>
             <span className="text-gray-600">Penguin Pro Bundle</span>
           </nav>

@@ -4,12 +4,7 @@ import { GOOGLE_REVIEWS_URL } from '@/lib/approved-course-details';
 import { Award, Mail, MapPin, Phone } from 'lucide-react';
 import Link from 'next/link';
 
-interface FooterProps {
-  onTermsClick?: () => void;
-  onAdminClick?: () => void;
-}
-
-const Footer: React.FC<FooterProps> = () => {
+const Footer: React.FC = () => {
   return (
       <footer className="border-t border-white/10 bg-[#061724] text-white">
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
@@ -39,30 +34,11 @@ const Footer: React.FC<FooterProps> = () => {
           <div>
             <h3 className="text-lg font-semibold mb-6">Quick Links</h3>
             <ul className="space-y-3 text-sm text-slate-400">
-              <li>
-                <button 
-                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="hover:text-white transition-colors"
-                >
-                  About Trainer
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => document.getElementById('courses')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="hover:text-white transition-colors"
-                >
-                  Course Listing
-                </button>
-              </li>
-              <li>
-                <button 
-                  onClick={() => document.getElementById('calendar')?.scrollIntoView({ behavior: 'smooth' })}
-                  className="hover:text-white transition-colors"
-                >
-                  Course Calendar
-                </button>
-              </li>
+              <li><Link href="/about" className="transition-colors hover:text-white">About Academy</Link></li>
+              <li><Link href="/courses" className="transition-colors hover:text-white">All Courses</Link></li>
+              <li><Link href="/course-dates" className="transition-colors hover:text-white">Course Dates</Link></li>
+              <li><Link href="/blog" className="transition-colors hover:text-white">Training Guides</Link></li>
+              <li><Link href="/contact" className="transition-colors hover:text-white">Contact</Link></li>
               <li><a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Testimonials</a></li>
             </ul>
           </div>
@@ -91,8 +67,9 @@ const Footer: React.FC<FooterProps> = () => {
             <p className="mb-4 text-sm text-slate-500 md:mb-0">
               © {new Date().getFullYear()} Penguin Academy Singapore. All rights reserved.
             </p>
-            <div className="flex space-x-6 text-sm text-slate-400">
+            <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm text-slate-400 md:justify-end">
               <Link href="/terms" className="transition-colors hover:text-white">Terms &amp; Conditions</Link>
+              <Link href="/privacy" className="transition-colors hover:text-white">Privacy Policy</Link>
               <a href="https://my.divessi.com/pro/121320" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Verified SSI Profile</a>
             </div>
           </div>

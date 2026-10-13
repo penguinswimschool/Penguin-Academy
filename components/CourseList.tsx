@@ -6,8 +6,6 @@ import { Award, Clock, Users, CheckCircle, GraduationCap, Baby, Package, Shield 
 import { COURSE_DETAILS, COURSE_STANDARDS, FULL_REACT_RIGHT, whatsappEnquiryUrl } from '@/lib/approved-course-details';
 import { trackWhatsAppEnquiry } from '@/lib/analytics';
 
-interface CourseListProps { onAskQuestions: (courseTitle?: string) => void; }
-
 const courses = [
   { title: 'Penguin Pro Bundle – Any 2 Teacher Courses', path: '/courses/penguin-pro-swim-teacher-pathway', price: '$2,888', originalPrice: '$3,376', duration: '2 instructor-led days', description: 'Choose any 2: Level 1, Level 2, Baby & Me, or Adult Swim Teacher. The bundle includes full React Right.', features: ['Choose any 2 teacher courses', FULL_REACT_RIGHT, 'Save $488', 'All programme-specific SSI completion requirements'], icon: Package, bundle: true },
   { title: 'SSI Swim Teacher Level 1 Certification', path: '/courses/ssi-swim-teacher-level-1', price: '$1,688', duration: COURSE_DETAILS.liveDay, description: 'Foundational professional swim-teaching course. SSI recommends 24-28 total hours.', features: [FULL_REACT_RIGHT, COURSE_STANDARDS.level1.apprenticeship], icon: GraduationCap },
@@ -17,7 +15,7 @@ const courses = [
   { title: 'Full SSI React Right', path: '/courses/react-right-cpr-aed-first-aid', price: '$100', duration: '8-12 recommended hours', description: 'First Aid & CPR, AED Provider and Oxygen Provider, with practical scenarios and final assessments.', features: ['Minimum age 12+', 'Valid for 2 years', 'No swim-teaching apprenticeship'], icon: Shield },
 ];
 
-const CourseList: React.FC<CourseListProps> = () => (
+const CourseList: React.FC = () => (
   <section id="courses" className="scroll-mt-20 bg-[#f6f4ee] py-16 sm:py-24 lg:py-28">
     <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
       <div className="mb-14 max-w-3xl">

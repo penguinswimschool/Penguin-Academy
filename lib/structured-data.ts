@@ -211,7 +211,7 @@ export function buildCoursePageStructuredData(courseKey: CourseKey) {
             '@type': 'ListItem',
             position: 2,
             name: 'Courses',
-            item: `${SITE_URL}/#courses`,
+            item: `${SITE_URL}/courses`,
           },
           {
             '@type': 'ListItem',
@@ -245,7 +245,7 @@ export const bundlePageStructuredData = {
       '@id': `${SITE_URL}/courses/penguin-pro-swim-teacher-pathway#breadcrumb`,
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
-        { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SITE_URL}/#courses` },
+        { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SITE_URL}/courses` },
         {
           '@type': 'ListItem',
           position: 3,
