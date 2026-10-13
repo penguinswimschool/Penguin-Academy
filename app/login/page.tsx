@@ -3,8 +3,7 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { supabase } from '@/utils/supabase/client'
-import { Eye, EyeOff, Mail, Lock, User, LogIn } from 'lucide-react'
-import Link from 'next/link'
+import { Eye, EyeOff, Mail, Lock, LogIn } from 'lucide-react'
 
 const LoginPage: React.FC = () => {
   const [email, setEmail] = useState('')
@@ -48,7 +47,7 @@ const LoginPage: React.FC = () => {
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 p-8 text-white text-center">
           <LogIn className="h-12 w-12 mx-auto mb-4" />
           <h1 className="text-2xl font-bold mb-2">Welcome Back</h1>
-          <p className="text-blue-100">Sign in to your account</p>
+          <p className="text-blue-100">Authorised Academy access</p>
         </div>
 
         <div className="p-8">
@@ -115,11 +114,6 @@ const LoginPage: React.FC = () => {
             </button>
           </form>
 
-          <div className="mt-6 text-center">
-            <Link href="/signup" className="text-blue-600 cursor-pointer hover:text-blue-700 font-semibold">
-              Don't have an account? Sign up
-            </Link>
-          </div>
         </div>
       </div>
     </div>

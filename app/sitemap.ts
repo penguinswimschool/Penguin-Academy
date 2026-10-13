@@ -1,5 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { sanityClient } from '@/lib/sanity'
+import { blogArticles } from '@/lib/blog-articles'
 
 const baseUrl = 'https://www.swimcoachcertification.com'
 
@@ -12,7 +13,7 @@ const staticRoutes = [
   { path: '/courses/baby-and-me-swim-teacher', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/courses/ssi-adult-swim-teacher', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/courses/react-right-cpr-aed-first-aid', lastModified: '2026-10-13T16:09:32+08:00' },
-  { path: '/blog', lastModified: '2026-06-26T18:09:03+05:00' },
+  { path: '/blog', lastModified: '2026-10-13T10:00:00+08:00' },
   { path: '/terms', lastModified: '2026-10-01T11:42:49+08:00' },
 ]
 
@@ -21,6 +22,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     url: `${baseUrl}${route.path}`,
     lastModified: route.lastModified,
   }))
+
+  const publishedSlugs = new Set(blogArticles.map((article) => article.slug))
+  for (const article of blogArticles) {
+    entries.push({
+      url: `${baseUrl}/blog/${article.slug}`,
+      lastModified: article.updatedAt,
+    })
+  }
 
   if (sanityClient) {
     try {
@@ -31,9 +40,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }`
       )
 
-      let latestBlogUpdate = new Date('2026-06-26T18:09:03+05:00')
+      let latestBlogUpdate = new Date(Math.max(...blogArticles.map((article) => new Date(article.updatedAt).getTime())))
 
       for (const post of posts) {
+        if (publishedSlugs.has(post.slug)) continue
         const updatedAt = new Date(post.updatedAt)
 
         entries.push({

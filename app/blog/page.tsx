@@ -21,6 +21,7 @@ import {
   COURSE_DETAILS,
   WHATSAPP_URL,
 } from '@/lib/approved-course-details'
+import { blogArticles } from '@/lib/blog-articles'
 
 const blogQuery = `*[
   _type == "blogPost" &&
@@ -49,6 +50,8 @@ interface BlogPost {
   author?: { name?: string; image?: any }
   categories?: Array<{ title: string; color?: string }>
   featured?: boolean
+  imageUrl?: string
+  imageAlt?: string
 }
 
 async function getBlogPosts(): Promise<BlogPost[]> {
@@ -95,7 +98,7 @@ const pathways = [
   },
   {
     title: 'SSI Baby & Me Swim Teacher',
-    description: 'Parent-child teaching for infants and young children from 6 months to 3 years.',
+    description: 'Parent-child teaching for SSI Baby Swim I and II, with current programme ages from 2–35 months.',
     href: '/courses/baby-and-me-swim-teacher',
     price: '$1,688',
     icon: Users,
@@ -167,7 +170,21 @@ const faqs = [
 ]
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts()
+  const cmsPosts = await getBlogPosts()
+  const staticPosts: BlogPost[] = blogArticles.map((article, index) => ({
+    _id: `published-${article.slug}`,
+    title: article.title,
+    slug: { current: article.slug },
+    excerpt: article.excerpt,
+    publishedAt: article.publishedAt,
+    categories: [{ title: article.category }],
+    author: { name: 'Penguin Academy' },
+    featured: index === 0,
+    imageUrl: article.image,
+    imageAlt: article.imageAlt,
+  }))
+  const staticSlugs = new Set(staticPosts.map((post) => post.slug.current))
+  const posts = [...staticPosts, ...cmsPosts.filter((post) => !staticSlugs.has(post.slug.current))]
   const featuredPost = posts.find((post) => post.featured) || posts[0]
   const latestPosts = featuredPost ? posts.filter((post) => post._id !== featuredPost._id) : []
 
@@ -340,10 +357,13 @@ export default async function BlogPage() {
           <div className="mx-auto flex max-w-7xl flex-col gap-7 px-5 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
             <div>
               <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Verified guidance</p>
-              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em]">Train with an active SSI Swim Teacher Instructor.</h2>
-              <p className="mt-3 text-slate-300">Remus Teo · SSI Pro 121320 · React Right Instructor Trainer</p>
+              <h2 className="mt-3 text-3xl font-semibold tracking-[-0.03em]">Learn with an instructor and mentoring team.</h2>
+              <p className="mt-3 text-slate-300">Remus Teo · SSI Swim Teacher Instructor &nbsp;·&nbsp; Rayner Teo · Trainer &amp; Mentor</p>
             </div>
-            <a href="https://my.divessi.com/pro/121320" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 self-start rounded-full border border-white/20 px-6 py-3 font-bold transition hover:bg-white/10 lg:self-auto">View verified SSI profile <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+            <div className="flex flex-wrap gap-3 lg:justify-end">
+              <a href="https://my.divessi.com/pro/121320" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-bold transition hover:bg-white/10">Remus profile <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+              <a href="https://my.divessi.com/pro/126454" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/20 px-5 py-3 font-bold transition hover:bg-white/10">Rayner profile <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+            </div>
           </div>
         </section>
       </main>
@@ -357,8 +377,8 @@ function PostCard({ post, featured = false }: { post: BlogPost; featured?: boole
     <Link href={`/blog/${post.slug.current}`} className={`group grid overflow-hidden rounded-[1.5rem] border border-slate-200 bg-white shadow-[0_16px_45px_rgba(11,36,56,0.08)] transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(11,36,56,0.13)] ${featured ? 'lg:grid-cols-[1.1fr_0.9fr]' : ''}`}>
       <div className={`relative bg-slate-200 ${featured ? 'min-h-[320px]' : 'h-52'}`}>
         <Image
-          src={post.mainImage ? urlFor(post.mainImage).width(1200).height(700).fit('crop').url() : '/academy-supervised-session.jpg'}
-          alt={post.mainImage?.alt || post.title}
+          src={post.imageUrl || (post.mainImage ? urlFor(post.mainImage).width(1200).height(700).fit('crop').url() : '/academy-supervised-session.jpg')}
+          alt={post.imageAlt || post.mainImage?.alt || post.title}
           fill
           sizes={featured ? '(min-width: 1024px) 55vw, 100vw' : '(min-width: 1024px) 33vw, 100vw'}
           className="object-cover transition duration-700 group-hover:scale-[1.02]"

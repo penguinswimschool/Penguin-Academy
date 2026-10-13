@@ -12,18 +12,15 @@ import CourseCalendar from '@/components/CourseCalendar';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
 import SuccessPage from '@/components/SuccessPage';
-import PenguinGPT from '@/components/PenguinGPT';
 import TermsConditions from '@/components/TermsConditions';
 import WhatsAppButton from '@/components/WhatsAppButton';
 import StructuredData from '@/components/StructuredData';
 import { homepageStructuredData } from '@/lib/structured-data';
-import Image from 'next/image';
+import { WHATSAPP_URL } from '@/lib/approved-course-details';
 
 function App() {
   const [showContactForm, setShowContactForm] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const [showPenguinGPT, setShowPenguinGPT] = useState(false);
-  const [penguinGPTContext, setPenguinGPTContext] = useState<string | null>(null);
   const [showTerms, setShowTerms] = useState(false);
   const [showAdminDashboard, setShowAdminDashboard] = useState(false);
 
@@ -37,8 +34,6 @@ function App() {
   const handleBackToHome = () => {
     setShowSuccess(false);
     setShowContactForm(false);
-    setShowPenguinGPT(false);
-    setPenguinGPTContext(null);
     setShowTerms(false);
     setShowAdminDashboard(false);
     // Update URL without page reload
@@ -46,18 +41,14 @@ function App() {
   };
 
   const handleAskQuestions = (courseTitle?: string) => {
-    if (courseTitle) {
-      setPenguinGPTContext(`I'm interested in learning more about the ${courseTitle}. Can you tell me more about this course?`);
-    }
-    setShowPenguinGPT(true);
+    const message = courseTitle
+      ? `Hi Penguin Academy, I am interested in ${courseTitle}. Please share the next available date and course details.`
+      : 'Hi Penguin Academy, I have a question about your swim teacher courses.';
+    window.open(`${WHATSAPP_URL}?text=${encodeURIComponent(message)}`, '_blank', 'noopener,noreferrer');
   };
 
   if (showSuccess) {
     return <SuccessPage onBackToHome={handleBackToHome} />;
-  }
-
-  if (showPenguinGPT) {
-    return <PenguinGPT onBack={() => setShowPenguinGPT(false)} initialMessage={penguinGPTContext} />;
   }
 
   if (showTerms) {
@@ -92,22 +83,6 @@ function App() {
         onTermsClick={() => setShowTerms(true)} 
         onAdminClick={() => setShowAdminDashboard(true)} 
       />
-      {/* Floating PenguinGPT Button */}
-      <button
-        onClick={() => handleAskQuestions()}
-        className="fixed bottom-6 right-6 z-50 rounded-full border-4 border-white bg-[#0b2438] p-3 text-white shadow-[0_12px_35px_rgba(7,27,43,0.22)] transition-all duration-200 hover:scale-105 hover:bg-teal-800"
-        title="Chat with PenguinGPT"
-        aria-label="Chat with PenguinGPT"
-      >
-        <Image 
-          src="/2.png" 
-          alt="Chat with PenguinGPT" 
-          width={32} 
-          height={32} 
-          className="rounded-full object-cover"
-        />
-      </button>
-      
       <WhatsAppButton />
     </div>
   );

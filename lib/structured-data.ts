@@ -2,6 +2,7 @@ const SITE_URL = 'https://www.swimcoachcertification.com';
 const ORGANIZATION_ID = `${SITE_URL}/#organization`;
 const WEBSITE_ID = `${SITE_URL}/#website`;
 const INSTRUCTOR_ID = `${SITE_URL}/#remus-teo`;
+const MENTOR_ID = `${SITE_URL}/#rayner-teo`;
 const SSI_PROFILE_URL = 'https://my.divessi.com/pro/121320';
 
 type CourseKey = 'level1' | 'level2' | 'baby' | 'adult' | 'reactRight';
@@ -144,6 +145,20 @@ export const homepageStructuredData = {
       },
       url: SSI_PROFILE_URL,
       sameAs: [SSI_PROFILE_URL],
+      worksFor: { '@id': ORGANIZATION_ID },
+    },
+    {
+      '@type': 'Person',
+      '@id': MENTOR_ID,
+      name: 'Rayner Teo',
+      jobTitle: 'Trainer and Mentor',
+      identifier: {
+        '@type': 'PropertyValue',
+        propertyID: 'SSI Pro',
+        value: '126454',
+      },
+      url: 'https://my.divessi.com/pro/126454',
+      sameAs: ['https://my.divessi.com/pro/126454'],
       worksFor: { '@id': ORGANIZATION_ID },
     },
     ...Object.values(courses).map((course) => courseEntity(course)),

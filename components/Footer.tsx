@@ -20,7 +20,7 @@ const Footer: React.FC<FooterProps> = () => {
               <span className="text-xl font-bold tracking-tight">Penguin Academy</span>
             </div>
             <p className="mb-6 leading-7 text-slate-400">
-              SSI swim teacher education in Singapore, led by a verified active SSI Swim Teacher Instructor.
+              SSI swim teacher education in Singapore, supported by an instructor and practical mentoring team.
             </p>
           </div>
 

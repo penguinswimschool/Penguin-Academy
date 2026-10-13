@@ -32,7 +32,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Structured SSI pathways for aspiring and experienced swim teachers, led in Singapore by verified SSI professional Remus Teo.
+              Structured SSI pathways for aspiring and experienced swim teachers, guided in Singapore by Remus Teo and Rayner Teo.
             </p>
 
             <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:max-w-2xl">
@@ -117,38 +117,43 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
       </div>
 
       <div className="bg-white text-[#0b2438]">
-        <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 py-20 sm:px-8 lg:grid-cols-[0.75fr_1.25fr] lg:px-10 lg:py-24">
-          <div className="relative mx-auto">
-            <div className="absolute -inset-4 rounded-full bg-cyan-100 blur-2xl" />
-            <Image
-              src="/Remus.png"
-              alt="Remus Teo, SSI Swim Teacher Instructor"
-              className="relative h-52 w-52 rounded-full border-[10px] border-white object-cover shadow-2xl sm:h-64 sm:w-64"
-              width={256}
-              height={256}
-            />
+        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
+          <div className="max-w-3xl">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Meet your training team</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">Two mentors. One clear path into teaching.</h2>
+            <p className="mt-6 text-lg leading-8 text-slate-600">Remus and Rayner guide new coaches through professional instruction, practical teaching, feedback and in-water mentoring. Formal SSI certification is issued only after every applicable requirement is completed.</p>
           </div>
 
-          <div>
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Meet your instructor</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">Learn with verified guidance.</h2>
-            <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-600">
-              Remus Teo is an active SSI Swim Teacher Instructor and React Right Instructor Trainer. Candidates receive a clearly explained pathway through digital learning, in-person instruction, assessment and programme-specific apprenticeship.
-            </p>
-            <div className="mt-7 flex flex-wrap gap-3 text-sm font-semibold">
-              <span className="rounded-full bg-slate-100 px-4 py-2">SSI Swim Teacher Instructor</span>
-              <span className="rounded-full bg-slate-100 px-4 py-2">React Right Instructor Trainer</span>
-              <span className="rounded-full bg-slate-100 px-4 py-2">SSI Pro 121320</span>
-            </div>
-            <a
-              href="https://my.divessi.com/pro/121320"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-8 inline-flex items-center gap-2 font-bold text-teal-800 transition hover:text-teal-600"
-            >
-              View verified SSI profile
-              <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </a>
+          <div className="mt-12 grid gap-6 lg:grid-cols-2">
+            <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[#f7f8f6] shadow-[0_18px_55px_rgba(11,36,56,0.08)]">
+              <div className="grid sm:grid-cols-[0.72fr_1.28fr]">
+                <div className="relative min-h-[320px] bg-slate-200">
+                  <Image src="/Remus.png" alt="Remus Teo, SSI Swim Teacher Instructor" fill sizes="(min-width: 1024px) 22vw, 100vw" className="object-cover" />
+                </div>
+                <div className="p-7 sm:p-8">
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-700">Lead Instructor</p>
+                  <h3 className="mt-3 text-3xl font-semibold">Remus Teo</h3>
+                  <p className="mt-4 leading-7 text-slate-600">Active SSI Swim Teacher Instructor and React Right Instructor Trainer, leading the formal learning, assessment and certification pathway.</p>
+                  <div className="mt-6 flex flex-wrap gap-2 text-xs font-bold"><span className="rounded-full bg-white px-3 py-2">SSI Pro 121320</span><span className="rounded-full bg-white px-3 py-2">Instructor Trainer</span></div>
+                  <a href="https://my.divessi.com/pro/121320" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 font-bold text-teal-800 transition hover:text-teal-600">Verified SSI profile<ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+                </div>
+              </div>
+            </article>
+
+            <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[#f7f8f6] shadow-[0_18px_55px_rgba(11,36,56,0.08)]">
+              <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
+                <div className="relative min-h-[320px] bg-slate-200">
+                  <Image src="/rayner-teo-mentor.webp" alt="Rayner Teo mentoring a swim coach during practical in-water training" fill sizes="(min-width: 1024px) 24vw, 100vw" className="object-cover" />
+                </div>
+                <div className="p-7 sm:p-8">
+                  <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-700">Trainer &amp; Mentor</p>
+                  <h3 className="mt-3 text-3xl font-semibold">Rayner Teo</h3>
+                  <p className="mt-4 leading-7 text-slate-600">Guides aspiring swim coaches through practical teaching, learner confidence and in-water mentoring as an active SSI Swim Teacher and AUSTSWIM Competency Assessor.</p>
+                  <div className="mt-6 flex flex-wrap gap-2 text-xs font-bold"><span className="rounded-full bg-white px-3 py-2">SSI Pro 126454</span><span className="rounded-full bg-white px-3 py-2">AUSTSWIM Assessor</span></div>
+                  <a href="https://my.divessi.com/pro/126454" target="_blank" rel="noopener noreferrer" className="mt-7 inline-flex items-center gap-2 font-bold text-teal-800 transition hover:text-teal-600">Verified SSI profile<ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
       </div>
