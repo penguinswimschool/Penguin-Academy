@@ -74,12 +74,12 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             <div className="absolute -inset-5 -z-10 rounded-[2.5rem] bg-gradient-to-br from-cyan-300/20 via-transparent to-teal-300/10 blur-2xl" />
             <div className="relative h-[480px] overflow-hidden rounded-[2rem] border border-white/15 bg-slate-800 shadow-[0_35px_90px_rgba(0,0,0,0.38)] sm:h-[620px]">
               <Image
-                src="/hero_image.jpg"
+                src="/academy-guided-practice.jpg"
                 alt="Penguin Academy swim teacher training in Singapore"
                 fill
                 priority
                 sizes="(min-width: 1024px) 48vw, 100vw"
-                className="object-cover"
+                className="object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071b2b]/80 via-transparent to-transparent" />
               <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/15 bg-[#071b2b]/85 p-5 backdrop-blur-md sm:inset-x-7 sm:bottom-7 sm:p-6">

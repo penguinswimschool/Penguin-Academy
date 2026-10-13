@@ -6,6 +6,7 @@ import Hero from '@/components/Hero';
 import AcademyVideo from '@/components/AcademyVideo';
 import CourseList from '@/components/CourseList';
 import TrainingJourney from '@/components/TrainingJourney';
+import AcademyMoments from '@/components/AcademyMoments';
 import CourseCalendar from '@/components/CourseCalendar';
 import ContactForm from '@/components/ContactForm';
 import Footer from '@/components/Footer';
@@ -81,6 +82,7 @@ function App() {
         <Hero onContactClick={() => setShowContactForm(true)} />
         <CourseList onAskQuestions={handleAskQuestions} />
         <TrainingJourney />
+        <AcademyMoments />
         <AcademyVideo />
         <CourseCalendar />
       </main>
