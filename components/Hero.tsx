@@ -143,7 +143,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[#f7f8f6] shadow-[0_18px_55px_rgba(11,36,56,0.08)]">
               <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
                 <div className="relative min-h-[320px] bg-slate-200">
-                  <Image src="/rayner-teo-mentor.webp" alt="Rayner Teo mentoring a swim coach during practical in-water training" fill sizes="(min-width: 1024px) 24vw, 100vw" className="object-cover" />
+                  <Image src="/rayner-teo-profile.jpg" alt="Rayner Teo, Penguin Academy trainer and mentor, beside a swimming pool in Singapore" fill sizes="(min-width: 1024px) 24vw, 100vw" className="object-cover object-center" />
                 </div>
                 <div className="p-7 sm:p-8">
                   <p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-700">Trainer &amp; Mentor</p>

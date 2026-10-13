@@ -152,6 +152,7 @@ export const homepageStructuredData = {
       '@id': MENTOR_ID,
       name: 'Rayner Teo',
       jobTitle: 'Trainer and Mentor',
+      image: `${SITE_URL}/rayner-teo-profile.jpg`,
       identifier: {
         '@type': 'PropertyValue',
         propertyID: 'SSI Pro',
