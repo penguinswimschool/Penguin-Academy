@@ -19,15 +19,15 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
         <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_12%,rgba(45,212,191,0.18),transparent_34%),radial-gradient(circle_at_8%_72%,rgba(56,189,248,0.16),transparent_32%)]" />
         <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
 
-        <div className="mx-auto grid max-w-7xl items-center gap-14 px-5 py-20 sm:px-8 lg:grid-cols-[1.03fr_0.97fr] lg:px-10 lg:py-28">
+        <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:gap-14 sm:px-8 sm:py-20 lg:grid-cols-[1.03fr_0.97fr] lg:px-10 lg:py-28">
           <div>
             <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-200/20 bg-white/5 px-4 py-2 text-sm font-semibold tracking-wide text-cyan-100 backdrop-blur">
               <Shield className="h-4 w-4 text-cyan-300" aria-hidden="true" />
               SSI swim teacher education · Singapore
             </div>
 
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-              Teach swimming with
+            <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
+              Teach swimming with{' '}
               <span className="block bg-gradient-to-r from-cyan-300 to-teal-200 bg-clip-text text-transparent">skill, safety and confidence.</span>
             </h1>
 
@@ -72,7 +72,7 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
 
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
             <div className="absolute -inset-5 -z-10 rounded-[2.5rem] bg-gradient-to-br from-cyan-300/20 via-transparent to-teal-300/10 blur-2xl" />
-            <div className="relative h-[480px] overflow-hidden rounded-[2rem] border border-white/15 bg-slate-800 shadow-[0_35px_90px_rgba(0,0,0,0.38)] sm:h-[620px]">
+            <div className="relative h-[420px] overflow-hidden rounded-[1.75rem] border border-white/15 bg-slate-800 shadow-[0_35px_90px_rgba(0,0,0,0.38)] sm:h-[560px] sm:rounded-[2rem] lg:h-[620px]">
               <Image
                 src="/academy-guided-practice.jpg"
                 alt="Penguin Academy swim teacher training in Singapore"
@@ -99,35 +99,37 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
       </div>
 
       <div className="border-y border-slate-200 bg-[#f6f4ee] text-[#0b2438]">
-        <div className="mx-auto grid max-w-7xl gap-px bg-slate-200 sm:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-slate-200 sm:grid-cols-3">
           {[
-            { value: '1–8', label: 'candidates per cohort', icon: Users },
-            { value: '5', label: 'focused SSI course pathways', icon: Sparkles },
-            { value: '121320', label: 'verified SSI Pro profile', icon: Shield },
-          ].map(({ value, label, icon: Icon }) => (
-            <div key={label} className="flex items-center justify-center gap-4 bg-[#f6f4ee] px-6 py-7">
-              <Icon className="h-6 w-6 text-teal-700" aria-hidden="true" />
-              <div>
-                <p className="text-2xl font-bold tracking-tight">{value}</p>
-                <p className="text-sm text-slate-600">{label}</p>
+            { title: 'Small cohorts', detail: '1–8 candidates', icon: Users },
+            { title: 'Verified instructor', detail: 'SSI Pro 121320', icon: Shield },
+            { title: 'Safety included', detail: 'Full React Right', icon: Sparkles },
+          ].map(({ title, detail, icon: Icon }, index) => (
+            <div key={title} className={`flex items-center gap-3 bg-[#f6f4ee] px-4 py-5 sm:justify-center sm:gap-4 sm:px-6 sm:py-6 ${index === 2 ? 'col-span-2 sm:col-span-1' : ''}`}>
+              <span className="flex h-10 w-10 flex-none items-center justify-center rounded-xl bg-white text-teal-700 shadow-sm">
+                <Icon className="h-5 w-5" aria-hidden="true" />
+              </span>
+              <div className="min-w-0">
+                <p className="font-bold tracking-tight">{title}</p>
+                <p className="mt-0.5 text-xs text-slate-600 sm:text-sm">{detail}</p>
               </div>
             </div>
           ))}
         </div>
       </div>
 
-      <div className="bg-white text-[#0b2438]">
-        <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:px-10 lg:py-24">
+      <div id="about" className="scroll-mt-20 bg-white text-[#0b2438]">
+        <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 sm:py-20 lg:px-10 lg:py-24">
           <div className="max-w-3xl">
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Meet your training team</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.035em] sm:text-5xl">Two mentors. One clear path into teaching.</h2>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.035em] sm:text-5xl">Two mentors. One clear path into teaching.</h2>
             <p className="mt-6 text-lg leading-8 text-slate-600">Remus and Rayner guide new coaches through professional instruction, practical teaching, feedback and in-water mentoring. Formal SSI certification is issued only after every applicable requirement is completed.</p>
           </div>
 
           <div className="mt-12 grid gap-6 lg:grid-cols-2">
             <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[#f7f8f6] shadow-[0_18px_55px_rgba(11,36,56,0.08)]">
-              <div className="grid sm:grid-cols-[0.72fr_1.28fr]">
-                <div className="relative min-h-[320px] bg-slate-200">
+              <div className="grid md:grid-cols-[0.72fr_1.28fr]">
+                <div className="relative min-h-[280px] bg-slate-200 sm:min-h-[340px]">
                   <Image src="/Remus.png" alt="Remus Teo, SSI Swim Teacher Instructor" fill sizes="(min-width: 1024px) 22vw, 100vw" className="object-cover" />
                 </div>
                 <div className="p-7 sm:p-8">
@@ -141,8 +143,8 @@ const Hero: React.FC<HeroProps> = ({ onContactClick }) => {
             </article>
 
             <article className="overflow-hidden rounded-[1.75rem] border border-slate-200 bg-[#f7f8f6] shadow-[0_18px_55px_rgba(11,36,56,0.08)]">
-              <div className="grid sm:grid-cols-[0.9fr_1.1fr]">
-                <div className="relative min-h-[320px] bg-slate-200">
+              <div className="grid md:grid-cols-[0.9fr_1.1fr]">
+                <div className="relative min-h-[280px] bg-slate-200 sm:min-h-[340px]">
                   <Image src="/rayner-teo-profile.jpg" alt="Rayner Teo, Penguin Academy trainer and mentor, beside a swimming pool in Singapore" fill sizes="(min-width: 1024px) 24vw, 100vw" className="object-cover object-center" />
                 </div>
                 <div className="p-7 sm:p-8">

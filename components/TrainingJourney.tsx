@@ -30,18 +30,18 @@ const steps = [
 
 export default function TrainingJourney() {
   return (
-    <section className="bg-white py-20 sm:py-28" aria-labelledby="journey-title">
+    <section className="bg-white py-16 sm:py-24 lg:py-28" aria-labelledby="journey-title">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <div className="grid gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:gap-16">
           <div>
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Your learning journey</p>
-            <h2 id="journey-title" className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">
+            <h2 id="journey-title" className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">
               A clear route from learning to practice.
             </h2>
             <p className="mt-5 text-lg leading-8 text-slate-600">
               Certification is awarded after all applicable SSI learning, assessment and apprenticeship requirements are completed—not simply after attending one training day.
             </p>
-            <figure className="relative mt-9 min-h-[420px] overflow-hidden rounded-[1.75rem] bg-slate-200 shadow-[0_18px_50px_rgba(11,36,56,0.1)]">
+            <figure className="relative mt-9 min-h-[340px] overflow-hidden rounded-[1.75rem] bg-slate-200 shadow-[0_18px_50px_rgba(11,36,56,0.1)] sm:min-h-[420px]">
               <Image
                 src="/academy-instructor-development.jpg"
                 alt="Instructor guiding swim teacher candidates during an in-water training session"
@@ -58,7 +58,7 @@ export default function TrainingJourney() {
 
           <ol className="grid gap-4 sm:grid-cols-2">
             {steps.map(({ number, title, text, icon: Icon }) => (
-              <li key={number} className="rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-6">
+              <li key={number} className="rounded-[1.5rem] border border-slate-200 bg-slate-50/70 p-5 sm:p-6">
                 <div className="flex items-center justify-between">
                   <span className="text-xs font-bold tracking-[0.22em] text-teal-700">STEP {number}</span>
                   <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-white text-teal-700 shadow-sm"><Icon className="h-5 w-5" aria-hidden="true" /></span>

@@ -196,7 +196,7 @@ const CourseCalendar = () => {
 
   if (loading) {
     return (
-      <section id="calendar" className="bg-white py-20 sm:py-28">
+      <section id="calendar" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-b-teal-700"></div>
@@ -209,16 +209,16 @@ const CourseCalendar = () => {
 
   if (courses.length === 0) {
     return (
-      <section id="calendar" className="bg-white py-20 sm:py-28">
+      <section id="calendar" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-28">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <div className="relative overflow-hidden rounded-[2rem] bg-[#dff5f1] px-7 py-14 text-center sm:px-14 sm:py-16">
             <div className="absolute -right-16 -top-20 h-56 w-56 rounded-full bg-cyan-300/20 blur-3xl" />
             <div className="relative">
               <div className="mx-auto mb-6 flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-teal-700 shadow-sm"><Calendar className="h-7 w-7" /></div>
               <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-800">Plan your training</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Flexible course dates.</h2>
+              <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Flexible course dates.</h2>
               <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">Dates are arranged around candidate availability and instructor capacity. Confirmed sessions appear here; otherwise, speak with us to plan a suitable schedule.</p>
-              <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_empty_state', courseName: 'Course date enquiry' })} className="mt-8 inline-flex rounded-full bg-[#0b2438] px-7 py-4 font-bold text-white transition hover:bg-teal-800">Check dates on WhatsApp</a>
+              <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_empty_state', courseName: 'Course date enquiry' })} className="mt-8 inline-flex w-full justify-center rounded-full bg-[#0b2438] px-7 py-4 font-bold text-white transition hover:bg-teal-800 sm:w-auto">Check dates on WhatsApp</a>
             </div>
           </div>
         </div>
@@ -227,11 +227,11 @@ const CourseCalendar = () => {
   }
 
   return (
-    <section id="calendar" className="bg-white py-20 sm:py-28">
+    <section id="calendar" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <Calendar className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl">
             Course <span className="text-blue-600">Calendar</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -239,13 +239,15 @@ const CourseCalendar = () => {
           </p>
         </div>
 
-        <div className="bg-white rounded-2xl shadow-lg overflow-hidden">
+        <div className="overflow-x-auto rounded-2xl bg-white shadow-lg">
+          <div className="min-w-[760px]">
           {/* Calendar Header */}
           <div className="bg-blue-600 text-white p-6">
             <div className="flex items-center justify-between">
               <button
                 onClick={() => navigateMonth('prev')}
                 className="p-2 hover:bg-blue-700 rounded-lg transition-colors"
+                aria-label="Previous month"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -257,6 +259,7 @@ const CourseCalendar = () => {
               <button
                 onClick={() => navigateMonth('next')}
                 className="p-2 hover:bg-blue-700 rounded-lg transition-colors"
+                aria-label="Next month"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -275,6 +278,7 @@ const CourseCalendar = () => {
           {/* Calendar Grid */}
           <div className="grid grid-cols-7">
             {renderCalendarDays()}
+          </div>
           </div>
         </div>
 
@@ -347,7 +351,7 @@ const CourseCalendar = () => {
               </div>
             </div>
 
-            <div className="flex gap-3">
+            <div className="flex flex-col gap-3 sm:flex-row">
               <a href={whatsappEnquiryUrl(selectedCourse.title)} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_course_modal', courseName: selectedCourse.title })} className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center">Enquire on WhatsApp</a>
               <button 
                 onClick={() => setSelectedCourse(null)}

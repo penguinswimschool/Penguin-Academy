@@ -40,11 +40,11 @@ export default function TrainingReel() {
   };
 
   return (
-    <section className="overflow-hidden bg-[#071b2b] py-20 text-white sm:py-28" aria-labelledby="training-reel-title">
+    <section className="overflow-hidden bg-[#071b2b] py-16 text-white sm:py-24 lg:py-28" aria-labelledby="training-reel-title">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:px-10">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Proof in practice</p>
-          <h2 id="training-reel-title" className="mt-4 text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">
+          <h2 id="training-reel-title" className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">
             Watch coaching skills take shape.
           </h2>
           <p className="mt-5 text-lg leading-8 text-slate-300">

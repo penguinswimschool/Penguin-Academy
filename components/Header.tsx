@@ -49,9 +49,9 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             </div>
           </Link>
           
-          <nav className="hidden items-center space-x-8 md:flex" aria-label="Primary navigation">
+          <nav className="hidden items-center space-x-8 lg:flex" aria-label="Primary navigation">
             <button 
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection('about')}
               className="font-medium text-slate-200 transition-colors hover:text-cyan-300"
             >
               About Trainer
@@ -76,7 +76,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
             </Link>
           </nav>
 
-          <div className="hidden md:flex items-center space-x-4">
+          <div className="hidden items-center space-x-4 lg:flex">
             <button
               onClick={handleContactClick}
               className="rounded-full bg-cyan-300 px-5 py-2.5 font-bold text-[#071b2b] transition-colors hover:bg-cyan-200"
@@ -88,7 +88,7 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
 
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="rounded-lg p-2 text-white transition hover:bg-white/10 md:hidden"
+            className="rounded-lg p-2 text-white transition hover:bg-white/10 lg:hidden"
             aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             aria-expanded={isMenuOpen}
             aria-controls="mobile-navigation"
@@ -99,10 +99,10 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
       </div>
 
       {isMenuOpen && (
-        <div id="mobile-navigation" className="border-t border-white/10 bg-[#071b2b] md:hidden">
+        <div id="mobile-navigation" className="border-t border-white/10 bg-[#071b2b] lg:hidden">
           <div className="space-y-2 px-4 py-4">
             <button 
-              onClick={() => scrollToSection('hero')}
+              onClick={() => scrollToSection('about')}
               className="block w-full rounded-lg px-3 py-2.5 text-left text-slate-200 hover:bg-white/5 hover:text-cyan-300"
             >
               About Trainer

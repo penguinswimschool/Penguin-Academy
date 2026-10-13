@@ -41,7 +41,7 @@ const Footer: React.FC<FooterProps> = () => {
             <ul className="space-y-3 text-sm text-slate-400">
               <li>
                 <button 
-                  onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}
                   className="hover:text-white transition-colors"
                 >
                   About Trainer
@@ -92,11 +92,7 @@ const Footer: React.FC<FooterProps> = () => {
               © {new Date().getFullYear()} Penguin Academy Singapore. All rights reserved.
             </p>
             <div className="flex space-x-6 text-sm text-slate-400">
-              <button className="hover:text-white transition-colors">
-              <Link href='/terms'>
-                Terms & Conditions
-              </Link>
-              </button>
+              <Link href="/terms" className="transition-colors hover:text-white">Terms &amp; Conditions</Link>
               <a href="https://my.divessi.com/pro/121320" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Verified SSI Profile</a>
             </div>
           </div>
