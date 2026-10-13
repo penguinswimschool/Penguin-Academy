@@ -34,7 +34,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       
       <div className="flex items-center justify-between">
         <div className="text-2xl font-bold text-blue-600">
-          S$1.00
+          SGD 1.00
         </div>
         <button
           onClick={handlePurchase}

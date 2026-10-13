@@ -91,7 +91,7 @@ const CourseListItem: React.FC<CourseListItemProps> = ({
                   {course.current_participants}/{course.max_participants} participants
                 </span>
                 <span className="text-xs text-gray-500">
-                  ${course.price}
+                  SGD {course.price}
                 </span>
               </div>
             </div>
@@ -126,4 +126,4 @@ const CourseListItem: React.FC<CourseListItemProps> = ({
   );
 };
 
-export default CourseListItem; 
+export default CourseListItem;

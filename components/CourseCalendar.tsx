@@ -46,7 +46,7 @@ const CourseCalendar = () => {
       // Transform data to match the expected format
       const transformedCourses = (data || []).map(course => ({
         ...course,
-        price: `$${course.price}`,
+        price: `SGD ${course.price}`,
       }));
       
       setCourses(transformedCourses);

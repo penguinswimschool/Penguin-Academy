@@ -231,7 +231,7 @@ const DashboardPage: React.FC = () => {
                       <div className="text-right">
                         <p className="text-sm text-gray-900">{new Date(course.start_date).toLocaleDateString()}</p>
                         <p className="text-sm text-gray-500">{course.current_participants}/{course.max_participants} participants</p>
-                        <p className="text-sm font-medium text-green-600">${course.price}</p>
+                        <p className="text-sm font-medium text-green-600">SGD {course.price}</p>
                       </div>
                     </div>
                   </div>

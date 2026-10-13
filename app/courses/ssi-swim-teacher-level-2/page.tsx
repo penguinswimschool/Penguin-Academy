@@ -11,7 +11,7 @@ import { buildCoursePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
   title: 'SSI Swim Teacher Level 2 Singapore | Penguin Academy',
-  description: 'Advance with SSI Swim Teacher Level 2 in Singapore for $1,688, including full React Right. SSI Swim Teacher Level 1 is required.',
+  description: 'Advance with SSI Swim Teacher Level 2 in Singapore for SGD 1,688, including full React Right. SSI Swim Teacher Level 1 is required.',
   path: '/courses/ssi-swim-teacher-level-2',
 })
 
@@ -60,7 +60,7 @@ export default function SSILevel2Page() {
             <div className="bg-yellow-50 p-6 rounded-lg">
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="min-w-0">
-                  <div className="text-3xl font-bold text-gray-900">$1,688</div>
+                  <div className="text-3xl font-bold text-gray-900">SGD 1,688</div>
                   <div className="text-sm text-gray-600">includes full React Right</div>
                 </div>
                 <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">

@@ -19,8 +19,8 @@ import StructuredData from '@/components/StructuredData'
 import { bundlePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
-  title: 'Any 2 SSI Swim Teacher Courses | $2,888 Bundle',
-  description: 'Choose any two SSI teacher courses for $2,888 in Singapore: Level 1, Level 2, Baby & Me or Adult. Full React Right is included.',
+  title: 'Any 2 SSI Swim Teacher Courses | SGD 2,888 Bundle',
+  description: 'Choose any two SSI teacher courses for SGD 2,888 in Singapore: Level 1, Level 2, Baby & Me or Adult. Full React Right is included.',
   path: '/courses/penguin-pro-swim-teacher-pathway',
 })
 
@@ -59,11 +59,11 @@ export default function PenguinProPathwayPage() {
             <p className="text-xl text-gray-800 mb-6">Any 2 SSI teacher courses with full React Right included</p>
             <div className="flex items-center justify-center gap-6 text-gray-900">
               <div className="bg-white bg-opacity-30 px-6 py-3 rounded-lg">
-                <div className="text-3xl font-bold">$2,888</div>
-                <div className="text-sm line-through opacity-75">$3,376</div>
+                <div className="text-3xl font-bold">SGD 2,888</div>
+                <div className="text-sm line-through opacity-75">SGD 3,376</div>
               </div>
               <div className="bg-red-500 text-white px-6 py-3 rounded-lg font-bold">
-                Save $488
+                Save SGD 488
               </div>
             </div>
           </div>
@@ -101,7 +101,7 @@ export default function PenguinProPathwayPage() {
               <div className="bg-white rounded-2xl shadow-lg p-8">
                 <h2 className="text-2xl font-bold text-gray-900 mb-6">Why Choose This Bundle?</h2>
                 <p className="text-gray-700 mb-4">
-                  Save $488 compared with purchasing any two teacher courses separately ($3,376). Full React Right is included, not charged separately.
+                  Save SGD 488 compared with purchasing any two teacher courses separately (SGD 3,376). Full React Right is included, not charged separately.
                 </p>
                 <p className="text-gray-700">
                   {COMPLETION_REQUIREMENTS} Level 2 requires SSI Swim Teacher Level 1 certification.
@@ -114,11 +114,11 @@ export default function PenguinProPathwayPage() {
                 <h3 className="text-xl font-bold text-gray-900 mb-6">Book This Bundle</h3>
                 <div className="space-y-4 mb-6">
                   <div>
-                    <div className="text-3xl font-bold text-gray-900 mb-2">$2,888</div>
-                    <div className="text-sm text-gray-500 line-through">$3,376</div>
+                    <div className="text-3xl font-bold text-gray-900 mb-2">SGD 2,888</div>
+                    <div className="text-sm text-gray-500 line-through">SGD 3,376</div>
                   </div>
                   <div className="bg-green-100 text-green-800 px-4 py-2 rounded-lg text-sm font-semibold text-center">
-                    Save $488
+                    Save SGD 488
                   </div>
                 </div>
                 <BookNowButton 

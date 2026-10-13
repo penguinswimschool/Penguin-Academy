@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Baby, GraduationCap, HeartPulse, Layers3, Users } from 'lucide-react'
+import Link from 'next/link'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InteriorPageHero from '@/components/InteriorPageHero'
@@ -39,6 +40,13 @@ export default function CoursesPage() {
         </section>
 
         <div id="course-list"><CourseList /></div>
+
+        <section className="bg-[#dff5f1] py-14 sm:py-20">
+          <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-7 px-5 sm:px-8 md:flex-row md:items-center">
+            <div><p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-800">Travelling to Singapore?</p><h2 className="mt-3 text-3xl font-semibold tracking-tight text-[#0b2438]">International candidates are welcome to enquire.</h2><p className="mt-3 max-w-2xl leading-7 text-slate-700">Review SGD fees, in-person requirements, travel exclusions and recognition checks before making arrangements.</p></div>
+            <Link href="/international-candidates" className="inline-flex flex-none rounded-full bg-[#0b2438] px-7 py-4 font-bold text-white hover:bg-[#12344d]">International candidate guide</Link>
+          </div>
+        </section>
 
         <section className="bg-white py-16 sm:py-20">
           <div className="mx-auto max-w-5xl px-5 sm:px-8">

@@ -11,7 +11,7 @@ import { buildCoursePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
   title: 'SSI Baby & Me Swim Teacher Singapore | Penguin Academy',
-  description: 'Train to teach parent-child swimming for ages 6 months to 3 years. $1,688 in Singapore, including full SSI React Right.',
+  description: 'Train to teach parent-child swimming for ages 6 months to 3 years. SGD 1,688 in Singapore, including full React Right.',
   path: '/courses/baby-and-me-swim-teacher',
 })
 
@@ -63,7 +63,7 @@ export default function BabyAndMePage() {
             <div className="bg-yellow-50 p-6 rounded-lg">
               <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                 <div className="min-w-0">
-                  <div className="text-3xl font-bold text-gray-900">$1,688</div>
+                  <div className="text-3xl font-bold text-gray-900">SGD 1,688</div>
                   <div className="text-sm text-gray-600">includes full React Right • Teaches ages 6 months – 3 years</div>
                 </div>
                 <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">

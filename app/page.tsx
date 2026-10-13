@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
 import AcademyVideo from '@/components/AcademyVideo'
@@ -10,6 +11,25 @@ import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import StructuredData from '@/components/StructuredData'
 import { homepageStructuredData } from '@/lib/structured-data'
+
+export const metadata: Metadata = {
+  title: 'Penguin Academy Singapore | SSI Swim Teacher Training',
+  description: 'Professional SSI swim teacher training in Singapore with small cohorts, practical mentorship and full React Right. International candidates are welcome to enquire.',
+  alternates: { canonical: 'https://www.swimcoachcertification.com/' },
+  openGraph: {
+    title: 'Penguin Academy Singapore | SSI Swim Teacher Training',
+    description: 'Professional SSI swim teacher training in Singapore for local and international candidates.',
+    url: 'https://www.swimcoachcertification.com/',
+    siteName: 'Penguin Academy',
+    locale: 'en_SG',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Penguin Academy Singapore | SSI Swim Teacher Training',
+    description: 'Professional SSI swim teacher training in Singapore for local and international candidates.',
+  },
+}
 
 export default function HomePage() {
   return (

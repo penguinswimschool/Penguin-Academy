@@ -17,7 +17,7 @@ export const metadata: Metadata = {
 const standards = [
   { icon: Award, title: 'Instructor-led education', text: 'Formal course delivery, assessment and certification requirements are led through the applicable SSI pathway.' },
   { icon: Waves, title: 'Practical mentoring', text: 'Candidates develop teaching confidence through supervised practice and programme-specific apprenticeship.' },
-  { icon: ShieldCheck, title: 'Safety built in', text: 'Full SSI React Right—First Aid & CPR, AED Provider and Oxygen Provider—is included with every $1,688 teacher course.' },
+  { icon: ShieldCheck, title: 'Safety built in', text: 'Full SSI React Right—First Aid & CPR, AED Provider and Oxygen Provider—is included with every SGD 1,688 teacher course.' },
   { icon: Users, title: 'Focused cohorts', text: 'Small cohorts of 1–8 candidates support clear feedback and meaningful instructor attention.' },
 ]
 

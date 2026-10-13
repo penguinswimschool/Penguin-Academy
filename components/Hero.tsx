@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
             <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:max-w-2xl">
               <p className="text-base font-semibold text-white sm:text-lg">
-                Every $1,688 teacher course includes full SSI React Right.
+                Every SGD 1,688 teacher course includes full SSI React Right.
               </p>
               <p className="mt-1 text-sm leading-6 text-slate-300">
                 First Aid &amp; CPR, AED Provider and Oxygen Provider training are included.

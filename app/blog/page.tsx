@@ -86,35 +86,35 @@ const pathways = [
     title: 'SSI Swim Teacher Level 1',
     description: 'The foundational pathway for teaching beginner swimmers safely and progressively.',
     href: '/courses/ssi-swim-teacher-level-1',
-    price: '$1,688',
+    price: 'SGD 1,688',
     icon: GraduationCap,
   },
   {
     title: 'SSI Swim Teacher Level 2',
     description: 'Advanced stroke development and class progression for certified Level 1 teachers.',
     href: '/courses/ssi-swim-teacher-level-2',
-    price: '$1,688',
+    price: 'SGD 1,688',
     icon: Layers3,
   },
   {
     title: 'SSI Baby & Me Swim Teacher',
     description: 'Parent-child teaching for SSI Baby Swim I and II, with current programme ages from 2–35 months.',
     href: '/courses/baby-and-me-swim-teacher',
-    price: '$1,688',
+    price: 'SGD 1,688',
     icon: Users,
   },
   {
     title: 'SSI Adult Swim Teacher',
     description: 'Structured teaching for adult beginners and swimmers developing confidence.',
     href: '/courses/ssi-adult-swim-teacher',
-    price: '$1,688',
+    price: 'SGD 1,688',
     icon: Waves,
   },
   {
     title: 'Full SSI React Right',
     description: 'First Aid & CPR, AED Provider and Oxygen Provider training in one pathway.',
     href: '/courses/react-right-cpr-aed-first-aid',
-    price: '$100',
+    price: 'SGD 100',
     icon: HeartPulse,
   },
 ]
@@ -157,7 +157,7 @@ const faqs = [
   },
   {
     question: 'Is React Right included with a teacher course?',
-    answer: 'Yes. Full React Right is included with every $1,688 teacher course and with the $2,888 any-two-teacher-course bundle.',
+    answer: 'Yes. Full React Right is included with every SGD 1,688 teacher course and with the SGD 2,888 any-two-teacher-course bundle.',
   },
   {
     question: 'Is certification issued after the instructor-led day?',
@@ -273,7 +273,7 @@ export default async function BlogPage() {
               <Link href="/courses/penguin-pro-swim-teacher-pathway" className="group flex min-h-[260px] flex-col rounded-[1.5rem] bg-[#0b2438] p-7 text-white shadow-[0_20px_55px_rgba(7,27,43,0.2)] transition hover:-translate-y-1">
                 <div className="flex items-start justify-between gap-4">
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white/10 text-cyan-300"><Sparkles className="h-5 w-5" aria-hidden="true" /></span>
-                  <span className="text-lg font-bold text-cyan-300">$2,888</span>
+                  <span className="text-lg font-bold text-cyan-300">SGD 2,888</span>
                 </div>
                 <h3 className="mt-7 text-xl font-bold">Any 2 teacher courses</h3>
                 <p className="mt-3 flex-1 leading-7 text-slate-300">Choose any two teacher pathways with full SSI React Right included.</p>
