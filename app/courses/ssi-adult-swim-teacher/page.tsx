@@ -4,14 +4,14 @@ import BookNowButton from '@/components/BookNowButton'
 import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { Users, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
-import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes, whatsappEnquiryUrl } from '@/lib/approved-course-details'
+import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
 import StructuredData from '@/components/StructuredData'
 import { buildCoursePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
   title: 'SSI Adult Swim Teacher Singapore | Penguin Academy',
-  description: 'Train to teach adult beginners and improvers with SSI in Singapore. SGD 1,688 including full React Right and required apprenticeship.',
+  description: 'Train to conduct SSI Adult swim programmes in Singapore. SGD 1,688 including full React Right and the required apprenticeship.',
   path: '/courses/ssi-adult-swim-teacher',
 })
 
@@ -41,7 +41,7 @@ export default function SSIAdultPage() {
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
               <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
               <p className="text-gray-700 leading-relaxed mb-4">
-                Train to teach adult swimmers with the SSI Adult Swim Teacher certification at Penguin Academy Singapore. This course prepares you to coach adult beginners and improvers with confidence, safety, and structured progression.
+                Prepare to conduct SSI Adult swim programmes with the SSI Adult Swim Teacher certification at Penguin Academy Singapore. The course covers the knowledge, teaching practice and programme requirements set for this pathway.
               </p>
               <p className="text-gray-700 leading-relaxed">
                 {COURSE_DETAILS.format} Assessment includes {COURSE_DETAILS.assessment.toLowerCase()}.
@@ -69,12 +69,10 @@ export default function SSIAdultPage() {
                 <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">
                   <BookNowButton courseTitle="SSI Adult Swim Teacher Certification" className="w-full text-center md:w-auto" />
                   <Link
-                    href={whatsappEnquiryUrl('SSI Adult Swim Teacher Certification')}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/course-dates"
                     className="inline-flex w-full items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg text-center font-semibold hover:bg-blue-50 transition-colors md:w-auto"
                   >
-                    Ask Questions
+                    View course dates
                   </Link>
                 </div>
               </div>

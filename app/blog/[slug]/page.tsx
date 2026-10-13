@@ -8,6 +8,7 @@ import { ArrowRight, BookOpenCheck, CheckCircle2, Clock3, ExternalLink } from 'l
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
+import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
 import { blogArticles, getBlogArticle, type BlogArticle } from '@/lib/blog-articles'
 
@@ -185,7 +186,7 @@ function StaticArticle({ article }: { article: BlogArticle }) {
               <p className="mt-4 max-w-3xl text-lg leading-8 text-slate-300">Review the verified course page or speak directly with Penguin Academy before enrolling.</p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <Link href={article.courseHref} className="inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">{article.courseName}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
-                <a href={`${WHATSAPP_URL}?text=${encodeURIComponent(article.whatsappMessage)}`} className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 font-bold transition hover:bg-white/10">Ask on WhatsApp</a>
+                <TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${encodeURIComponent(article.whatsappMessage)}`} source="blog_article_final" courseName={article.courseName} className="inline-flex items-center rounded-full border border-white/20 px-6 py-3 font-bold transition hover:bg-white/10">Ask on WhatsApp</TrackedWhatsAppLink>
               </div>
             </section>
 

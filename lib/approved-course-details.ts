@@ -13,10 +13,10 @@ export const WHATSAPP_URL = `https://wa.me/${WHATSAPP_NUMBER}`;
 export const FULL_REACT_RIGHT = 'Full SSI React Right: First Aid & CPR, AED Provider and Oxygen Provider';
 
 export const COURSE_STANDARDS = {
-  level1: { minimumAge: '18+', recommendedDuration: '24-28 hours', apprenticeship: 'Supervised apprenticeship: 4 Aquatike and 4 Beginner lessons (recommended cumulative 4 hours)' },
-  level2: { minimumAge: '18+', recommendedDuration: '23-27 hours', prerequisite: 'SSI Swim Teacher Level 1 certification required', apprenticeship: 'Supervised apprenticeship: 4 Intermediate and 2 Advanced lessons (recommended cumulative 3 hours)' },
-  baby: { minimumAge: '18+', recommendedDuration: '8-10 hours', apprenticeship: 'Supervised apprenticeship: 2 Baby Swim 1 and 2 Baby Swim 2 lessons (cumulative 2 hours)' },
-  adult: { minimumAge: '18+', recommendedDuration: '22-26 hours (6-8 hours for qualified Level 2 teachers)', apprenticeship: 'Supervised apprenticeship: 1 Adult 1 and 1 Adult 2 lesson (cumulative 2 hours)' },
+  level1: { minimumAge: '18+', recommendedDuration: '24-28 hours', apprenticeship: 'Supervised apprenticeship: 4 Aquatike and 4 Beginner lessons (recommended cumulative time of at least 4 hours)' },
+  level2: { minimumAge: '18+', recommendedDuration: '23-27 hours', prerequisite: 'SSI Swim Teacher Level 1 certification required', apprenticeship: 'Supervised apprenticeship: 4 Intermediate and 2 Advanced lessons (recommended cumulative time of at least 3 hours)' },
+  baby: { minimumAge: '18+', recommendedDuration: '8-10 hours', apprenticeship: 'Supervised apprenticeship: 2 Baby Swim I and 2 Baby Swim II lessons (recommended cumulative time of at least 2 hours)' },
+  adult: { minimumAge: '18+', recommendedDuration: '22-26 hours (6-8 hours for qualified Level 2 teachers)', apprenticeship: 'Supervised apprenticeship: 1 Adult I and 1 Adult II lesson (recommended cumulative time of at least 2 hours)' },
   reactRight: { minimumAge: '12+', recommendedDuration: '8-12 hours', apprenticeship: 'Practical scenarios, academic assessments and final exam; no swim-teaching apprenticeship' },
 } as const;
 

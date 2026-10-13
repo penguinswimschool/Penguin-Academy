@@ -298,7 +298,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     sources: [
       { label: 'SSI React Right course combination', url: 'https://www.divessi.com/en/advanced-training/scuba-diving/react-right---course-combination-fa-cpr-aed-o2' },
-      { label: 'SSI React Right training standard', url: 'https://training.divessi.com/live-important-content-do-not-remove/source-library/text-library/2025/october/archived-2025-10-14/scuba-standards-archived-2025-10-14/react-right-programs/student-level-programs/react-right' },
+      { label: 'SSI React Right training standard', url: 'https://training.divessi.com/course/scuba-training-standards-and-procedures-20241/react-right-programs/student-level-programs/react-right' },
       { label: 'SSI React Right Update standard', url: 'https://training.divessi.com/index.php?id=22820380' },
     ],
     courseHref: '/courses/react-right-cpr-aed-first-aid',
@@ -392,7 +392,7 @@ export const blogArticles: BlogArticle[] = [
       { label: 'SSI Baby Swim II training standard', url: 'https://training.divessi.com/index.php?id=22820343' },
     ],
     courseHref: '/courses/baby-and-me-swim-teacher',
-    courseName: 'View Baby & Me course details',
+    courseName: 'View SSI Baby Swim Teacher course details',
     whatsappMessage: 'Hi Penguin Academy, I would like to know more about SSI Baby Swim Teacher certification.',
   },
   {

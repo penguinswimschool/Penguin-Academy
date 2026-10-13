@@ -48,7 +48,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const meta = await getHomepageMeta();
   
   const title = meta?.title || "SSI Swim Teacher Courses Singapore | Penguin Academy";
-  const description = meta?.description || "Train as an SSI swim teacher in Singapore with Penguin Academy. Explore Level 1, Level 2, Baby & Me, Adult and React Right CPR, AED and Oxygen Provider courses.";
+  const description = meta?.description || "Train as an SSI swim teacher in Singapore with Penguin Academy. Explore Level 1, Level 2, Baby Swim Teacher, Adult and React Right CPR, AED and Oxygen Provider courses.";
   const ogTitle = meta?.ogTitle || title;
   const ogDescription = meta?.ogDescription || description;
   const ogImage = meta?.ogImage && sanityClient ? urlFor(meta.ogImage).url() : "/penguinacademylogo512x280.jpg";

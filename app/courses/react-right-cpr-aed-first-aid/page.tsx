@@ -10,7 +10,6 @@ import {
   FULL_REACT_RIGHT,
   LIFETIME_REFRESHER,
   PENGUIN_SUPPORT,
-  whatsappEnquiryUrl,
 } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
 import StructuredData from '@/components/StructuredData'
@@ -85,12 +84,10 @@ export default function ReactRightPage() {
                 <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">
                   <BookNowButton courseTitle="Full SSI React Right" className="w-full text-center md:w-auto" />
                   <Link
-                    href={whatsappEnquiryUrl('Full SSI React Right')}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/course-dates"
                     className="inline-flex w-full items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg text-center font-semibold hover:bg-blue-50 transition-colors md:w-auto"
                   >
-                    Ask Questions
+                    View course dates
                   </Link>
                 </div>
               </div>

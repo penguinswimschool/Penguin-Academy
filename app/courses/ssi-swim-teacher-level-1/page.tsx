@@ -4,7 +4,7 @@ import BookNowButton from '@/components/BookNowButton'
 import CourseMetaGrid from '@/components/CourseMetaGrid'
 import { GraduationCap, CheckCircle } from 'lucide-react'
 import Link from 'next/link'
-import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes, whatsappEnquiryUrl } from '@/lib/approved-course-details'
+import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
 import StructuredData from '@/components/StructuredData'
 import { buildCoursePageStructuredData } from '@/lib/structured-data'
@@ -69,12 +69,10 @@ export default function SSILevel1Page() {
                 <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">
                   <BookNowButton courseTitle="SSI Swim Teacher Level 1 Certification" className="w-full text-center md:w-auto" />
                   <Link
-                    href={whatsappEnquiryUrl('SSI Swim Teacher Level 1 Certification')}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href="/course-dates"
                     className="inline-flex w-full items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg text-center font-semibold hover:bg-blue-50 transition-colors md:w-auto"
                   >
-                    Ask Questions
+                    View course dates
                   </Link>
                 </div>
               </div>

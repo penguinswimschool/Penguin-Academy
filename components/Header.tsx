@@ -10,7 +10,7 @@ const courseLinks = [
   { href: '/courses/penguin-pro-swim-teacher-pathway', label: 'Penguin Pro Bundle', description: 'Choose any 2 teacher courses' },
   { href: '/courses/ssi-swim-teacher-level-1', label: 'SSI Swim Teacher Level 1', description: 'Foundation pathway' },
   { href: '/courses/ssi-swim-teacher-level-2', label: 'SSI Swim Teacher Level 2', description: 'Advanced progression' },
-  { href: '/courses/baby-and-me-swim-teacher', label: 'SSI Baby & Me', description: 'Parent-child teaching' },
+  { href: '/courses/baby-and-me-swim-teacher', label: 'SSI Baby Swim Teacher', description: 'Parent-child teaching' },
   { href: '/courses/ssi-adult-swim-teacher', label: 'SSI Adult Swim Teacher', description: 'Adult learner pathway' },
   { href: '/courses/react-right-cpr-aed-first-aid', label: 'Full SSI React Right', description: 'First Aid, CPR, AED & Oxygen' },
 ]

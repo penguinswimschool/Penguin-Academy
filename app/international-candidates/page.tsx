@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InteriorPageHero from '@/components/InteriorPageHero'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
@@ -54,7 +55,7 @@ export default function InternationalCandidatesPage() {
     <div className="min-h-screen bg-[#f6f4ee]">
       <Header />
       <main id="main-content">
-        <InteriorPageHero eyebrow="Train in Singapore" title="International candidates are welcome." description="Plan your Penguin Academy pathway with clear SGD pricing, in-person requirements and practical checks before you arrange travel." primaryHref={`${WHATSAPP_URL}?text=${message}`} primaryLabel="Discuss your training plan" secondaryHref="/courses" secondaryLabel="Compare courses" />
+        <InteriorPageHero eyebrow="Train in Singapore" title="International candidates are welcome." description="Plan your Penguin Academy pathway with clear SGD pricing, in-person requirements and practical checks before you arrange travel." primaryHref={`${WHATSAPP_URL}?text=${message}`} primaryLabel="Discuss your training plan" primaryTrackingSource="international_hero" primaryCandidateSegment="international" secondaryHref="/courses" secondaryLabel="Compare courses" />
 
         <section className="bg-white py-16 sm:py-24">
           <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
@@ -76,7 +77,7 @@ export default function InternationalCandidatesPage() {
           <div className="mx-auto max-w-5xl px-5 sm:px-8"><p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">International candidate FAQ</p><h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Questions to settle before travelling.</h2><div className="mt-10 divide-y divide-slate-200 border-y border-slate-200">{faqs.map(([question, answer]) => <section key={question} className="py-7"><h3 className="text-lg font-bold text-[#0b2438]">{question}</h3><p className="mt-3 leading-7 text-slate-600">{answer}</p></section>)}</div></div>
         </section>
 
-        <section className="bg-[#071b2b] py-16 text-white sm:py-20"><div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-5 sm:px-8 lg:flex-row lg:items-end"><div><p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Before you book travel</p><h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">Get your course plan confirmed in writing.</h2><p className="mt-5 max-w-2xl leading-7 text-slate-300">Share your country, intended course and travel window. We will explain what can be confirmed and what you must verify independently.</p></div><a href={`${WHATSAPP_URL}?text=${message}`} target="_blank" rel="noopener noreferrer" className="inline-flex flex-none rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] hover:bg-cyan-200">WhatsApp the Academy</a></div></section>
+        <section className="bg-[#071b2b] py-16 text-white sm:py-20"><div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 px-5 sm:px-8 lg:flex-row lg:items-end"><div><p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Before you book travel</p><h2 className="mt-4 max-w-3xl text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">Get your course plan confirmed in writing.</h2><p className="mt-5 max-w-2xl leading-7 text-slate-300">Share your country, intended course and travel window. We will explain what can be confirmed and what you must verify independently.</p></div><TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${message}`} source="international_final" candidateSegment="international" className="inline-flex flex-none rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] hover:bg-cyan-200">WhatsApp the Academy</TrackedWhatsAppLink></div></section>
       </main>
       <Footer />
       <WhatsAppButton />

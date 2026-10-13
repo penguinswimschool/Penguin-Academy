@@ -25,7 +25,7 @@ const Footer: React.FC = () => {
               <li><Link href="/courses/penguin-pro-swim-teacher-pathway" className="hover:text-white transition-colors">Penguin Pro Bundle</Link></li>
               <li><Link href="/courses/ssi-swim-teacher-level-1" className="hover:text-white transition-colors">SSI Swim Teacher Level 1</Link></li>
               <li><Link href="/courses/ssi-swim-teacher-level-2" className="hover:text-white transition-colors">SSI Swim Teacher Level 2</Link></li>
-              <li><Link href="/courses/baby-and-me-swim-teacher" className="hover:text-white transition-colors">SSI Baby & Me Instructor</Link></li>
+              <li><Link href="/courses/baby-and-me-swim-teacher" className="hover:text-white transition-colors">SSI Baby Swim Teacher</Link></li>
               <li><Link href="/courses/ssi-adult-swim-teacher" className="hover:text-white transition-colors">SSI Adult Swim Teacher</Link></li>
               <li><Link href="/courses/react-right-cpr-aed-first-aid" className="hover:text-white transition-colors">Full SSI React Right</Link></li>
             </ul>

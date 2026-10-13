@@ -15,6 +15,7 @@ import {
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import StructuredData from '@/components/StructuredData'
+import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import { sanityClient, urlFor } from '@/lib/sanity'
 import {
   COMPLETION_REQUIREMENTS,
@@ -97,15 +98,15 @@ const pathways = [
     icon: Layers3,
   },
   {
-    title: 'SSI Baby & Me Swim Teacher',
-    description: 'Parent-child teaching for SSI Baby Swim I and II, with current programme ages from 2–35 months.',
+    title: 'SSI Baby Swim Teacher',
+    description: 'Parent-child teaching for Baby Swim I, ages 2–35 months, and Baby Swim II, ages 12–35 months.',
     href: '/courses/baby-and-me-swim-teacher',
     price: 'SGD 1,688',
     icon: Users,
   },
   {
     title: 'SSI Adult Swim Teacher',
-    description: 'Structured teaching for adult beginners and swimmers developing confidence.',
+    description: 'Training to conduct SSI Adult swim programmes with adult-focused teaching practice.',
     href: '/courses/ssi-adult-swim-teacher',
     price: 'SGD 1,688',
     icon: Waves,
@@ -145,7 +146,7 @@ const topics = [
 const faqs = [
   {
     question: 'Which SSI swim teacher courses does Penguin Academy offer?',
-    answer: 'Penguin Academy offers SSI Swim Teacher Level 1, Level 2, Baby & Me and Adult Swim Teacher pathways, plus full SSI React Right.',
+    answer: 'Penguin Academy offers SSI Swim Teacher Level 1, Level 2, Baby Swim Teacher and Adult Swim Teacher pathways, plus full SSI React Right.',
   },
   {
     question: 'Do I need Level 1 before Level 2?',
@@ -242,9 +243,9 @@ export default async function BlogPage() {
                 <Link href="/courses" className="rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">
                   Compare courses
                 </Link>
-                <a href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, please help me choose the right course pathway.')}`} className="rounded-full border border-white/20 px-6 py-3 font-bold text-white transition hover:bg-white/10">
+                <TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, please help me choose the right course pathway.')}`} source="blog_index_hero" className="rounded-full border border-white/20 px-6 py-3 font-bold text-white transition hover:bg-white/10">
                   Ask on WhatsApp
-                </a>
+                </TrackedWhatsAppLink>
               </div>
             </div>
           </div>
@@ -324,7 +325,7 @@ export default async function BlogPage() {
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-cyan-300"><BookOpenCheck className="h-6 w-6" aria-hidden="true" /></span>
                   <h3 className="mt-7 text-3xl font-semibold tracking-[-0.03em]">New guides are being prepared and reviewed.</h3>
                   <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">For current prices, prerequisites, course inclusions and completion requirements, use the verified course pages above or speak directly with the Academy.</p>
-                  <a href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, I have a question about your swim teacher courses.')}`} className="mt-7 inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">Ask the Academy <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
+                  <TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, I have a question about your swim teacher courses.')}`} source="blog_index_guidance" className="mt-7 inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">Ask the Academy <ArrowRight className="h-4 w-4" aria-hidden="true" /></TrackedWhatsAppLink>
                 </div>
                 <div className="relative min-h-[320px]">
                   <Image src="/academy-ssi-learning-community.jpg" alt="Penguin Academy learning community with an SSI flag" fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" />

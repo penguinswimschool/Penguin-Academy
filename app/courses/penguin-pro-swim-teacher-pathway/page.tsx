@@ -12,7 +12,6 @@ import {
   LIFETIME_MENTORSHIP,
   LIFETIME_REFRESHER,
   PENGUIN_SUPPORT,
-  whatsappEnquiryUrl,
 } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
 import StructuredData from '@/components/StructuredData'
@@ -20,12 +19,12 @@ import { bundlePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
   title: 'Any 2 SSI Swim Teacher Courses | SGD 2,888 Bundle',
-  description: 'Choose any two SSI teacher courses for SGD 2,888 in Singapore: Level 1, Level 2, Baby & Me or Adult. Full React Right is included.',
+  description: 'Choose any two SSI teacher courses for SGD 2,888 in Singapore: Level 1, Level 2, Baby Swim Teacher or Adult. Full React Right is included.',
   path: '/courses/penguin-pro-swim-teacher-pathway',
 })
 
 const bundleFeatures = [
-  'Choose any 2: Level 1, Level 2, Baby & Me, or Adult Swim Teacher',
+  'Choose any 2: Level 1, Level 2, Baby Swim Teacher, or Adult Swim Teacher',
   FULL_REACT_RIGHT,
   'SSI digital learning, assessments, final exam and programme-specific apprenticeship for each selected course',
   PENGUIN_SUPPORT,
@@ -76,7 +75,7 @@ export default function PenguinProPathwayPage() {
                   <h2 className="text-2xl font-bold text-gray-900">Course Overview</h2>
                 </div>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Choose any two teacher courses: Level 1, Level 2, Baby & Me, or Adult Swim Teacher. Each selected course includes one instructor-led day (9am–6pm) at our {COURSE_DETAILS.venue} venue plus all programme-specific SSI completion requirements. {COURSE_DETAILS.format}
+                  Choose any two teacher courses: Level 1, Level 2, Baby Swim Teacher, or Adult Swim Teacher. Each selected course includes one instructor-led day (9am–6pm) at our {COURSE_DETAILS.venue} venue plus all programme-specific SSI completion requirements. {COURSE_DETAILS.format}
                 </p>
 
                 <CourseMetaGrid recommendedDuration="Varies by the 2 courses selected" minimumAge="18+" liveTraining="2 instructor-led days" />
@@ -126,15 +125,13 @@ export default function PenguinProPathwayPage() {
                   variant="green"
                   className="block w-full text-center mb-4"
                 >
-                  Enquire on WhatsApp
+                  Ask about this bundle on WhatsApp
                 </BookNowButton>
                 <Link
-                  href={whatsappEnquiryUrl('Penguin Pro Bundle – any 2 SSI teacher courses')}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                  href="/course-dates"
                   className="block w-full border-2 border-green-600 text-green-600 text-center py-3 rounded-lg font-semibold hover:bg-green-50 transition-colors"
                 >
-                  Ask Questions
+                  View course dates
                 </Link>
               </div>
             </div>

@@ -38,21 +38,21 @@ const courses: Record<CourseKey, CourseDefinition> = {
   },
   baby: {
     path: '/courses/baby-and-me-swim-teacher',
-    name: 'SSI Baby & Me Swim Teacher',
-    description: 'Training to teach parent-child swimming safely.',
+    name: 'SSI Baby Swim Teacher',
+    description: 'Training to teach SSI Baby Swim I and Baby Swim II parent-child programmes.',
     price: '1688',
     prerequisites: 'Minimum age 18.',
-    credential: 'SSI Baby & Me Teacher certification',
-    teaches: ['Parent-child swim classes', 'Infant water safety', 'Age-appropriate swim activities'],
+    credential: 'SSI Baby Swim Teacher certification',
+    teaches: ['Parent-child Baby Swim I instruction', 'Parent-child Baby Swim II instruction', 'Age-appropriate aquatic activities'],
   },
   adult: {
     path: '/courses/ssi-adult-swim-teacher',
     name: 'SSI Adult Swim Teacher',
-    description: 'Training to teach adult beginners and improvers.',
+    description: 'Training to conduct SSI Adult swim programmes.',
     price: '1688',
     prerequisites: 'Minimum age 18.',
     credential: 'SSI Adult Swim Teacher certification',
-    teaches: ['Teaching adult beginners', 'Adult stroke development', 'Adult class progression'],
+    teaches: ['Conducting SSI Adult swim programmes', 'Adult-focused teaching practice', 'Programme planning'],
   },
   reactRight: {
     path: '/courses/react-right-cpr-aed-first-aid',
@@ -168,6 +168,44 @@ export const homepageStructuredData = {
       '@id': `${SITE_URL}/#course-list`,
       name: 'Penguin Academy courses',
       numberOfItems: 5,
+      itemListElement: Object.values(courses).map((course, index) => ({
+        '@type': 'ListItem',
+        position: index + 1,
+        url: courseUrl(course),
+        item: { '@id': courseId(course) },
+      })),
+    },
+  ],
+};
+
+export const coursesPageStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'CollectionPage',
+      '@id': `${SITE_URL}/courses#webpage`,
+      url: `${SITE_URL}/courses`,
+      name: 'SSI Swim Teacher Courses in Singapore',
+      description: 'Compare SSI swim teacher pathways, prerequisites, recommended hours, apprenticeships and Penguin Academy fees in SGD.',
+      inLanguage: 'en-SG',
+      isPartOf: { '@id': WEBSITE_ID },
+      breadcrumb: { '@id': `${SITE_URL}/courses#breadcrumb` },
+      mainEntity: { '@id': `${SITE_URL}/courses#course-list` },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${SITE_URL}/courses#breadcrumb`,
+      itemListElement: [
+        { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+        { '@type': 'ListItem', position: 2, name: 'Courses', item: `${SITE_URL}/courses` },
+      ],
+    },
+    ...Object.values(courses).map((course) => courseEntity(course, true)),
+    {
+      '@type': 'ItemList',
+      '@id': `${SITE_URL}/courses#course-list`,
+      name: 'Penguin Academy SSI courses',
+      numberOfItems: Object.values(courses).length,
       itemListElement: Object.values(courses).map((course, index) => ({
         '@type': 'ListItem',
         position: index + 1,

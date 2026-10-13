@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InteriorPageHero from '@/components/InteriorPageHero'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
 
 export const metadata: Metadata = {
@@ -20,14 +21,14 @@ export default function ContactPage() {
     <div className="min-h-screen bg-white">
       <Header />
       <main id="main-content">
-        <InteriorPageHero eyebrow="Contact Penguin Academy" title="Let’s find the right certification pathway." description="Tell us about your experience, preferred course and availability. We’ll help you understand the requirements and next suitable step." primaryHref={`${WHATSAPP_URL}?text=${message}`} primaryLabel="WhatsApp the Academy" secondaryHref="/courses" secondaryLabel="Compare courses" />
+        <InteriorPageHero eyebrow="Contact Penguin Academy" title="Let’s find the right certification pathway." description="Tell us about your experience, preferred course and availability. We’ll help you understand the requirements and next suitable step." primaryHref={`${WHATSAPP_URL}?text=${message}`} primaryLabel="WhatsApp the Academy" primaryTrackingSource="contact_hero" secondaryHref="/courses" secondaryLabel="Compare courses" />
         <section className="bg-[#f6f4ee] py-16 sm:py-24">
           <div className="mx-auto grid max-w-6xl gap-6 px-5 sm:px-8 lg:grid-cols-[1.1fr_0.9fr] lg:px-10">
             <div className="rounded-[2rem] bg-[#0b2438] p-8 text-white sm:p-12">
               <p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">Fastest way to reach us</p>
               <h2 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl">Start the conversation on WhatsApp.</h2>
               <p className="mt-5 max-w-2xl leading-8 text-slate-300">For useful guidance, include the course you are considering, your current swim teaching qualification, and your preferred training period.</p>
-              <a href={`${WHATSAPP_URL}?text=${message}`} target="_blank" rel="noopener noreferrer" className="mt-8 inline-flex items-center gap-3 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] hover:bg-cyan-200"><MessageCircle className="h-5 w-5" />WhatsApp +65 8909 4395</a>
+              <TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${message}`} source="contact_primary" className="mt-8 inline-flex items-center gap-3 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] hover:bg-cyan-200"><MessageCircle className="h-5 w-5" />WhatsApp +65 8909 4395</TrackedWhatsAppLink>
               <div className="mt-10 border-t border-white/10 pt-8"><p className="flex items-start gap-3 text-sm leading-6 text-slate-300"><ShieldCheck className="mt-0.5 h-5 w-5 flex-none text-teal-300" />Please do not send payment-card information, identity documents or sensitive medical details through the website or WhatsApp unless specifically required through an authorised process.</p></div>
             </div>
             <div className="grid gap-4">
