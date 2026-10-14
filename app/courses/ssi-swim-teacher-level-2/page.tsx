@@ -1,83 +1,58 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import BookNowButton from '@/components/BookNowButton'
-import CourseMetaGrid from '@/components/CourseMetaGrid'
-import { Award, CheckCircle } from 'lucide-react'
-import Link from 'next/link'
-import { COURSE_DETAILS, COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
+import PremiumCoursePage from '@/components/PremiumCoursePage'
+import { COURSE_STANDARDS, certCourseIncludes } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
-import StructuredData from '@/components/StructuredData'
 import { buildCoursePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
-  title: 'SSI Swim Teacher Level 2 Singapore | Penguin Academy',
-  description: 'Advance with SSI Swim Teacher Level 2 in Singapore for SGD 1,688, including full React Right. SSI Swim Teacher Level 1 is required.',
+  title: 'SSI Swim Teacher Level 2 Singapore | Requirements & Cost',
+  description: 'Review SSI Swim Teacher Level 2 requirements, apprenticeship, SGD 1,688 fee and full React Right inclusion at Penguin Academy Singapore.',
   path: '/courses/ssi-swim-teacher-level-2',
 })
 
+const faqs = [
+  { question: 'What are the entry requirements for SSI Swim Teacher Level 2?', answer: 'Candidates must be at least 18 and hold SSI Swim Teacher Level 1 certification.' },
+  { question: 'How long is the Level 2 course?', answer: 'SSI lists a recommended duration of 23–27 hours, including the applicable learning, assessment and practical requirements.' },
+  { question: 'What apprenticeship is required?', answer: 'The pathway includes four supervised Intermediate lessons and two supervised Advanced lessons, with a recommended cumulative time of at least three hours.' },
+  { question: 'How much does Level 2 cost?', answer: 'The Penguin Academy fee is SGD 1,688 and includes the full SSI React Right combination: First Aid & CPR, AED Provider and Oxygen Provider.' },
+  { question: 'Does paying the fee guarantee certification?', answer: 'No. Certification may be issued only after all applicable SSI academic, in-water, assessment and apprenticeship requirements are successfully completed.' },
+  { question: 'Can Level 2 certification be used at every pool?', answer: 'Certification and venue access are separate matters. Employers, facilities and local authorities may impose their own requirements, so candidates should confirm where they intend to teach.' },
+]
+
 export default function SSILevel2Page() {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <StructuredData data={buildCoursePageStructuredData('level2')} />
-      <Header />
-      <main id="main-content" className="pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <nav className="mb-8" aria-label="Breadcrumb">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <Link href="/courses" className="text-blue-600 hover:text-blue-800">Courses</Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <span className="text-gray-600">SSI Swim Teacher Level 2</span>
-          </nav>
-
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Award className="h-8 w-8 text-blue-600" />
-              <h1 className="text-4xl font-bold text-gray-900">SSI Swim Teacher Level 2 Certification</h1>
-            </div>
-
-            <CourseMetaGrid recommendedDuration={COURSE_STANDARDS.level2.recommendedDuration} minimumAge={COURSE_STANDARDS.level2.minimumAge} />
-
-            <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
-              <p className="text-gray-700 leading-relaxed">
-                Build on Level 1 with stroke development (freestyle, backstroke, breaststroke), technique correction, endurance building, and class progression planning. {COURSE_STANDARDS.level2.prerequisite}. {COURSE_DETAILS.format} Assessment includes {COURSE_DETAILS.assessment.toLowerCase()}.
-              </p>
-            </div>
-
-            <div className="bg-green-50 p-6 rounded-lg mb-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">What&apos;s Included</h3>
-              <div className="space-y-3">
-                {certCourseIncludes('SSI Swim Teacher Level 2 Certification', COURSE_STANDARDS.level2.apprenticeship).map((feature, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-yellow-50 p-6 rounded-lg">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-                <div className="min-w-0">
-                  <div className="text-3xl font-bold text-gray-900">SGD 1,688</div>
-                  <div className="text-sm text-gray-600">includes full React Right</div>
-                </div>
-                <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">
-                  <BookNowButton courseTitle="SSI Swim Teacher Level 2 Certification" className="w-full text-center md:w-auto" />
-                  <Link
-                    href="/course-dates"
-                    className="inline-flex w-full items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg text-center font-semibold hover:bg-blue-50 transition-colors md:w-auto"
-                  >
-                    View course dates
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
+  return <PremiumCoursePage
+    structuredData={buildCoursePageStructuredData('level2')}
+    eyebrow="Advanced SSI teaching pathway"
+    title="SSI Swim Teacher Level 2 in Singapore."
+    description="Develop stronger stroke teaching, correction and class-progression skills for intermediate and advanced learners."
+    price="SGD 1,688"
+    priceNote="Includes full SSI React Right. SSI Swim Teacher Level 1 is required before this pathway."
+    directAnswer="SSI Swim Teacher Level 2 is the progression pathway for qualified Level 1 teachers. SSI recommends 23–27 hours and a supervised apprenticeship of four Intermediate and two Advanced lessons."
+    facts={[
+      { label: 'Minimum age', value: COURSE_STANDARDS.level2.minimumAge },
+      { label: 'Prerequisite', value: 'SSI Swim Teacher Level 1' },
+      { label: 'Recommended time', value: COURSE_STANDARDS.level2.recommendedDuration },
+      { label: 'Training venue', value: 'Singapore; international candidates welcome' },
+    ]}
+    suitableFor={[
+      'Qualified Level 1 teachers ready to progress beyond beginner programmes',
+      'Coaches who want a clearer framework for stroke development and correction',
+      'Teachers preparing to work with intermediate and advanced learners',
+      'International candidates who can complete the confirmed Singapore arrangements',
+    ]}
+    pathway={[
+      'Confirm your Level 1 certification and course suitability with Penguin Academy.',
+      'Complete SSI digital learning before instructor-led training.',
+      'Complete applicable theory, water fitness, practical assessment and final exam requirements.',
+      'Finish the supervised Level 2 apprenticeship before certification is issued.',
+    ]}
+    practicalTitle="Level 2 apprenticeship"
+    practicalDescription={COURSE_STANDARDS.level2.apprenticeship}
+    included={certCourseIncludes('SSI Swim Teacher Level 2 Certification', COURSE_STANDARDS.level2.apprenticeship)}
+    importantTitle="Certification does not automatically grant teaching access"
+    importantDescription="Facilities, employers and jurisdictions can set additional access, insurance or employment requirements. Penguin Academy explains the SSI course pathway but does not guarantee venue access, employment or universal acceptance."
+    faqs={faqs}
+    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/index.php?id=22219536' }}
+    guide={{ label: 'Compare SSI Level 1 and Level 2', href: '/blog/ssi-swim-teacher-level-1-vs-level-2' }}
+    courseTitle="SSI Swim Teacher Level 2 Certification"
+  />
 }

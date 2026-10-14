@@ -1,27 +1,15 @@
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
-import BookNowButton from '@/components/BookNowButton'
-import CourseMetaGrid from '@/components/CourseMetaGrid'
-import { Shield, CheckCircle } from 'lucide-react'
-import Link from 'next/link'
-import {
-  COURSE_DETAILS,
-  COURSE_STANDARDS,
-  FULL_REACT_RIGHT,
-  LIFETIME_REFRESHER,
-  PENGUIN_SUPPORT,
-} from '@/lib/approved-course-details'
+import PremiumCoursePage from '@/components/PremiumCoursePage'
+import { COURSE_STANDARDS, FULL_REACT_RIGHT, LIFETIME_REFRESHER, PENGUIN_SUPPORT } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
-import StructuredData from '@/components/StructuredData'
 import { buildCoursePageStructuredData } from '@/lib/structured-data'
 
 export const metadata = buildCourseMetadata({
-  title: 'SSI React Right Singapore | First Aid, CPR, AED & Oxygen',
-  description: 'Full SSI React Right in Singapore for SGD 100, including First Aid & CPR, AED Provider and Oxygen Provider training.',
+  title: 'SSI React Right Singapore | CPR, AED & Oxygen Provider',
+  description: 'Full SSI React Right in Singapore for SGD 100: First Aid & CPR, AED Provider and Oxygen Provider training, assessment and certification pathway.',
   path: '/courses/react-right-cpr-aed-first-aid',
 })
 
-const reactRightIncludes = [
+const includes = [
   FULL_REACT_RIGHT,
   'First Aid & CPR module (recommended 5 hours)',
   'AED Provider module (recommended 1 hour)',
@@ -33,69 +21,50 @@ const reactRightIncludes = [
   LIFETIME_REFRESHER,
 ]
 
+const faqs = [
+  { question: 'What is included in full SSI React Right?', answer: 'The full combination includes First Aid & CPR, AED Provider and Oxygen Provider.' },
+  { question: 'What is the minimum age?', answer: 'Candidates must be at least 12.' },
+  { question: 'Do I need a previous first-aid certification?', answer: 'No certification prerequisite is listed for this student-level pathway.' },
+  { question: 'How long does React Right take?', answer: 'SSI lists a combined recommended duration of 8–12 hours, with applicable learning, scenarios, assessments and final exams.' },
+  { question: 'How long is the certification valid?', answer: 'SSI React Right certification is valid for two years.' },
+  { question: 'Will every employer accept React Right?', answer: 'Acceptance requirements vary. Confirm the exact course, issuing organisation and validity required by your employer, facility or regulator before enrolling.' },
+]
+
 export default function ReactRightPage() {
-  return (
-    <div className="min-h-screen bg-gray-50">
-      <StructuredData data={buildCoursePageStructuredData('reactRight')} />
-      <Header />
-      <main id="main-content" className="pt-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <nav className="mb-8" aria-label="Breadcrumb">
-            <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <Link href="/courses" className="text-blue-600 hover:text-blue-800">Courses</Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <span className="text-gray-600">React Right</span>
-          </nav>
-
-          <div className="bg-white rounded-2xl shadow-lg p-8 mb-8">
-            <div className="flex items-center gap-3 mb-6">
-              <Shield className="h-8 w-8 text-blue-600" />
-              <h1 className="text-4xl font-bold text-gray-900">React Right: First Aid, CPR, AED & Oxygen Provider</h1>
-            </div>
-
-            <CourseMetaGrid recommendedDuration={COURSE_STANDARDS.reactRight.recommendedDuration} minimumAge={COURSE_STANDARDS.reactRight.minimumAge} liveTraining="Scheduled practical training" />
-
-            <div className="bg-blue-50 p-6 rounded-lg mb-8">
-              <h2 className="text-xl font-bold text-gray-900 mb-4">Course Description</h2>
-              <p className="text-gray-700 leading-relaxed">
-                Complete the full SSI React Right combination: First Aid & CPR, AED Provider and Oxygen Provider. Suitable for swim coaches, personal trainers, educators, and anyone who wants to respond confidently in emergencies. {COURSE_DETAILS.format}
-              </p>
-            </div>
-
-            <div className="bg-green-50 p-6 rounded-lg mb-8">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">What&apos;s Included</h3>
-              <div className="space-y-3">
-                {reactRightIncludes.map((feature, index) => (
-                  <div key={index} className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                    <span className="text-gray-700">{feature}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="bg-yellow-50 p-6 rounded-lg">
-              <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-                <div className="min-w-0">
-                  <div className="text-3xl font-bold text-gray-900">SGD 100</div>
-                  <div className="text-sm text-gray-600">Standalone course</div>
-                </div>
-                <div className="grid w-full grid-cols-1 gap-3 md:w-auto md:grid-cols-2 md:gap-4">
-                  <BookNowButton courseTitle="Full SSI React Right" className="w-full text-center md:w-auto" />
-                  <Link
-                    href="/course-dates"
-                    className="inline-flex w-full items-center justify-center border-2 border-blue-600 text-blue-600 px-6 py-3 rounded-lg text-center font-semibold hover:bg-blue-50 transition-colors md:w-auto"
-                  >
-                    View course dates
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
+  return <PremiumCoursePage
+    structuredData={buildCoursePageStructuredData('reactRight')}
+    eyebrow="Emergency response training"
+    title="Full SSI React Right in Singapore."
+    description="Train in First Aid & CPR, AED use and emergency oxygen administration through one practical SSI pathway."
+    price="SGD 100"
+    priceNote="Standalone full React Right course. It is also included with each SGD 1,688 Penguin Academy swim-teacher course."
+    directAnswer="Full SSI React Right combines First Aid & CPR, AED Provider and Oxygen Provider. The minimum age is 12, SSI recommends 8–12 hours, and the certification is valid for two years."
+    facts={[
+      { label: 'Minimum age', value: COURSE_STANDARDS.reactRight.minimumAge },
+      { label: 'Recommended time', value: COURSE_STANDARDS.reactRight.recommendedDuration },
+      { label: 'Validity', value: '2 years' },
+      { label: 'Training venue', value: 'In person in Singapore' },
+    ]}
+    suitableFor={[
+      'Swim teachers and aquatic professionals',
+      'Educators, personal trainers and activity leaders',
+      'People who want structured CPR, AED and oxygen-provider training',
+      'International candidates able to attend the confirmed Singapore session',
+    ]}
+    pathway={[
+      'Confirm the next scheduled practical session with Penguin Academy.',
+      'Complete the applicable SSI learning portions.',
+      'Practise the required emergency-response scenarios with your trainer.',
+      'Successfully complete the applicable academic assessments and final exams.',
+    ]}
+    practicalTitle="Practical assessment, not apprenticeship"
+    practicalDescription={COURSE_STANDARDS.reactRight.apprenticeship}
+    included={includes}
+    importantTitle="Confirm the qualification your workplace requires"
+    importantDescription="React Right is an SSI emergency-response certification pathway. It is not presented as a healthcare-professional or lifeguard qualification, and Penguin Academy cannot guarantee acceptance by every employer, facility or regulator."
+    faqs={faqs}
+    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/course/scuba-training-standards-and-procedures-20241/react-right-programs/student-level-programs/react-right' }}
+    guide={{ label: 'Read the React Right guide', href: '/blog/ssi-react-right-cpr-aed-oxygen-provider' }}
+    courseTitle="Full SSI React Right"
+  />
 }
