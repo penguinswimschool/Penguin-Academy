@@ -14,6 +14,39 @@ import { blogArticles, getBlogArticle, type BlogArticle } from '@/lib/blog-artic
 
 const SITE_URL = 'https://www.swimcoachcertification.com'
 
+const relatedArticleSlugs: Record<string, string[]> = {
+  'how-to-become-certified-swimming-instructor-singapore': [
+    'ssi-swim-teacher-level-1-requirements-cost-career-path',
+    'ssi-swim-teacher-level-1-vs-level-2',
+    'ssi-adult-swim-teacher-certification-singapore',
+  ],
+  'ssi-swim-teacher-level-1-requirements-cost-career-path': [
+    'how-to-become-certified-swimming-instructor-singapore',
+    'ssi-swim-teacher-level-1-vs-level-2',
+    'ssi-react-right-cpr-aed-oxygen-provider-explained',
+  ],
+  'ssi-react-right-cpr-aed-oxygen-provider-explained': [
+    'how-to-become-certified-swimming-instructor-singapore',
+    'ssi-adult-swim-teacher-certification-singapore',
+    'baby-swimming-teacher-certification-singapore',
+  ],
+  'baby-swimming-teacher-certification-singapore': [
+    'how-to-become-certified-swimming-instructor-singapore',
+    'ssi-react-right-cpr-aed-oxygen-provider-explained',
+    'ssi-adult-swim-teacher-certification-singapore',
+  ],
+  'ssi-swim-teacher-level-1-vs-level-2': [
+    'ssi-swim-teacher-level-1-requirements-cost-career-path',
+    'how-to-become-certified-swimming-instructor-singapore',
+    'ssi-adult-swim-teacher-certification-singapore',
+  ],
+  'ssi-adult-swim-teacher-certification-singapore': [
+    'how-to-become-certified-swimming-instructor-singapore',
+    'ssi-swim-teacher-level-1-vs-level-2',
+    'ssi-react-right-cpr-aed-oxygen-provider-explained',
+  ],
+}
+
 const postQuery = `*[_type == "blogPost" && slug.current == $slug && defined(publishedAt) && publishedAt <= now()][0] {
   _id, _updatedAt, title, slug, excerpt, publishedAt, mainImage,
   author->{name, image, bio}, categories[]->{title, color}, body, seoTitle, seoDescription
@@ -127,7 +160,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
 
 function StaticArticle({ article }: { article: BlogArticle }) {
   const url = `${SITE_URL}/blog/${article.slug}`
-  const related = blogArticles.filter((item) => item.slug !== article.slug).slice(0, 3)
+  const preferredRelatedSlugs = relatedArticleSlugs[article.slug] || []
+  const related = preferredRelatedSlugs
+    .map((slug) => blogArticles.find((item) => item.slug === slug))
+    .filter((item): item is BlogArticle => Boolean(item))
+    .slice(0, 3)
   const structuredData = buildArticleStructuredData({
     url, title: article.title, description: article.description, image: `${SITE_URL}${article.image}`,
     publishedAt: article.publishedAt, updatedAt: article.updatedAt, category: article.category, author: 'Penguin Academy',
@@ -179,6 +216,20 @@ function StaticArticle({ article }: { article: BlogArticle }) {
                 </section>
               ))}
             </div>
+
+            {article.internalLinks && article.internalLinks.length > 0 && (
+              <nav className="mt-16 rounded-[1.5rem] border border-slate-200 bg-white p-7 sm:p-9" aria-labelledby="next-reading-title">
+                <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">Plan your pathway</p>
+                <h2 id="next-reading-title" className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#0b2438]">Continue with the most relevant information.</h2>
+                <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                  {article.internalLinks.map((link) => (
+                    <Link key={link.href} href={link.href} className="inline-flex items-center justify-between gap-3 rounded-xl bg-[#f6f4ee] px-5 py-4 font-bold text-teal-800 transition hover:bg-[#dff5f1] hover:text-teal-700">
+                      {link.label}<ArrowRight className="h-4 w-4 shrink-0" aria-hidden="true" />
+                    </Link>
+                  ))}
+                </div>
+              </nav>
+            )}
 
             <section className="mt-16 rounded-[1.75rem] bg-[#0b2438] p-8 text-white sm:p-10">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-cyan-300">Your next step</p>

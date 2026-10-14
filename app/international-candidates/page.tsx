@@ -5,20 +5,79 @@ import Footer from '@/components/Footer'
 import InteriorPageHero from '@/components/InteriorPageHero'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
+import StructuredData from '@/components/StructuredData'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
+
+const pageUrl = 'https://www.swimcoachcertification.com/international-candidates'
+const socialImage = 'https://www.swimcoachcertification.com/academy-coach-community.jpg'
 
 export const metadata: Metadata = {
   title: 'Swim Teacher Certification in Singapore for International Candidates',
   description: 'Plan SSI swim teacher training with Penguin Academy in Singapore. Review SGD fees, in-person requirements, travel planning and recognition checks before booking.',
-  alternates: { canonical: 'https://www.swimcoachcertification.com/international-candidates' },
+  alternates: { canonical: pageUrl },
   openGraph: {
     title: 'International Candidates | Penguin Academy Singapore',
     description: 'Plan professional SSI swim teacher training in Singapore with clear SGD pricing and practical travel guidance.',
-    url: 'https://www.swimcoachcertification.com/international-candidates',
+    url: pageUrl,
     siteName: 'Penguin Academy',
     locale: 'en_SG',
     type: 'website',
+    images: [
+      {
+        url: socialImage,
+        width: 1280,
+        height: 853,
+        alt: 'Penguin Academy candidates taking part in practical swim teacher training in Singapore',
+      },
+    ],
   },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'International Swim Teacher Candidates | Penguin Academy Singapore',
+    description: 'Plan SSI swim teacher training in Singapore with clear SGD pricing, in-person requirements and travel guidance.',
+    images: [socialImage],
+  },
+}
+
+const internationalCandidatesStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'WebPage',
+      '@id': `${pageUrl}#webpage`,
+      url: pageUrl,
+      name: 'Swim Teacher Certification in Singapore for International Candidates',
+      description: 'Plan SSI swim teacher training with Penguin Academy in Singapore, including SGD fees, in-person requirements, travel planning and recognition checks.',
+      inLanguage: 'en-SG',
+      isPartOf: { '@id': 'https://www.swimcoachcertification.com/#website' },
+      about: { '@id': 'https://www.swimcoachcertification.com/#organization' },
+      breadcrumb: { '@id': `${pageUrl}#breadcrumb` },
+      primaryImageOfPage: {
+        '@type': 'ImageObject',
+        url: socialImage,
+        width: 1280,
+        height: 853,
+      },
+    },
+    {
+      '@type': 'BreadcrumbList',
+      '@id': `${pageUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: 'https://www.swimcoachcertification.com/',
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'International Candidates',
+          item: pageUrl,
+        },
+      ],
+    },
+  ],
 }
 
 const planningPoints = [
@@ -53,6 +112,7 @@ export default function InternationalCandidatesPage() {
 
   return (
     <div className="min-h-screen bg-[#f6f4ee]">
+      <StructuredData data={internationalCandidatesStructuredData} />
       <Header />
       <main id="main-content">
         <InteriorPageHero eyebrow="Train in Singapore" title="International candidates are welcome." description="Plan your Penguin Academy pathway with clear SGD pricing, in-person requirements and practical checks before you arrange travel." primaryHref={`${WHATSAPP_URL}?text=${message}`} primaryLabel="Discuss your training plan" primaryTrackingSource="international_hero" primaryCandidateSegment="international" secondaryHref="/courses" secondaryLabel="Compare courses" />

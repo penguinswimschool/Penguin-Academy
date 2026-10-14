@@ -6,12 +6,12 @@ const baseUrl = 'https://www.swimcoachcertification.com'
 
 // Canonical URLs aligned with GSC-indexed pages (legacy slugs redirect via next.config.ts)
 const staticRoutes = [
-  { path: '', lastModified: '2026-10-13T15:46:26+08:00' },
+  { path: '', lastModified: '2026-10-14T10:28:00+08:00' },
   { path: '/about', lastModified: '2026-10-13T22:00:00+08:00' },
   { path: '/courses', lastModified: '2026-10-13T22:00:00+08:00' },
   { path: '/course-dates', lastModified: '2026-10-13T22:00:00+08:00' },
   { path: '/contact', lastModified: '2026-10-13T22:00:00+08:00' },
-  { path: '/international-candidates', lastModified: '2026-10-13T23:00:00+08:00' },
+  { path: '/international-candidates', lastModified: '2026-10-14T10:28:00+08:00' },
   { path: '/courses/penguin-pro-swim-teacher-pathway', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/courses/ssi-swim-teacher-level-1', lastModified: '2026-10-13T16:09:32+08:00' },
   { path: '/courses/ssi-swim-teacher-level-2', lastModified: '2026-10-13T16:09:32+08:00' },

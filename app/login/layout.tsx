@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   robots: {
     index: false,
     follow: false,
+    nocache: true,
+  },
+  alternates: {
+    canonical: 'https://www.swimcoachcertification.com/login',
   },
 }
 

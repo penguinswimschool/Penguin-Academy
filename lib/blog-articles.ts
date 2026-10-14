@@ -20,6 +20,7 @@ export interface BlogArticle {
   }>
   faqs: Array<{ question: string; answer: string }>
   sources: Array<{ label: string; url: string }>
+  internalLinks?: Array<{ label: string; href: string }>
   courseHref: string
   courseName: string
   whatsappMessage: string
@@ -485,6 +486,112 @@ export const blogArticles: BlogArticle[] = [
     courseHref: '/courses/penguin-pro-swim-teacher-pathway',
     courseName: 'Compare the any-two-course bundle',
     whatsappMessage: 'Hi Penguin Academy, please help me choose between SSI Swim Teacher Level 1 and Level 2.',
+  },
+  {
+    slug: 'ssi-adult-swim-teacher-certification-singapore',
+    title: 'SSI Adult Swim Teacher Certification Singapore: Requirements, Duration and Apprenticeship',
+    seoTitle: 'SSI Adult Swim Teacher Singapore: Requirements & Cost',
+    description: 'Review SSI Adult Swim Teacher entry requirements, recommended duration, apprenticeship, Penguin Academy’s SGD 1,688 fee and React Right inclusion.',
+    excerpt: 'A source-backed guide to the SSI Adult Swim Teacher pathway, including completion requirements, apprenticeship and responsible recognition checks.',
+    publishedAt: '2026-10-14T10:15:00+08:00',
+    updatedAt: '2026-10-14T10:15:00+08:00',
+    category: 'Adult Swim',
+    image: '/academy-adult-teacher-practice.jpg',
+    imageAlt: 'Penguin Academy coach completing adult-focused teaching practice in a Singapore swimming pool',
+    readTime: '7 min read',
+    directAnswer: 'SSI Adult Swim Teacher is a professional pathway for candidates preparing to conduct SSI Adult swim programmes. Candidates must be at least 18. SSI recommends 22–26 hours for completion, or 6–8 hours for candidates who are already qualified SSI Level 2 Swim Teachers. Penguin Academy’s current fee is SGD 1,688 and includes full SSI React Right.',
+    facts: [
+      { label: 'Minimum age', value: '18 years' },
+      { label: 'Recommended duration', value: '22–26 hours' },
+      { label: 'Level 2 teacher duration', value: '6–8 hours' },
+      { label: 'Penguin Academy fee', value: 'SGD 1,688' },
+    ],
+    sections: [
+      {
+        id: 'what-is-adult-swim-teacher',
+        title: 'What is SSI Adult Swim Teacher certification?',
+        paragraphs: [
+          'The SSI Adult Swim Teacher programme provides candidates with the knowledge and training needed to conduct SSI Adult swim programmes. It combines academic development, directly supervised in-water training, assessment and a programme-specific teaching apprenticeship.',
+          'The certification records completion of an SSI professional programme. It does not by itself guarantee employment, access to a particular pool or acceptance for every employer, venue or regulatory purpose.',
+        ],
+      },
+      {
+        id: 'entry-duration',
+        title: 'Entry requirement and recommended duration',
+        paragraphs: [
+          'The current SSI standard sets a minimum candidate age of 18. It does not list another swim-teacher certification as a prerequisite for the full Adult Swim Teacher programme.',
+          'SSI recommends 22–26 hours for completion. For a candidate who is already an SSI Level 2 Swim Teacher, the recommended duration is 6–8 hours. These figures describe the complete programme, not only Penguin Academy’s instructor-led training day.',
+        ],
+      },
+      {
+        id: 'completion',
+        title: 'What must candidates complete?',
+        bullets: [
+          'Complete the Candidate Water Fitness Evaluation if required under the current SSI standard.',
+          'Complete all academic sections and assessments in the Adult Swim Teacher instructor materials.',
+          'Complete directly supervised and evaluated academic and in-water training.',
+          'Complete the programme final exam.',
+          'Complete at least one Adult I lesson and one Adult II lesson.',
+          'Reach a recommended cumulative apprenticeship time of at least two hours.',
+        ],
+        paragraphs: [
+          'The digital certification card may be issued only after the applicable academic, in-water, water-fitness, examination and apprenticeship requirements are complete.',
+        ],
+      },
+      {
+        id: 'apprenticeship',
+        title: 'How the Adult Swim Teacher apprenticeship works',
+        paragraphs: [
+          'The apprenticeship is specific to the learners and programmes covered by this pathway. SSI requires at least one Adult I lesson and one Adult II lesson, with a recommended cumulative training time of at least two hours.',
+          'An active-status Adult Teacher Mentor may directly supervise a candidate during the apprenticeship. The exact training schedule is set by the Swim Teacher Instructor according to the candidate’s needs and ability.',
+        ],
+      },
+      {
+        id: 'price-inclusions',
+        title: 'Penguin Academy price and React Right inclusion',
+        paragraphs: [
+          'Penguin Academy’s current published fee is SGD 1,688 for the SSI Adult Swim Teacher course. The offer includes full SSI React Right: First Aid & CPR, AED Provider and Oxygen Provider.',
+          'React Right is a separate emergency-response programme within the package. Its inclusion does not remove any Adult Swim Teacher completion requirement, and candidates should confirm whether an intended employer or regulator requires a different or additional first-aid credential.',
+        ],
+      },
+      {
+        id: 'recognition',
+        title: 'Recognition and work-setting requirements',
+        paragraphs: [
+          'Professional certification and permission to teach in a particular work setting are separate questions. Employers, pool operators and regulators may apply their own requirements for hiring, venue access, insurance, safeguarding, first aid or programme delivery.',
+          'Ask the intended employer or venue to confirm its current requirements in writing before relying on any course for a particular job or teaching location. Penguin Academy does not promise employment or universal recognition.',
+        ],
+      },
+      {
+        id: 'international-candidates',
+        title: 'Information for international candidates',
+        paragraphs: [
+          'International candidates are welcome to enquire about training in Singapore. Before booking travel, confirm the in-person training and apprenticeship arrangements, the total completion pathway and whether the certification suits the country or organisation where you intend to teach.',
+          'Course fees are published in Singapore dollars. Travel, accommodation, immigration and recognition arrangements remain separate from the SSI training requirements and should be confirmed before payment or travel is arranged.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'What is the minimum age for SSI Adult Swim Teacher?', answer: 'The current SSI standard sets a minimum candidate age of 18.' },
+      { question: 'How long does SSI Adult Swim Teacher take?', answer: 'SSI recommends 22–26 hours for completion. For candidates who are already SSI Level 2 Swim Teachers, the recommendation is 6–8 hours.' },
+      { question: 'What apprenticeship is required?', answer: 'At least one Adult I lesson and one Adult II lesson, with a recommended cumulative apprenticeship time of at least two hours.' },
+      { question: 'How much does Penguin Academy charge?', answer: 'The current published fee is SGD 1,688 and includes full SSI React Right: First Aid & CPR, AED Provider and Oxygen Provider.' },
+      { question: 'Does certification guarantee a teaching job or access to every pool?', answer: 'No. Employers, venues and regulators determine their own hiring, access and credential requirements.' },
+      { question: 'Can international candidates enquire?', answer: 'Yes. Confirm the complete in-person training, apprenticeship, travel and recognition arrangements before booking.' },
+    ],
+    sources: [
+      { label: 'SSI Adult Swim Teacher training standard', url: 'https://training.divessi.com/en-au/course/swim-standards/professional-programs-2/swim-professional-programs/adult-swim-teacher' },
+      { label: 'SSI React Right training standard', url: 'https://training.divessi.com/index.php?L=0&extauth%5Baction%5D=previewaccess&id=21401025&logintype=login' },
+    ],
+    internalLinks: [
+      { label: 'Compare all SSI swim teacher courses', href: '/courses' },
+      { label: 'Read the Singapore swimming-instructor pathway', href: '/blog/how-to-become-certified-swimming-instructor-singapore' },
+      { label: 'Compare SSI Level 1 and Level 2', href: '/blog/ssi-swim-teacher-level-1-vs-level-2' },
+      { label: 'Review information for international candidates', href: '/international-candidates' },
+    ],
+    courseHref: '/courses/ssi-adult-swim-teacher',
+    courseName: 'View SSI Adult Swim Teacher course details',
+    whatsappMessage: 'Hi Penguin Academy, I would like to know more about SSI Adult Swim Teacher certification.',
   },
 ]
 

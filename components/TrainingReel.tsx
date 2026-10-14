@@ -4,43 +4,89 @@ import { Pause, Play, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 export default function TrainingReel() {
+  const sectionRef = useRef<HTMLElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [hasStarted, setHasStarted] = useState(false);
+  const [shouldLoadVideo, setShouldLoadVideo] = useState(false);
+  const [isNearViewport, setIsNearViewport] = useState(false);
+  const [allowsAutomaticPlayback, setAllowsAutomaticPlayback] = useState(false);
+  const [manualPlayback, setManualPlayback] = useState(false);
+  const [isUserPaused, setIsUserPaused] = useState(false);
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    if (!('IntersectionObserver' in window)) {
+      setShouldLoadVideo(true);
+      setIsNearViewport(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsNearViewport(entry.isIntersecting);
+        if (entry.isIntersecting) setShouldLoadVideo(true);
+      },
+      { rootMargin: '300px 0px' },
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const syncPreference = () => setAllowsAutomaticPlayback(!reducedMotion.matches);
+
+    syncPreference();
+    reducedMotion.addEventListener('change', syncPreference);
+    return () => reducedMotion.removeEventListener('change', syncPreference);
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
-    if (!video) return;
+    if (!video || !shouldLoadVideo) return;
+    video.load();
+  }, [shouldLoadVideo]);
 
-    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-    const syncPlayback = () => {
-      if (reducedMotion.matches) {
-        video.pause();
-        setIsPlaying(false);
-        return;
-      }
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !shouldLoadVideo) return;
 
+    if (isNearViewport && (manualPlayback || (allowsAutomaticPlayback && !isUserPaused))) {
       void video.play().catch(() => setIsPlaying(false));
-    };
-
-    syncPlayback();
-    reducedMotion.addEventListener('change', syncPlayback);
-    return () => reducedMotion.removeEventListener('change', syncPlayback);
-  }, []);
+    } else {
+      video.pause();
+    }
+  }, [allowsAutomaticPlayback, isNearViewport, isUserPaused, manualPlayback, shouldLoadVideo]);
 
   const togglePlayback = () => {
     const video = videoRef.current;
     if (!video) return;
 
+    if (!shouldLoadVideo) {
+      setIsNearViewport(true);
+      setManualPlayback(true);
+      setIsUserPaused(false);
+      setShouldLoadVideo(true);
+      return;
+    }
+
     if (video.paused) {
+      setManualPlayback(true);
+      setIsUserPaused(false);
       void video.play();
     } else {
+      setManualPlayback(false);
+      setIsUserPaused(true);
       video.pause();
     }
   };
 
   return (
-    <section className="overflow-hidden bg-[#071b2b] py-16 text-white sm:py-24 lg:py-28" aria-labelledby="training-reel-title">
+    <section ref={sectionRef} className="overflow-hidden bg-[#071b2b] py-16 text-white sm:py-24 lg:py-28" aria-labelledby="training-reel-title">
       <div className="mx-auto grid max-w-7xl items-center gap-12 px-5 sm:px-8 lg:grid-cols-[0.72fr_1.28fr] lg:px-10">
         <div>
           <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Proof in practice</p>
@@ -67,6 +113,8 @@ export default function TrainingReel() {
                 src="/academy-training-poster-mobile.jpg"
                 alt="Penguin coaches guiding practical swim teaching in a Singapore pool"
                 className="h-full w-full object-cover"
+                loading="lazy"
+                decoding="async"
               />
             </picture>
           )}
@@ -76,7 +124,7 @@ export default function TrainingReel() {
             muted
             loop
             playsInline
-            preload="metadata"
+            preload={shouldLoadVideo ? 'metadata' : 'none'}
             poster="/academy-training-poster.jpg"
             aria-label="Real Penguin Academy pool training and guided coaching practice"
             onPlaying={() => {
@@ -85,8 +133,12 @@ export default function TrainingReel() {
             }}
             onPause={() => setIsPlaying(false)}
           >
-            <source media="(min-width: 768px)" src="/academy-training-desktop.mp4" type="video/mp4" />
-            <source src="/academy-training-mobile.mp4" type="video/mp4" />
+            {shouldLoadVideo && (
+              <>
+                <source media="(min-width: 768px)" src="/academy-training-desktop.mp4" type="video/mp4" />
+                <source src="/academy-training-mobile.mp4" type="video/mp4" />
+              </>
+            )}
           </video>
 
           <div className="absolute inset-x-0 bottom-0 z-20 flex items-end justify-between bg-gradient-to-t from-[#071b2b]/85 via-[#071b2b]/25 to-transparent p-5 sm:p-6">

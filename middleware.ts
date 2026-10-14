@@ -30,10 +30,19 @@ export async function middleware(req: NextRequest) {
   // Check if user is authenticated
   const { data: { session } } = await supabase.auth.getSession()
 
-  // Dashboard protection - only admins can access
-  if (pathname.startsWith('/dashboard')) {
+  const isAccountRoute = pathname.startsWith('/account')
+  const isDashboardRoute = pathname.startsWith('/dashboard')
+
+  // Private account and dashboard routes require an authenticated session.
+  if (isAccountRoute || isDashboardRoute) {
     if (!session) {
-      // Redirect to login if not authenticated
+      return NextResponse.redirect(new URL('/login', req.url))
+    }
+  }
+
+  // Dashboard protection - only admins can access
+  if (isDashboardRoute) {
+    if (!session) {
       return NextResponse.redirect(new URL('/login', req.url))
     }
 
