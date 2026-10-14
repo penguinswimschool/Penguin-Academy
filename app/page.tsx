@@ -10,6 +10,7 @@ import CourseCalendar from '@/components/CourseCalendar'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import StructuredData from '@/components/StructuredData'
+import LegacyHashRedirect from '@/components/LegacyHashRedirect'
 import { homepageStructuredData } from '@/lib/structured-data'
 
 export const metadata: Metadata = {
@@ -34,6 +35,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-white">
+      <LegacyHashRedirect />
       <StructuredData data={homepageStructuredData} />
       <Header />
       <main id="main-content">
