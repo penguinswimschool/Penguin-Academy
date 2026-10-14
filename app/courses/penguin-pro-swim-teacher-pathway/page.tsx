@@ -26,7 +26,7 @@ export const metadata = buildCourseMetadata({
 const bundleFeatures = [
   'Choose any 2: Level 1, Level 2, Baby Swim Teacher, or Adult Swim Teacher',
   FULL_REACT_RIGHT,
-  'SSI digital learning, assessments, final exam and programme-specific apprenticeship for each selected course',
+  'Applicable SSI digital learning, assessments, final exam and programme-specific apprenticeship pathway for each selected course',
   PENGUIN_SUPPORT,
   LIFETIME_MENTORSHIP,
   LIFETIME_MEMBERSHIP,
@@ -38,7 +38,7 @@ export default function PenguinProPathwayPage() {
     <div className="min-h-screen bg-gray-50">
       <StructuredData data={bundlePageStructuredData} />
       <Header />
-      <div className="pt-16">
+      <main id="main-content" className="pt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
           <nav className="mb-8" aria-label="Breadcrumb">
             <Link href="/" className="text-blue-600 hover:text-blue-800">Home</Link>
@@ -50,7 +50,7 @@ export default function PenguinProPathwayPage() {
 
           <div className="bg-gradient-to-r from-yellow-400 to-orange-400 rounded-2xl p-8 mb-8 text-center">
             <div className="inline-block bg-white bg-opacity-20 px-4 py-2 rounded-full mb-4">
-              <span className="text-sm font-bold text-gray-900">🏆 MOST POPULAR BUNDLE</span>
+              <span className="text-sm font-bold text-gray-900">ANY 2-COURSE BUNDLE</span>
             </div>
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
               Penguin Pro Bundle
@@ -75,7 +75,7 @@ export default function PenguinProPathwayPage() {
                   <h2 className="text-2xl font-bold text-gray-900">Course Overview</h2>
                 </div>
                 <p className="text-gray-700 mb-6 leading-relaxed">
-                  Choose any two teacher courses: Level 1, Level 2, Baby Swim Teacher, or Adult Swim Teacher. Each selected course includes one instructor-led day (9am–6pm) at our {COURSE_DETAILS.venue} venue plus all programme-specific SSI completion requirements. {COURSE_DETAILS.format}
+                  Choose any two teacher courses: Level 1, Level 2, Baby Swim Teacher, or Adult Swim Teacher. Each selected course includes one instructor-led day (9am–6pm) at our {COURSE_DETAILS.venue} venue and the applicable training and assessment pathway. Certification follows successful completion of every programme-specific requirement. {COURSE_DETAILS.format}
                 </p>
 
                 <CourseMetaGrid recommendedDuration="Varies by the 2 courses selected" minimumAge="18+" liveTraining="2 instructor-led days" />
@@ -137,7 +137,7 @@ export default function PenguinProPathwayPage() {
             </div>
           </div>
         </div>
-      </div>
+      </main>
       <Footer />
     </div>
   )

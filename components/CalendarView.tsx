@@ -1,5 +1,6 @@
 import React from 'react';
 import { ChevronLeft } from 'lucide-react';
+import { formatLocalDate } from '@/lib/date-utils';
 
 interface Course {
   id: string;
@@ -50,18 +51,8 @@ const CalendarView: React.FC<CalendarViewProps> = ({
     return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
   };
 
-  const formatDate = (date: Date) => {
-    return date.toISOString().split('T')[0];
-  };
-
   const getCoursesForDate = (date: string) => {
-    return courses.filter(course => {
-      const courseStart = new Date(course.start_date);
-      const courseEnd = new Date(course.end_date);
-      const currentDate = new Date(date);
-      
-      return currentDate >= courseStart && currentDate <= courseEnd;
-    });
+    return courses.filter(course => date >= course.start_date && date <= course.end_date);
   };
 
   const navigateMonth = (direction: 'prev' | 'next') => {
@@ -88,9 +79,9 @@ const CalendarView: React.FC<CalendarViewProps> = ({
 
     // Days of the month
     for (let day = 1; day <= daysInMonth; day++) {
-      const dateString = formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
+      const dateString = formatLocalDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
       const coursesForDay = getCoursesForDate(dateString);
-      const isToday = dateString === formatDate(new Date());
+      const isToday = dateString === formatLocalDate(new Date());
 
       days.push(
         <div 
@@ -178,4 +169,4 @@ const CalendarView: React.FC<CalendarViewProps> = ({
   );
 };
 
-export default CalendarView; 
+export default CalendarView;

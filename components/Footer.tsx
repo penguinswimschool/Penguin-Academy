@@ -37,6 +37,7 @@ const Footer: React.FC = () => {
               <li><Link href="/about" className="transition-colors hover:text-white">About Academy</Link></li>
               <li><Link href="/courses" className="transition-colors hover:text-white">All Courses</Link></li>
               <li><Link href="/course-dates" className="transition-colors hover:text-white">Course Dates</Link></li>
+              <li><Link href="/swimming-coach-career-singapore" className="transition-colors hover:text-white">Swimming Coach Career</Link></li>
               <li><Link href="/international-candidates" className="transition-colors hover:text-white">International Candidates</Link></li>
               <li><Link href="/blog" className="transition-colors hover:text-white">Training Guides</Link></li>
               <li><Link href="/contact" className="transition-colors hover:text-white">Contact</Link></li>

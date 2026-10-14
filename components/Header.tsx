@@ -57,6 +57,7 @@ const Header: React.FC = () => {
               </div>
             </div>
             <Link href="/course-dates" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">Course Dates</Link>
+            <Link href="/swimming-coach-career-singapore" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">Career</Link>
             <Link href="/blog" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">Guides</Link>
           </nav>
 
@@ -88,6 +89,7 @@ const Header: React.FC = () => {
               )}
             </div>
             <Link href="/course-dates" onClick={closeMenus} className="block rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5 hover:text-cyan-300">Course Dates</Link>
+            <Link href="/swimming-coach-career-singapore" onClick={closeMenus} className="block rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5 hover:text-cyan-300">Swimming Coach Career</Link>
             <Link href="/blog" onClick={closeMenus} className="block rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5 hover:text-cyan-300">Guides</Link>
             <Link href="/contact" onClick={closeMenus} className="mt-3 block w-full rounded-full bg-cyan-300 px-5 py-3 text-center font-bold text-[#071b2b] transition hover:bg-cyan-200">Contact</Link>
           </nav>

@@ -2,6 +2,8 @@ import React from 'react';
 import { ArrowRight, Award, CheckCircle, Shield, Sparkles, Users } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
+import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink';
+import { WHATSAPP_URL } from '@/lib/approved-course-details';
 
 const trustPoints = [
   'Verified SSI instructor-led training',
@@ -24,12 +26,12 @@ const Hero: React.FC = () => {
             </div>
 
             <h1 className="max-w-3xl text-[2.65rem] font-semibold leading-[1.04] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-              Teach swimming with{' '}
-              <span className="block bg-gradient-to-r from-cyan-300 to-teal-200 bg-clip-text text-transparent">skill, safety and confidence.</span>
+              Train for SSI swim teacher{' '}
+              <span className="block bg-gradient-to-r from-cyan-300 to-teal-200 bg-clip-text text-transparent">certification in Singapore.</span>
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Structured SSI pathways for aspiring and experienced swim teachers, guided in Singapore by Remus Teo and Rayner Teo.
+              Build the skills to teach others through structured SSI training, supervised practical experience and ongoing Penguin mentorship—whether you are exploring part-time teaching or a professional career.
             </p>
 
             <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:max-w-2xl">
@@ -49,12 +51,13 @@ const Hero: React.FC = () => {
                 Explore courses
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
-              <Link
-                href="/contact"
+              <TrackedWhatsAppLink
+                href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, please help me choose the right swim teacher and coaching pathway.')}`}
+                source="home_hero_pathway"
                 className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-7 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/10"
               >
-                Speak with the Academy
-              </Link>
+                Ask about my pathway
+              </TrackedWhatsAppLink>
             </div>
 
             <div className="mt-10 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">

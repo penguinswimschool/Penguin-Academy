@@ -12,9 +12,11 @@ interface InteriorPageHeroProps {
   secondaryLabel?: string
   primaryTrackingSource?: string
   primaryCandidateSegment?: string
+  secondaryTrackingSource?: string
+  secondaryCandidateSegment?: string
 }
 
-export default function InteriorPageHero({ eyebrow, title, description, primaryHref, primaryLabel, secondaryHref, secondaryLabel, primaryTrackingSource, primaryCandidateSegment }: InteriorPageHeroProps) {
+export default function InteriorPageHero({ eyebrow, title, description, primaryHref, primaryLabel, secondaryHref, secondaryLabel, primaryTrackingSource, primaryCandidateSegment, secondaryTrackingSource, secondaryCandidateSegment }: InteriorPageHeroProps) {
   return (
     <section className="relative overflow-hidden bg-[#071b2b] pb-16 pt-28 text-white sm:pb-20 sm:pt-36 lg:pb-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,rgba(45,212,191,0.17),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(56,189,248,0.13),transparent_30%)]" />
@@ -27,7 +29,9 @@ export default function InteriorPageHero({ eyebrow, title, description, primaryH
             {primaryHref && primaryLabel && (primaryTrackingSource
               ? <TrackedWhatsAppLink href={primaryHref} source={primaryTrackingSource} candidateSegment={primaryCandidateSegment} className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] transition hover:bg-cyan-200">{primaryLabel}<ArrowRight className="h-4 w-4" /></TrackedWhatsAppLink>
               : <Link href={primaryHref} className="inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] transition hover:bg-cyan-200">{primaryLabel}<ArrowRight className="h-4 w-4" /></Link>)}
-            {secondaryHref && secondaryLabel && <Link href={secondaryHref} className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/10">{secondaryLabel}</Link>}
+            {secondaryHref && secondaryLabel && (secondaryTrackingSource
+              ? <TrackedWhatsAppLink href={secondaryHref} source={secondaryTrackingSource} candidateSegment={secondaryCandidateSegment} className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/10">{secondaryLabel}</TrackedWhatsAppLink>
+              : <Link href={secondaryHref} className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-semibold text-white transition hover:border-white/40 hover:bg-white/10">{secondaryLabel}</Link>)}
           </div>
         )}
       </div>

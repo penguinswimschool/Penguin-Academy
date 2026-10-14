@@ -5,6 +5,7 @@ import { supabase } from '@/utils/supabase/client';
 import { Calendar, ChevronLeft, ChevronRight, MapPin, Clock, Users, MessageCircle, Award } from 'lucide-react';
 import { whatsappEnquiryUrl } from '@/lib/approved-course-details';
 import { trackWhatsAppEnquiry } from '@/lib/analytics';
+import { formatLocalDate } from '@/lib/date-utils';
 
 interface Course {
   id: string;
@@ -25,6 +26,7 @@ interface Course {
 const CourseCalendar = () => {
   const [courses, setCourses] = useState<Course[]>([]);
   const [loading, setLoading] = useState(true);
+  const [loadError, setLoadError] = useState(false);
   const [currentDate, setCurrentDate] = useState(new Date());
   const [selectedCourse, setSelectedCourse] = useState<Course | null>(null);
 
@@ -35,6 +37,7 @@ const CourseCalendar = () => {
   const fetchCourses = async () => {
     try {
       setLoading(true);
+      setLoadError(false);
       const { data, error } = await supabase
         .from('admin_courses')
         .select('*')
@@ -52,6 +55,7 @@ const CourseCalendar = () => {
       setCourses(transformedCourses);
     } catch (error) {
       console.error('Error fetching courses:', error);
+      setLoadError(true);
     } finally {
       setLoading(false);
     }
@@ -81,10 +85,6 @@ const CourseCalendar = () => {
 
   const getFirstDayOfMonth = (date: Date) => {
     return new Date(date.getFullYear(), date.getMonth(), 1).getDay();
-  };
-
-  const formatDate = (date: Date) => {
-    return date.toISOString().split('T')[0];
   };
 
   const isDateInRange = (date: string, startDate: string, endDate: string) => {
@@ -123,9 +123,9 @@ const CourseCalendar = () => {
 
     // Days of the month
     for (let day = 1; day <= daysInMonth; day++) {
-      const dateString = formatDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
+      const dateString = formatLocalDate(new Date(currentDate.getFullYear(), currentDate.getMonth(), day));
       const coursesForDay = getCoursesForDate(dateString);
-      const isToday = dateString === formatDate(new Date());
+      const isToday = dateString === formatLocalDate(new Date());
 
       days.push(
         <div 
@@ -137,17 +137,18 @@ const CourseCalendar = () => {
           </div>
           <div className="space-y-1">
             {coursesForDay.slice(0, 2).map((course, index) => (
-              <div
+              <button
+                type="button"
                 key={`${course.id}-${index}`}
                 onClick={() => setSelectedCourse(course)}
-                className={`${getCategoryColor(course.category)} text-white text-xs p-1 rounded cursor-pointer hover:opacity-80 transition-opacity`}
-                title={course.title}
+                className={`${getCategoryColor(course.category)} w-full rounded p-1 text-left text-xs text-white transition-opacity hover:opacity-80`}
+                aria-label={`View ${course.title} details${course.start_time ? `, starts ${course.start_time}` : ''}`}
               >
                 <div className="truncate font-medium">{course.title}</div>
                 {course.start_date === dateString && (
                   <div className="text-xs opacity-90">{course.start_time}</div>
                 )}
-              </div>
+              </button>
             ))}
             {coursesForDay.length > 2 && (
               <div className="text-xs text-gray-500 font-medium">
@@ -207,6 +208,21 @@ const CourseCalendar = () => {
     );
   }
 
+  if (loadError) {
+    return (
+      <section id="calendar" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-28">
+        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+          <div className="rounded-[2rem] border border-amber-200 bg-amber-50 px-7 py-12 text-center sm:px-14">
+            <Calendar className="mx-auto h-12 w-12 text-amber-700" />
+            <h2 className="mt-5 text-3xl font-semibold tracking-tight text-[#0b2438]">Course dates are temporarily unavailable.</h2>
+            <p className="mx-auto mt-4 max-w-2xl leading-7 text-slate-600">The calendar could not be loaded. Contact Penguin Academy to confirm the next available date before making arrangements.</p>
+            <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_error_state', courseName: 'Course date enquiry' })} className="mt-7 inline-flex rounded-full bg-[#0b2438] px-7 py-4 font-bold text-white hover:bg-teal-800">Check dates on WhatsApp</a>
+          </div>
+        </div>
+      </section>
+    )
+  }
+
   if (courses.length === 0) {
     return (
       <section id="calendar" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-28">
@@ -235,7 +251,7 @@ const CourseCalendar = () => {
             Course <span className="text-blue-600">Calendar</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            View upcoming course schedules and book your SSI instructor certification. Click on any course to see details and reserve your spot.
+            View upcoming course schedules and enquire about SSI teacher training. Select a course to review its details and availability.
           </p>
         </div>
 
@@ -313,18 +329,18 @@ const CourseCalendar = () => {
 
       {/* Course Detail Modal */}
       {selectedCourse && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-          <div className="bg-white rounded-2xl p-8 max-w-lg w-full max-h-[90vh] overflow-y-auto">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 p-4" role="presentation" onKeyDown={(event) => { if (event.key === 'Escape') setSelectedCourse(null) }}>
+          <div className="max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-2xl bg-white p-8" role="dialog" aria-modal="true" aria-labelledby="course-dialog-title">
             <div className="flex justify-between items-start mb-6">
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{selectedCourse.title}</h3>
+                <h3 id="course-dialog-title" className="text-2xl font-bold text-gray-900 mb-2">{selectedCourse.title}</h3>
                 <div className="flex items-center gap-2 text-blue-600 font-semibold">
                   <Award className="h-5 w-5" />
                   <span className="text-2xl">{selectedCourse.price}</span>
                 </div>
               </div>
               <div className={`px-3 py-1 rounded-full text-sm font-semibold ${getStatusColor(selectedCourse.max_participants - selectedCourse.current_participants, selectedCourse.max_participants)}`}>
-                {selectedCourse.max_participants - selectedCourse.current_participants} spots left
+                {Math.max(0, selectedCourse.max_participants - selectedCourse.current_participants)} spots left
               </div>
             </div>
 
@@ -343,7 +359,7 @@ const CourseCalendar = () => {
               </div>
               <div className="flex items-center gap-3 text-gray-600">
                 <Users className="h-5 w-5 text-blue-600" />
-                <span>{selectedCourse.max_participants - selectedCourse.current_participants} / {selectedCourse.max_participants} available</span>
+                <span>{Math.max(0, selectedCourse.max_participants - selectedCourse.current_participants)} / {selectedCourse.max_participants} available</span>
               </div>
               <div className="flex items-center gap-3 text-gray-600">
                 <Award className="h-5 w-5 text-blue-600" />
@@ -354,6 +370,8 @@ const CourseCalendar = () => {
             <div className="flex flex-col gap-3 sm:flex-row">
               <a href={whatsappEnquiryUrl(selectedCourse.title)} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_course_modal', courseName: selectedCourse.title })} className="flex-1 bg-green-600 text-white py-3 rounded-lg font-semibold hover:bg-green-700 transition-colors text-center">Enquire on WhatsApp</a>
               <button 
+                type="button"
+                autoFocus
                 onClick={() => setSelectedCourse(null)}
                 className="px-6 py-3 border border-gray-300 text-gray-600 rounded-lg hover:bg-gray-50 transition-colors"
               >

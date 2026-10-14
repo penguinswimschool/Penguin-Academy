@@ -4,7 +4,7 @@ export const COURSE_DETAILS = {
   schedule: 'Flexible dates by arrangement; confirmed dates are shown when available',
   capacity: '1-8 Students',
   venue: 'CBD / Central Singapore',
-  format: 'In-person for Singapore students. Overseas format can be discussed separately.',
+  format: 'Training is conducted in person in Singapore. International candidates are welcome to enquire; any overseas delivery or apprenticeship arrangement must be confirmed in writing and is not guaranteed.',
   assessment: 'Theory and practical assessments, final exam and supervised apprenticeship',
 } as const;
 
@@ -20,10 +20,10 @@ export const COURSE_STANDARDS = {
   reactRight: { minimumAge: '12+', recommendedDuration: '8-12 hours', apprenticeship: 'Practical scenarios, academic assessments and final exam; no swim-teaching apprenticeship' },
 } as const;
 
-export const COMPLETION_REQUIREMENTS = 'Certification is issued only after all SSI digital learning, water fitness (where required), theory and practical assessments, final exam and programme-specific apprenticeship requirements are completed.';
+export const COMPLETION_REQUIREMENTS = 'A digital certification card may be issued only after all applicable SSI academic and in-water requirements are successfully completed, including the Candidate Water Fitness Evaluation when required by the current standard, final exam and programme-specific apprenticeship.';
 export const LIFETIME_REFRESHER = 'Lifetime refresher at a discounted rate (payable by coach)';
-export const PENGUIN_SUPPORT = '24/7 Penguin Support';
-export const LIFETIME_MENTORSHIP = 'Lifetime mentorship & training with the Penguin Team';
+export const PENGUIN_SUPPORT = '24/7 message access to Penguin Support (replies depend on trainer availability)';
+export const LIFETIME_MENTORSHIP = 'Ongoing Penguin mentorship for eligible teacher-course graduates (ask for the current scope and terms)';
 export const LIFETIME_MEMBERSHIP = 'Lifetime membership in the Penguin Family';
 export const GOOGLE_REVIEWS_URL = 'https://maps.app.goo.gl/pRTAwpRDUBaw1NKW8';
 
@@ -33,5 +33,5 @@ export function whatsappEnquiryUrl(courseTitle: string): string {
 }
 
 export function certCourseIncludes(certification: string, apprenticeship: string): string[] {
-  return [certification, FULL_REACT_RIGHT, 'SSI digital learning before instructor-led training', 'Candidate Water Fitness Evaluation where required', 'Theory and practical assessments plus final exam', apprenticeship, LIFETIME_MENTORSHIP, PENGUIN_SUPPORT, LIFETIME_MEMBERSHIP, LIFETIME_REFRESHER];
+  return [`${certification.replace(/ certification/i, '')} training and assessment pathway`, FULL_REACT_RIGHT, 'SSI digital learning before instructor-led training', 'Candidate Water Fitness Evaluation when required by the current standard', 'Theory and practical assessments plus final exam', apprenticeship, COMPLETION_REQUIREMENTS, LIFETIME_MENTORSHIP, PENGUIN_SUPPORT, LIFETIME_MEMBERSHIP, LIFETIME_REFRESHER];
 }
