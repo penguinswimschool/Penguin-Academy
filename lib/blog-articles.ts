@@ -17,6 +17,10 @@ export interface BlogArticle {
     title: string
     paragraphs?: string[]
     bullets?: string[]
+    comparison?: {
+      columns: [string, string, string]
+      rows: Array<[string, string, string]>
+    }
   }>
   faqs: Array<{ question: string; answer: string }>
   sources: Array<{ label: string; url: string }>
@@ -121,6 +125,12 @@ export const blogArticles: BlogArticle[] = [
       { label: 'ActiveSG coaching requirements', url: 'https://ask.gov.sg/activesg/questions/cm0avawmm000ltcp8l1gqg58w' },
       { label: 'SportSG Sports Education Programme', url: 'https://www.sportsingapore.gov.sg/sport-education/sports-education-programme/' },
     ],
+    internalLinks: [
+      { label: 'Compare SSI and NROC pathways', href: '/blog/ssi-vs-nroc-swimming-instructor-certification-singapore' },
+      { label: 'Review SSI Swim Teacher Level 1', href: '/courses/ssi-swim-teacher-level-1' },
+      { label: 'Compare all Penguin Academy courses', href: '/courses' },
+      { label: 'Information for international candidates', href: '/international-candidates' },
+    ],
     courseHref: '/courses/ssi-swim-teacher-level-1',
     courseName: 'Explore SSI Swim Teacher Level 1',
     whatsappMessage: 'Hi Penguin Academy, I would like advice on becoming a certified swimming instructor in Singapore.',
@@ -208,6 +218,12 @@ export const blogArticles: BlogArticle[] = [
     sources: [
       { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22219535' },
       { label: 'SSI Level 2 Swim Teacher training standard', url: 'https://training.divessi.com/course/swim-training-standards-and-procedures/professional-programs/swim-professional-programs/level-2-swim-teacher-1' },
+    ],
+    internalLinks: [
+      { label: 'Compare SSI and NROC pathways', href: '/blog/ssi-vs-nroc-swimming-instructor-certification-singapore' },
+      { label: 'Read the Singapore swimming-instructor pathway', href: '/blog/how-to-become-certified-swimming-instructor-singapore' },
+      { label: 'Compare SSI Level 1 and Level 2', href: '/blog/ssi-swim-teacher-level-1-vs-level-2' },
+      { label: 'View upcoming course dates', href: '/course-dates' },
     ],
     courseHref: '/courses/ssi-swim-teacher-level-1',
     courseName: 'View Level 1 course details',
@@ -592,6 +608,143 @@ export const blogArticles: BlogArticle[] = [
     courseHref: '/courses/ssi-adult-swim-teacher',
     courseName: 'View SSI Adult Swim Teacher course details',
     whatsappMessage: 'Hi Penguin Academy, I would like to know more about SSI Adult Swim Teacher certification.',
+  },
+  {
+    slug: 'ssi-vs-nroc-swimming-instructor-certification-singapore',
+    title: 'SSI vs NROC in Singapore: Which Swim Coach Path Should You Choose?',
+    seoTitle: 'SSI vs NROC Singapore: Swim Coach Pathways Compared',
+    description: 'Compare SSI swim teacher certification with Singapore’s NROC coaching registry, including their purpose, requirements, teaching settings and when both may help.',
+    excerpt: 'A source-backed comparison of SSI swim teacher certification, SG-Coach training and Singapore’s NROC registry—without treating them as equivalent credentials.',
+    publishedAt: '2026-10-14T11:50:00+08:00',
+    updatedAt: '2026-10-14T11:50:00+08:00',
+    category: 'Singapore pathways',
+    image: '/academy-ssi-learning-community.jpg',
+    imageAlt: 'Penguin Academy swim teachers completing professional development together in Singapore',
+    readTime: '9 min read',
+    directAnswer: 'SSI and NROC are not interchangeable. SSI Level 1 is a professional training and certification pathway for teaching specified SSI learn-to-swim programmes. NROC is Singapore’s national coaching registry and recognition framework, normally supported by SG-Coach qualifications. The right route depends on your intended employer, venue and programme; some coaches may benefit from pursuing both.',
+    facts: [
+      { label: 'SSI Level 1', value: 'Swim-teacher certification' },
+      { label: 'NROC', value: 'Singapore coaching registry' },
+      { label: 'Automatic equivalence', value: 'No official basis found' },
+      { label: 'Best choice', value: 'Depends on teaching setting' },
+    ],
+    sections: [
+      {
+        id: 'not-like-for-like',
+        title: 'First, correct the terminology: these are different systems',
+        paragraphs: [
+          'SSI Swim Teacher Level 1 is a specific professional programme. It trains and assesses candidates to conduct designated SSI learn-to-swim programmes. Candidates who complete the applicable academic, in-water, examination and apprenticeship requirements may receive an SSI digital certification card.',
+          'The National Registry of Coaches, or NROC, is not one swimming course. It is Singapore’s national coaching database and recognition framework. The normal Level 1 pathway combines SG-Coach Theory, Foundational Sport Science and a sport-specific SG-Coach Technical qualification, or an approved Full Integration programme, together with the other current membership requirements.',
+          'This means “SSI or NROC?” is not a simple comparison between two versions of the same certificate. One documents training within SSI’s swim-teacher system; the other records coaches who meet Singapore’s registry requirements.',
+        ],
+      },
+      {
+        id: 'comparison',
+        title: 'SSI Level 1 and NROC at a glance',
+        comparison: {
+          columns: ['Question', 'SSI Swim Teacher Level 1', 'SG-Coach / NROC pathway'],
+          rows: [
+            ['What is it?', 'A professional swim-teacher training and certification programme within SSI.', 'SG-Coach qualifications support an application to Singapore’s national coaching registry.'],
+            ['Primary purpose', 'Prepare candidates to teach specified SSI Aquatike and Beginner programmes.', 'Recognise coaches who meet Singapore’s coaching, safety, ethics and development requirements.'],
+            ['Who administers it?', 'SSI, through an eligible active-status SSI professional.', 'CoachSG/SportSG administers NROC; the relevant National Sports Association oversees sport-specific technical accreditation.'],
+            ['Core pathway', 'Digital learning, supervised training, assessments, final exam and programme-specific apprenticeship.', 'Theory, sport science and sport-specific technical components, or an eligible integrated route, plus current registry requirements.'],
+            ['Ongoing requirements', 'Follow the current SSI standards and active-status requirements relevant to the rating.', 'Membership is valid for three years and requires ongoing coaching practice and continuing coach education for renewal.'],
+            ['Does it grant every type of pool access?', 'No. Employers and venues set separate requirements.', 'No. A particular facility or programme may impose permits and additional credentials.'],
+          ],
+        },
+      },
+      {
+        id: 'ssi-level-one',
+        title: 'What SSI Swim Teacher Level 1 covers',
+        paragraphs: [
+          'The current SSI standard sets a minimum candidate age of 18 and recommends 24–28 hours for completion. The programme prepares candidates to conduct SSI Aquatike I–III and Beginner I–III when they hold the applicable active status.',
+          'Completion includes the applicable Candidate Water Fitness Evaluation, academic sections and assessments, the final exam and at least four Aquatike lessons plus four Beginner lessons. SSI recommends a cumulative apprenticeship time of at least four hours.',
+          'Penguin Academy’s current Level 1 fee is SGD 1,688 and includes full SSI React Right: First Aid & CPR, AED Provider and Oxygen Provider. That commercial package does not remove any SSI completion requirement or automatically satisfy a separate employer, venue or NROC first-aid requirement.',
+        ],
+      },
+      {
+        id: 'nroc-pathway',
+        title: 'What the SG-Coach and NROC pathway involves',
+        paragraphs: [
+          'CoachSG describes the usual SG-Coach Level 1 route as SG-Coach Theory Level 1, Foundational Sport Science and SG-Coach Technical Level 1 offered by the relevant National Sports Association. An SG-Coach Full Integration Level 1 route may also be available. Singapore Aquatics publishes the current swimming-coach training information for its pathway.',
+          'NROC membership also carries professional obligations. CoachSG states that membership lasts three years, and active renewal includes coaching-practice and continuing-education requirements. Applicants should use the current NROC guidance rather than relying on an old course advertisement or a third-party summary.',
+          'There is no single reliable NROC price or completion time to compare with Penguin Academy’s SSI fee because the registry pathway can involve multiple qualifications, providers, assessments and an application. Check each current official component before budgeting or committing to a deadline.',
+        ],
+      },
+      {
+        id: 'teaching-settings',
+        title: 'Which requirements apply in different teaching settings?',
+        bullets: [
+          'Private swim schools and condominium pools: ask the employer and venue for their current qualification, insurance, access and safeguarding requirements.',
+          'ActiveSG facilities: ActiveSG states that coaches using its facilities require valid NROC status and a Usage Permit.',
+          'SportSG Sports Education Programme: participating school programmes require NROC-certified coaches; swimming coaches also need valid SwimSafer certification, with MOE registration required where applicable.',
+          'SSI programmes: the appropriate active-status SSI rating determines which SSI programmes the teacher may conduct.',
+          'International work: ask the destination country, employer and facility whether the credential and training pathway meet their rules before booking travel.',
+        ],
+        paragraphs: [
+          'No official source reviewed for this guide establishes either SSI or NROC as a universal licence for every swimming-teaching job in Singapore. Requirements are setting-specific and can change.',
+        ],
+      },
+      {
+        id: 'recognition',
+        title: 'Can SSI certification count toward NROC?',
+        paragraphs: [
+          'No official source reviewed states that SSI Level 1 automatically grants NROC membership, replaces SG-Coach Technical Level 1 or qualifies for a direct waiver. Do not enrol on the assumption that conversion is automatic.',
+          'CoachSG provides Recognition of Prior Learning, Recognition of Prior Experience and accreditation processes for some applicants with other qualifications or substantial experience. Decisions are made through the relevant process, with sport-specific technical matters involving the appropriate National Sports Association. Confirm your individual eligibility with CoachSG and Singapore Aquatics before relying on an exemption.',
+        ],
+      },
+      {
+        id: 'decision',
+        title: 'Which pathway should you choose?',
+        bullets: [
+          'Choose SSI Level 1 when your goal is to train and qualify within SSI’s learn-to-swim system.',
+          'Follow the SG-Coach and NROC route when your intended role, facility or programme requires NROC registration.',
+          'Consider both when your career plan spans SSI programme delivery and Singapore settings that separately require NROC status.',
+          'Ask the intended employer, venue or programme for its current requirements in writing before enrolling.',
+          'Verify any proposed recognition or exemption directly with CoachSG and the relevant National Sports Association.',
+        ],
+        paragraphs: [
+          'Neither route is universally “better.” The stronger choice is the pathway—or combination of pathways—that matches the people you want to teach and the settings where you intend to work.',
+        ],
+      },
+      {
+        id: 'international-candidates',
+        title: 'A note for international candidates',
+        paragraphs: [
+          'International candidates are welcome to enquire about SSI training with Penguin Academy in Singapore. Confirm the complete in-person training and apprenticeship arrangements, travel costs and whether your intended employer or country recognises the credential for its purpose.',
+          'NROC is a Singapore registry. The NROC handbook dated 23 October 2023 states that a foreign applicant must provide a valid Work Pass or Letter of Consent authorising coaching services. Immigration and permission to work are separate from completing a training course.',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'Is SSI the same as NROC?', answer: 'No. SSI Level 1 is a swim-teacher training and certification programme. NROC is Singapore’s national coaching registry and recognition framework, normally supported by SG-Coach qualifications.' },
+      { question: 'Do I need NROC to teach swimming in Singapore?', answer: 'It depends on the setting. Official sources expressly require NROC for ActiveSG coaching access and SportSG Sports Education Programme delivery, while private employers and venues may set their own requirements.' },
+      { question: 'Can an SSI teacher coach at ActiveSG pools?', answer: 'SSI certification alone does not establish ActiveSG access. ActiveSG states that coaches using its facilities need valid NROC status and a Usage Permit.' },
+      { question: 'Does SSI Level 1 automatically qualify for NROC?', answer: 'No official source reviewed establishes automatic equivalence or a direct waiver. Ask CoachSG and Singapore Aquatics whether your individual qualifications may be considered through an applicable recognition or accreditation process.' },
+      { question: 'Is SSI React Right automatically accepted as NROC Standard First Aid?', answer: 'Do not assume so. Confirm the exact accepted first-aid credential with CoachSG, the employer or the relevant programme before relying on React Right for that requirement.' },
+      { question: 'Which route is better for a private swim school?', answer: 'Ask the school and its venues for their current requirements. SSI may suit teaching within SSI programmes, while some employers or facilities may separately require NROC or other credentials.' },
+      { question: 'Can I pursue both SSI and NROC?', answer: 'The systems serve different purposes and are not presented as mutually exclusive. Pursuing both may be useful for some career plans, subject to meeting each pathway’s requirements.' },
+      { question: 'Can international candidates take SSI training in Singapore?', answer: 'Yes, international candidates may enquire. Confirm training, apprenticeship, travel, local work rights and recognition requirements before booking.' },
+    ],
+    sources: [
+      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22219535' },
+      { label: 'CoachSG National Registry of Coaches', url: 'https://coachsg.sportsingapore.gov.sg/nroc' },
+      { label: 'CoachSG Participation Coach pathway', url: 'https://coachsg.sportsingapore.gov.sg/participation-coach' },
+      { label: 'SportSG National Registry of Coaches overview', url: 'https://www.sportsingapore.gov.sg/support-resources/national-registry-of-coaches/' },
+      { label: 'Singapore Aquatics swimming coaching pathway', url: 'https://www.sgaquatics.org.sg/swimming/coaching/' },
+      { label: 'ActiveSG coaching requirements', url: 'https://ask.gov.sg/activesg/questions/cm0avawmm000ltcp8l1gqg58w' },
+      { label: 'SportSG Sports Education Programme', url: 'https://www.sportsingapore.gov.sg/sport-education/sports-education-programme/' },
+      { label: 'NROC handbook dated 23 October 2023', url: 'https://coachsg.sportsingapore.gov.sg/hubfs/CID_NROC%20Handbook%20%2820231023%29.pdf' },
+    ],
+    internalLinks: [
+      { label: 'Read the Singapore swimming-instructor pathway', href: '/blog/how-to-become-certified-swimming-instructor-singapore' },
+      { label: 'Review SSI Swim Teacher Level 1 requirements', href: '/blog/ssi-swim-teacher-level-1-requirements-cost-career-path' },
+      { label: 'Compare all Penguin Academy courses', href: '/courses' },
+      { label: 'Information for international candidates', href: '/international-candidates' },
+    ],
+    courseHref: '/courses/ssi-swim-teacher-level-1',
+    courseName: 'View SSI Swim Teacher Level 1',
+    whatsappMessage: 'Hi Penguin Academy, I would like help comparing the SSI and NROC pathways for my teaching goals.',
   },
 ]
 

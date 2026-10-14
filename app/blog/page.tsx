@@ -172,7 +172,7 @@ const faqs = [
 
 export default async function BlogPage() {
   const cmsPosts = await getBlogPosts()
-  const staticPosts: BlogPost[] = blogArticles.map((article, index) => ({
+  const staticPosts: BlogPost[] = blogArticles.map((article) => ({
     _id: `published-${article.slug}`,
     title: article.title,
     slug: { current: article.slug },
@@ -180,12 +180,13 @@ export default async function BlogPage() {
     publishedAt: article.publishedAt,
     categories: [{ title: article.category }],
     author: { name: 'Penguin Academy' },
-    featured: index === 0,
+    featured: false,
     imageUrl: article.image,
     imageAlt: article.imageAlt,
   }))
   const staticSlugs = new Set(staticPosts.map((post) => post.slug.current))
   const posts = [...staticPosts, ...cmsPosts.filter((post) => !staticSlugs.has(post.slug.current))]
+    .sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime())
   const featuredPost = posts.find((post) => post.featured) || posts[0]
   const latestPosts = featuredPost ? posts.filter((post) => post._id !== featuredPost._id) : []
 
@@ -225,7 +226,7 @@ export default async function BlogPage() {
     <div className="min-h-screen bg-[#f6f4ee]">
       <StructuredData data={structuredData} />
       <Header />
-      <main className="pt-16">
+      <main id="main-content" className="pt-16">
         <section className="relative overflow-hidden bg-[#071b2b] py-20 text-white sm:py-28">
           <div className="absolute -right-24 top-8 h-72 w-72 rounded-full bg-cyan-300/10 blur-3xl" />
           <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">

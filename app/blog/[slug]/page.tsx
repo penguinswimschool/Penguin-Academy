@@ -16,14 +16,14 @@ const SITE_URL = 'https://www.swimcoachcertification.com'
 
 const relatedArticleSlugs: Record<string, string[]> = {
   'how-to-become-certified-swimming-instructor-singapore': [
+    'ssi-vs-nroc-swimming-instructor-certification-singapore',
     'ssi-swim-teacher-level-1-requirements-cost-career-path',
     'ssi-swim-teacher-level-1-vs-level-2',
-    'ssi-adult-swim-teacher-certification-singapore',
   ],
   'ssi-swim-teacher-level-1-requirements-cost-career-path': [
+    'ssi-vs-nroc-swimming-instructor-certification-singapore',
     'how-to-become-certified-swimming-instructor-singapore',
     'ssi-swim-teacher-level-1-vs-level-2',
-    'ssi-react-right-cpr-aed-oxygen-provider-explained',
   ],
   'ssi-react-right-cpr-aed-oxygen-provider-explained': [
     'how-to-become-certified-swimming-instructor-singapore',
@@ -44,6 +44,11 @@ const relatedArticleSlugs: Record<string, string[]> = {
     'how-to-become-certified-swimming-instructor-singapore',
     'ssi-swim-teacher-level-1-vs-level-2',
     'ssi-react-right-cpr-aed-oxygen-provider-explained',
+  ],
+  'ssi-vs-nroc-swimming-instructor-certification-singapore': [
+    'how-to-become-certified-swimming-instructor-singapore',
+    'ssi-swim-teacher-level-1-requirements-cost-career-path',
+    'ssi-swim-teacher-level-1-vs-level-2',
   ],
 }
 
@@ -168,13 +173,14 @@ function StaticArticle({ article }: { article: BlogArticle }) {
   const structuredData = buildArticleStructuredData({
     url, title: article.title, description: article.description, image: `${SITE_URL}${article.image}`,
     publishedAt: article.publishedAt, updatedAt: article.updatedAt, category: article.category, author: 'Penguin Academy',
+    faqs: article.faqs,
   })
 
   return (
     <div className="min-h-screen bg-[#f6f4ee]">
       <StructuredData data={structuredData} />
       <Header />
-      <main className="pt-16">
+      <main id="main-content" className="pt-16">
         <article>
           <header className="bg-[#071b2b] text-white">
             <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[1.08fr_0.92fr] lg:items-center lg:px-10 lg:py-24">
@@ -213,6 +219,24 @@ function StaticArticle({ article }: { article: BlogArticle }) {
                   <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#0b2438] sm:text-4xl">{section.title}</h2>
                   {section.paragraphs?.map((paragraph) => <p key={paragraph} className="mt-5 text-lg leading-8 text-slate-700">{paragraph}</p>)}
                   {section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet) => <li key={bullet} className="flex gap-3 text-lg leading-8 text-slate-700"><CheckCircle2 className="mt-1.5 h-5 w-5 shrink-0 text-teal-700" aria-hidden="true" /><span>{bullet}</span></li>)}</ul>}
+                  {section.comparison && (
+                    <div className="mt-7 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
+                      <table className="w-full min-w-[720px] border-collapse text-left">
+                        <thead className="bg-[#0b2438] text-white">
+                          <tr>{section.comparison.columns.map((column) => <th key={column} scope="col" className="px-5 py-4 text-sm font-bold tracking-wide">{column}</th>)}</tr>
+                        </thead>
+                        <tbody className="divide-y divide-slate-200">
+                          {section.comparison.rows.map(([question, ssi, nroc]) => (
+                            <tr key={question} className="align-top">
+                              <th scope="row" className="w-1/4 bg-slate-50 px-5 py-4 font-bold text-[#0b2438]">{question}</th>
+                              <td className="w-[37.5%] px-5 py-4 leading-7 text-slate-700">{ssi}</td>
+                              <td className="w-[37.5%] px-5 py-4 leading-7 text-slate-700">{nroc}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                 </section>
               ))}
             </div>
@@ -281,7 +305,7 @@ function CmsArticle({ post }: { post: CmsBlogPost }) {
   return (
     <div className="min-h-screen bg-[#f6f4ee]">
       <StructuredData data={structuredData} /><Header />
-      <main className="pt-28"><article className="mx-auto max-w-4xl px-5 pb-20 sm:px-8">
+      <main id="main-content" className="pt-28"><article className="mx-auto max-w-4xl px-5 pb-20 sm:px-8">
         <nav className="mb-8 text-sm"><Link href="/blog" className="font-semibold text-teal-700 hover:text-teal-900">← Back to training guides</Link></nav>
         <header><p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">{post.categories?.[0]?.title || 'Academy guide'}</p><h1 className="mt-5 text-4xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">{post.title}</h1><p className="mt-5 text-xl leading-8 text-slate-600">{post.excerpt}</p><div className="mt-6 text-sm text-slate-500">{post.author?.name || 'Penguin Academy'} · <time dateTime={post.publishedAt}>{formatDate(post.publishedAt)}</time></div></header>
         {post.mainImage && <Image src={image} alt={post.mainImage?.alt || post.title} width={1200} height={630} className="mt-10 w-full rounded-[1.5rem] object-cover" />}
@@ -292,7 +316,7 @@ function CmsArticle({ post }: { post: CmsBlogPost }) {
   )
 }
 
-function buildArticleStructuredData(input: { url: string; title: string; description: string; image: string; publishedAt: string; updatedAt: string; category: string; author: string }) {
+function buildArticleStructuredData(input: { url: string; title: string; description: string; image: string; publishedAt: string; updatedAt: string; category: string; author: string; faqs?: Array<{ question: string; answer: string }> }) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
@@ -313,6 +337,13 @@ function buildArticleStructuredData(input: { url: string; title: string; descrip
           { '@type': 'ListItem', position: 3, name: input.title, item: input.url },
         ],
       },
+      ...(input.faqs?.length ? [{
+        '@type': 'FAQPage', '@id': `${input.url}#faq`,
+        mainEntity: input.faqs.map((faq) => ({
+          '@type': 'Question', name: faq.question,
+          acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+        })),
+      }] : []),
     ],
   }
 }
