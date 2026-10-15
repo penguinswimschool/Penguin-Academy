@@ -12,7 +12,7 @@ const pageUrl = 'https://www.swimcoachcertification.com/international-candidates
 const socialImage = 'https://www.swimcoachcertification.com/academy-coach-community.jpg'
 
 export const metadata: Metadata = {
-  title: 'Swim Teacher Certification in Singapore for International Candidates',
+  title: 'International Swim Teacher Training Singapore | Penguin Academy',
   description: 'Plan SSI swim teacher training with Penguin Academy in Singapore. Review SGD fees, in-person requirements, travel planning and recognition checks before booking.',
   alternates: { canonical: pageUrl },
   openGraph: {

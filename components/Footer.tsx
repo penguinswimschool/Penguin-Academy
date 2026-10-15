@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
               <li><Link href="/international-candidates" className="transition-colors hover:text-white">International Candidates</Link></li>
               <li><Link href="/blog" className="transition-colors hover:text-white">Training Guides</Link></li>
               <li><Link href="/contact" className="transition-colors hover:text-white">Contact</Link></li>
-              <li><a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Testimonials</a></li>
+              <li><a href={GOOGLE_REVIEWS_URL} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Google reviews</a></li>
             </ul>
           </div>
 

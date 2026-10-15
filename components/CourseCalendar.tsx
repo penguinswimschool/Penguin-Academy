@@ -198,10 +198,17 @@ const CourseCalendar = () => {
   if (loading) {
     return (
       <section id="calendar" className="scroll-mt-20 bg-white py-16 sm:py-24 lg:py-28">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-2 border-slate-200 border-b-teal-700"></div>
-            <p className="text-slate-600">Loading course dates…</p>
+        <div className="mx-auto max-w-5xl px-5 sm:px-8">
+          <div className="rounded-[2rem] border border-slate-200 bg-[#f7f8f6] px-7 py-12 text-center sm:px-14">
+            <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-white text-teal-700 shadow-sm"><Calendar className="h-7 w-7" /></div>
+            <p className="mt-6 text-sm font-bold uppercase tracking-[0.22em] text-teal-800">Confirmed sessions</p>
+            <h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Check the calendar or ask about a suitable date.</h2>
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-slate-600">Published sessions appear after the live calendar loads. If no date fits, share your preferred course and availability so Penguin Academy can explain the current options.</p>
+            <div className="mt-7 flex items-center justify-center gap-3 text-sm text-slate-500" aria-live="polite">
+              <div className="h-5 w-5 animate-spin rounded-full border-2 border-slate-200 border-b-teal-700" />
+              Loading confirmed dates…
+            </div>
+            <a href={whatsappEnquiryUrl('the next available course date')} target="_blank" rel="noopener noreferrer" onClick={() => trackWhatsAppEnquiry({ source: 'calendar_loading_state', courseName: 'Course date enquiry' })} className="mt-7 inline-flex w-full justify-center rounded-full bg-[#0b2438] px-7 py-4 font-bold text-white transition hover:bg-teal-800 sm:w-auto">Ask about dates on WhatsApp</a>
           </div>
         </div>
       </section>
@@ -255,7 +262,32 @@ const CourseCalendar = () => {
           </p>
         </div>
 
-        <div className="overflow-x-auto rounded-2xl bg-white shadow-lg">
+        <div className="grid gap-4 md:hidden" aria-label="Upcoming course agenda">
+          {courses.map((course) => (
+            <button
+              type="button"
+              key={course.id}
+              onClick={() => setSelectedCourse(course)}
+              className="rounded-2xl border border-slate-200 bg-[#f7f8f6] p-5 text-left shadow-sm transition hover:border-teal-300 hover:bg-white"
+            >
+              <span className="flex items-start justify-between gap-4">
+                <span>
+                  <span className="text-xs font-bold uppercase tracking-[0.16em] text-teal-700">{course.category}</span>
+                  <span className="mt-2 block text-xl font-bold text-[#0b2438]">{course.title}</span>
+                </span>
+                <span className="whitespace-nowrap rounded-full bg-white px-3 py-2 text-xs font-bold text-teal-800 shadow-sm">{course.price}</span>
+              </span>
+              <span className="mt-5 grid gap-3 text-sm text-slate-600">
+                <span className="flex items-start gap-3"><Calendar className="mt-0.5 h-4 w-4 flex-none text-teal-700" />{formatDateRange(course.start_date, course.end_date)}</span>
+                <span className="flex items-start gap-3"><Clock className="mt-0.5 h-4 w-4 flex-none text-teal-700" />{course.start_time} – {course.end_time}</span>
+                <span className="flex items-start gap-3"><MapPin className="mt-0.5 h-4 w-4 flex-none text-teal-700" />{course.location}</span>
+              </span>
+              <span className="mt-5 inline-flex font-bold text-teal-800">View availability →</span>
+            </button>
+          ))}
+        </div>
+
+        <div className="hidden overflow-x-auto rounded-2xl bg-white shadow-lg md:block">
           <div className="min-w-[760px]">
           {/* Calendar Header */}
           <div className="bg-blue-600 text-white p-6">
@@ -299,7 +331,7 @@ const CourseCalendar = () => {
         </div>
 
         {/* Legend */}
-        <div className="mt-8 bg-white rounded-xl p-6 shadow-lg">
+        <div className="mt-8 hidden rounded-xl bg-white p-6 shadow-lg md:block">
           <h4 className="text-lg font-bold text-gray-900 mb-4">Course Legend</h4>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             <div className="flex items-center gap-2">
