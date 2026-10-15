@@ -1,7 +1,7 @@
 'use client';
 
 import type { CSSProperties, PointerEvent, ReactNode } from 'react';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 type WaterFrameStyle = CSSProperties & {
   '--water-x': string;
@@ -16,6 +16,10 @@ const initialStyle: WaterFrameStyle = {
 export default function HeroWaterFrame({ children }: { children: ReactNode }) {
   const frameRef = useRef<HTMLDivElement>(null);
   const animationFrameRef = useRef<number | null>(null);
+
+  useEffect(() => () => {
+    if (animationFrameRef.current !== null) cancelAnimationFrame(animationFrameRef.current);
+  }, []);
 
   const updateLightPosition = (event: PointerEvent<HTMLDivElement>) => {
     if (event.pointerType !== 'mouse' || !frameRef.current) return;

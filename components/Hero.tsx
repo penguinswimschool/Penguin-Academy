@@ -3,6 +3,7 @@ import { ArrowRight, Award, CheckCircle, Shield, Sparkles, Users } from 'lucide-
 import Image from 'next/image';
 import Link from 'next/link';
 import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink';
+import HeroAmbientBackground from '@/components/HeroAmbientBackground';
 import HeroWaterFrame from '@/components/HeroWaterFrame';
 import { WHATSAPP_URL } from '@/lib/approved-course-details';
 
@@ -15,8 +16,7 @@ const trustPoints = [
 const Hero: React.FC = () => {
   return (
     <section id="hero" className="overflow-hidden bg-[#071b2b] pt-16 text-white">
-      <div className="relative isolate">
-        <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_82%_12%,rgba(45,212,191,0.18),transparent_34%),radial-gradient(circle_at_8%_72%,rgba(56,189,248,0.16),transparent_32%)]" />
+      <HeroAmbientBackground>
         <div className="absolute inset-x-0 top-0 -z-10 h-px bg-gradient-to-r from-transparent via-cyan-300/40 to-transparent" />
 
         <div className="mx-auto grid max-w-7xl items-center gap-10 px-5 py-14 sm:gap-14 sm:px-8 sm:py-20 lg:grid-cols-[1.03fr_0.97fr] lg:px-10 lg:py-28">
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
             </HeroWaterFrame>
           </div>
         </div>
-      </div>
+      </HeroAmbientBackground>
 
       <div className="border-y border-slate-200 bg-[#f6f4ee] text-[#0b2438]">
         <div className="mx-auto grid max-w-7xl grid-cols-2 gap-px bg-slate-200 sm:grid-cols-3">

@@ -58,9 +58,14 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     icons: {
-      icon: "/penguinacademylogo512x280.jpg",
-      apple: "/penguinacademylogo512x280.jpg",
-      shortcut: "/penguinacademylogo512x280.jpg",
+      icon: [
+        { url: "/penguin-academy-icon-48.png", sizes: "48x48", type: "image/png" },
+        { url: "/penguin-academy-icon-96.png", sizes: "96x96", type: "image/png" },
+        { url: "/penguin-academy-icon-192.png", sizes: "192x192", type: "image/png" },
+        { url: "/penguin-academy-icon-512.png", sizes: "512x512", type: "image/png" },
+      ],
+      apple: [{ url: "/penguin-academy-icon-192.png", sizes: "192x192", type: "image/png" }],
+      shortcut: "/penguin-academy-icon-48.png",
     },
     keywords: meta?.keywords || undefined,
     openGraph: {

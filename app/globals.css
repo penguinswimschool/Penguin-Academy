@@ -32,6 +32,47 @@ body {
   --water-y: 24%;
 }
 
+.academy-ambient-water {
+  --ambient-x: 78%;
+  --ambient-y: 22%;
+}
+
+.academy-ambient-light,
+.academy-ambient-ripples {
+  position: absolute;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+}
+
+.academy-ambient-light {
+  background:
+    radial-gradient(circle at var(--ambient-x) var(--ambient-y), rgba(103, 232, 249, 0.13), transparent 21%),
+    radial-gradient(circle at 82% 12%, rgba(45, 212, 191, 0.16), transparent 34%),
+    radial-gradient(circle at 8% 72%, rgba(56, 189, 248, 0.13), transparent 32%);
+}
+
+.academy-ambient-ripples {
+  background:
+    repeating-radial-gradient(ellipse at 88% 12%, transparent 0 72px, rgba(165, 243, 252, 0.025) 76px 78px, transparent 82px 132px),
+    linear-gradient(118deg, transparent 18%, rgba(45, 212, 191, 0.035) 48%, transparent 72%);
+  background-size: 118% 124%, 180% 100%;
+  opacity: 0.72;
+  animation: academy-ambient-drift 18s ease-in-out infinite alternate;
+}
+
+@keyframes academy-ambient-drift {
+  from {
+    background-position: 0 0, 100% 0;
+    transform: scale(1.01) translate3d(-0.35%, -0.2%, 0);
+  }
+
+  to {
+    background-position: 12% 8%, 0 0;
+    transform: scale(1.025) translate3d(0.35%, 0.2%, 0);
+  }
+}
+
 .academy-water-light,
 .academy-water-caustics {
   position: absolute;
@@ -72,6 +113,18 @@ body {
 }
 
 @media (hover: none), (pointer: coarse) {
+  .academy-ambient-light {
+    background:
+      radial-gradient(circle at 78% 22%, rgba(103, 232, 249, 0.09), transparent 23%),
+      radial-gradient(circle at 82% 12%, rgba(45, 212, 191, 0.14), transparent 34%),
+      radial-gradient(circle at 8% 72%, rgba(56, 189, 248, 0.11), transparent 32%);
+  }
+
+  .academy-ambient-ripples {
+    animation: none;
+    opacity: 0.44;
+  }
+
   .academy-water-light {
     background:
       radial-gradient(circle at 68% 24%, rgba(165, 243, 252, 0.16), transparent 20%),
@@ -80,6 +133,21 @@ body {
 
   .academy-water-caustics {
     animation: none;
+    opacity: 0.48;
+  }
+}
+
+@media (max-width: 1023px) {
+  .academy-ambient-ripples,
+  .academy-water-caustics {
+    animation: none;
+  }
+
+  .academy-ambient-ripples {
+    opacity: 0.44;
+  }
+
+  .academy-water-caustics {
     opacity: 0.48;
   }
 }
@@ -100,6 +168,11 @@ body {
   .academy-water-caustics {
     animation: none !important;
     opacity: 0.48;
+  }
+
+  .academy-ambient-ripples {
+    animation: none !important;
+    opacity: 0.44;
   }
 }
 
