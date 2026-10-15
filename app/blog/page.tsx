@@ -23,6 +23,7 @@ import {
   WHATSAPP_URL,
 } from '@/lib/approved-course-details'
 import { blogArticles } from '@/lib/blog-articles'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 const blogQuery = `*[
   _type == "blogPost" &&
@@ -77,8 +78,8 @@ export async function generateMetadata(): Promise<Metadata> {
     title,
     description,
     alternates: { canonical: url },
-    openGraph: { title, description, type: 'website', url },
-    twitter: { card: 'summary_large_image', title, description },
+    openGraph: { title, description, type: 'website', url, images: [SOCIAL_IMAGE_METADATA] },
+    twitter: { card: 'summary_large_image', title, description, images: [SOCIAL_IMAGE] },
   }
 }
 

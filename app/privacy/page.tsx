@@ -4,12 +4,14 @@ import { Database, Eye, LockKeyhole, Mail, RefreshCw, ShieldCheck, UserCheck } f
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy | Penguin Academy Singapore',
   description: 'How Penguin Academy collects, uses, protects and manages personal data for website visitors, course enquiries and candidates in Singapore.',
   alternates: { canonical: 'https://www.swimcoachcertification.com/privacy' },
-  openGraph: { title: 'Privacy Policy | Penguin Academy', description: 'Penguin Academy data protection and privacy information.', url: 'https://www.swimcoachcertification.com/privacy', type: 'website' },
+  openGraph: { title: 'Privacy Policy | Penguin Academy', description: 'Penguin Academy data protection and privacy information.', url: 'https://www.swimcoachcertification.com/privacy', type: 'website', images: [SOCIAL_IMAGE_METADATA] },
+  twitter: { card: 'summary_large_image', title: 'Privacy Policy | Penguin Academy', description: 'Penguin Academy data protection and privacy information.', images: [SOCIAL_IMAGE] },
 }
 
 const sections = [

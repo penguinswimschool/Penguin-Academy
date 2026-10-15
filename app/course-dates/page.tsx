@@ -6,12 +6,14 @@ import InteriorPageHero from '@/components/InteriorPageHero'
 import CourseCalendar from '@/components/CourseCalendar'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { whatsappEnquiryUrl } from '@/lib/approved-course-details'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 export const metadata: Metadata = {
   title: 'SSI Swim Teacher Course Dates Singapore | Penguin Academy',
   description: 'Check confirmed Penguin Academy course dates or arrange a suitable SSI swim teacher training schedule in Singapore.',
   alternates: { canonical: 'https://www.swimcoachcertification.com/course-dates' },
-  openGraph: { title: 'SSI Swim Teacher Course Dates Singapore', description: 'View confirmed intakes and understand how Penguin Academy schedules small-cohort training.', url: 'https://www.swimcoachcertification.com/course-dates', type: 'website' },
+  openGraph: { title: 'SSI Swim Teacher Course Dates Singapore', description: 'View confirmed intakes and understand how Penguin Academy schedules small-cohort training.', url: 'https://www.swimcoachcertification.com/course-dates', type: 'website', images: [SOCIAL_IMAGE_METADATA] },
+  twitter: { card: 'summary_large_image', title: 'SSI Swim Teacher Course Dates Singapore', description: 'View confirmed intakes and understand how Penguin Academy schedules small-cohort training.', images: [SOCIAL_IMAGE] },
 }
 
 export default function CourseDatesPage() {

@@ -10,12 +10,14 @@ import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { COURSE_STANDARDS, FULL_REACT_RIGHT, WHATSAPP_URL } from '@/lib/approved-course-details'
 import { coursesPageStructuredData } from '@/lib/structured-data'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 export const metadata: Metadata = {
   title: 'Swim Teacher Courses Singapore | SSI Certification',
   description: 'Compare SSI Level 1, Level 2, Baby Swim Teacher, Adult Swim Teacher and full React Right courses in Singapore. View requirements and SGD fees.',
   alternates: { canonical: 'https://www.swimcoachcertification.com/courses' },
-  openGraph: { title: 'SSI Swim Teacher Courses in Singapore', description: 'Compare SSI swim teacher pathways, prerequisites, recommended hours, apprenticeships and current Penguin Academy fees in SGD.', url: 'https://www.swimcoachcertification.com/courses', type: 'website' },
+  openGraph: { title: 'SSI Swim Teacher Courses in Singapore', description: 'Compare SSI swim teacher pathways, prerequisites, recommended hours, apprenticeships and current Penguin Academy fees in SGD.', url: 'https://www.swimcoachcertification.com/courses', type: 'website', images: [SOCIAL_IMAGE_METADATA] },
+  twitter: { card: 'summary_large_image', title: 'SSI Swim Teacher Courses in Singapore', description: 'Compare SSI swim teacher pathways, prerequisites, recommended hours, apprenticeships and current Penguin Academy fees in SGD.', images: [SOCIAL_IMAGE] },
 }
 
 const choices = [

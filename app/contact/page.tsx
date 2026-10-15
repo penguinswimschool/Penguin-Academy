@@ -6,12 +6,14 @@ import InteriorPageHero from '@/components/InteriorPageHero'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 export const metadata: Metadata = {
   title: 'Contact Penguin Academy | Swim Teacher Courses Singapore',
   description: 'Contact Penguin Academy in Singapore for SSI swim teacher course guidance, dates, requirements and enrolment information.',
   alternates: { canonical: 'https://www.swimcoachcertification.com/contact' },
-  openGraph: { title: 'Contact Penguin Academy', description: 'Ask about SSI swim teacher certification pathways and upcoming course dates.', url: 'https://www.swimcoachcertification.com/contact', type: 'website' },
+  openGraph: { title: 'Contact Penguin Academy', description: 'Ask about SSI swim teacher certification pathways and upcoming course dates.', url: 'https://www.swimcoachcertification.com/contact', type: 'website', images: [SOCIAL_IMAGE_METADATA] },
+  twitter: { card: 'summary_large_image', title: 'Contact Penguin Academy', description: 'Ask about SSI swim teacher certification pathways and upcoming course dates.', images: [SOCIAL_IMAGE] },
 }
 
 const message = encodeURIComponent('Hi Penguin Academy, I would like advice about your swim teacher certification courses.')

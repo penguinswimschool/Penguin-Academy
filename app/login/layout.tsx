@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Authorised Access | Penguin Academy',
+  title: 'Penguin Academy Private Admin Login | Authorised Access',
+  description: 'Private authorised access for Penguin Academy administrators.',
   robots: {
     index: false,
     follow: false,

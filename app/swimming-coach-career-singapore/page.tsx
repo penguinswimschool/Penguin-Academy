@@ -8,6 +8,7 @@ import StructuredData from '@/components/StructuredData'
 import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 const pageUrl = 'https://www.swimcoachcertification.com/swimming-coach-career-singapore'
 
@@ -15,7 +16,8 @@ export const metadata: Metadata = {
   title: 'Swimming Coach Career Singapore | Practical Starting Guide',
   description: 'Prepare for a swimming coach career in Singapore: choose a suitable course, build supervised experience and check employer, venue and NROC requirements.',
   alternates: { canonical: pageUrl },
-  openGraph: { title: 'Swimming Coach Career in Singapore | Penguin Academy', description: 'A practical, honest route from swim teacher education to career readiness in Singapore.', url: pageUrl, type: 'website' },
+  openGraph: { title: 'Swimming Coach Career in Singapore | Penguin Academy', description: 'A practical, honest route from swim teacher education to career readiness in Singapore.', url: pageUrl, type: 'website', images: [SOCIAL_IMAGE_METADATA] },
+  twitter: { card: 'summary_large_image', title: 'Swimming Coach Career in Singapore | Penguin Academy', description: 'A practical, honest route from swim teacher education to career readiness in Singapore.', images: [SOCIAL_IMAGE] },
 }
 
 const structuredData = {

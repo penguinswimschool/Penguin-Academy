@@ -6,12 +6,14 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import InteriorPageHero from '@/components/InteriorPageHero'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 export const metadata: Metadata = {
   title: 'About Penguin Academy | SSI Swim Teacher Education Singapore',
   description: 'Meet Remus Teo and Rayner Teo and learn how Penguin Academy combines SSI instructor education, assessment and practical mentoring in Singapore.',
   alternates: { canonical: 'https://www.swimcoachcertification.com/about' },
-  openGraph: { title: 'About Penguin Academy', description: 'Professional SSI swim teacher education and practical mentoring in Singapore.', url: 'https://www.swimcoachcertification.com/about', type: 'website' },
+  openGraph: { title: 'About Penguin Academy', description: 'Professional SSI swim teacher education and practical mentoring in Singapore.', url: 'https://www.swimcoachcertification.com/about', type: 'website', images: [SOCIAL_IMAGE_METADATA] },
+  twitter: { card: 'summary_large_image', title: 'About Penguin Academy', description: 'Professional SSI swim teacher education and practical mentoring in Singapore.', images: [SOCIAL_IMAGE] },
 }
 
 const standards = [

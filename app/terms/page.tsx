@@ -4,12 +4,14 @@ import { Building, Calendar, CheckCircle, CreditCard, FileText, GraduationCap, S
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import WhatsAppButton from '@/components/WhatsAppButton'
+import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions | Penguin Academy Singapore',
   description: 'Read the enrolment, payment, attendance, certification, cancellation and conduct terms for Penguin Academy courses in Singapore.',
   alternates: { canonical: 'https://www.swimcoachcertification.com/terms' },
-  openGraph: { title: 'Terms & Conditions | Penguin Academy Singapore', description: 'Terms applying to Penguin Academy course enrolment and participation.', url: 'https://www.swimcoachcertification.com/terms', siteName: 'Penguin Academy', locale: 'en_SG', type: 'website' },
+  openGraph: { title: 'Terms & Conditions | Penguin Academy Singapore', description: 'Terms applying to Penguin Academy course enrolment and participation.', url: 'https://www.swimcoachcertification.com/terms', siteName: 'Penguin Academy', locale: 'en_SG', type: 'website', images: [SOCIAL_IMAGE_METADATA] },
+  twitter: { card: 'summary_large_image', title: 'Terms & Conditions | Penguin Academy Singapore', description: 'Terms applying to Penguin Academy course enrolment and participation.', images: [SOCIAL_IMAGE] },
 }
 
 const sections = [

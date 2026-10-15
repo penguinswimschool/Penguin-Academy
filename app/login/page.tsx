@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import Link from 'next/link'
 import { supabase } from '@/utils/supabase/client'
 import { Eye, EyeOff, Mail, Lock, LogIn } from 'lucide-react'
 
@@ -113,6 +114,10 @@ const LoginPage: React.FC = () => {
               {loading ? 'Signing in...' : 'Sign In'}
             </button>
           </form>
+
+          <Link href="/" className="mt-6 block text-center text-sm font-semibold text-blue-700 hover:text-blue-900">
+            Return to Penguin Academy
+          </Link>
 
         </div>
       </div>
