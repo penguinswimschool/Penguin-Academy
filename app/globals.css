@@ -27,6 +27,63 @@ body {
   outline-offset: 3px;
 }
 
+.academy-water-frame {
+  --water-x: 68%;
+  --water-y: 24%;
+}
+
+.academy-water-light,
+.academy-water-caustics {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.academy-water-light {
+  z-index: 1;
+  background:
+    radial-gradient(circle at var(--water-x) var(--water-y), rgba(165, 243, 252, 0.22), transparent 18%),
+    radial-gradient(circle at calc(var(--water-x) - 12%) calc(var(--water-y) + 18%), rgba(45, 212, 191, 0.13), transparent 22%);
+  mix-blend-mode: screen;
+  transition: background-position 240ms ease-out;
+}
+
+.academy-water-caustics {
+  z-index: 1;
+  background:
+    repeating-radial-gradient(ellipse at 60% -10%, transparent 0 20px, rgba(207, 250, 254, 0.07) 23px 25px, transparent 28px 42px),
+    linear-gradient(112deg, transparent 22%, rgba(103, 232, 249, 0.08) 42%, transparent 62%);
+  background-size: 128% 118%, 180% 100%;
+  mix-blend-mode: screen;
+  opacity: 0.72;
+  animation: academy-water-drift 14s ease-in-out infinite alternate;
+}
+
+@keyframes academy-water-drift {
+  from {
+    background-position: 8% 0, 100% 0;
+    transform: scale(1.02) translate3d(-0.5%, -0.4%, 0);
+  }
+
+  to {
+    background-position: 92% 10%, 0 0;
+    transform: scale(1.045) translate3d(0.6%, 0.4%, 0);
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .academy-water-light {
+    background:
+      radial-gradient(circle at 68% 24%, rgba(165, 243, 252, 0.16), transparent 20%),
+      radial-gradient(circle at 52% 44%, rgba(45, 212, 191, 0.1), transparent 24%);
+  }
+
+  .academy-water-caustics {
+    animation: none;
+    opacity: 0.48;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -38,6 +95,11 @@ body {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .academy-water-caustics {
+    animation: none !important;
+    opacity: 0.48;
   }
 }
 

@@ -3,6 +3,7 @@ import { ArrowRight, Award, CheckCircle, Shield, Sparkles, Users } from 'lucide-
 import Image from 'next/image';
 import Link from 'next/link';
 import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink';
+import HeroWaterFrame from '@/components/HeroWaterFrame';
 import { WHATSAPP_URL } from '@/lib/approved-course-details';
 
 const trustPoints = [
@@ -72,7 +73,7 @@ const Hero: React.FC = () => {
 
           <div className="relative mx-auto w-full max-w-xl lg:max-w-none">
             <div className="absolute -inset-5 -z-10 rounded-[2.5rem] bg-gradient-to-br from-cyan-300/20 via-transparent to-teal-300/10 blur-2xl" />
-            <div className="relative h-[420px] overflow-hidden rounded-[1.75rem] border border-white/15 bg-slate-800 shadow-[0_35px_90px_rgba(0,0,0,0.38)] sm:h-[560px] sm:rounded-[2rem] lg:h-[620px]">
+            <HeroWaterFrame>
               <Image
                 src="/academy-guided-practice.jpg"
                 alt="Penguin Academy swim teacher training in Singapore"
@@ -93,7 +94,7 @@ const Hero: React.FC = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </HeroWaterFrame>
           </div>
         </div>
       </div>
