@@ -1,7 +1,8 @@
 "use client"
 import React from 'react';
 import { GOOGLE_REVIEWS_URL } from '@/lib/approved-course-details';
-import { Award, Mail, MapPin, Phone } from 'lucide-react';
+import { Mail, MapPin, Phone } from 'lucide-react';
+import Image from 'next/image';
 import Link from 'next/link';
 
 const Footer: React.FC = () => {
@@ -10,10 +11,12 @@ const Footer: React.FC = () => {
       <div className="mx-auto max-w-7xl px-5 py-16 sm:px-8 lg:px-10 lg:py-20">
         <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           <div>
-            <div className="flex items-center space-x-2 mb-6">
-              <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-cyan-300 text-[#071b2b]"><Award className="h-6 w-6" /></span>
-              <span className="text-xl font-bold tracking-tight">Penguin Academy</span>
-            </div>
+            <Link href="/" aria-label="Penguin Academy home" className="mb-6 inline-flex items-center gap-3">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center overflow-hidden rounded-xl">
+                <Image src="/penguin-academy-icon-96.png" alt="" width={44} height={44} />
+              </span>
+              <span className="text-xl font-bold leading-none tracking-tight">Penguin Academy</span>
+            </Link>
             <p className="mb-6 leading-7 text-slate-400">
               SSI swim teacher education in Singapore, supported by an instructor and practical mentoring team.
             </p>
