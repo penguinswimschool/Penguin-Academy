@@ -4,6 +4,7 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import BookNowButton from '@/components/BookNowButton'
 import StructuredData from '@/components/StructuredData'
+import OfficialCourseImage from '@/components/OfficialCourseImage'
 
 type Fact = { label: string; value: string }
 type Faq = { question: string; answer: string }
@@ -28,9 +29,10 @@ interface PremiumCoursePageProps {
   officialSource: { label: string; href: string }
   guide: { label: string; href: string }
   courseTitle: string
+  officialImage?: { src: string; alt: string }
 }
 
-export default function PremiumCoursePage({ structuredData, eyebrow, title, description, price, priceNote, directAnswer, facts, suitableFor, pathway, practicalTitle, practicalDescription, included, importantTitle, importantDescription, faqs, officialSource, guide, courseTitle }: PremiumCoursePageProps) {
+export default function PremiumCoursePage({ structuredData, eyebrow, title, description, price, priceNote, directAnswer, facts, suitableFor, pathway, practicalTitle, practicalDescription, included, importantTitle, importantDescription, faqs, officialSource, guide, courseTitle, officialImage }: PremiumCoursePageProps) {
   const faqData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -54,6 +56,7 @@ export default function PremiumCoursePage({ structuredData, eyebrow, title, desc
           </div>
         </section>
         <section className="border-b border-slate-200 bg-[#f6f4ee] py-12"><div className="mx-auto max-w-4xl px-5 text-lg leading-8 text-slate-700 sm:px-8"><strong className="text-[#0b2438]">Direct answer:</strong> {directAnswer}</div></section>
+        {officialImage && <section className="bg-white py-10 sm:py-14"><div className="mx-auto max-w-6xl px-5 sm:px-8"><OfficialCourseImage {...officialImage} /></div></section>}
         <section className="bg-white py-16 sm:py-24"><div className="mx-auto max-w-6xl px-5 sm:px-8"><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{facts.map((fact) => <article key={fact.label} className="rounded-[1.5rem] border border-slate-200 bg-white p-6 shadow-sm"><p className="text-sm font-bold uppercase tracking-[0.16em] text-teal-700">{fact.label}</p><p className="mt-3 text-xl font-semibold text-[#0b2438]">{fact.value}</p></article>)}</div><div className="mt-16 grid gap-8 lg:grid-cols-2"><article className="rounded-[1.75rem] bg-[#dff5f1] p-7 sm:p-9"><Users aria-hidden="true" className="h-7 w-7 text-teal-700"/><h2 className="mt-5 text-3xl font-semibold tracking-tight text-[#0b2438]">Who this course suits</h2><ul className="mt-6 space-y-4">{suitableFor.map((item) => <li key={item} className="flex gap-3 leading-7 text-slate-700"><CheckCircle2 aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-teal-700"/><span>{item}</span></li>)}</ul></article><article className="rounded-[1.75rem] bg-[#071b2b] p-7 text-white sm:p-9"><Clock3 aria-hidden="true" className="h-7 w-7 text-cyan-300"/><h2 className="mt-5 text-3xl font-semibold tracking-tight">From enrolment to completion</h2><ol className="mt-6 space-y-4">{pathway.map((item, index) => <li key={item} className="flex gap-4 leading-7 text-slate-300"><span className="flex h-8 w-8 flex-none items-center justify-center rounded-full bg-cyan-300 font-bold text-[#071b2b]">{index + 1}</span><span>{item}</span></li>)}</ol></article></div></div></section>
         <section className="bg-[#f6f4ee] py-16 sm:py-24"><div className="mx-auto grid max-w-6xl gap-8 px-5 sm:px-8 lg:grid-cols-[0.8fr_1.2fr]"><article className="rounded-[1.75rem] border border-teal-900/10 bg-white p-7 sm:p-9"><Award aria-hidden="true" className="h-7 w-7 text-teal-700"/><h2 className="mt-5 text-3xl font-semibold tracking-tight text-[#0b2438]">{practicalTitle}</h2><p className="mt-5 leading-8 text-slate-600">{practicalDescription}</p></article><article className="rounded-[1.75rem] border border-teal-900/10 bg-white p-7 sm:p-9"><h2 className="text-3xl font-semibold tracking-tight text-[#0b2438]">What Penguin Academy includes</h2><div className="mt-7 grid gap-4 sm:grid-cols-2">{included.map((item) => <div key={item} className="flex gap-3 rounded-2xl bg-slate-50 p-4 leading-7 text-slate-700"><CheckCircle2 aria-hidden="true" className="mt-1 h-5 w-5 flex-none text-teal-700"/><span>{item}</span></div>)}</div></article></div></section>
         <section className="bg-white py-16 sm:py-20"><div className="mx-auto max-w-6xl px-5 sm:px-8"><div className="grid gap-6 rounded-[1.75rem] border border-slate-200 p-7 sm:p-9 md:grid-cols-[auto_1fr]"><ShieldCheck aria-hidden="true" className="h-8 w-8 text-teal-700"/><div><h2 className="text-2xl font-semibold text-[#0b2438]">{importantTitle}</h2><p className="mt-3 max-w-4xl leading-7 text-slate-600">{importantDescription}</p></div></div></div></section>

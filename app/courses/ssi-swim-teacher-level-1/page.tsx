@@ -8,6 +8,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 import { COURSE_DETAILS, COURSE_STANDARDS, FULL_REACT_RIGHT } from '@/lib/approved-course-details'
 import { buildCourseMetadata } from '@/lib/course-metadata'
 import { buildCoursePageStructuredData } from '@/lib/structured-data'
+import OfficialCourseImage from '@/components/OfficialCourseImage'
 
 export const metadata = buildCourseMetadata({
   title: 'SSI Swim Teacher Level 1 Singapore | Requirements & Cost',
@@ -80,6 +81,8 @@ export default function SSILevel1Page() {
         </section>
 
         <section className="border-b border-slate-200 bg-[#f6f4ee] py-10 sm:py-14"><div className="mx-auto max-w-5xl px-5 sm:px-8"><p className="text-lg leading-8 text-slate-700"><strong className="text-[#0b2438]">Direct answer:</strong> SSI Swim Teacher Level 1 is the foundation pathway for teaching SSI Aquatike I–III and Beginner I–III programmes. Candidates must be at least 18. SSI recommends 24–28 hours, including required learning, evaluation, assessment and apprenticeship—not only the instructor-led day.</p></div></section>
+
+        <section className="bg-white py-10 sm:py-14"><div className="mx-auto max-w-6xl px-5 sm:px-8"><OfficialCourseImage src="/ssi/swim-teacher-level-1.jpg" alt="Official SSI Swim Teacher Level 1 programme visual showing a teacher supporting beginner swimmers" /></div></section>
 
         <section className="bg-white py-16 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{facts.map(({icon:Icon,label,value})=><article key={label} className="rounded-2xl border border-slate-200 bg-[#f7f8f6] p-6"><Icon className="h-6 w-6 text-teal-700"/><p className="mt-4 text-sm font-bold uppercase tracking-[0.12em] text-slate-500">{label}</p><p className="mt-2 font-bold leading-6 text-[#0b2438]">{value}</p></article>)}</div></div></section>
 

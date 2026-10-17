@@ -54,5 +54,6 @@ export default function SSIAdultPage() {
     officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/en-au/course/swim-standards/professional-programs-2/swim-professional-programs/adult-swim-teacher' }}
     guide={{ label: 'Read the Adult Swim Teacher guide', href: '/blog/ssi-adult-swim-teacher-certification-singapore' }}
     courseTitle="SSI Adult Swim Teacher Certification"
+    officialImage={{ src: '/ssi/swim-teacher-adult.jpg', alt: 'Official SSI Adult Swim Teacher programme visual showing an adult learner swimming underwater' }}
   />
 }

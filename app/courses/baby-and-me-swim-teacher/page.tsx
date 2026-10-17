@@ -54,5 +54,6 @@ export default function BabyAndMePage() {
     officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/index.php?id=22820366' }}
     guide={{ label: 'Read the Baby Swim Teacher guide', href: '/blog/baby-swimming-teacher-certification-singapore' }}
     courseTitle="SSI Baby Swim Teacher Course"
+    officialImage={{ src: '/ssi/swim-teacher-baby.jpg', alt: 'Official SSI Baby Swim Teacher programme visual showing caregiver-supported baby swimming' }}
   />
 }
