@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Award, BookOpenCheck, CheckCircle2, Clock3, ShieldCheck, Users } from 'lucide-react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
@@ -30,9 +31,10 @@ interface PremiumCoursePageProps {
   guide: { label: string; href: string }
   courseTitle: string
   officialImage?: { src: string; alt: string }
+  courseLogo?: { src: string; alt: string; width: number; height: number }
 }
 
-export default function PremiumCoursePage({ structuredData, eyebrow, title, description, price, priceNote, directAnswer, facts, suitableFor, pathway, practicalTitle, practicalDescription, included, importantTitle, importantDescription, faqs, officialSource, guide, courseTitle, officialImage }: PremiumCoursePageProps) {
+export default function PremiumCoursePage({ structuredData, eyebrow, title, description, price, priceNote, directAnswer, facts, suitableFor, pathway, practicalTitle, practicalDescription, included, importantTitle, importantDescription, faqs, officialSource, guide, courseTitle, officialImage, courseLogo }: PremiumCoursePageProps) {
   const faqData = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -51,7 +53,7 @@ export default function PremiumCoursePage({ structuredData, eyebrow, title, desc
             <nav className="mb-8 text-sm text-slate-300" aria-label="Breadcrumb"><Link href="/" className="hover:text-white">Home</Link><span className="mx-2">/</span><Link href="/courses" className="hover:text-white">Courses</Link><span className="mx-2">/</span><span>{courseTitle}</span></nav>
             <div className="grid items-end gap-10 lg:grid-cols-[1.35fr_0.65fr]">
               <div><p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">{eyebrow}</p><h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.04] tracking-[-0.045em] sm:text-6xl lg:text-7xl">{title}</h1><p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">{description}</p><div className="mt-9 flex flex-col gap-3 sm:flex-row"><BookNowButton courseTitle={courseTitle} source={`${trackingKey}_hero`} className="rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] hover:bg-cyan-200">Ask about this course</BookNowButton><Link href="/course-dates" className="inline-flex items-center justify-center rounded-full border border-white/20 px-7 py-4 font-semibold text-white hover:border-white/40 hover:bg-white/10">View course dates</Link></div></div>
-              <aside className="rounded-[1.75rem] border border-white/15 bg-white/10 p-7 backdrop-blur sm:p-9"><p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">Current Penguin fee</p><p className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{price}</p><p className="mt-3 leading-7 text-slate-300">{priceNote}</p></aside>
+              <aside className="rounded-[1.75rem] border border-white/15 bg-white/10 p-7 backdrop-blur sm:p-9">{courseLogo && <div className="mb-7 rounded-2xl bg-white p-4 shadow-sm"><Image src={courseLogo.src} alt={courseLogo.alt} width={courseLogo.width} height={courseLogo.height} sizes="(min-width: 1024px) 320px, calc(100vw - 6.5rem)" className="h-auto w-full" /></div>}<p className="text-sm font-bold uppercase tracking-[0.2em] text-cyan-300">Current Penguin fee</p><p className="mt-4 text-4xl font-semibold tracking-tight sm:text-5xl">{price}</p><p className="mt-3 leading-7 text-slate-300">{priceNote}</p></aside>
             </div>
           </div>
         </section>

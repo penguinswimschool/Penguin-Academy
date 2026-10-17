@@ -66,5 +66,7 @@ export default function ReactRightPage() {
     officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/course/scuba-training-standards-and-procedures-20241/react-right-programs/student-level-programs/react-right' }}
     guide={{ label: 'Read the React Right guide', href: '/blog/ssi-react-right-cpr-aed-oxygen-provider' }}
     courseTitle="Full SSI React Right"
+    courseLogo={{ src: '/ssi/react-right-logo-black.png', alt: 'SSI React Right First Aid, oxygen and AED training logo', width: 1400, height: 561 }}
+    officialImage={{ src: '/ssi/react-right.jpg', alt: 'Official SSI React Right programme visual showing an emergency-response scenario' }}
   />
 }
