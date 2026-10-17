@@ -9,6 +9,7 @@ import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import WhatsAppButton from '@/components/WhatsAppButton'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
 import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
+import { organizationStructuredDataNode, websiteStructuredDataNode } from '@/lib/structured-data'
 
 const pageUrl = 'https://www.swimcoachcertification.com/swimming-coach-career-singapore'
 
@@ -23,6 +24,8 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
+    websiteStructuredDataNode,
+    organizationStructuredDataNode,
     { '@type': 'WebPage', '@id': `${pageUrl}#webpage`, url: pageUrl, name: 'Swimming Coach Career in Singapore', description: 'A practical route from swim teacher education to career readiness in Singapore.', inLanguage: 'en-SG', isPartOf: { '@id': 'https://www.swimcoachcertification.com/#website' }, breadcrumb: { '@id': `${pageUrl}#breadcrumb` } },
     { '@type': 'BreadcrumbList', '@id': `${pageUrl}#breadcrumb`, itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.swimcoachcertification.com/' },

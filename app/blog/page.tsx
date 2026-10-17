@@ -24,6 +24,7 @@ import {
 } from '@/lib/approved-course-details'
 import { blogArticles } from '@/lib/blog-articles'
 import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
+import { organizationStructuredDataNode, websiteStructuredDataNode } from '@/lib/structured-data'
 
 const blogQuery = `*[
   _type == "blogPost" &&
@@ -194,6 +195,8 @@ export default async function BlogPage() {
   const structuredData = {
     '@context': 'https://schema.org',
     '@graph': [
+      websiteStructuredDataNode,
+      organizationStructuredDataNode,
       {
         '@type': 'CollectionPage',
         '@id': 'https://www.swimcoachcertification.com/blog#page',

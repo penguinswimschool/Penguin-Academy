@@ -9,6 +9,7 @@ import { whatsappEnquiryUrl } from '@/lib/approved-course-details'
 export const metadata: Metadata = {
   title: 'Page Not Found | Penguin Academy',
   description: 'The requested Penguin Academy page could not be found.',
+  alternates: {},
   robots: { index: false, follow: true },
 }
 

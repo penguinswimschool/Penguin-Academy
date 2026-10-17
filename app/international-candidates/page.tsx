@@ -7,6 +7,7 @@ import WhatsAppButton from '@/components/WhatsAppButton'
 import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import StructuredData from '@/components/StructuredData'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
+import { organizationStructuredDataNode, websiteStructuredDataNode } from '@/lib/structured-data'
 
 const pageUrl = 'https://www.swimcoachcertification.com/international-candidates'
 const socialImage = 'https://www.swimcoachcertification.com/academy-coach-community.jpg'
@@ -42,6 +43,8 @@ export const metadata: Metadata = {
 const internationalCandidatesStructuredData = {
   '@context': 'https://schema.org',
   '@graph': [
+    websiteStructuredDataNode,
+    organizationStructuredDataNode,
     {
       '@type': 'WebPage',
       '@id': `${pageUrl}#webpage`,

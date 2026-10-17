@@ -32,7 +32,7 @@ const Hero: React.FC = () => {
             </h1>
 
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-300 sm:text-xl">
-              Build the skills to teach others through structured SSI training, supervised practical experience and ongoing Penguin mentorship—whether you are exploring part-time teaching or a professional career.
+              Compare Penguin Academy&apos;s swimming instructor courses and SSI Swim Teacher pathways, with structured training, supervised practical experience, current SGD fees and ongoing mentorship for part-time or professional goals.
             </p>
 
             <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:max-w-2xl">
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
                 href="/courses"
                 className="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] shadow-[0_14px_40px_rgba(34,211,238,0.18)] transition hover:bg-cyan-200"
               >
-                Explore courses
+                Compare SSI swim teacher courses
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
               </Link>
               <TrackedWhatsAppLink

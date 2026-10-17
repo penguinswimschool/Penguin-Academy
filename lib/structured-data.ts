@@ -5,6 +5,34 @@ const INSTRUCTOR_ID = `${SITE_URL}/#remus-teo`;
 const MENTOR_ID = `${SITE_URL}/#rayner-teo`;
 const SSI_PROFILE_URL = 'https://my.divessi.com/pro/121320';
 
+export const websiteStructuredDataNode = {
+  '@type': 'WebSite',
+  '@id': WEBSITE_ID,
+  url: `${SITE_URL}/`,
+  name: 'Penguin Academy',
+  inLanguage: 'en-SG',
+  publisher: { '@id': ORGANIZATION_ID },
+};
+
+export const organizationStructuredDataNode = {
+  '@type': 'EducationalOrganization',
+  '@id': ORGANIZATION_ID,
+  name: 'Penguin Academy',
+  url: `${SITE_URL}/`,
+  logo: `${SITE_URL}/penguinacademylogo512x512.png`,
+  email: 'swim@penguinswimschool.sg',
+  telephone: '+65 8909 4395',
+  areaServed: { '@type': 'Country', name: 'Singapore' },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'course enquiries',
+    telephone: '+65 8909 4395',
+    email: 'swim@penguinswimschool.sg',
+    url: 'https://wa.me/6589094395',
+    availableLanguage: 'English',
+  },
+};
+
 type CourseKey = 'level1' | 'level2' | 'baby' | 'adult' | 'reactRight';
 
 interface CourseDefinition {
@@ -104,35 +132,8 @@ function courseEntity(course: CourseDefinition, includeOffer = false) {
 export const homepageStructuredData = {
   '@context': 'https://schema.org',
   '@graph': [
-    {
-      '@type': 'WebSite',
-      '@id': WEBSITE_ID,
-      url: `${SITE_URL}/`,
-      name: 'Penguin Academy',
-      inLanguage: 'en-SG',
-      publisher: { '@id': ORGANIZATION_ID },
-    },
-    {
-      '@type': 'EducationalOrganization',
-      '@id': ORGANIZATION_ID,
-      name: 'Penguin Academy',
-      url: `${SITE_URL}/`,
-      logo: `${SITE_URL}/penguinacademylogo512x512.png`,
-      email: 'swim@penguinswimschool.sg',
-      telephone: '+65 8909 4395',
-      areaServed: {
-        '@type': 'Country',
-        name: 'Singapore',
-      },
-      contactPoint: {
-        '@type': 'ContactPoint',
-        contactType: 'course enquiries',
-        telephone: '+65 8909 4395',
-        email: 'swim@penguinswimschool.sg',
-        url: 'https://wa.me/6589094395',
-        availableLanguage: 'English',
-      },
-    },
+    websiteStructuredDataNode,
+    organizationStructuredDataNode,
     {
       '@type': 'Person',
       '@id': INSTRUCTOR_ID,
@@ -181,6 +182,8 @@ export const homepageStructuredData = {
 export const coursesPageStructuredData = {
   '@context': 'https://schema.org',
   '@graph': [
+    websiteStructuredDataNode,
+    organizationStructuredDataNode,
     {
       '@type': 'CollectionPage',
       '@id': `${SITE_URL}/courses#webpage`,
@@ -224,6 +227,8 @@ export function buildCoursePageStructuredData(courseKey: CourseKey) {
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      websiteStructuredDataNode,
+      organizationStructuredDataNode,
       {
         '@type': 'WebPage',
         '@id': `${url}#webpage`,
@@ -267,6 +272,8 @@ export function buildCoursePageStructuredData(courseKey: CourseKey) {
 export const bundlePageStructuredData = {
   '@context': 'https://schema.org',
   '@graph': [
+    websiteStructuredDataNode,
+    organizationStructuredDataNode,
     {
       '@type': 'WebPage',
       '@id': `${SITE_URL}/courses/penguin-pro-swim-teacher-pathway#webpage`,

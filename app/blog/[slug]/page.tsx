@@ -11,6 +11,7 @@ import StructuredData from '@/components/StructuredData'
 import TrackedWhatsAppLink from '@/components/TrackedWhatsAppLink'
 import { WHATSAPP_URL } from '@/lib/approved-course-details'
 import { blogArticles, getBlogArticle, type BlogArticle } from '@/lib/blog-articles'
+import { organizationStructuredDataNode, websiteStructuredDataNode } from '@/lib/structured-data'
 
 const SITE_URL = 'https://www.swimcoachcertification.com'
 
@@ -320,6 +321,8 @@ function buildArticleStructuredData(input: { url: string; title: string; descrip
   return {
     '@context': 'https://schema.org',
     '@graph': [
+      websiteStructuredDataNode,
+      organizationStructuredDataNode,
       {
         '@type': 'BlogPosting', '@id': `${input.url}#article`, url: input.url,
         mainEntityOfPage: { '@id': `${input.url}#webpage` }, headline: input.title,
