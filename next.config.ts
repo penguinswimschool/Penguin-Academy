@@ -79,6 +79,11 @@ const nextConfig: NextConfig = {
         destination: '/courses/ssi-adult-swim-teacher',
         permanent: true,
       },
+      {
+        source: '/blog/ssi-react-right-cpr-aed-oxygen-provider',
+        destination: '/blog/ssi-react-right-cpr-aed-oxygen-provider-explained',
+        permanent: true,
+      },
     ];
   },
 };
