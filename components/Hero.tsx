@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/courses"
-                className="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] shadow-[0_14px_40px_rgba(34,211,238,0.18)] transition hover:bg-cyan-200"
+                className="group mr-16 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] shadow-[0_14px_40px_rgba(34,211,238,0.18)] transition hover:bg-cyan-200 sm:mr-0"
               >
                 Compare SSI swim teacher courses
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
