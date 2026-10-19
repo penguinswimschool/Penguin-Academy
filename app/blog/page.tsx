@@ -387,7 +387,7 @@ function PostCard({ post, featured = false }: { post: BlogPost; featured?: boole
           alt={post.imageAlt || post.mainImage?.alt || post.title}
           fill
           sizes={featured ? '(min-width: 1024px) 55vw, 100vw' : '(min-width: 1024px) 33vw, 100vw'}
-          className="object-cover transition duration-700 group-hover:scale-[1.02]"
+          className={`object-cover transition duration-700 group-hover:scale-[1.02] ${post.imageUrl === '/academy-ssi-learning-community.jpg' ? 'object-top' : ''}`}
         />
       </div>
       <article className="flex flex-col justify-center p-7 sm:p-9">

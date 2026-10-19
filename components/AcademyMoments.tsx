@@ -34,6 +34,7 @@ const moments = [
     alt: 'Penguin Academy learners and instructors gathered with an SSI flag',
     label: 'A professional community that keeps learning together',
     className: 'min-h-[260px] sm:min-h-[300px] lg:col-span-4',
+    imageClassName: 'object-top',
     sizes: '(min-width: 1024px) 33vw, 100vw',
   },
   {
@@ -69,7 +70,7 @@ export default function AcademyMoments() {
                 alt={moment.alt}
                 fill
                 sizes={moment.sizes}
-                className="object-cover transition duration-700 group-hover:scale-[1.02]"
+                className={`object-cover transition duration-700 group-hover:scale-[1.02] ${moment.imageClassName || ''}`}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#071b2b]/80 via-transparent to-transparent" />
               <figcaption className="absolute inset-x-0 bottom-0 p-6 text-base font-semibold text-white sm:p-7">
