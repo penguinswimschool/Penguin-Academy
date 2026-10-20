@@ -51,7 +51,7 @@ export default function SSILevel2Page() {
     importantTitle="Certification does not automatically grant teaching access"
     importantDescription="Facilities, employers and jurisdictions can set additional access, insurance or employment requirements. Penguin Academy explains the SSI course pathway but does not guarantee venue access, employment or universal acceptance."
     faqs={faqs}
-    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/index.php?id=22219536' }}
+    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/index.php?id=22820368' }}
     guide={{ label: 'Compare SSI Level 1 and Level 2', href: '/blog/ssi-swim-teacher-level-1-vs-level-2' }}
     courseTitle="SSI Swim Teacher Level 2 Certification"
     officialImage={{ src: '/ssi/swim-teacher-level-2.jpg', alt: 'Official SSI Swim Teacher Level 2 programme visual showing a teacher with intermediate swimmers' }}

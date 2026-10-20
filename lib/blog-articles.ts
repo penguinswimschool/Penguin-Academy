@@ -216,7 +216,7 @@ export const blogArticles: BlogArticle[] = [
       { question: 'Does Level 1 guarantee employment?', answer: 'No. It establishes an SSI programme qualification. Employers and venue operators determine their own hiring and access requirements.' },
     ],
     sources: [
-      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22219535' },
+      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820367' },
       { label: 'SSI Level 2 Swim Teacher training standard', url: 'https://training.divessi.com/course/swim-training-standards-and-procedures/professional-programs/swim-professional-programs/level-2-swim-teacher-1' },
     ],
     internalLinks: [
@@ -508,7 +508,7 @@ export const blogArticles: BlogArticle[] = [
       { question: 'Does the SGD 2,888 bundle waive the Level 2 prerequisite?', answer: 'No. Pricing does not change SSI prerequisites or completion requirements.' },
     ],
     sources: [
-      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22219535' },
+      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820367' },
       { label: 'SSI Level 2 Swim Teacher training standard', url: 'https://training.divessi.com/course/swim-training-standards-and-procedures/professional-programs/swim-professional-programs/level-2-swim-teacher-1' },
     ],
     internalLinks: [
@@ -746,7 +746,7 @@ export const blogArticles: BlogArticle[] = [
       { question: 'Can international candidates take SSI training in Singapore?', answer: 'Yes, international candidates may enquire. Confirm training, apprenticeship, travel, local work rights and recognition requirements before booking.' },
     ],
     sources: [
-      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22219535' },
+      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820367' },
       { label: 'CoachSG National Registry of Coaches', url: 'https://coachsg.sportsingapore.gov.sg/nroc' },
       { label: 'CoachSG Participation Coach pathway', url: 'https://coachsg.sportsingapore.gov.sg/participation-coach' },
       { label: 'SportSG National Registry of Coaches overview', url: 'https://www.sportsingapore.gov.sg/support-resources/national-registry-of-coaches/' },
