@@ -35,19 +35,10 @@ const Hero: React.FC = () => {
               Compare Penguin Academy&apos;s swimming instructor courses and SSI Swim Teacher pathways, with structured training, supervised practical experience, current SGD fees and ongoing mentorship for part-time or professional goals.
             </p>
 
-            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:max-w-2xl">
-              <p className="text-base font-semibold text-white sm:text-lg">
-                Every SGD 1,688 teacher course includes full SSI React Right.
-              </p>
-              <p className="mt-1 text-sm leading-6 text-slate-300">
-                First Aid &amp; CPR, AED Provider and Oxygen Provider training are included.
-              </p>
-            </div>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/courses"
-                className="group mr-16 inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] shadow-[0_14px_40px_rgba(34,211,238,0.18)] transition hover:bg-cyan-200 sm:mr-0"
+                className="group inline-flex items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 py-4 font-bold text-[#071b2b] shadow-[0_14px_40px_rgba(34,211,238,0.18)] transition hover:bg-cyan-200"
               >
                 Compare SSI swim teacher courses
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" aria-hidden="true" />
@@ -59,6 +50,15 @@ const Hero: React.FC = () => {
               >
                 Ask about my pathway
               </TrackedWhatsAppLink>
+            </div>
+
+            <div className="mt-8 rounded-2xl border border-white/10 bg-white/[0.06] p-5 backdrop-blur-sm sm:max-w-2xl">
+              <p className="text-base font-semibold text-white sm:text-lg">
+                Every SGD 1,688 teacher course includes full SSI React Right.
+              </p>
+              <p className="mt-1 text-sm leading-6 text-slate-300">
+                First Aid &amp; CPR, AED Provider and Oxygen Provider training are included.
+              </p>
             </div>
 
             <div className="mt-10 grid gap-3 text-sm text-slate-300 sm:grid-cols-3">

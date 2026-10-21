@@ -51,7 +51,7 @@ export default function SSIAdultPage() {
     importantTitle="Certification and employment are separate"
     importantDescription="Employers, facilities and jurisdictions may set additional insurance, safeguarding, access or employment requirements. Penguin Academy does not guarantee a job or universal venue acceptance."
     faqs={faqs}
-    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/en-au/course/swim-standards/professional-programs-2/swim-professional-programs/adult-swim-teacher' }}
+    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/index.php?id=22820369' }}
     guide={{ label: 'Read the Adult Swim Teacher guide', href: '/blog/ssi-adult-swim-teacher-certification-singapore' }}
     courseTitle="SSI Adult Swim Teacher Certification"
     officialImage={{ src: '/ssi/swim-teacher-adult.jpg', alt: 'Official SSI Adult Swim Teacher programme visual showing an adult learner swimming underwater' }}

@@ -614,7 +614,7 @@ export const blogArticles: BlogArticle[] = [
       { question: 'Can international candidates enquire?', answer: 'Yes. Confirm the complete in-person training, apprenticeship, travel and recognition arrangements before booking.' },
     ],
     sources: [
-      { label: 'SSI Adult Swim Teacher training standard', url: 'https://training.divessi.com/en-au/course/swim-standards/professional-programs-2/swim-professional-programs/adult-swim-teacher' },
+      { label: 'SSI Adult Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820369' },
       { label: 'SSI React Right training standard', url: 'https://training.divessi.com/index.php?L=0&extauth%5Baction%5D=previewaccess&id=21401025&logintype=login' },
     ],
     internalLinks: [
