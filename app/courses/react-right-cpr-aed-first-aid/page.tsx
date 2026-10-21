@@ -63,7 +63,7 @@ export default function ReactRightPage() {
     importantTitle="Confirm the qualification your workplace requires"
     importantDescription="React Right is an SSI emergency-response certification pathway. It is not presented as a healthcare-professional or lifeguard qualification, and Penguin Academy cannot guarantee acceptance by every employer, facility or regulator."
     faqs={faqs}
-    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/course/scuba-training-standards-and-procedures-20241/react-right-programs/student-level-programs/react-right' }}
+    officialSource={{ label: 'Review the official SSI training standard', href: 'https://training.divessi.com/index.php?id=22807793' }}
     guide={{ label: 'Read the React Right guide', href: '/blog/ssi-react-right-cpr-aed-oxygen-provider-explained' }}
     courseTitle="Full SSI React Right"
     courseLogo={{ src: '/ssi/react-right-logo-black.png', alt: 'SSI React Right First Aid, oxygen and AED training logo', width: 1400, height: 561 }}

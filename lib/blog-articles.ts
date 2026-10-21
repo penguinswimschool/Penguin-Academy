@@ -217,7 +217,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     sources: [
       { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820367' },
-      { label: 'SSI Level 2 Swim Teacher training standard', url: 'https://training.divessi.com/course/swim-training-standards-and-procedures/professional-programs/swim-professional-programs/level-2-swim-teacher-1' },
+      { label: 'SSI Level 2 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820368' },
     ],
     internalLinks: [
       { label: 'Compare SSI and NROC pathways', href: '/blog/ssi-vs-nroc-swimming-instructor-certification-singapore' },
@@ -315,7 +315,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     sources: [
       { label: 'SSI React Right course combination', url: 'https://www.divessi.com/en/advanced-training/scuba-diving/react-right---course-combination-fa-cpr-aed-o2' },
-      { label: 'SSI React Right training standard', url: 'https://training.divessi.com/course/scuba-training-standards-and-procedures-20241/react-right-programs/student-level-programs/react-right' },
+      { label: 'SSI React Right training standard', url: 'https://training.divessi.com/index.php?id=22807793' },
       { label: 'SSI React Right Update standard', url: 'https://training.divessi.com/index.php?id=22820380' },
     ],
     internalLinks: [
@@ -509,7 +509,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     sources: [
       { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820367' },
-      { label: 'SSI Level 2 Swim Teacher training standard', url: 'https://training.divessi.com/course/swim-training-standards-and-procedures/professional-programs/swim-professional-programs/level-2-swim-teacher-1' },
+      { label: 'SSI Level 2 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820368' },
     ],
     internalLinks: [
       { label: 'View SSI Swim Teacher Level 1', href: '/courses/ssi-swim-teacher-level-1' },
@@ -615,7 +615,7 @@ export const blogArticles: BlogArticle[] = [
     ],
     sources: [
       { label: 'SSI Adult Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820369' },
-      { label: 'SSI React Right training standard', url: 'https://training.divessi.com/index.php?L=0&extauth%5Baction%5D=previewaccess&id=21401025&logintype=login' },
+      { label: 'SSI React Right training standard', url: 'https://training.divessi.com/index.php?id=22807793' },
     ],
     internalLinks: [
       { label: 'View the SSI Adult Swim Teacher course', href: '/courses/ssi-adult-swim-teacher' },
@@ -764,6 +764,80 @@ export const blogArticles: BlogArticle[] = [
     courseHref: '/courses/ssi-swim-teacher-level-1',
     courseName: 'View SSI Swim Teacher Level 1',
     whatsappMessage: 'Hi Penguin Academy, I would like help comparing the SSI and NROC pathways for my teaching goals.',
+  },
+  {
+    slug: 'ssi-swim-teacher-level-1-apprenticeship-singapore',
+    title: 'What Does the SSI Swim Teacher Level 1 Apprenticeship Involve?',
+    seoTitle: 'SSI Level 1 Swim Teacher Apprenticeship in Singapore',
+    description: 'Understand the eight supervised SSI Level 1 apprenticeship lessons, recommended four-hour total and what must be completed before certification.',
+    excerpt: 'A clear explanation of the supervised Aquatike and Beginner lessons required beyond the instructor-led training day.',
+    publishedAt: '2026-10-21T11:00:00+08:00',
+    updatedAt: '2026-10-21T11:00:00+08:00',
+    category: 'Practical training',
+    image: '/academy-practical-training.jpg',
+    imageAlt: 'Penguin coaches supporting swimmers during pool lessons in Singapore',
+    readTime: '5 min read',
+    directAnswer: 'SSI Swim Teacher Level 1 candidates must complete at least four Aquatike lessons and four Beginner lessons as supervised apprenticeship training. SSI recommends a cumulative apprenticeship time of at least four hours. These lessons are part of the complete certification pathway, not a substitute for academic work, assessment, the final exam or any applicable water fitness evaluation.',
+    facts: [
+      { label: 'Aquatike lessons', value: 'At least 4' },
+      { label: 'Beginner lessons', value: 'At least 4' },
+      { label: 'Recommended apprenticeship time', value: 'At least 4 hours total' },
+      { label: 'SSI recommended full programme', value: '24–28 hours' },
+    ],
+    sections: [
+      {
+        id: 'what-counts',
+        title: 'What does SSI require for the apprenticeship?',
+        paragraphs: [
+          'The current SSI Level 1 standard specifies at least four lessons in Aquatike and four lessons in Beginner, with a recommended cumulative apprenticeship time of at least four hours. The lesson count is a requirement; the four-hour figure is SSI’s recommendation for the cumulative apprenticeship time.',
+          'This practical component gives candidates supervised experience within the programmes they are training to teach. It is one part of SSI’s recommended 24–28 hours for the complete Level 1 programme, not an extra four hours that can be assumed to replace the rest of the training.',
+        ],
+      },
+      {
+        id: 'supervision',
+        title: 'Who supervises the lessons?',
+        paragraphs: [
+          'SSI requires an active-status Swim Teacher Instructor to directly supervise and evaluate the academic and in-water training sessions. During the apprenticeship, an active-status Level 1 Teacher Mentor or higher may directly supervise candidates.',
+          'Ask the training centre how your apprenticeship sessions will be arranged, who will supervise them and how completion will be recorded. The actual timing depends on the available lessons, candidate progress and confirmed arrangements.',
+        ],
+      },
+      {
+        id: 'before-certification',
+        title: 'Is finishing eight lessons enough to receive the certification?',
+        paragraphs: [
+          'No. SSI says the Level 1 digital certification card may be issued by a Swim Teacher Instructor only after all academic and in-water requirements are completed. The standard also calls for the programme’s final exam and a Candidate Water Fitness Evaluation when the previous evaluation is more than six months old.',
+          'An instructor-led training day, the apprenticeship lesson count and the certification decision are distinct steps. Do not assume that attending a single day or logging eight lessons alone results in certification.',
+        ],
+      },
+      {
+        id: 'questions-to-ask',
+        title: 'Questions to ask before you enrol',
+        bullets: [
+          'Where and when are Aquatike and Beginner apprenticeship lessons expected to take place?',
+          'Who will supervise the apprenticeship and confirm completion?',
+          'How should I prepare for the digital learning, assessments and final exam?',
+          'Will I need a new Candidate Water Fitness Evaluation?',
+          'If I am travelling to Singapore, how should I plan for the complete in-person pathway rather than only the instructor-led day?',
+        ],
+      },
+    ],
+    faqs: [
+      { question: 'How many SSI Level 1 apprenticeship lessons are required?', answer: 'At least four Aquatike lessons and four Beginner lessons.' },
+      { question: 'Does the apprenticeship take exactly four hours?', answer: 'SSI recommends a cumulative apprenticeship time of at least four hours. The actual schedule depends on the lessons and arrangements confirmed for the candidate.' },
+      { question: 'Can I receive SSI Level 1 certification after one training day?', answer: 'No. The applicable academic and in-water work, final exam, apprenticeship and water fitness requirement must be completed before a Swim Teacher Instructor may issue the certification.' },
+      { question: 'Can international candidates complete the apprenticeship in Singapore?', answer: 'International candidates may enquire. Confirm the full training and apprenticeship arrangements, travel needs and recognition of the certification in the setting where you intend to teach before booking.' },
+    ],
+    sources: [
+      { label: 'SSI Level 1 Swim Teacher training standard', url: 'https://training.divessi.com/index.php?id=22820367' },
+    ],
+    internalLinks: [
+      { label: 'Review the SSI Level 1 course', href: '/courses/ssi-swim-teacher-level-1' },
+      { label: 'Compare all SSI swim teacher courses', href: '/courses' },
+      { label: 'Information for international candidates', href: '/international-candidates' },
+    ],
+    courseHref: '/courses/ssi-swim-teacher-level-1',
+    courseName: 'Explore SSI Swim Teacher Level 1',
+    whatsappMessage: 'Hi Penguin Academy, please explain how the SSI Swim Teacher Level 1 apprenticeship is arranged.',
   },
 ]
 
