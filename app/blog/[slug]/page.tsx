@@ -19,12 +19,12 @@ const relatedArticleSlugs: Record<string, string[]> = {
   'how-to-become-certified-swimming-instructor-singapore': [
     'ssi-vs-nroc-swimming-instructor-certification-singapore',
     'ssi-swim-teacher-level-1-requirements-cost-career-path',
-    'ssi-swim-teacher-level-1-vs-level-2',
+    'ssi-swim-teacher-level-1-apprenticeship-singapore',
   ],
   'ssi-swim-teacher-level-1-requirements-cost-career-path': [
     'ssi-vs-nroc-swimming-instructor-certification-singapore',
     'how-to-become-certified-swimming-instructor-singapore',
-    'ssi-swim-teacher-level-1-vs-level-2',
+    'ssi-swim-teacher-level-1-apprenticeship-singapore',
   ],
   'ssi-react-right-cpr-aed-oxygen-provider-explained': [
     'how-to-become-certified-swimming-instructor-singapore',
@@ -49,6 +49,11 @@ const relatedArticleSlugs: Record<string, string[]> = {
   'ssi-vs-nroc-swimming-instructor-certification-singapore': [
     'how-to-become-certified-swimming-instructor-singapore',
     'ssi-swim-teacher-level-1-requirements-cost-career-path',
+    'ssi-swim-teacher-level-1-vs-level-2',
+  ],
+  'ssi-swim-teacher-level-1-apprenticeship-singapore': [
+    'ssi-swim-teacher-level-1-requirements-cost-career-path',
+    'how-to-become-certified-swimming-instructor-singapore',
     'ssi-swim-teacher-level-1-vs-level-2',
   ],
 }

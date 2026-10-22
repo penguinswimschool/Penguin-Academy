@@ -128,6 +128,7 @@ export const blogArticles: BlogArticle[] = [
     internalLinks: [
       { label: 'Compare SSI and NROC pathways', href: '/blog/ssi-vs-nroc-swimming-instructor-certification-singapore' },
       { label: 'Review SSI Swim Teacher Level 1', href: '/courses/ssi-swim-teacher-level-1' },
+      { label: 'Understand the Level 1 apprenticeship', href: '/blog/ssi-swim-teacher-level-1-apprenticeship-singapore' },
       { label: 'Compare all Penguin Academy courses', href: '/courses' },
       { label: 'Information for international candidates', href: '/international-candidates' },
     ],
@@ -222,6 +223,7 @@ export const blogArticles: BlogArticle[] = [
     internalLinks: [
       { label: 'Compare SSI and NROC pathways', href: '/blog/ssi-vs-nroc-swimming-instructor-certification-singapore' },
       { label: 'Read the Singapore swimming-instructor pathway', href: '/blog/how-to-become-certified-swimming-instructor-singapore' },
+      { label: 'Understand the Level 1 apprenticeship', href: '/blog/ssi-swim-teacher-level-1-apprenticeship-singapore' },
       { label: 'Compare SSI Level 1 and Level 2', href: '/blog/ssi-swim-teacher-level-1-vs-level-2' },
       { label: 'View upcoming course dates', href: '/course-dates' },
     ],
