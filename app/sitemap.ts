@@ -31,6 +31,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   }))
 
   const publishedSlugs = new Set(blogArticles.map((article) => article.slug))
+  let latestBlogUpdate = new Date(Math.max(...blogArticles.map((article) => new Date(article.updatedAt).getTime())))
   for (const article of blogArticles) {
     entries.push({
       url: `${baseUrl}/blog/${article.slug}`,
@@ -47,8 +48,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         }`
       )
 
-      let latestBlogUpdate = new Date(Math.max(...blogArticles.map((article) => new Date(article.updatedAt).getTime())))
-
       for (const post of posts) {
         if (publishedSlugs.has(post.slug)) continue
         const updatedAt = new Date(post.updatedAt)
@@ -62,14 +61,14 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
           latestBlogUpdate = updatedAt
         }
       }
-
-      const blogEntry = entries.find((entry) => entry.url === `${baseUrl}/blog`)
-      if (blogEntry) {
-        blogEntry.lastModified = latestBlogUpdate
-      }
     } catch (error) {
       console.error('Error fetching blog slugs for sitemap:', error)
     }
+  }
+
+  const blogEntry = entries.find((entry) => entry.url === `${baseUrl}/blog`)
+  if (blogEntry) {
+    blogEntry.lastModified = latestBlogUpdate
   }
 
   return entries
