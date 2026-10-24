@@ -31,6 +31,151 @@ export interface BlogArticle {
 }
 
 export const blogArticles: BlogArticle[] = [
+{
+  "slug": "choose-two-ssi-swim-teacher-courses-singapore",
+  "title": "Which Two SSI Swim Teacher Courses Should You Choose?",
+  "seoTitle": "Choosing Two SSI Swim Teacher Courses in Singapore",
+  "description": "Choose an SSI swim teacher course pairing around your qualifications, learner group and training time. A practical guide to Penguin Academy’s bundle.",
+  "excerpt": "A course-selection checklist to match two SSI teacher courses with your current qualifications, intended learner group and available training time.",
+  "publishedAt": "2026-10-24T08:29:57+08:00",
+  "updatedAt": "2026-10-24T08:29:57+08:00",
+  "category": "Course planning",
+  "image": "/academy-instructor-development.jpg",
+  "imageAlt": "Penguin Academy swim teachers developing practical coaching skills in a Singapore pool",
+  "readTime": "5 min read",
+  "directAnswer": "Choose your two SSI swim teacher courses around the learners you want to teach and the qualifications you already hold. If your goal is beginner teaching followed by intermediate and advanced progression, consider Level 1 followed by Level 2. If you want to specialise in parent-child classes or adult swimming, compare Baby Swim Teacher or Adult Swim Teacher against that goal before choosing your pair.",
+  "facts": [
+    {
+      "label": "Choose around",
+      "value": "Learner group and current qualifications"
+    },
+    {
+      "label": "Course choice",
+      "value": "Any two of four teacher pathways"
+    },
+    {
+      "label": "Level 2 prerequisite",
+      "value": "SSI Swim Teacher Level 1"
+    },
+    {
+      "label": "Completion",
+      "value": "All applicable programme requirements"
+    }
+  ],
+  "sections": [
+    {
+      "id": "start-with-the-classes-you-hope-to-teach",
+      "title": "Start with the classes you hope to teach",
+      "paragraphs": [
+        "Write down a specific teaching goal before comparing course names. “I want to teach children who are learning their first swimming skills” is more useful than “I want more certificates”. So is “I want to develop parent-child classes” or “I want to teach adult learners”.",
+        "Next, describe your present experience. Include any swim teaching certification, the learner groups you have taught and the parts of teaching you want help with. Someone who swims confidently and someone who already teaches are starting different conversations, even if both are considering the same bundle.",
+        "Use this short decision guide as a starting point:",
+        "These are planning suggestions. Ask the Academy to confirm eligibility and course sequence for your circumstances before booking."
+      ],
+      "bullets": [
+        "Beginner teaching, then intermediate and advanced progression — Level 1 followed by Level 2",
+        "Beginner teaching plus parent-child programmes — Level 1 and Baby Swim Teacher",
+        "Beginner teaching plus adult swimming — Level 1 and Adult Swim Teacher",
+        "Two specialist learner groups — Baby Swim Teacher and Adult Swim Teacher, with suitability checked for your background"
+      ]
+    },
+    {
+      "id": "check-the-level-2-prerequisite-before-choosing-dates",
+      "title": "Check the Level 2 prerequisite before choosing dates",
+      "paragraphs": [
+        "SSI requires Level 1 Swim Teacher certification before Level 2. The official SSI Level 2 standard lists Level 1 as a prerequisite and does not permit an equivalent certification in its place.",
+        "If you are new to SSI, discuss how you will complete Level 1 before moving into Level 2. Booking a two-course package does not remove that sequence.",
+        "Level 1 covers SSI Aquatike through Beginner programmes; Level 2 extends into Intermediate, Advanced and Swim Team Prep. The Academy’s Level 1 course page explains the foundation route, and its Level 1 versus Level 2 guide helps compare the two."
+      ]
+    },
+    {
+      "id": "choose-a-specialisation-for-a-clear-reason",
+      "title": "Choose a specialisation for a clear reason",
+      "paragraphs": [
+        "The Baby Swim Teacher course prepares candidates for SSI Baby Swim I and II parent-child programmes. A parent or guardian is in the water and directly supervises the child. Consider this route if working with babies and their accompanying adults is the kind of teaching you want to develop.",
+        "The Adult Swim Teacher course focuses on SSI adult swimming programmes. Before selecting it, think about what draws you to adult teaching and the experience you can bring to that setting.",
+        "You can be interested in several groups while choosing one immediate priority. Ask which pair supports the classes you hope to teach first, then discuss what further development would make sense later."
+      ]
+    },
+    {
+      "id": "plan-time-beyond-the-instructor-led-days",
+      "title": "Plan time beyond the instructor-led days",
+      "paragraphs": [
+        "The bundle includes two instructor-led days. Each selected pathway also has its own completion requirements. Digital learning, applicable water fitness evaluation, assessments, the final exam and supervised apprenticeship all need to be considered when planning your availability. Certification follows successful completion of the applicable requirements. Review the published bundle inclusions.",
+        "For example, SSI’s Adult Swim Teacher standard recommends 22–26 hours for completion, or 6–8 hours for candidates who are already Level 2 Swim Teachers. Recommended programme hours and calendar dates are different things. Ask how the relevant training and apprenticeship can fit your actual schedule."
+      ]
+    },
+    {
+      "id": "send-one-enquiry-that-answers-the-practical-questions",
+      "title": "Send one enquiry that answers the practical questions",
+      "paragraphs": [
+        "Before you pay, prepare these details:",
+        "Ask for confirmation of the course order, the full completion pathway and the current total payable. If you intend to use the qualification with a particular employer or facility, check that organisation’s requirements separately.",
+        "Ask Penguin Academy to check your course pairing. Include your existing qualifications and preferred learner group so the discussion starts with the route that fits your goal."
+      ],
+      "bullets": [
+        "The two courses you are considering and your reason for choosing them.",
+        "Your current swim teaching qualifications and experience.",
+        "The learners and setting you hope to teach in.",
+        "Your available training dates and time for apprenticeship.",
+        "Any deadline you are working towards."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does a two-course bundle remove the Level 2 prerequisite?",
+      "answer": "No. SSI Swim Teacher Level 1 certification is required before Level 2."
+    },
+    {
+      "question": "Does attending two instructor-led days complete certification?",
+      "answer": "No. Candidates must successfully complete every applicable programme-specific requirement, including the required academic and practical work."
+    }
+  ],
+  "sources": [
+    {
+      "label": "Penguin Academy current bundle inclusions",
+      "url": "https://www.swimcoachcertification.com/courses/penguin-pro-swim-teacher-pathway"
+    },
+    {
+      "label": "SSI Level 2 standard",
+      "url": "https://training.divessi.com/index.php?L=0&extauth%5Baction%5D=previewaccess&id=22820368&logintype=login"
+    },
+    {
+      "label": "SSI Adult Swim Teacher standard",
+      "url": "https://training.divessi.com/en-au/course/swim-standards/professional-programs-2/swim-professional-programs/adult-swim-teacher"
+    }
+  ],
+  "internalLinks": [
+    {
+      "label": "Compare the two-course bundle",
+      "href": "/courses/penguin-pro-swim-teacher-pathway"
+    },
+    {
+      "label": "Level 1 course",
+      "href": "/courses/ssi-swim-teacher-level-1"
+    },
+    {
+      "label": "Level 1 versus Level 2 guide",
+      "href": "/blog/ssi-swim-teacher-level-1-vs-level-2"
+    },
+    {
+      "label": "Baby Swim Teacher",
+      "href": "/courses/baby-and-me-swim-teacher"
+    },
+    {
+      "label": "Adult Swim Teacher",
+      "href": "/courses/ssi-adult-swim-teacher"
+    },
+    {
+      "label": "Ask about your pairing",
+      "href": "/contact"
+    }
+  ],
+  "courseHref": "/courses/penguin-pro-swim-teacher-pathway",
+  "courseName": "Explore the two-course bundle",
+  "whatsappMessage": "Hi Penguin Academy, please help me choose two SSI teacher courses for my current qualifications and intended learner group."
+},
   {
     slug: 'how-to-become-certified-swimming-instructor-singapore',
     title: 'How to Become a Certified Swimming Instructor in Singapore',
