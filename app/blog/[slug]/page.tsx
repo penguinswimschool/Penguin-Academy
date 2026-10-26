@@ -271,6 +271,7 @@ function StaticArticle({ article }: { article: BlogArticle }) {
               </div>
             </section>
 
+            {article.faqs.length > 0 && (
             <section className="mt-16" aria-labelledby="faq-title">
               <p className="text-sm font-bold uppercase tracking-[0.18em] text-teal-700">Quick answers</p>
               <h2 id="faq-title" className="mt-4 text-3xl font-semibold tracking-[-0.035em] text-[#0b2438] sm:text-4xl">Frequently asked questions</h2>
@@ -279,6 +280,8 @@ function StaticArticle({ article }: { article: BlogArticle }) {
               </div>
             </section>
 
+            )}
+
             <section className="mt-14 rounded-2xl border border-slate-200 bg-white p-7" aria-labelledby="sources-title">
               <h2 id="sources-title" className="text-xl font-bold text-[#0b2438]">Official sources</h2>
               <p className="mt-2 text-sm leading-6 text-slate-500">Course standards and external requirements can change. These primary sources were checked when this guide was updated.</p>
@@ -286,12 +289,14 @@ function StaticArticle({ article }: { article: BlogArticle }) {
               <p className="mt-5 text-sm text-slate-500">Last updated {formatDate(article.updatedAt)}.</p>
             </section>
 
+            {related.length > 0 && (
             <section className="mt-16 border-t border-slate-200 pt-12" aria-labelledby="related-title">
               <h2 id="related-title" className="text-3xl font-semibold tracking-[-0.035em] text-[#0b2438]">Continue your research</h2>
               <div className="mt-7 grid gap-5 md:grid-cols-3">
                 {related.map((item) => <Link key={item.slug} href={`/blog/${item.slug}`} className="group rounded-2xl border border-slate-200 bg-white p-6 transition hover:-translate-y-1 hover:shadow-lg"><p className="text-xs font-bold uppercase tracking-[0.14em] text-teal-700">{item.category}</p><h3 className="mt-3 font-bold leading-6 text-[#0b2438] group-hover:text-teal-700">{item.title}</h3><span className="mt-5 inline-flex items-center gap-2 text-sm font-bold text-teal-700">Read guide <ArrowRight className="h-4 w-4" aria-hidden="true" /></span></Link>)}
               </div>
             </section>
+            )}
           </div>
         </article>
       </main>
