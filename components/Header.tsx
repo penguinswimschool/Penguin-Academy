@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { ChevronDown, Menu, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -19,6 +19,22 @@ const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isCoursesOpen, setIsCoursesOpen] = useState(false)
 
+  const navigationButton = useRef<HTMLButtonElement>(null)
+  const coursesButton = useRef<HTMLButtonElement>(null)
+
+  useEffect(() => {
+    const onEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        if (isMenuOpen) navigationButton.current?.focus();
+        else if (isCoursesOpen) coursesButton.current?.focus();
+        setIsMenuOpen(false);
+        setIsCoursesOpen(false);
+      }
+    };
+    document.addEventListener('keydown', onEscape);
+    return () => document.removeEventListener('keydown', onEscape);
+  }, [isMenuOpen, isCoursesOpen]);
+
   const closeMenus = () => {
     setIsMenuOpen(false)
     setIsCoursesOpen(false)
@@ -35,17 +51,17 @@ const Header: React.FC = () => {
             <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl">
               <Image src="/penguin-academy-icon-96.png" alt="" width={40} height={40} priority />
             </span>
-            <span className="text-lg font-bold tracking-tight text-white sm:text-xl">Penguin Academy</span>
+            <span className="academy-display text-lg tracking-tight text-white sm:text-xl">Penguin Academy</span>
           </Link>
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
             <Link href="/about" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">About</Link>
             <div className="group relative flex items-center">
               <Link href="/courses" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">Courses</Link>
-              <button type="button" aria-label="Open courses menu" aria-expanded={isCoursesOpen} onClick={() => setIsCoursesOpen((open) => !open)} className="ml-1 rounded-md p-1 text-slate-300 transition hover:bg-white/10 hover:text-cyan-300">
+              <button ref={coursesButton} type="button" aria-label={isCoursesOpen ? "Close courses menu" : "Open courses menu"} aria-expanded={isCoursesOpen} onClick={() => setIsCoursesOpen((open) => !open)} className="ml-1 rounded-md p-1 text-slate-300 transition hover:bg-white/10 hover:text-cyan-300">
                 <ChevronDown className={`h-4 w-4 transition-transform ${isCoursesOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className={`${isCoursesOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'} absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 text-[#0b2438] shadow-[0_24px_70px_rgba(3,15,25,0.22)] transition group-hover:visible group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:visible group-focus-within:translate-y-0 group-focus-within:opacity-100`}>
+              <div className={`${isCoursesOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'} absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 text-[#0b2438] shadow-[0_24px_70px_rgba(3,15,25,0.22)] transition`}>
                 <div className="grid grid-cols-2 gap-1">
                   {courseLinks.map((course, index) => (
                     <Link key={course.href} href={course.href} onClick={closeMenus} className={`rounded-xl px-4 py-3 transition hover:bg-teal-50 ${index === 0 ? 'col-span-2 border-b border-slate-100 bg-[#f6f4ee]' : ''}`}>
@@ -61,9 +77,9 @@ const Header: React.FC = () => {
             <Link href="/blog" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">Guides</Link>
           </nav>
 
-          <Link href="/contact" className="hidden rounded-full bg-cyan-300 px-5 py-2.5 font-bold text-[#071b2b] transition-colors hover:bg-cyan-200 lg:inline-flex">Contact</Link>
+          <Link href="/contact" className="hidden rounded-full bg-[#c8e9e4] px-5 py-2.5 font-bold text-[#071b2b] transition-colors hover:bg-white lg:inline-flex">Contact</Link>
 
-          <button type="button" onClick={() => setIsMenuOpen((open) => !open)} className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-white transition hover:bg-white/10 lg:hidden" aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={isMenuOpen} aria-controls="mobile-navigation">
+          <button ref={navigationButton} type="button" onClick={() => setIsMenuOpen((open) => !open)} className="inline-flex h-11 w-11 items-center justify-center rounded-lg text-white transition hover:bg-white/10 lg:hidden" aria-label={isMenuOpen ? 'Close navigation menu' : 'Open navigation menu'} aria-expanded={isMenuOpen} aria-controls="mobile-navigation">
             {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
@@ -91,7 +107,7 @@ const Header: React.FC = () => {
             <Link href="/course-dates" onClick={closeMenus} className="block rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5 hover:text-cyan-300">Course Dates</Link>
             <Link href="/swimming-coach-career-singapore" onClick={closeMenus} className="block rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5 hover:text-cyan-300">Swimming Coach Career</Link>
             <Link href="/blog" onClick={closeMenus} className="block rounded-xl px-3 py-3 text-slate-200 hover:bg-white/5 hover:text-cyan-300">Guides</Link>
-            <Link href="/contact" onClick={closeMenus} className="mt-3 block w-full rounded-full bg-cyan-300 px-5 py-3 text-center font-bold text-[#071b2b] transition hover:bg-cyan-200">Contact</Link>
+            <Link href="/contact" onClick={closeMenus} className="mt-3 block w-full rounded-full bg-[#c8e9e4] px-5 py-3 text-center font-bold text-[#071b2b] transition hover:bg-white">Contact</Link>
           </nav>
         </div>
       )}

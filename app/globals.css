@@ -295,3 +295,21 @@ body {
     @apply bg-background text-foreground;
   }
 } */
+
+/* Shared marketing typography. System serif keeps the site free of extra font downloads. */
+.academy-display,
+.academy-marketing h2,
+.academy-marketing h3,
+.academy-interior h1 {
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -0.035em;
+}
+.academy-eyebrow {
+  font-size: 0.7rem;
+  line-height: 1.6;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+body { font-family: Arial, Helvetica, sans-serif; }

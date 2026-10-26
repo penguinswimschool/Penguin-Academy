@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import Header from '@/components/Header'
 import Hero from '@/components/Hero'
+import AcademyTeam from '@/components/AcademyTeam'
+import LatestGuides from '@/components/LatestGuides'
 import AcademyVideo from '@/components/AcademyVideo'
 import CourseList from '@/components/CourseList'
 import TrainingJourney from '@/components/TrainingJourney'
@@ -38,7 +40,7 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="academy-marketing min-h-screen bg-white">
       <LegacyHashRedirect />
       <StructuredData data={homepageStructuredData} />
       <Header />
@@ -46,11 +48,13 @@ export default function HomePage() {
         <Hero />
         <CourseList />
         <TrainingJourney />
+        <AcademyTeam />
         <MentorshipCareer />
         <TrainingReel />
         <AcademyMoments />
         <AcademyVideo />
         <CourseCalendar />
+        <LatestGuides />
       </main>
       <Footer />
       <WhatsAppButton />
