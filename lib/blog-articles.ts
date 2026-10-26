@@ -32,6 +32,137 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
 {
+  "slug": "questions-before-booking-ssi-swim-teacher-training",
+  "title": "Six questions to ask before booking SSI swim teacher training",
+  "seoTitle": "Before You Book SSI Swim Teacher Training: 6 Checks",
+  "description": "Ask about assessment, apprenticeship, fees and work-setting recognition before booking SSI swim teacher training in Singapore. Use this checklist.",
+  "excerpt": "A practical enrolment checklist to confirm your assessment pathway, dates, quotation and intended teaching setting before booking.",
+  "publishedAt": "2026-10-26T08:40:00+08:00",
+  "updatedAt": "2026-10-26T08:40:00+08:00",
+  "category": "Course planning",
+  "image": "/academy-instructor-development.jpg",
+  "imageAlt": "Penguin Academy swim teachers developing practical coaching skills in a Singapore pool",
+  "readTime": "5 min read",
+  "directAnswer": "Before you book swim teacher training, ask for a clear account of how you will complete the course, what your payment covers and whether the qualification suits your intended work. A published training date helps you plan, but you also need to understand the learning and supervised practice around it. Use these questions when discussing an intake with Penguin Academy. Keep the answers together so you can check your availability and prepare before committing to dates.",
+  "facts": [
+    {
+      "label": "Before booking",
+      "value": "Confirm the complete pathway"
+    },
+    {
+      "label": "Dates",
+      "value": "Separate confirmed and provisional"
+    },
+    {
+      "label": "Quotation",
+      "value": "Check your exact inclusions"
+    },
+    {
+      "label": "Recognition",
+      "value": "Ask the intended employer or venue"
+    }
+  ],
+  "sections": [
+    {
+      "id": "1-what-needs-to-happen-before-my-certification-can-be-issued",
+      "title": "1. What needs to happen before my certification can be issued?",
+      "paragraphs": [
+        "Ask the Academy to explain the completion pathway for your chosen course, including what you should finish before attending instructor-led training. Separate tasks you can prepare independently from those that require an instructor or a scheduled lesson.",
+        "Penguin Academy’s Level 1 page describes academic and practical assessment, a final exam, supervised apprenticeship and an applicable water fitness evaluation. Ask the Academy to confirm the current requirements for your intake.",
+        "Then ask what happens if you need further practice or assessment. Confirm how feedback is given, how another assessment is arranged and whether additional charges apply. These are questions to settle with the Academy, rather than assumed course terms."
+      ]
+    },
+    {
+      "id": "2-which-dates-should-i-keep-available-beyond-the-training-day",
+      "title": "2. Which dates should I keep available beyond the training day?",
+      "paragraphs": [
+        "Ask for the expected sequence of digital learning, instructor-led training, assessment and apprenticeship. Mark confirmed appointments separately from dates still being arranged. This is especially useful if you need leave from work or are travelling to Singapore.",
+        "The Level 1 course page explains that timing depends on candidate progress and confirmed apprenticeship arrangements. Ask who will coordinate your supervised lessons and how you will receive confirmation.",
+        "If your availability is limited to particular evenings or weekends, say so early. Also ask how pool closures or missed sessions would affect your plan. Treat a hoped-for completion date as provisional until the relevant arrangements are confirmed."
+      ]
+    },
+    {
+      "id": "3-what-should-i-prepare-for-practical-assessment",
+      "title": "3. What should I prepare for practical assessment?",
+      "paragraphs": [
+        "Describe your swimming background honestly. Explain any previous teaching experience, the time since your last formal assessment and any areas where you would like guidance.",
+        "Ask for the practical assessment requirements that apply to your programme and the preparation advice for your current ability. Request the correct equipment list and any documents you need to bring. Avoid planning from a fitness checklist found for a different SSI activity or qualification.",
+        "For the teaching component, ask what you should prepare, how your work will be assessed and how the instructor will explain areas for improvement. These answers give your practice a clear purpose before training begins."
+      ]
+    },
+    {
+      "id": "4-what-is-included-in-my-written-quotation",
+      "title": "4. What is included in my written quotation?",
+      "paragraphs": [
+        "Review the current course details, then ask for a written quotation for your selected pathway. Check the inclusions against the arrangements you actually need.",
+        "The Academy’s Level 1 page says that refresher training, new certifications, venue access, dedicated pool sessions and individual services require separate confirmation and may carry additional fees. Ask which, if any, apply to your plans. Confirm payment terms and cancellation or rescheduling conditions before paying.",
+        "If you already hold a safety qualification, share its exact title and expiry date. Ask how it relates to the course arrangements and check its acceptance separately with any intended employer or programme."
+      ]
+    },
+    {
+      "id": "5-who-should-confirm-recognition-for-my-intended-teaching-role",
+      "title": "5. Who should confirm recognition for my intended teaching role?",
+      "paragraphs": [
+        "Name the employer, venue or programme you hope to work with. Ask that organisation what qualifications and access arrangements it requires, then share the answer with the Academy when discussing your route.",
+        "Penguin Academy’s career guidance separates certification from employment and venue requirements. Completing training does not guarantee a job or income. If you are considering work overseas, check the destination’s requirements before arranging travel.",
+        "Keep any confirmation with your course information. A specific employer’s answer is more useful for your decision than a broad description of international recognition."
+      ]
+    },
+    {
+      "id": "6-what-support-can-i-use-after-training",
+      "title": "6. What support can I use after training?",
+      "paragraphs": [
+        "The Level 1 page lists ongoing Penguin mentorship for eligible teacher-course graduates and asks candidates to confirm its current scope and terms. Ask who is eligible, what support is available and how to request it.",
+        "Discuss the practical preparation you want help with, such as a lesson plan or organising feedback from supervised practice. The Academy’s career page suggests keeping a readiness portfolio. You can begin yours with current qualifications, a simple lesson plan and evidence of supervised feedback."
+      ]
+    },
+    {
+      "id": "prepare-one-useful-enquiry",
+      "title": "Prepare one useful enquiry",
+      "paragraphs": [
+        "Send your chosen course, current qualifications, swimming and teaching experience, intended work setting and available dates. Add your questions about assessment, supervised practice, total payable and any deadline you are working towards.",
+        "Ask Penguin Academy about your course arrangements before booking. Use the reply to complete your plan, and keep any unresolved arrangements visible until they are confirmed."
+      ]
+    }
+  ],
+  "faqs": [],
+  "sources": [
+    {
+      "label": "Penguin Academy Level 1 pathway and inclusions",
+      "url": "https://www.swimcoachcertification.com/courses/ssi-swim-teacher-level-1"
+    },
+    {
+      "label": "Penguin Academy course catalogue",
+      "url": "https://www.swimcoachcertification.com/courses"
+    },
+    {
+      "label": "Penguin Academy career preparation",
+      "url": "https://www.swimcoachcertification.com/swimming-coach-career-singapore"
+    }
+  ],
+  "internalLinks": [
+    {
+      "label": "Review Level 1 arrangements",
+      "href": "/courses/ssi-swim-teacher-level-1"
+    },
+    {
+      "label": "Compare current courses",
+      "href": "/courses"
+    },
+    {
+      "label": "Review course dates",
+      "href": "/course-dates"
+    },
+    {
+      "label": "Prepare for a teaching role",
+      "href": "/swimming-coach-career-singapore"
+    }
+  ],
+  "courseHref": "/courses/ssi-swim-teacher-level-1",
+  "courseName": "Review Level 1 course arrangements",
+  "whatsappMessage": "Hi Penguin Academy, please help me confirm the completion pathway, dates and inclusions for my chosen SSI swim teacher course."
+},
+{
   "slug": "choose-two-ssi-swim-teacher-courses-singapore",
   "title": "Which Two SSI Swim Teacher Courses Should You Choose?",
   "seoTitle": "Choosing Two SSI Swim Teacher Courses in Singapore",
