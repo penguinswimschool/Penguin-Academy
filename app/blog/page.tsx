@@ -227,7 +227,7 @@ export default async function BlogPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#f6f4ee]">
+    <div className="academy-marketing min-h-screen bg-[#f6f4ee]">
       <StructuredData data={structuredData} />
       <Header />
       <main id="main-content" className="pt-16">
@@ -237,7 +237,7 @@ export default async function BlogPage() {
             <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Penguin Academy knowledge centre</p>
             <div className="mt-5 grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
               <div>
-                <h1 className="max-w-4xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+                <h1 className="academy-display max-w-4xl text-5xl font-semibold tracking-[-0.05em] sm:text-6xl lg:text-7xl">
                   Swim teacher training guides for Singapore.
                 </h1>
                 <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
@@ -253,6 +253,37 @@ export default async function BlogPage() {
                 </TrackedWhatsAppLink>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="py-20 sm:py-28" aria-labelledby="guides-title">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Academy guides</p>
+            <h2 id="guides-title" className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Current training insights.</h2>
+
+            {featuredPost ? (
+              <>
+                <div className="mt-12"><PostCard post={featuredPost} featured /></div>
+                {latestPosts.length > 0 && (
+                  <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+                    {latestPosts.map((post) => <PostCard key={post._id} post={post} />)}
+                  </div>
+                )}
+              </>
+            ) : (
+              <div className="mt-12 grid overflow-hidden rounded-[1.75rem] bg-[#0b2438] text-white shadow-[0_25px_70px_rgba(7,27,43,0.18)] lg:grid-cols-[1fr_0.75fr]">
+                <div className="p-8 sm:p-10 lg:p-12">
+                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-cyan-300"><BookOpenCheck className="h-6 w-6" aria-hidden="true" /></span>
+                  <h3 className="mt-7 text-3xl font-semibold tracking-[-0.03em]">New guides are being prepared and reviewed.</h3>
+                  <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">For current prices, prerequisites, course inclusions and completion requirements, use the verified course pages above or speak directly with the Academy.</p>
+                  <TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, I have a question about your swim teacher courses.')}`} source="blog_index_guidance" className="mt-7 inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">Ask the Academy <ArrowRight className="h-4 w-4" aria-hidden="true" /></TrackedWhatsAppLink>
+                </div>
+                <div className="relative min-h-[320px]">
+                  <Image src="/academy-ssi-learning-community.jpg" alt="Penguin Academy learning community with an SSI flag" fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" />
+                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b2438] via-transparent to-transparent" />
+                </div>
+              </div>
+            )}
           </div>
         </section>
 
@@ -307,37 +338,6 @@ export default async function BlogPage() {
                 ))}
               </div>
             </div>
-          </div>
-        </section>
-
-        <section className="py-20 sm:py-28" aria-labelledby="guides-title">
-          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-            <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Academy guides</p>
-            <h2 id="guides-title" className="mt-4 text-4xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Current training insights.</h2>
-
-            {featuredPost ? (
-              <>
-                <div className="mt-12"><PostCard post={featuredPost} featured /></div>
-                {latestPosts.length > 0 && (
-                  <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                    {latestPosts.map((post) => <PostCard key={post._id} post={post} />)}
-                  </div>
-                )}
-              </>
-            ) : (
-              <div className="mt-12 grid overflow-hidden rounded-[1.75rem] bg-[#0b2438] text-white shadow-[0_25px_70px_rgba(7,27,43,0.18)] lg:grid-cols-[1fr_0.75fr]">
-                <div className="p-8 sm:p-10 lg:p-12">
-                  <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-cyan-300"><BookOpenCheck className="h-6 w-6" aria-hidden="true" /></span>
-                  <h3 className="mt-7 text-3xl font-semibold tracking-[-0.03em]">New guides are being prepared and reviewed.</h3>
-                  <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">For current prices, prerequisites, course inclusions and completion requirements, use the verified course pages above or speak directly with the Academy.</p>
-                  <TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, I have a question about your swim teacher courses.')}`} source="blog_index_guidance" className="mt-7 inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">Ask the Academy <ArrowRight className="h-4 w-4" aria-hidden="true" /></TrackedWhatsAppLink>
-                </div>
-                <div className="relative min-h-[320px]">
-                  <Image src="/academy-ssi-learning-community.jpg" alt="Penguin Academy learning community with an SSI flag" fill sizes="(min-width: 1024px) 42vw, 100vw" className="object-cover" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#0b2438] via-transparent to-transparent" />
-                </div>
-              </div>
-            )}
           </div>
         </section>
 

@@ -18,7 +18,7 @@ interface InteriorPageHeroProps {
 
 export default function InteriorPageHero({ eyebrow, title, description, primaryHref, primaryLabel, secondaryHref, secondaryLabel, primaryTrackingSource, primaryCandidateSegment, secondaryTrackingSource, secondaryCandidateSegment }: InteriorPageHeroProps) {
   return (
-    <section className="relative overflow-hidden bg-[#071b2b] pb-16 pt-28 text-white sm:pb-20 sm:pt-36 lg:pb-24">
+    <section className="academy-interior relative overflow-hidden bg-[#071b2b] pb-16 pt-28 text-white sm:pb-20 sm:pt-36 lg:pb-24">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_15%,rgba(45,212,191,0.17),transparent_34%),radial-gradient(circle_at_12%_90%,rgba(56,189,248,0.13),transparent_30%)]" />
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
         <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">{eyebrow}</p>
