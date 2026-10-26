@@ -275,7 +275,7 @@ export default async function BlogPage() {
                 <div className="p-8 sm:p-10 lg:p-12">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-white/10 text-cyan-300"><BookOpenCheck className="h-6 w-6" aria-hidden="true" /></span>
                   <h3 className="mt-7 text-3xl font-semibold tracking-[-0.03em]">New guides are being prepared and reviewed.</h3>
-                  <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">For current prices, prerequisites, course inclusions and completion requirements, use the verified course pages above or speak directly with the Academy.</p>
+                  <p className="mt-4 max-w-2xl text-lg leading-8 text-slate-300">For current prices, prerequisites, course inclusions and completion requirements, use the verified course pages or speak directly with the Academy.</p>
                   <TrackedWhatsAppLink href={`${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, I have a question about your swim teacher courses.')}`} source="blog_index_guidance" className="mt-7 inline-flex items-center gap-2 rounded-full bg-cyan-300 px-6 py-3 font-bold text-[#071b2b] transition hover:bg-cyan-200">Ask the Academy <ArrowRight className="h-4 w-4" aria-hidden="true" /></TrackedWhatsAppLink>
                 </div>
                 <div className="relative min-h-[320px]">
