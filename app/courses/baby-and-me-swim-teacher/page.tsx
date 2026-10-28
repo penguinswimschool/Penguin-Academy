@@ -12,7 +12,7 @@ export const metadata = buildCourseMetadata({
 const faqs = [
   { question: 'What is the minimum age for the SSI Baby Swim Teacher course?', answer: 'Candidates must be at least 18.' },
   { question: 'Do I need SSI Swim Teacher Level 1 first?', answer: 'The approved course details do not list Level 1 as a prerequisite for this specialist pathway. Penguin Academy will still confirm your suitability before enrolment.' },
-  { question: 'How long is the course?', answer: 'SSI lists a recommended duration of 8–10 hours, in addition to the applicable preparation and supervised apprenticeship.' },
+  { question: 'How long is the course?', answer: 'SSI recommends 8–10 hours for completion. The instructor sets the number of classes and sessions based on candidate needs and ability; all applicable assessments and supervised apprenticeship requirements must be completed.' },
   { question: 'What apprenticeship is required?', answer: 'Candidates complete two supervised Baby Swim I lessons and two supervised Baby Swim II lessons, with a recommended cumulative time of at least two hours.' },
   { question: 'Is a parent or caregiver involved?', answer: 'Yes. SSI Baby Swim programmes are parent-child programmes, with a parent or guardian in the water and directly supervising the child.' },
   { question: 'Does the course make a baby drown-proof?', answer: 'No responsible programme can promise that. The pathway teaches age-appropriate, caregiver-supported aquatic experiences and does not replace constant adult supervision.' },
@@ -26,7 +26,7 @@ export default function BabyAndMePage() {
     description="Learn to guide caregiver-supported Baby Swim I and Baby Swim II experiences with age-appropriate teaching practice."
     price="SGD 1,688"
     priceNote="Includes full SSI React Right: First Aid & CPR, AED Provider and Oxygen Provider."
-    directAnswer="SSI Baby Swim Teacher prepares eligible adults to conduct Baby Swim I and Baby Swim II parent-child programmes. SSI recommends 8–10 hours plus a four-lesson supervised apprenticeship."
+    directAnswer="SSI Baby Swim Teacher prepares eligible adults to conduct Baby Swim I and Baby Swim II parent-child programmes. SSI recommends 8–10 hours for completion and requires a supervised apprenticeship of two Baby Swim I and two Baby Swim II lessons."
     facts={[
       { label: 'Minimum age', value: COURSE_STANDARDS.baby.minimumAge },
       { label: 'Recommended time', value: COURSE_STANDARDS.baby.recommendedDuration },
