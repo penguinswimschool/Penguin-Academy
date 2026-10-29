@@ -55,6 +55,11 @@ const nextConfig: NextConfig = {
   async redirects() {
     return [
       {
+        source: '/swim-instructor-course-singapore',
+        destination: '/courses',
+        permanent: true,
+      },
+      {
         source: '/ssi-swim-teacher-level-1',
         destination: '/courses/ssi-swim-teacher-level-1',
         permanent: true,
