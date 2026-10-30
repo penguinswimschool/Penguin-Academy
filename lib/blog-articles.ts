@@ -1117,6 +1117,170 @@ export const blogArticles: BlogArticle[] = [
     courseName: 'Explore SSI Swim Teacher Level 1',
     whatsappMessage: 'Hi Penguin Academy, please explain how the SSI Swim Teacher Level 1 apprenticeship is arranged.',
   },
+{
+  "slug": "travelling-singapore-swim-teacher-training-plan",
+  "title": "Travelling to Singapore for swim teacher training: plan your whole stay",
+  "seoTitle": "Travelling to Singapore for Swim Teacher Training: Plan Your Stay",
+  "description": "Plan a Singapore swim teacher training trip around confirmed sessions, supervised practice and assessment, with a worksheet for overseas candidates.",
+  "excerpt": "Plan a Singapore swim teacher training trip around confirmed sessions, supervised practice and assessment, with a worksheet for overseas candidates.",
+  "publishedAt": "2026-10-30",
+  "updatedAt": "2026-10-30",
+  "category": "International candidates",
+  "image": "/academy-poolside-coaching.jpg",
+  "imageAlt": "Penguin Swim School coach guiding a young swimmer during poolside practice",
+  "readTime": "7 min read",
+  "directAnswer": "Before booking a trip for swim teacher training in Singapore, map the activities you need to attend against the dates you can be here.  Keep every unconfirmed session visible.  A course-day booking alone is not enough to decide when you can fly home with a completed qualification.",
+  "facts": [
+    {
+      "label": "Before booking travel",
+      "value": "Confirm the complete course and supervised-practice timetable"
+    },
+    {
+      "label": "Level 1 apprenticeship",
+      "value": "SSI standard includes four Aquatike and four Beginner lessons"
+    },
+    {
+      "label": "Overseas training",
+      "value": "Confirm course arrangements and relevant entry requirements for your circumstances"
+    },
+    {
+      "label": "Trip length",
+      "value": "Do not assume a course day determines your return date"
+    }
+  ],
+  "sections": [
+    {
+      "id": "a-useful-starting-point",
+      "title": "A useful starting point",
+      "paragraphs": [
+        "Before booking a trip for swim teacher training in Singapore, map the activities you need to attend against the dates you can be here. Keep every unconfirmed session visible. A course-day booking alone is not enough to decide when you can fly home with a completed qualification.",
+        "Penguin Academy welcomes international enquiries, with in-person practical training in Singapore. Any plan involving overseas delivery or apprenticeship must be agreed in writing for the specific course. Its international candidate information explains these boundaries.",
+        "This guide gives you a travel worksheet to complete with the Academy once you have a course in mind. It helps you decide whether a proposed visit fits the arrangements that can actually be confirmed."
+      ]
+    },
+    {
+      "id": "start-with-the-dates-you-cannot-change",
+      "title": "Start with the dates you cannot change",
+      "paragraphs": [
+        "Write down your earliest arrival, latest departure and any work or family commitments during the visit. Include the hours you are unavailable on travel days. A date shown as free in your calendar may still contain a flight, a border crossing or a transfer to accommodation.",
+        "Then record where you intend to use the qualification. Ask the intended employer or facility to confirm its requirements before treating a training trip as the final step towards a job. Keep that answer with your course plan so you can check that you are working towards the right qualification.",
+        "Avoid choosing a return flight simply by counting forward from the instructor-led day. First establish which activities need a scheduled session and which arrangements are still being discussed."
+      ]
+    },
+    {
+      "id": "make-a-session-map-not-just-a-course-day-reminder",
+      "title": "Make a session map, not just a course-day reminder",
+      "paragraphs": [
+        "For SSI Level 1, the official standard includes academic work and assessments, a final exam, an applicable water fitness evaluation and supervised apprenticeship. The apprenticeship includes at least four Aquatike and four Beginner lessons. SSI recommends at least four cumulative apprenticeship hours; it does not present that recommendation as a guaranteed trip length. SSI Level 1 Swim Teacher standard.",
+        "Use the requirements for your chosen programme. Do not copy the Level 1 lesson count into a plan for Baby, Adult or another pathway.",
+        "Fill in this worksheet with the Academy. “To confirm” is a useful entry because it shows exactly what still affects your travel decision.",
+        "Ask for times in Singapore time and put them into your travel calendar with that time zone attached. Keep the written confirmation beside the calendar entry."
+      ],
+      "comparison": {
+        "columns": [
+          "Part of the plan",
+          "Details to record",
+          "Status"
+        ],
+        "rows": [
+          [
+            "Course and prerequisites",
+            "Exact programme; qualifications reviewed; outstanding evidence",
+            "Confirmed / to confirm"
+          ],
+          [
+            "Preparation before arrival",
+            "Learning tasks, access and any agreed preparation deadline",
+            "Confirmed / to confirm"
+          ],
+          [
+            "Instructor-led sessions",
+            "Date, start and finish time, exact venue",
+            "Confirmed / to confirm"
+          ],
+          [
+            "Practical evaluation and assessments",
+            "Required sessions, location and how they are arranged",
+            "Confirmed / to confirm"
+          ],
+          [
+            "Supervised apprenticeship",
+            "Applicable learner groups, supervising arrangement and actual lesson dates",
+            "Confirmed / to confirm"
+          ],
+          [
+            "Further practice or reassessment",
+            "What happens if more work is needed; timing and charges to check",
+            "Confirmed / to confirm"
+          ],
+          [
+            "Certification review",
+            "Who checks completion and how outstanding requirements will be communicated",
+            "Confirmed / to confirm"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "decide-what-an-unresolved-date-means-for-your-trip",
+      "title": "Decide what an unresolved date means for your trip",
+      "paragraphs": [
+        "Suppose your instructor-led session is confirmed, but the supervised lessons have no agreed dates. That plan has a clear gap. Before paying for travel, ask whether suitable sessions can be arranged within your available window and what happens if they cannot.",
+        "If your departure date is fixed, say so at the start. A hoped-for extension to your stay should not carry an essential part of the plan. If you are considering a later visit, record that as a separate proposal until the Academy confirms the relevant arrangements.",
+        "This is also the point to discuss extra practice. Ask how a candidate who needs further work receives feedback and how the next session is arranged. Budgeting for a possible change is your planning choice; it is not evidence that another session will be available."
+      ]
+    },
+    {
+      "id": "check-entry-and-training-permission-for-your-own-circumstances",
+      "title": "Check entry and training permission for your own circumstances",
+      "paragraphs": [
+        "Start with the current Singapore entry requirements from the Immigration & Checkpoints Authority. Separately, ask the relevant authority to clarify the permission needed for your full intended activity, explicitly including any supervised practical training.",
+        "This article does not determine your immigration eligibility or recommend a particular pass. Get any necessary answer before making a non-refundable commitment. A course reservation does not settle that question."
+      ]
+    },
+    {
+      "id": "put-the-confirmed-venues-into-your-accommodation-plan",
+      "title": "Put the confirmed venues into your accommodation plan",
+      "paragraphs": [
+        "The Academy’s contact page describes the training area as CBD / Central Singapore and says the applicable venue is shared with enrolled candidates. Use the exact confirmed session locations when comparing accommodation and travel routes. Penguin Academy contact information.",
+        "Allow for arrival, changing and preparation when building your daily plan. Ask what you need to bring, where you should meet and who to contact if travel disruption affects your arrival. Save those details where you can access them during the journey.",
+        "Keep your course quotation separate from your personal travel budget. Add flights or other transport, accommodation, meals, local travel, insurance and any relevant administrative costs. Record what you have actually been quoted and leave unknown amounts blank instead of presenting an estimate as a confirmed total."
+      ]
+    },
+    {
+      "id": "bring-one-completed-planning-note-to-the-conversation",
+      "title": "Bring one completed planning note to the conversation",
+      "paragraphs": [
+        "Your first note can be short: your country of residence, chosen course, current qualifications, intended teaching setting, earliest arrival and latest departure. Add the timetable restrictions that would make a proposed session impossible.",
+        "Ask Penguin Academy to review your proposed training window. Use the reply to complete the worksheet, resolve the remaining dates and decide when you have enough confirmed information to arrange your trip."
+      ]
+    }
+  ],
+  "faqs": [],
+  "sources": [
+    {
+      "label": "SSI Level 1 Swim Teacher standard",
+      "url": "https://training.divessi.com/index.php?id=22820367"
+    },
+    {
+      "label": "Singapore entry requirements from the Immigration & Checkpoints Authority",
+      "url": "https://www.ica.gov.sg/information-and-e-services/entry-and-departure/entering-singapore/entry-requirements"
+    }
+  ],
+  "internalLinks": [
+    {
+      "label": "international candidate information",
+      "href": "/international-candidates"
+    },
+    {
+      "label": "Penguin Academy contact information",
+      "href": "/contact"
+    }
+  ],
+  "courseHref": "/international-candidates",
+  "courseName": "Review information for international candidates",
+  "whatsappMessage": "Hi Penguin Academy, I am considering travelling to Singapore for swim teacher training. Could you help me check the complete course and supervised-practice dates for my available window?"
+}
 ]
 
 export function getBlogArticle(slug: string): BlogArticle | undefined {
