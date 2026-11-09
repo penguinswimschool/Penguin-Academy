@@ -10,12 +10,11 @@ export default function Hero() {
       <div className="mx-auto grid max-w-7xl lg:grid-cols-2">
         <div className="flex flex-col justify-center px-5 pb-12 pt-14 sm:px-8 sm:py-20 lg:py-24 lg:pl-10 lg:pr-14">
           <p className="academy-eyebrow text-cyan-200">Penguin Academy · Singapore</p>
-          <h1 id="home-title" className="academy-display mt-6 text-[2.7rem] leading-[1.08] sm:text-6xl lg:text-[4.4rem]">
-            Swim teacher training.<br />
-            <span className="text-[#b9e1dc]">A career with purpose.</span>
+          <h1 id="home-title" className="academy-display mt-6 max-w-2xl text-[2.5rem] leading-[1.08] sm:text-[3.5rem] lg:text-[3.8rem]">
+            SSI swim teacher training <span className="text-[#b9e1dc]">in Singapore.</span>
           </h1>
           <p className="mt-7 max-w-lg text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">
-            Turn your experience in the water into skills you can share. Learn through SSI training, supervised practice and ongoing Penguin mentorship.
+            <span className="font-semibold text-white">A career with purpose.</span> Turn your experience in the water into skills you can share through SSI training, supervised practice and ongoing Penguin mentorship.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Link href="/courses" className="inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#c8e9e4] px-7 py-3.5 font-semibold text-[#071b2b] transition hover:bg-white">
