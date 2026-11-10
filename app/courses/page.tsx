@@ -48,6 +48,7 @@ const faqs = [
 ]
 
 export default function CoursesPage() {
+  const comparisonGuidanceUrl = `${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, I would like help checking my course pathway and dates. I can share my preferred course, current qualifications, teaching experience, intended learner group and availability.')}`
   const guidanceUrl = `${WHATSAPP_URL}?text=${encodeURIComponent('Hi Penguin Academy, please help me choose the right swim teacher certification pathway.')}`
 
   return (
@@ -61,7 +62,40 @@ export default function CoursesPage() {
 
         <section className="bg-white py-16 sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><div className="max-w-3xl"><p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-700">Find your starting point</p><h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">Compare SSI swim teacher pathways.</h2></div><div className="mt-10 grid gap-4 md:grid-cols-2 xl:grid-cols-5">{choices.map(({ icon: Icon, title, course, note, href }) => <Link key={title} href={href} className="group rounded-[1.5rem] border border-slate-200 bg-[#f7f8f6] p-6 transition hover:-translate-y-1 hover:border-teal-300 hover:shadow-lg"><span className="flex h-11 w-11 items-center justify-center rounded-xl bg-white text-teal-700 shadow-sm"><Icon className="h-5 w-5" /></span><h3 className="mt-5 font-bold text-[#0b2438]">{title}</h3><p className="mt-3 text-sm font-semibold text-teal-800 group-hover:text-teal-600">{course}</p><p className="mt-2 text-sm leading-6 text-slate-600">{note}</p></Link>)}</div></div></section>
 
-        <section id="compare" className="scroll-mt-24 bg-[#071b2b] py-16 text-white sm:py-24"><div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10"><p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Side-by-side guide</p><h2 className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">Requirements, duration and SGD fees.</h2><p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">SSI’s recommended hours describe the complete programme—not only the instructor-led session. Swipe the table on smaller screens.</p><div className="mt-10 overflow-x-auto rounded-2xl border border-white/10 bg-white/5"><table className="w-full min-w-[920px] text-left text-sm"><thead className="border-b border-white/10 bg-white/5 text-cyan-200"><tr>{['Course', 'Best suited to', 'Prerequisite', 'Recommended total', 'Apprenticeship', 'Penguin fee'].map(label => <th key={label} className="px-5 py-4 font-bold">{label}</th>)}</tr></thead><tbody>{comparison.map(row => <tr key={row.course} className="border-b border-white/10 last:border-0"><td className="px-5 py-5 font-bold"><Link href={row.href} className="text-white underline decoration-cyan-300/50 underline-offset-4 hover:text-cyan-200">{row.course}</Link></td><td className="px-5 py-5 text-slate-300">{row.suited}</td><td className="px-5 py-5 text-slate-300">{row.prerequisite}</td><td className="px-5 py-5 text-slate-300">{row.hours}</td><td className="px-5 py-5 text-slate-300">{row.apprenticeship}</td><td className="whitespace-nowrap px-5 py-5 font-bold text-cyan-200">{row.fee}</td></tr>)}</tbody></table></div></div></section>
+        <section id="compare" className="scroll-mt-24 bg-[#071b2b] py-16 text-white sm:py-24">
+          <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
+            <p className="text-sm font-bold uppercase tracking-[0.22em] text-cyan-300">Side-by-side guide</p>
+            <h2 id="course-comparison-heading" className="mt-4 text-3xl font-semibold tracking-[-0.04em] sm:text-5xl">Requirements, duration and SGD fees.</h2>
+            <p id="course-comparison-help" className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">SSI’s recommended hours describe the complete programme—not only the instructor-led session. Swipe the table on smaller screens, or focus it and use the left and right arrow keys.</p>
+            <div role="region" aria-labelledby="course-comparison-heading" aria-describedby="course-comparison-help" tabIndex={0} className="mt-10 overflow-x-auto rounded-2xl border border-white/10 bg-white/5">
+              <table className="w-full min-w-[920px] text-left text-sm">
+                <caption className="sr-only">Compare SSI course prerequisites, recommended hours, apprenticeships and Penguin Academy fees.</caption>
+                <thead className="border-b border-white/10 bg-white/5 text-cyan-200">
+                  <tr>{['Course', 'Best suited to', 'Prerequisite', 'Recommended total', 'Apprenticeship', 'Penguin fee'].map(label => <th key={label} scope="col" className="px-5 py-4 font-bold">{label}</th>)}</tr>
+                </thead>
+                <tbody>{comparison.map(row => <tr key={row.course} className="border-b border-white/10 last:border-0">
+                  <th scope="row" className="px-5 py-5 font-bold"><Link href={row.href} className="text-white underline decoration-cyan-300/50 underline-offset-4 hover:text-cyan-200">{row.course}</Link></th>
+                  <td className="px-5 py-5 text-slate-300">{row.suited}</td>
+                  <td className="px-5 py-5 text-slate-300">{row.prerequisite}</td>
+                  <td className="px-5 py-5 text-slate-300">{row.hours}</td>
+                  <td className="px-5 py-5 text-slate-300">{row.apprenticeship}</td>
+                  <td className="whitespace-nowrap px-5 py-5 font-bold text-cyan-200">{row.fee}</td>
+                </tr>)}</tbody>
+              </table>
+            </div>
+            <div id="course-next-step" className="mt-8 grid gap-6 rounded-2xl border border-white/15 bg-white/5 p-6 sm:p-8 lg:grid-cols-[1fr_auto] lg:items-center">
+              <div>
+                <h3 className="text-2xl font-semibold tracking-tight">Check your pathway and dates.</h3>
+                <p className="mt-3 max-w-2xl leading-7 text-slate-300">Share your preferred course, current qualifications, teaching experience, intended learner group and availability so we can discuss a suitable pathway and date.</p>
+                <p className="mt-3 max-w-2xl text-sm leading-6 text-slate-300">Confirm your session and full completion requirements before making training arrangements.</p>
+              </div>
+              <div className="flex flex-col gap-3">
+                <TrackedWhatsAppLink href={comparisonGuidanceUrl} source="courses_comparison_guidance" className="inline-flex min-h-12 items-center justify-center rounded-full bg-cyan-300 px-6 py-3 text-center font-bold text-[#071b2b] hover:bg-cyan-200">Ask about my course</TrackedWhatsAppLink>
+                <Link href="/course-dates" className="inline-flex min-h-12 items-center justify-center rounded-full border border-white/30 px-6 py-3 text-center font-semibold text-white hover:bg-white/10">Check course dates</Link>
+              </div>
+            </div>
+          </div>
+        </section>
 
         <section className="bg-white py-16 sm:py-24"><div className="mx-auto grid max-w-7xl gap-8 px-5 sm:px-8 lg:grid-cols-2 lg:px-10"><div className="rounded-[2rem] bg-[#dff5f1] p-8 sm:p-10"><p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-800">The complete pathway</p><h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#0b2438]">One training day is not the whole certification.</h2><ol className="mt-7 space-y-4 text-slate-700">{['Complete the applicable SSI digital learning.', 'Attend instructor-led knowledge and practical training.', 'Complete the Candidate Water Fitness Evaluation when required by the current standard.', 'Pass the required theory, practical and final assessments.', 'Complete the programme-specific supervised apprenticeship.'].map((step, index) => <li key={step} className="flex gap-4"><span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-teal-700 text-sm font-bold text-white">{index + 1}</span><span className="leading-7">{step}</span></li>)}</ol></div><div className="rounded-[2rem] border border-slate-200 p-8 sm:p-10"><p className="text-sm font-bold uppercase tracking-[0.2em] text-teal-700">Important distinction</p><h2 className="mt-4 text-3xl font-semibold tracking-tight text-[#0b2438]">Certification and work-setting requirements are separate.</h2><p className="mt-5 leading-7 text-slate-600">Requirements depend on where you plan to teach. ActiveSG coaching requires valid NROC status and a Usage Permit. SportSG’s Sports Education Programme requires NROC-certified coaches; swimming coaches in that programme also need valid SwimSafer certification, and MOE registration applies where stated. Private employers and venues may impose their own requirements.</p><Link href="/blog/ssi-vs-nroc-swimming-instructor-certification-singapore" className="mt-7 inline-flex font-bold text-teal-700 hover:text-teal-600">Compare SSI and NROC pathways →</Link></div></div></section>
 
