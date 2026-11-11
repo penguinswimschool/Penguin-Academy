@@ -32,6 +32,170 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
 {
+  "slug": "level-2-to-adult-swim-teacher-training-brief",
+  "title": "From SSI Level 2 to Adult Swim Teacher: prepare your training brief",
+  "seoTitle": "SSI Level 2 to Adult Swim Teacher: Training Preparation",
+  "description": "Already an SSI Level 2 teacher? Prepare a focused brief for Adult Swim Teacher training, with learner scenarios, observation prompts and mentor questions.",
+  "excerpt": "Turn your existing teaching experience into a focused adult-specialist training brief, with practical examples to discuss with your instructor.",
+  "publishedAt": "2026-11-11",
+  "updatedAt": "2026-11-11",
+  "category": "Adult Swim",
+  "image": "/academy-adult-teacher-practice.jpg",
+  "imageAlt": "A Penguin Swim School coach teaching two adults in a swimming pool",
+  "readTime": "5 min read",
+  "directAnswer": "If you already hold SSI Swim Teacher Level 2 and want to develop your adult teaching, prepare a short brief before discussing Adult Swim Teacher training. Bring your qualification details, describe the adult learners you hope to support, and identify a teaching decision you want feedback on. The worksheet below helps you turn that goal into a useful conversation with Penguin Academy.",
+  "facts": [
+    {
+      "label": "Who this guide is for",
+      "value": "Existing SSI Level 2 teachers"
+    },
+    {
+      "label": "Prepare",
+      "value": "One focused teaching brief"
+    },
+    {
+      "label": "Discuss",
+      "value": "Your adult-learning priorities"
+    },
+    {
+      "label": "Next step",
+      "value": "Confirm your training plan"
+    }
+  ],
+  "sections": [
+    {
+      "id": "confirm-your-pathway",
+      "title": "Confirm which training pathway applies to you",
+      "paragraphs": [
+        "SSI lists 6–8 recommended completion hours for candidates who already hold SSI Swim Teacher Level 2, compared with 22–26 hours for the full Adult Swim Teacher pathway. Your instructor sets the sessions around your needs and ability. Ask how the complete programme will fit your availability before committing to a date.",
+        "The shorter recommendation still requires completion of the applicable academic work, assessments, final exam and apprenticeship. SSI specifies at least one Adult I lesson and one Adult II lesson, with at least two hours recommended across the apprenticeship. A water-fitness evaluation is required if more than six months have passed since your last evaluation.",
+        "Keep your certification details and previous evaluation date ready for the Academy to review. The existing Adult Swim Teacher certification guide, linked below, explains the wider requirements. This article helps you prepare the teaching questions you want to explore."
+      ]
+    },
+    {
+      "id": "choose-one-teaching-question",
+      "title": "Choose a teaching question you can discuss in detail",
+      "paragraphs": [
+        "“I want to teach adults” is a starting point. Give your instructor a clearer picture by describing a situation you want to handle well. You might want help explaining a task to a hesitant beginner, agreeing a goal with a returning swimmer, or checking whether your feedback makes sense to an adult learner.",
+        "Use a real situation from your authorised teaching or observation if you have one, with personal details removed. If you have not worked with adults, use a hypothetical example and say so. You can still prepare a useful question without claiming experience you do not have.",
+        "For example: “I can explain the stroke task, but I want feedback on how I check what the learner understood before moving on.” That gives your instructor a specific communication decision to discuss."
+      ]
+    },
+    {
+      "id": "learner-scenarios",
+      "title": "Use learner scenarios to make your priorities concrete",
+      "paragraphs": [
+        "These examples are discussion prompts for your instructor. They are not SSI assessment criteria or a prescribed lesson plan. Adapt them to the learners and teaching setting you expect to work with."
+      ],
+      "comparison": {
+        "columns": [
+          "Learner situation",
+          "Question to bring to training",
+          "Feedback to ask for"
+        ],
+        "rows": [
+          [
+            "An adult says they feel uneasy about a proposed activity.",
+            "How would I check what feels manageable and discuss an appropriate next step?",
+            "Whether my wording gives the learner room to explain their concern."
+          ],
+          [
+            "A returning swimmer wants to rebuild a skill they once knew.",
+            "How would I distinguish what I have observed from what I am assuming?",
+            "Whether my notes support the teaching decision I propose."
+          ],
+          [
+            "An adult can repeat my instructions but does not apply them consistently.",
+            "How would I check their understanding and choose the next explanation?",
+            "Whether my feedback is clear enough for the learner to use."
+          ]
+        ]
+      }
+    },
+    {
+      "id": "prepare-for-feedback",
+      "title": "Make supervised practice useful to your own development",
+      "paragraphs": [
+        "Before a supervised session, tell your instructor which decision you would like them to watch. Keep it narrow enough to discuss afterwards. For example, ask for feedback on the question you used to check understanding, rather than asking whether the entire lesson was good.",
+        "Afterwards, separate the learner’s response from your interpretation. “The learner asked me to explain the task again” is an observation. “My explanation was too long” is a possible explanation to explore with your instructor. This distinction gives you a clearer basis for deciding what to change.",
+        "Write down the feedback and the adjustment you agree to practise next. Use the instructor’s assessment process for formal completion; these personal notes help you remember the discussion."
+      ]
+    },
+    {
+      "id": "training-brief-template",
+      "title": "Prepare your one-page training brief",
+      "paragraphs": [
+        "Copy these prompts into a note and complete the parts you can. They are an optional preparation tool, separate from the Academy’s enrolment documents. Keep learner names, contact details and private histories out of the note."
+      ],
+      "bullets": [
+        "My qualification: the exact SSI certification I hold and when I completed it.",
+        "My recent practice: the learner groups and teaching tasks I have actually worked with.",
+        "My adult-teaching goal: the learners and setting I want to prepare for.",
+        "My example: one observed or hypothetical situation, clearly identified.",
+        "My question: the teaching decision I want to discuss with the instructor.",
+        "My availability: the times I can make available for the complete training and supervised practice."
+      ]
+    },
+    {
+      "id": "example-brief",
+      "title": "An example of a focused brief",
+      "paragraphs": [
+        "Illustrative example: “I hold SSI Swim Teacher Level 2 and currently teach children. I would like to develop my work with adult beginners. I have not yet taught an adult class. In a hypothetical first lesson, an adult asks to pause before trying the next task. I want feedback on how I listen, clarify their concern and discuss the next step with them. I can share my certification record and availability for the full training plan.”",
+        "This brief makes the teacher’s experience and learning goal clear. It also gives the instructor something concrete to respond to before arranging practical work. Your own brief can be shorter if it answers the same questions."
+      ]
+    },
+    {
+      "id": "discuss-your-plan",
+      "title": "Discuss your Adult Swim Teacher plan with Penguin Academy",
+      "paragraphs": [
+        "Review the Adult Swim Teacher course page, then share your current qualification, teaching goal and availability with Penguin Academy. Ask the team to confirm the pathway and arrangements that apply to you. The course dates page is a starting point for availability; your complete plan needs confirmation.",
+        "Bring your brief to the training conversation so your questions stay close to the adult learners you want to support."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Do I need adult-teaching experience to use this worksheet?",
+      "answer": "You can prepare a brief using a clearly labelled hypothetical situation. Describe your actual teaching background accurately and ask the Academy to confirm the applicable course requirements."
+    },
+    {
+      "question": "Can I use the worksheet as my assessment record?",
+      "answer": "Use it as a personal preparation and reflection note. Follow the instructor’s formal assessment and documentation process for course completion."
+    },
+    {
+      "question": "What should I include in my first enquiry?",
+      "answer": "Share the qualification you hold, the adult learners you hope to work with and your availability. Add the specific teaching question you would like help with."
+    }
+  ],
+  "sources": [
+    {
+      "label": "SSI Adult Swim Teacher training standard",
+      "url": "https://training.divessi.com/index.php?id=22820369"
+    },
+    {
+      "label": "Penguin Academy Adult Swim Teacher course",
+      "url": "https://www.swimcoachcertification.com/courses/ssi-adult-swim-teacher"
+    }
+  ],
+  "internalLinks": [
+    {
+      "label": "Review the Adult Swim Teacher certification requirements",
+      "href": "/blog/ssi-adult-swim-teacher-certification-singapore"
+    },
+    {
+      "label": "View Adult Swim Teacher course details",
+      "href": "/courses/ssi-adult-swim-teacher"
+    },
+    {
+      "label": "Check Academy course dates",
+      "href": "/course-dates"
+    }
+  ],
+  "courseHref": "/courses/ssi-adult-swim-teacher",
+  "courseName": "Plan your Adult Swim Teacher training",
+  "whatsappMessage": "Hi Penguin Academy, I hold SSI Swim Teacher Level 2 and would like to discuss Adult Swim Teacher training. I can share my qualification details, adult-teaching goals and availability. Please confirm the pathway and complete training arrangements that apply to me."
+},
+{
   "slug": "questions-before-booking-ssi-swim-teacher-training",
   "title": "Six questions to ask before booking SSI swim teacher training",
   "seoTitle": "Before You Book SSI Swim Teacher Training: 6 Checks",
