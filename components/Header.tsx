@@ -21,6 +21,19 @@ const Header: React.FC = () => {
 
   const navigationButton = useRef<HTMLButtonElement>(null)
   const coursesButton = useRef<HTMLButtonElement>(null)
+  const desktopCourses = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    if (!isCoursesOpen || isMenuOpen) return
+
+    const onPointerDown = (event: PointerEvent) => {
+      if (!desktopCourses.current?.contains(event.target as Node)) {
+        setIsCoursesOpen(false)
+      }
+    }
+    document.addEventListener('pointerdown', onPointerDown)
+    return () => document.removeEventListener('pointerdown', onPointerDown)
+  }, [isCoursesOpen, isMenuOpen])
 
   useEffect(() => {
     const onEscape = (event: KeyboardEvent) => {
@@ -56,12 +69,14 @@ const Header: React.FC = () => {
 
           <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary navigation">
             <Link href="/about" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">About</Link>
-            <div className="group relative flex items-center">
+            <div ref={desktopCourses} onBlur={(event) => {
+              if (event.relatedTarget && !event.currentTarget.contains(event.relatedTarget)) setIsCoursesOpen(false)
+            }} className="group relative flex items-center">
               <Link href="/courses" className="font-medium text-slate-200 transition-colors hover:text-cyan-300">Courses</Link>
-              <button ref={coursesButton} type="button" aria-label={isCoursesOpen ? "Close courses menu" : "Open courses menu"} aria-expanded={isCoursesOpen} onClick={() => setIsCoursesOpen((open) => !open)} className="ml-1 rounded-md p-1 text-slate-300 transition hover:bg-white/10 hover:text-cyan-300">
+              <button ref={coursesButton} type="button" aria-label={isCoursesOpen ? "Close courses menu" : "Open courses menu"} aria-expanded={isCoursesOpen} aria-controls="desktop-course-links" onClick={() => setIsCoursesOpen((open) => !open)} className="ml-1 rounded-md p-1 text-slate-300 transition hover:bg-white/10 hover:text-cyan-300">
                 <ChevronDown className={`h-4 w-4 transition-transform ${isCoursesOpen ? 'rotate-180' : ''}`} />
               </button>
-              <div className={`${isCoursesOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'} absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 text-[#0b2438] shadow-[0_24px_70px_rgba(3,15,25,0.22)] transition`}>
+              <div id="desktop-course-links" className={`${isCoursesOpen ? 'visible translate-y-0 opacity-100' : 'invisible -translate-y-1 opacity-0'} absolute left-1/2 top-full mt-4 w-[620px] -translate-x-1/2 rounded-2xl border border-slate-200 bg-white p-3 text-[#0b2438] shadow-[0_24px_70px_rgba(3,15,25,0.22)] transition`}>
                 <div className="grid grid-cols-2 gap-1">
                   {courseLinks.map((course, index) => (
                     <Link key={course.href} href={course.href} onClick={closeMenus} className={`rounded-xl px-4 py-3 transition hover:bg-teal-50 ${index === 0 ? 'col-span-2 border-b border-slate-100 bg-[#f6f4ee]' : ''}`}>
