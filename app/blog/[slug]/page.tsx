@@ -224,6 +224,13 @@ function StaticArticle({ article }: { article: BlogArticle }) {
                 <section key={section.id} id={section.id} className="scroll-mt-28">
                   <h2 className="text-3xl font-semibold tracking-[-0.035em] text-[#0b2438] sm:text-4xl">{section.title}</h2>
                   {section.paragraphs?.map((paragraph) => <p key={paragraph} className="mt-5 text-lg leading-8 text-slate-700">{paragraph}</p>)}
+                  {section.decision && (
+                    <p className="mt-6 border-l-4 border-teal-700 pl-5 text-lg leading-8 text-slate-700">
+                      {section.decision.map((part, index) => part.href ? (
+                        <Link key={index} href={part.href} className="font-semibold text-teal-800 underline underline-offset-4 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-teal-700">{part.text}</Link>
+                      ) : part.text)}
+                    </p>
+                  )}
                   {section.bullets && <ul className="mt-6 space-y-4">{section.bullets.map((bullet) => <li key={bullet} className="flex gap-3 text-lg leading-8 text-slate-700"><CheckCircle2 className="mt-1.5 h-5 w-5 shrink-0 text-teal-700" aria-hidden="true" /><span>{bullet}</span></li>)}</ul>}
                   {section.comparison && (
                     <div className="mt-7 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm">
