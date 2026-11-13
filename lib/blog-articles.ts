@@ -33,6 +33,171 @@ export interface BlogArticle {
 
 export const blogArticles: BlogArticle[] = [
 {
+  "slug": "ssi-swim-teacher-training-full-time-job-planner",
+  "title": "Plan SSI swim teacher training around a full-time job",
+  "seoTitle": "SSI Swim Teacher Training Alongside Work | Penguin",
+  "description": "Map digital learning, instructor-led training, assessments and supervised practice around work. Use this SSI Level 1 availability planner before booking.",
+  "excerpt": "Prepare a realistic availability plan for the complete SSI Level 1 pathway before booking around your work commitments.",
+  "publishedAt": "2026-11-13",
+  "updatedAt": "2026-11-13",
+  "category": "Training planning",
+  "image": "/academy-adult-teacher-practice.jpg",
+  "imageAlt": "An existing Penguin coach-led lesson with two adult swimmers",
+  "readTime": "5 min read",
+  "directAnswer": "If you work full time, plan your availability for the complete SSI Swim Teacher Level 1 pathway before booking. Include digital learning, the instructor-led day, applicable evaluations and assessments, and supervised apprenticeship lessons. Send Penguin Academy the times you can actually attend and ask the team to confirm a complete arrangement. Evening or weekend availability needs confirmation.",
+  "facts": [
+    {
+      "label": "Who this helps",
+      "value": "Candidates balancing work and training"
+    },
+    {
+      "label": "Prepare",
+      "value": "Your real availability and constraints"
+    },
+    {
+      "label": "Confirm",
+      "value": "Every required stage and supervisor"
+    },
+    {
+      "label": "Next step",
+      "value": "Discuss a complete Level 1 plan"
+    }
+  ],
+  "sections": [
+    {
+      "id": "map-the-pathway",
+      "title": "Map the complete pathway before requesting leave",
+      "paragraphs": [
+        "SSI recommends 24–28 hours for Level 1. Its instructor sets the classes and sessions around candidate needs and ability. Completion includes academic work, the final exam, applicable water-fitness evaluation and supervised apprenticeship. Penguin Academy’s course page describes one instructor-led day within that wider pathway.",
+        "Use the published course date as one entry in your calendar. Ask what must happen before it, what follows it and which parts already have a confirmed time. Keep the complete requirements visible while discussing leave or other commitments.",
+        "This planner helps you prepare that conversation. It does not reserve a place or establish a fixed completion period. The current course page and your confirmed training arrangement remain the references for what applies to you."
+      ]
+    },
+    {
+      "id": "availability",
+      "title": "Describe the time you can reliably attend",
+      "paragraphs": [
+        "Start with the work commitments that are already fixed. Include rotating shifts, travel, caring responsibilities and any dates when leave is unavailable. Then mark the periods you could offer for supervised training and the periods you could protect for study.",
+        "Give start and finish times in Singapore time. Add the journey you expect to make from work or home so that “available after work” becomes a usable arrival time. If your roster changes, say when the next confirmed roster will arrive.",
+        "Use separate labels for confirmed availability, possible availability and unavailable time. That lets the Academy judge which options can be discussed without treating a tentative evening as a firm commitment."
+      ]
+    },
+    {
+      "id": "planning-sheet",
+      "title": "Make a simple training calendar",
+      "paragraphs": [
+        "Use one row for each part of the pathway. The questions below are planning prompts; ask the Academy to supply the actual dates and arrangements."
+      ],
+      "comparison": {
+        "columns": [
+          "Part of the plan",
+          "What to prepare",
+          "What to confirm"
+        ],
+        "rows": [
+          [
+            "Digital learning",
+            "Study periods you can protect",
+            "Required preparation and when it must be completed"
+          ],
+          [
+            "Instructor-led training",
+            "Dates you could attend in full",
+            "The confirmed session, venue and attendance requirements"
+          ],
+          [
+            "Evaluations and assessments",
+            "Your relevant training records",
+            "Which evaluations apply and when they are scheduled"
+          ],
+          [
+            "Supervised apprenticeship",
+            "Reliable periods for practical attendance",
+            "Eligible lessons, supervisor, location and record process"
+          ],
+          [
+            "Completion review",
+            "Time to discuss remaining tasks",
+            "How completion is checked and any further work arranged"
+          ]
+        ]
+      }
+    },
+    {
+      "id": "supervised-practice",
+      "title": "Check how supervised practice fits your working week",
+      "paragraphs": [
+        "SSI Level 1 requires at least four Aquatike and four Beginner apprenticeship lessons, with at least four cumulative hours recommended. An active Level 1 Teacher Mentor or higher may directly supervise that apprenticeship. Ask the Academy which actual lessons and supervision arrangements can be confirmed for your plan.",
+        "A free weekend in your diary does not establish a suitable practical placement. Check the learner groups, location, reporting time, supervisor and attendance process before committing. The existing apprenticeship guide explains that part of Level 1 in more detail.",
+        "If you have access to another teaching venue, describe it accurately and ask whether any proposed arrangement can be accepted. Let the Academy confirm it before relying on those hours. Keep candidate and learner information within the approved training channels."
+      ]
+    },
+    {
+      "id": "changes",
+      "title": "Plan for a changed roster or an unfinished stage",
+      "paragraphs": [
+        "Before booking, ask how to contact the team if work changes your availability. Read the applicable booking and change terms and clarify any separate cost before paying. This article does not change those terms.",
+        "Keep a question in your calendar for each stage that still needs confirmation. For example: “Which supervised lessons can I attend after my next roster is issued?” Update that question when the Academy confirms an arrangement.",
+        "Allow space to discuss feedback and any remaining work after an assessment. Agree a realistic next step with your instructor rather than assuming every task will finish on the first planned date. Certification follows successful completion of the applicable requirements."
+      ]
+    },
+    {
+      "id": "availability-message",
+      "title": "Prepare your availability note for Penguin Academy",
+      "paragraphs": [
+        "Your first enquiry can be short. Include your intended course, swimming or teaching background, confirmed availability, possible availability and the date by which you need to decide. Add any training records relevant to the pathway through the channel the team confirms.",
+        "Illustrative note: “I am interested in SSI Level 1 and work Monday to Friday. I can attend a full training day if leave is confirmed. My practical availability is currently Saturday mornings, with my next roster due later this month. Please explain which parts of the complete pathway can be arranged around those times and which remain unconfirmed.”",
+        "Use your own circumstances and ask the Academy to confirm every arrangement. The course dates page is the place to start checking published sessions. If none fits, share your availability with the team. Course completion and future employment are separate decisions; ask about any intended teaching setting on its own requirements."
+      ]
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Does Penguin Academy guarantee evening or weekend Level 1 training?",
+      "answer": "Ask the Academy which sessions and supervised arrangements are currently available. Your preferred times need confirmation before you make training or work arrangements."
+    },
+    {
+      "question": "Can I plan only for the published instructor-led day?",
+      "answer": "Include the complete pathway in your calendar. Digital learning, applicable evaluations and assessments, the final exam and supervised apprenticeship also need to be completed."
+    },
+    {
+      "question": "Will my work timetable set the certification date?",
+      "answer": "Agree a training plan with the Academy, then follow the instructor’s completion process. Actual certification depends on successful completion of all applicable requirements."
+    }
+  ],
+  "sources": [
+    {
+      "label": "SSI Level 1 Swim Teacher standard",
+      "url": "https://training.divessi.com/index.php?id=22820367"
+    },
+    {
+      "label": "Penguin Academy Level 1 course",
+      "url": "https://www.swimcoachcertification.com/courses/ssi-swim-teacher-level-1"
+    },
+    {
+      "label": "Penguin Academy course dates",
+      "url": "https://www.swimcoachcertification.com/course-dates"
+    }
+  ],
+  "internalLinks": [
+    {
+      "label": "Check the complete Level 1 pathway",
+      "href": "/courses/ssi-swim-teacher-level-1"
+    },
+    {
+      "label": "Understand the supervised apprenticeship",
+      "href": "/blog/ssi-swim-teacher-level-1-apprenticeship-singapore"
+    },
+    {
+      "label": "Check published course dates",
+      "href": "/course-dates"
+    }
+  ],
+  "courseHref": "/courses/ssi-swim-teacher-level-1",
+  "courseName": "Discuss your Level 1 training availability",
+  "whatsappMessage": "Hi Penguin Academy, I am interested in SSI Swim Teacher Level 1 alongside my current work. I can share my background and confirmed availability. Please explain the complete training and supervised apprenticeship arrangements that could apply to me."
+},
+{
   "slug": "level-2-to-adult-swim-teacher-training-brief",
   "title": "From SSI Level 2 to Adult Swim Teacher: prepare your training brief",
   "seoTitle": "SSI Level 2 to Adult Swim Teacher: Training Preparation",
