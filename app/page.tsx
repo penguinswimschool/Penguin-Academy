@@ -19,11 +19,11 @@ import { SOCIAL_IMAGE, SOCIAL_IMAGE_METADATA } from '@/lib/social-metadata'
 
 export const metadata: Metadata = {
   title: 'Swimming Instructor Course Singapore | Penguin Academy',
-  description: 'Become a certified swim teacher in Singapore through SSI training, supervised practice and lifetime Penguin mentorship. Compare pathways and SGD fees.',
+  description: 'Become a certified swim teacher in Singapore through SSI training, supervised practice and ongoing Penguin mentorship for eligible graduates. Compare pathways and SGD fees.',
   alternates: { canonical: 'https://www.swimcoachcertification.com/' },
   openGraph: {
     title: 'Swimming Instructor Course Singapore | Penguin Academy',
-    description: 'SSI swim teacher training, supervised practice and lifetime mentorship for local and international candidates.',
+    description: 'SSI swim teacher training, supervised practice and ongoing mentorship for eligible graduates. Local and international candidates welcome.',
     url: 'https://www.swimcoachcertification.com/',
     siteName: 'Penguin Academy',
     locale: 'en_SG',
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Swimming Instructor Course Singapore | Penguin Academy',
-    description: 'SSI swim teacher training, supervised practice and lifetime mentorship for local and international candidates.',
+    description: 'SSI swim teacher training, supervised practice and ongoing mentorship for eligible graduates. Local and international candidates welcome.',
     images: [SOCIAL_IMAGE],
   },
 }

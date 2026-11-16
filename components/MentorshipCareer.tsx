@@ -41,7 +41,7 @@ export default function MentorshipCareer() {
         </div>
 
         <div>
-          <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-800">Lifetime Penguin mentorship</p>
+          <p className="text-sm font-bold uppercase tracking-[0.22em] text-teal-800">Ongoing Penguin mentorship</p>
           <h2 id="mentorship-title" className="mt-4 text-3xl font-semibold tracking-[-0.04em] text-[#0b2438] sm:text-5xl">
             Support for the teacher you are becoming.
           </h2>
