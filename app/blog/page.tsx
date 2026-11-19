@@ -62,7 +62,7 @@ async function getBlogPosts(): Promise<BlogPost[]> {
 
   try {
     return await sanityClient.fetch(blogQuery, {}, {
-      next: { revalidate: 1800, tags: ['blog-posts'] },
+      next: { revalidate: 86400, tags: ['blog-posts'] },
     })
   } catch (error) {
     console.error('Error fetching blog posts:', error)
