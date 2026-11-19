@@ -83,7 +83,7 @@ interface CmsBlogPost {
 async function getCmsBlogPost(slug: string): Promise<CmsBlogPost | null> {
   if (!sanityClient) return null
   try {
-    return await sanityClient.fetch(postQuery, { slug }, { next: { revalidate: 3600, tags: [`blog-post-${slug}`] } })
+    return await sanityClient.fetch(postQuery, { slug }, { next: { revalidate: 86400, tags: [`blog-post-${slug}`] } })
   } catch (error) {
     console.error('Error fetching blog post:', error)
     return null
