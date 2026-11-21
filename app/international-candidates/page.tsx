@@ -103,6 +103,7 @@ const checklist = [
 
 const faqs = [
   ['Are international candidates welcome?', 'Yes. International candidates are welcome to enquire about Penguin Academy courses in Singapore. Availability, prerequisites and the complete training plan must be confirmed before travel is booked.'],
+  ['Do you offer a six-month full-time swimming diploma?', 'Our currently published courses are SSI swim teacher certification pathways. The course list does not include a six-month full-time diploma. Please confirm the qualification you need before making study or immigration plans.'],
   ['Are the published fees in Singapore dollars?', 'Yes. All Penguin Academy prices are stated in SGD. Personal flights, accommodation, insurance, meals, local transport and immigration costs are not included unless expressly confirmed in writing.'],
   ['Can I complete the certification fully online?', 'Do not plan on a fully online pathway. SSI digital learning may form part of a programme, but practical training, assessments and programme-specific completion requirements also apply.'],
   ['Will the qualification be accepted in my country?', 'Requirements differ by employer, facility and jurisdiction. Candidates should obtain confirmation from the relevant organisation before enrolment. Penguin Academy does not promise universal acceptance.'],
